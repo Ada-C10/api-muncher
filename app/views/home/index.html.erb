@@ -1,0 +1,11 @@
+<h1>Muncher</h1>
+
+<h2>Find your flavor...</h2>
+
+<p><%= flash[:message] if flash[:message] %></p>
+
+<%= form_tag recipes_path, method: :get do %>
+  <%= label_tag :query, "Enter Message" %>
+  <%= text_field_tag :query %>
+  <%= submit_tag "Search" %>
+<% end %>
