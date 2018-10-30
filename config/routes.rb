@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  # root 'chat#index' 'welcome#index' ? put edit update params? b/c search bar in index
+  # search as a post or put -- own route
+
+  get '/recipes', to: 'recipes#index', as: 'recipes'
+  get '/recipes/:recipe/', to: 'recipes#show', as: 'recipe'
+
 end
