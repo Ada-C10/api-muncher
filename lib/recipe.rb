@@ -1,12 +1,18 @@
 class Recipe
-  attr_reader :name, :id
+  attr_reader :label, :image, :uri
 
-  def initialize(name, options = {})
+  def initialize(name, image, uri, options = {})
+    
     raise ArgumentError if name == nil || name.empty?
-    @name = name
-    @id = id
+    raise ArgumentError if image == nil || image.empty?
+    raise ArgumentError if uri == nil || uri.empty?
 
-    # options here 
+    @name = label
+    @image = image
+    @uid = uid
+
+
+    # options here
 
   end
 
