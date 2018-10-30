@@ -21,6 +21,9 @@
 /storage/*
 !/storage/.keep
 
+# Ignore key and token variable file
+.env
+
 /node_modules
 /yarn-error.log
 
