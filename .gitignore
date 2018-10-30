@@ -13,6 +13,8 @@
 !/log/.keep
 !/tmp/.keep
 
+.env
+
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
@@ -25,3 +27,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore application configuration
+/config/application.yml
