@@ -7,7 +7,7 @@
     <ul>
       <% @recipes.each do |recipe| %>
         <li>
-          <%= link_to "#{recipe.label}", recipe_path(@recipe.uid) %>
+          <%= link_to recipe.label, show_path(recipe.uri) %>
         </li>
       <% end %>
     </ul>

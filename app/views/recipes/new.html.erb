@@ -1,8 +1,8 @@
 <h1>Search for a Recipe</h1>
 
-<%= form_tag search_path(@recipes), method: "post" do %>
-  <%= label_tag(:label, "What flavors are you intersted in?") %>
-  <%= text_field_tag(:label) %>
+<%= form_tag recipes_path, method: :get do %>
+  <%= label_tag(:query, "What flavors are you intersted in?") %>
+  <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
 
 <% end %>

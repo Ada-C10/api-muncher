@@ -9,8 +9,8 @@
 
       <div>
         <ol>
-          <% @recipe.each do |list| %>
-          <li><%= list.ingredients %></li>
+          <% @recipe.ingredients.each do |list| %>
+          <li><%= ingredients %></li>
         </ol>
       </div>
 
@@ -18,7 +18,7 @@
 
       <div>
         <ol>
-          <li><%= list.healthLabels %>
+          <li><%= list.health %>
           </ol>
           <% end %>
         </div>
