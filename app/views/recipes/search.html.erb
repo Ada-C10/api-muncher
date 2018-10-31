@@ -1,0 +1,8 @@
+<h1>Search for Recipes in Edamam databse:</h1>
+
+<%= form_tag recipes_path(@query), method: "post" do %>
+  <%= label_tag(:user_search, "Enter Message") %>
+  <%= text_field_tag(:user_search) %>
+  <%= submit_tag("Search Recipes") %>
+
+<% end %>
