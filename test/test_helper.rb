@@ -2,8 +2,10 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
-require "minitest/reporters"  # for Colorized output
-#  For colorful output!
+require "minitest/reporters"
+require "pry"
+
+
 Minitest::Reporters.use!(
   Minitest::Reporters::SpecReporter.new,
   ENV,

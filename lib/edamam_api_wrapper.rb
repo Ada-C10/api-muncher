@@ -6,7 +6,7 @@ class EdamamApiWrapper
   TOKEN = ENV["RECIPE_TOKEN"]
 
 
-  def self.search_recipe(query)
+  def self.search_recipes(query)
     url = BASE_URL + "#{query}" + "&app_id=#{ID}&app_key=#{TOKEN}"
 
     responses = HTTParty.get(url)["hits"]
