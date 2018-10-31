@@ -1,4 +1,4 @@
 <h1> Your recipe search: <h1>
-<% if @response != nil %>
-  <%= @response["hits"][0]["recipe"] %>
+<% if @recipes != nil %>
+  <%= @recipes.first %>
 <% end %>
