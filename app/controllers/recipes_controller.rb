@@ -9,6 +9,8 @@ class RecipesController < ApplicationController
   end
 
   def new
+    # Not sure if this works...
+    @recipe = params[:recipe]
   end
 
   def create
