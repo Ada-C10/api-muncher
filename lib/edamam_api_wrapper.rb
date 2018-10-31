@@ -5,7 +5,7 @@ class EdamamApiWrapper
 
   def self.recipe_search(keyword)
 
-    url = BASE_URL + "?q=#{keyword}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
+    url = BASE_URL + "?q=#{keyword}" + "&app_id=#{ID}" + "&app_key=#{KEY}" + "&to=100"  #search results max out at 100
     data = HTTParty.get(url)
     recipe_list = []
 

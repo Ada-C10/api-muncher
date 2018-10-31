@@ -1,4 +1,7 @@
-<% if @recipes %>  <!-- @recipes.any?  what gets returned if search is empty? -->
+<% if @recipes.any? %>
+
+  <%= will_paginate @recipes, renderer: BootstrapPagination::Rails %>
+
   <% @recipes.each do |recipe| %>
 
     <div class="card" style="width:400px">
@@ -10,5 +13,7 @@
 
   <% end %>
 <% else %>
+  <h2>No results found.  Please search again!</h2>
+<% end %>
 <!-- enter your search terms above if no search was made (first visit) -->
 <!-- no recipes found message if search comes back empty -->
