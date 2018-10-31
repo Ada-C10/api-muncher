@@ -3,8 +3,10 @@
   <ol>
     <% @recipes.each do |recipe| %>
       <li>
-        <%= recipe.name %>
+        <%=link_to recipe.name, recipe_path(recipe.id) %>
+        <%= image_tag(recipe.image, alt: "recipe image") %>
       </li>
+
     <% end %>
   </ol>
 <% end %>

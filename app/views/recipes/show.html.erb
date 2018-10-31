@@ -1,2 +1,17 @@
 <h1><%= @recipe.name %></h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<p><%= image_tag(@recipe.image, alt: "recipe image") %></p>
+<p>Ingredients:</p>
+<% @recipe.ingredients.each do |ingredient| %>
+<ul>
+  <li><%= ingredient %></li>
+</ul>
+<% end %>
+
+<p>Dietary Info:</p>
+<% @recipe.dietary_info.each do |diet| %>
+<ul>
+  <li><%= diet %></li>
+</ul>
+<% end %>
+
+<p>Link to Website: <%= @recipe.uri %></p>
