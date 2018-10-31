@@ -1,5 +1,13 @@
 <section class="recipes-list">
   <h1>Recipe <%= "#{@recipe.label}" %></h1>
+    <%= image_tag(@recipe.image)%>
+    <ul>
+      <% @recipe.health.each do |health| %>
+        <li>
+          <%=health%>
+        </li>
+      <% end %>
+    </ul>
 
     <ul>
       <% @recipe.ingredients.each do |ingredient| %>

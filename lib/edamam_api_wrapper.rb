@@ -26,7 +26,6 @@ class EdamamApiWrapper
         recipe_list << create_recipe(recipe_data["recipe"])
       end
     end
-    puts recipe_list
     return recipe_list
   end
 
@@ -35,7 +34,7 @@ class EdamamApiWrapper
     url = BASE_URL + "search?" + "app_id=#{ID}" + "&app_key=#{KEY}" + "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{recipe_id}"
 
     data = HTTParty.get(url)
-    
+
     return create_recipe(data[0])
   end
 
