@@ -9,7 +9,7 @@ class EdamamApiWrapper
     data = HTTParty.get(url)
     recipe_list = []
 
-    if data["hits"].any?
+    if data && data["hits"] && data["hits"].any?
       data["hits"].each do |hit|
         label = hit["recipe"]["label"]
         image = hit["recipe"]["image"]

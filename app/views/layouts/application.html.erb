@@ -9,13 +9,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-<nav>
-  <%= form_tag recipes_path, method: :get do %>
-  <%= text_field_tag :keyword %>
-  <%= submit_tag "Recipe Search" %>
-  <% end %>
 
-</nav>
+  <nav class="navbar navbar-dark bg-dark sticky-top">
+    <h1>muncher.</h1>
+    <%= form_tag recipes_path, method: :get do %>
+    <%= text_field_tag :keyword %>
+    <%= submit_tag "Recipe Search" %>
+    <% end %>
+  </nav>
+
 
   <body>
     <%= yield %>
