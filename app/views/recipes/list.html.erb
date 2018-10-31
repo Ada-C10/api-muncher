@@ -1,2 +1,26 @@
-<h1>Recipes#list</h1>
-<p>Find me in app/views/recipes/list.html.erb</p>
+<h1>Search Munchies</h1>
+
+<%= form_tag list_recipes_path, method: "get" do %>
+  <%= label_tag(:search, "Enter Search") %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+
+<% end %>
+
+
+
+<section class="recipes-list">
+  <h1>Muncher Recipes</h1>
+  <% if @recipes %>
+    <ul>
+      <% @recipes.each do |recipe| %>
+        <li>
+          <%= "#{recipe.label}"%>
+          <%# link_to "#{recipe.label}", chat_new_path(channel.name) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
+
+<p>Find me in app/views/recipe/list.html.erb</p>
