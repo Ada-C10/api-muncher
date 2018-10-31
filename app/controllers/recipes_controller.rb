@@ -7,16 +7,17 @@ class RecipesController < ApplicationController
   def index
     # Params not making it here...
     @recipes = EdamamApiWrapper.list_recipes(params["search_terms"])
-    # binding.pry
+    binding.pry
   end
 
-  def home
-  end
+  # def home
+  # end
 
   def show
     # Click on a link
     # Go to show page
-    # Need acess to the URI for that recipe
+    # Need acess to the URI for that recipe/recipe details within this show page
+    # How do you find a recipe in their api?
 
   end
 
