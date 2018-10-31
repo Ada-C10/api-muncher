@@ -15,10 +15,8 @@ describe Recipe do
 
     it 'can be created with valid arguments' do
       args = Hash.new
-      valid_keys = [:label, :recipe_uri, :image_uri, :source, :source_uri, :recipe_yield, :health_labels, :ingredient_lines, :total_time]
-      valid_values = ["some recipe", "http://", "http://", "source", "http://", "http://", "yields 100", ["labels"], ["ingredients"], 30]
-      valid_keys.each do |key|
-        valid_values.each do |value|
+      RECIPE_VALID_ATTRS.each do |key|
+        RECIPE_VALID_VALUES.each do |value|
           args[key] = value
           recipe = Recipe.new(args)
           expect(recipe.send(key)).must_equal value
