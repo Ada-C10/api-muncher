@@ -12,7 +12,7 @@ class EdamamApiWrapper
 
     if data["hits"]
         data["hits"].each do |recipe_data|
-          recipes_search_result << create_recipe(recipe_data)
+          recipes_search_result << create_recipe(recipe_data["recipe"])
         end
 
     else
@@ -26,11 +26,12 @@ class EdamamApiWrapper
   def self.create_recipe(api_params)
     return Recipe.new(
       api_params["label"],
-      api_params["label"],
       api_params["source"],
+      api_params["image"],
       api_params["url"],
       api_params["ingredientLines"],
-      api_params["dietLabels"])
-
+      api_params["dietLabels"]
+    )
   end
+
 end
