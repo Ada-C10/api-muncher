@@ -1,8 +1,11 @@
-<h1>Search recipes</h1>
+<section class="recipes-list">
+  <h1>Recipe <%= "#{@recipe.label}" %></h1>
 
-<%= form_tag recipes_path, method: :get do %>
-  <%= label_tag(:search, "Enter Ingredient") %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Look Up Recipes") %>
-
-<% end %>
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+        <li>
+          <%=ingredient%>
+        </li>
+      <% end %>
+    </ul>
+</section>

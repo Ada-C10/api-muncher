@@ -30,6 +30,15 @@ class EdamamApiWrapper
     return recipe_list
   end
 
+  def self.find_recipe(recipe_id)
+
+    url = BASE_URL + "search?" + "app_id=#{ID}" + "&app_key=#{KEY}" + "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{recipe_id}"
+
+    data = HTTParty.get(url)
+    
+    return create_recipe(data[0])
+  end
+
 
   def self.send_msg(channel, msg)
     puts "Sending message to channel #{channel}: #{msg}"
@@ -51,6 +60,7 @@ class EdamamApiWrapper
   private
 
   def self.create_recipe(api_params)
+
       return Recipe.new(
         api_params["label"],
         api_params["uri"],

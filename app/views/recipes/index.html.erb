@@ -1,11 +1,11 @@
 
 <section class="recipes-list">
-  <h1>Ada Channels</h1>
+  <h1>Recipes for <%= "#{@search}" %></h1>
   <% if @recipes %>
     <ul>
       <% @recipes.each do |recipe| %>
         <li>
-          <%=recipe.label%>
+          <%= link_to recipe.label, recipe_path(recipe.id)%>
         </li>
       <% end %>
     </ul>

@@ -16,7 +16,7 @@ class Recipe
     raise ArgumentError if label == nil || label == "" || id == nil || id == ""
 
     @label = label
-    @id = id
+    @id = id.split("recipe_").last
 
     @image = options[:image]
     @url = options[:url]
