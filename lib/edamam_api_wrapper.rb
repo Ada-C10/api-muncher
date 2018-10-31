@@ -28,7 +28,7 @@ class EdamamApiWrapper
     args = Hash.new
 
     args[:label] = api_params["recipe"]["label"]
-    args[:recipe_uri] = URI(api_params["recipe"]["uri"]).fragment
+    args[:recipe_uri] = URI(api_params["recipe"]["uri"])
     # http://www.edamam.com/ontologies/edamam.owl#recipe_3d81878cd040aa6a73a2c3f11293102a
     args[:image_uri] = api_params["recipe"]["image"]
     args[:source] = api_params["recipe"]["source"]

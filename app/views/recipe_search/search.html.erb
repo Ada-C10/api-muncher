@@ -1,2 +1,7 @@
-<h1>RecipeSearch#search</h1>
-<p>Find me in app/views/recipe_search/search.html.erb</p>
+<h1>Welcome<br>to<br>Recipe<br>Muncher.</h1>
+<div id="wrap">
+  <form action= "<%= recipe_searches_path %>" method="get" autocomplete="on">
+    <input id="search" name="q" type="text" placeholder="I want a recipe for...">
+    <input id="search_submit" value="Submit" type="submit">
+  </form>
+</div>
