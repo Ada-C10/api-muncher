@@ -4,9 +4,11 @@ class EdamamApiWrapper
   KEY = ENV["EDAMAM_KEY"]
 
   def self.recipe_search(keyword)
-    url = BASE_URL + "q=#{keyword}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
+
+    url = BASE_URL + "?q=#{keyword}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
     data = HTTParty.get(url)
     recipe_list = []
+
     if data["hits"]
       data["hits"].each do |hit|
         label = hit["recipe"]["label"]
@@ -14,6 +16,7 @@ class EdamamApiWrapper
         uri = hit["recipe"]["uri"]
 
         recipe_list << Recipe.new(label, image, uri)
+      
       end
     else
       #do something if no recipes found
@@ -62,5 +65,6 @@ class EdamamApiWrapper
           healthLabels: api_params[:options][:healthLabels]
         }
       )
+    end
 
 end
