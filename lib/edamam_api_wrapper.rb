@@ -9,7 +9,7 @@ class EdamamApiWrapper
     data = HTTParty.get(url)
     recipe_list = []
 
-    if data["hits"]
+    if data["hits"].any?
       data["hits"].each do |hit|
         label = hit["recipe"]["label"]
         image = hit["recipe"]["image"]
@@ -19,7 +19,7 @@ class EdamamApiWrapper
 
       end
     else
-      return "No recipes found!  You've entered a food desert!"
+      return []
     end
     return recipe_list
   end

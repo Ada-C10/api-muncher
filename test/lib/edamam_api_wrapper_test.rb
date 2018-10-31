@@ -17,11 +17,11 @@ describe EdamamApiWrapper do
       end
     end
 
-    it 'does something else if no results are found' do
+    it 'returns an empty array if no results are found' do
       VCR.use_cassette('recipe_search') do
         recipes = EdamamApiWrapper.recipe_search('qmwmemrmtmmtmy')
 
-        expect(recipes).must_equal "No recipes found!  You've entered a food desert!"
+        expect(recipes).must_equal []
       end
     end
 
