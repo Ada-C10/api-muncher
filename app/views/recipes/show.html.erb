@@ -1,0 +1,13 @@
+<%= @recipe.label %>
+<%= @recipe.image %>
+<a href=<%=@recipe.url%>>Source</a>
+<ul>
+  <% @recipe.ingredientLines.each do |ingredient| %>
+    <li><%=ingredient%></li>
+  <% end %>
+</ul>
+<ul>
+  <% @recipe.healthLabels.each do |label| %>
+    <li><%=label%></li>
+  <% end %>
+</ul>

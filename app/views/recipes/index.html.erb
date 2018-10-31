@@ -1,3 +1,7 @@
 <% @recipes.each do |rec| %>
 <%= rec.label %>
+<%= rec.image %>
+<%= link_to "#{rec.label}", recipe_path(rec.id) %>
+
+
 <% end %>

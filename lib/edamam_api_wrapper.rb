@@ -16,7 +16,7 @@ class EdamamApiWrapper
         uri = hit["recipe"]["uri"]
 
         recipe_list << Recipe.new(label, image, uri)
-      
+
       end
     else
       #do something if no recipes found
@@ -24,8 +24,9 @@ class EdamamApiWrapper
     return recipe_list
   end
 
-  def self.show_recipe(uri)
-    url = BASE_URL + "r=#{URI.encode(uri)}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
+  def self.show_recipe(id)
+    uri_start = "?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_"
+    url = BASE_URL + uri_start + "#{id}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
     data = HTTParty.get(url)
 
     # if data is valid
@@ -36,7 +37,7 @@ class EdamamApiWrapper
     ingredientLines = data[0]["ingredientLines"]  # this is an array
     healthLabels = data[0]["healthLabels"] # this is an array
 
-    recipe = Recipe.new(label, image, uri, options: {url: rec_url, ingredientLines: ingredientLines, healthLabels: healthLabels})
+    recipe = Recipe.new(label, image, uri, {url: rec_url, ingredientLines: ingredientLines, healthLabels: healthLabels})
 
     return recipe
 
@@ -60,11 +61,13 @@ class EdamamApiWrapper
         api_params["image"],
         api_params["uri"],
         {
-          url: api_params[:options][:url],
-          ingredientLines: api_params[:options][:ingredientLines],
-          healthLabels: api_params[:options][:healthLabels]
+          url: api_params[:details][:url],
+          ingredientLines: api_params[:details][:ingredientLines],
+          healthLabels: api_params[:details][:healthLabels]
         }
       )
     end
+
+
 
 end
