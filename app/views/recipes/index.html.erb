@@ -1,10 +1,14 @@
+<% if @recipes %>  <!-- @recipes.any?  what gets returned if search is empty? -->
+  <% @recipes.each do |recipe| %>
 
-<% @recipes.each do |recipe| %>
+    <div class="card" style="width:400px">
+      <%= link_to image_tag(recipe.image, alt: "#{recipe.label}", class: "card-img-top"), recipe_path(recipe.id) %>
+      <div class="card-body">
+        <h5 class="card-title"><%= recipe.label %></h5>
+      </div>
+    </div>
 
-<div class="card" style="width:400px">
-  <%= link_to image_tag(recipe.image, alt: "#{recipe.label}", class: "card-img-top  "), recipe_path(recipe.id) %>
-<div class="card-body">
-  <h5 class="card-title"><%= recipe.label %></h5>
-</div>
-
-<% end %>
+  <% end %>
+<% else %>
+<!-- enter your search terms above if no search was made (first visit) -->
+<!-- no recipes found message if search comes back empty -->

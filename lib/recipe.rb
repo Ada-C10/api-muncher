@@ -12,11 +12,4 @@ class Recipe
     @ingredientLines = details[:ingredientLines]
     @healthLabels = details[:healthLabels]
   end
-
-
-
-
-
-
-
 end
