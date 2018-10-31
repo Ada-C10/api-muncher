@@ -11,6 +11,7 @@ class Recipe
     @url = options[:url]
     @ingredientLines = options[:ingredientLines]
     @healthLabels = options[:healthLabels]
+  end
 
 
 
