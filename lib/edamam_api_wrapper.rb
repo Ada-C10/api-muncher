@@ -20,6 +20,19 @@ class EdamamApiWrapper
     return recipe_list
   end
 
+  def self.find_recipe(find)
+    url = BASE_URL + "?app_id=#{TOKEN_ID}&app_key=#{TOKEN_KEY}&r=#{find}"
+    recipe = HTTParty.get(url)
+
+    if recipe["hits"]
+      create_recipe(recipe)
+    else
+      recipe = nil
+    end
+
+    return recipe
+  end
+
   private
 
   def self.create_recipe(api_params)
