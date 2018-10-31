@@ -1,0 +1,15 @@
+<h1>Recipes#index</h1>
+<p>Find me in app/views/recipes/index.html.erb</p>
+
+<section>
+  <h1>All Recipes</h1>
+  <% if @recipes %>
+    <ul>
+      <% @recipes.each do |recipe| %>
+        <li>
+          <%= link_to "#{recipe.label}", recipe_path(@recipe.uid) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
