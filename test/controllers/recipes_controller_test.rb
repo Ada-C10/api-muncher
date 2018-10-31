@@ -2,8 +2,11 @@ require "test_helper"
 
 describe RecipesController do
 
-  describe 'root' do
+  describe 'home' do
     it 'succeeds' do
+      get root_path
+
+      must_respond_with :success
     end
   end
   describe 'index' do
