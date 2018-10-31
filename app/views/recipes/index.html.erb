@@ -1,1 +1,5 @@
-<h1>Results for/h1>
+<h1>Results for "<%= @search_terms %>"</h1>
+<% @recipes.each do |recipe| %>
+  <%= link_to image_tag(recipe.image), recipe_path(recipe.uri) %>
+  <%= recipe.label %>
+<% end %>
