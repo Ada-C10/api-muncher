@@ -1,8 +1,5 @@
 class RecipesController < ApplicationController
 
-  def index
-
-  end
 
   def search
 
@@ -16,5 +13,6 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe = params[:recipe]
   end
 end

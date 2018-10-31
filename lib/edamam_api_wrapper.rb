@@ -1,13 +1,14 @@
 require 'httparty'
 
 class EdamamApiWrapper
-  BASE_URL = "https://api.edamam.com/search?q="
+  BASE_URL = "https://api.edamam.com/search?"
   ID = ENV["RECIPE_ID"]
   TOKEN = ENV["RECIPE_TOKEN"]
+  TOKENS_URL = "&app_id=#{ID}&app_key=#{TOKEN}"
 
 
   def self.search_recipes(query)
-    url = BASE_URL + "#{query}" + "&app_id=#{ID}&app_key=#{TOKEN}"
+    url = BASE_URL + "q=#{query}" + TOKENS_URL
 
     responses = HTTParty.get(url)["hits"]
 
@@ -17,6 +18,13 @@ class EdamamApiWrapper
 
     return recipes
 
+  end
+
+  def self.find_recipe(uri)
+
+    encoded_uri = URI.encode_www_form_component(uri)
+    url = BASE_URL + "r=#{encoded_uri}" + TOKENS_URL
+    response = HTTParty.post(url)
   end
 
   private
@@ -30,9 +38,10 @@ class EdamamApiWrapper
     return Recipe.new(
       api_params["label"],
       api_params["image"],
-      ingredients,
+      api_params["uri"],
       {
-        dietary_information: api_params["dietLabels"]
+        dietary_information: api_params["dietLabels"],
+        ingredients: ingredients
       }
     )
   end
