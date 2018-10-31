@@ -1,12 +1,13 @@
 require 'httparty'
 require 'pry'
+require 'uri'
 
 class EdamamApiWrapper
   BASE_URI = "https://api.edamam.com"
   APP_ID = ENV["EDAMAM_APP_ID"]
   APP_KEY = ENV["EDAMAM_APP_KEY"]
 
-  def self.list_recipes(query, from: 0, to: 3)
+  def self.list_recipes(query, from: 0, to: 9)
     uri = BASE_URI + "/search?q=#{query}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&from=#{from}" + "&to=#{to}"
     data = HTTParty.get(uri)
     recipe_list = []
@@ -27,6 +28,8 @@ class EdamamApiWrapper
     args = Hash.new
 
     args[:label] = api_params["recipe"]["label"]
+    args[:recipe_uri] = URI(api_params["recipe"]["uri"]).fragment
+    # http://www.edamam.com/ontologies/edamam.owl#recipe_3d81878cd040aa6a73a2c3f11293102a
     args[:image_uri] = api_params["recipe"]["image"]
     args[:source] = api_params["recipe"]["source"]
     args[:source_uri] = api_params["recipe"]["url"]

@@ -1,12 +1,13 @@
 class Recipe
-  attr_reader :label, :image_uri, :source, :source_uri, :recipe_yield, :health_labels, :ingredient_lines, :total_time
+  attr_reader :label, :recipe_uri, :image_uri, :source, :source_uri, :recipe_yield, :health_labels, :ingredient_lines, :total_time
 
   def initialize(args)
     args.each do |arg|
       raise ArgumentError if arg == nil || arg == ""
     end
-    
+
     @label = args[:label]
+    @recipe_uri = args[:recipe_uri]
     @image_uri = args[:image_uri]
     @source = args[:source]
     @source_uri = args[:source_uri]
