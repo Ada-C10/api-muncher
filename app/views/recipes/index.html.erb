@@ -1,0 +1,21 @@
+<h1>MUNCHER</h1>
+  <section><%= form_tag search_path, method: "get" do %>
+  <%= label_tag(:search_term, "Find your flavor...") %>
+  <%= text_field_tag(:search_term) %>
+  <%= submit_tag("Search") %>
+  <% end %>
+  </section>
+
+
+<section class="channels-list">
+  <h1>Edamam Recipes</h1>
+  <% if @recipes %>
+    <ul>
+      <% @recipes.each do |recipe| %>
+        <li>
+          <%= link_to recipe.label, recipes_path(recipe.label) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
