@@ -22,11 +22,11 @@ class EdamamApiWrapper
     end
   end
 
-  def self.recipe_details(uri)
-    encoded_uri = URI.encode(uri)
-    url = BASE_URL + "?&app_id=#{ID}" + "&app_key=#{KEY}" + "&r=#{encoded_uri}"
+  def self.recipe_details(id)
+    url = BASE_URL + "?&app_id=#{ID}" + "&app_key=#{KEY}" + "&r=http://www.edamam.com/ontologies/edamam.owl#recipe_" + "#{id}"
 
-    data = HTTParty.get(url)
+    encoded_url = URI.encode(url)
+    data = HTTParty.get(encoded_url)
 
     return recipe_data(data)
   end
@@ -43,12 +43,15 @@ class EdamamApiWrapper
   end
 
   def self.recipe_data(api_params)
-    details_hash = {}
-    details_hash[:label] = api_params[0]["label"]
-    details_hash[:original_url] = api_params[0]["url"]
-    details_hash[:ingredients] = api_params[0]["ingredientLines"]
-    details_hash[:diet_labels] = api_params[0]["dietLabels"]
-    details_hash[:health_labels] = api_params[0]["healthLabels"]
-    return details_hash
+    return Recipe.new(
+      api_params[0]["label"],
+      api_params[0]["image"],
+      api_params[0]["uri"],
+      original_url: api_params[0]["url"],
+      ingredients: api_params[0]["ingredientLines"],
+      diet_labels: api_params[0]["dietLabels"],
+      health_labels: api_params[0]["healthLabels"],
+      source: api_params[0]["source"]
+    )
   end
 end

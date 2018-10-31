@@ -6,8 +6,12 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # if params[:label] does not match the actual
-    @recipe = EdamamApiWrapper.recipe_details(params[:query])
+    @recipe = EdamamApiWrapper.recipe_details(params[:id])
+    if @recipe.id != params[:id]
+      flash[:status] = :warning
+      flash[:message] = "This recipe does not exist."
+      redirect_to root_path
+    end
   end
 
   private
