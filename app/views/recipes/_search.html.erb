@@ -1,0 +1,10 @@
+<section>
+  <%= form_tag recipes_path, method: :get, class: "form-inline d-flex justify-content-center" do %>
+    <div class="input-group mb-3">
+      <input id="query" name="query" type="text" class="form-control" placeholder="Find your flavor..." aria-label="Find your flavor..." aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <%= submit_tag "Search", class: "btn btn-outline-light" %>
+      </div>
+    </div>
+  <% end %>
+</section>

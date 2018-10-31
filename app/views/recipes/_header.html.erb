@@ -1,0 +1,8 @@
+<nav class="navbar fixed-top">
+  <h1><%= link_to "Muncher", root_path, id: "muncher" %></h1>
+  <%= render partial: "search" %>
+</nav>
+
+<section>
+  <p><%= flash[:message] if flash[:message] %></p>
+</section>

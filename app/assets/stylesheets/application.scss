@@ -12,7 +12,111 @@
  *
  */
 
+$primary: #00B0FF;
+$light: #FFFFFF;
+$danger: #FF6347;
+
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #F5F5F5;
+  color: #2C2C2C;
+  font-family: 'Roboto', sans-serif;
+}
+
+body#homepage {
+  background-image: url("food.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a.card-img-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1.5rem;
+}
+
+a.card-img-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+
+}
+
+nav, footer, article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+nav {
+  background-color: #01579B;
+  box-shadow: 0 6px 10px -8px grey;
+}
+
+.pagination > * {
+    padding-right: 0.3rem;
+    font-size: 0.8rem;
+}
+
+article {
+  padding-top: 150px;
+}
+
+h1 {
+  padding-top: 0.5rem;
+}
+
+#muncher {
+  font-family: 'Pacifico', cursive;
+  color: $light;
+  font-size: 3rem;
+}
+
+a#muncher, a#muncher::hover {
+  color: $light;
+}
+
+input#query {
+  background: rgba(255,255,255,0);
+  border: 1px solid white;
+  color: $light;
+}
+
+input#query::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+#muncher.muncher-homepage {
+  font-size: 4rem;
+}
+
+section.muncher-homepage > section > form > div > #query {
+  background-color: $light;
+  color: #2C2C2C;
+  border: 2px solid white;
+}
+
+section.muncher-homepage > section > form > div > #query::placeholder {
+  background-color: $light;
+  color: #6C6C6C;
+}
+
+section.muncher-homepage > section > form > div > div > input.btn.btn-outline-light {
+  background-color: $primary;
+  color: $light;
+}

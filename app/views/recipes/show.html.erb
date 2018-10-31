@@ -1,14 +1,22 @@
-<h1>Recipe: <%= @recipe.label %></h1>
-<p><a href="<%= @recipe.url %>" target="_blank">Open recipe in new window</a>
-<p>Ingredients</p>
-<p>
-  <% @recipe.ingredients.each do |ingredient| %>
-    <%= ingredient %><br>
-  <% end %>
-</p>
-<p>Dietary Info</p>
-<p>
-  <% @recipe.health_info.each do |info| %>
-    <%= info %><br>
-  <% end %>
-</p>
+<%= render partial: "header" %>
+
+<article class="recipe-detail col-sm-8 mx-auto">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title"><%= @recipe.label %></h2>
+      <p>
+        <% @recipe.health_info.each do |info| %>
+          <span class="badge badge-secondary"><%= info %></span>
+        <% end %>
+      </p>
+      <h4>Ingredients</h4>
+      <ul>
+        <% @recipe.ingredients.each do |ingredient| %>
+          <li><%= ingredient %></li>
+        <% end %>
+      </ul>
+      <a href="<%= @recipe.url %>" target="_blank">View original recipe ></a>
+    </div>
+    <%= image_tag("#{@recipe.image}", alt: "#{@recipe.label}", class: "card-img-bottom") %>
+  </div>
+</article>
