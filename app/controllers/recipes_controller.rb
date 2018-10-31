@@ -13,6 +13,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = params[:recipe]
+    
   end
 end

@@ -24,7 +24,10 @@ class EdamamApiWrapper
 
     encoded_uri = URI.encode_www_form_component(uri)
     url = BASE_URL + "r=#{encoded_uri}" + TOKENS_URL
-    response = HTTParty.post(url)
+    
+    response = HTTParty.get(url)
+
+    return create_recipe(response[0])
   end
 
   private
