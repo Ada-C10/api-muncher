@@ -57,10 +57,10 @@ end
 # http://www.edamam.com/ontologies/edamam.owl#recipe_3d81878cd040aa6a73a2c3f11293102a
 
 # Sample Query:
-# https://api.edamam.com/search?q=lemongrass&app_id=beffb2cc&app_key=a902dd278d98d1d773adffc24a34dd1f&from=0&to=3
+# https://api.edamam.com/search?q=lemongrass&app_id=<ID>&app_key=<KEY>&from=0&to=3
 
 # Sample Request:
-# https://api.edamam.com/search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9b5945e03f05acbf9d69625138385408&app_id=beffb2cc&app_key=a902dd278d98d1d773adffc24a34dd1f
+# https://api.edamam.com/search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9b5945e03f05acbf9d69625138385408&app_id=<ID>&app_key=<KEY>
 
 # Verify it works through the rails console:
 # EdamamApiWrapper.list_recipes("bitter melon")
