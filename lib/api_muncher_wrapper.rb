@@ -1,5 +1,5 @@
 require 'httparty'
 
-class EdamamApiWrapper
+class ApiMuncherWrapper
 
 end
