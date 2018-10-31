@@ -1,2 +1,13 @@
 <h1>Recipes#index</h1>
 <p>Find me in app/views/recipes/index.html.erb</p>
+<h1>Recipes</h1>
+  <% if @recipes %>
+    <ul>
+      <% @recipes.each do |recipe| %>
+        <li>
+
+          <%= link_to recipe.label, show_path(recipe.uri) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
