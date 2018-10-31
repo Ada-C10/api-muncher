@@ -1,0 +1,29 @@
+<div class="container recipe">
+  <section>
+    <h1 class="text-center mt-5 mb-5">List of Recipes for: <%= @search %></h1>
+
+    <% if @recipes %>
+      <% @recipes.each_slice(3) do |row| %>
+        <div class="row mb-5">
+          <% row.each do |recipe| %>
+            <div class="col-sm-4 mb-4 text-center">
+              <div class="card">
+                <img src="<%= recipe.image %>" width="500" alt="<%= recipe.label %>" class="card-img-top">
+              </div>
+              <div class="card-body">
+                <p class="card-title"><%= link_to recipe.label, recipe_path(recipe.label, :query => recipe.uri) %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class="flickr_pagination">
+      <div class="page_info">
+        <%= page_entries_info @recipes %>
+      </div>
+      <%= will_paginate @recipes, :container => false %>
+    </div>
+  </section>
+</div>
