@@ -12,13 +12,13 @@ class EdamamApiWrapper
 
     recipe_list = []
 
-    if data["hits"]
+    if data["hits"].empty?
+      return []
+    else
       data["hits"].each do |recipe_data|
         recipe_list << create_recipe(recipe_data)
       end
       return recipe_list
-    else
-      return []
     end
   end
 
@@ -28,7 +28,11 @@ class EdamamApiWrapper
     encoded_url = URI.encode(url)
     data = HTTParty.get(encoded_url)
 
-    return recipe_data(data)
+    if data.parsed_response.empty?
+      return []
+    else
+      return recipe_data(data)
+    end
   end
 
 
@@ -43,19 +47,15 @@ class EdamamApiWrapper
   end
 
   def self.recipe_data(api_params)
-    if api_params.parsed_response.empty?
-      return Recipe.new("Not Found", "Not Found", "Not Found")
-    else
-      return Recipe.new(
-        api_params[0]["label"],
-        api_params[0]["image"],
-        api_params[0]["uri"],
-        original_url: api_params[0]["url"],
-        ingredients: api_params[0]["ingredientLines"],
-        diet_labels: api_params[0]["dietLabels"],
-        health_labels: api_params[0]["healthLabels"],
-        source: api_params[0]["source"]
-      )
-    end
+    return Recipe.new(
+      api_params[0]["label"],
+      api_params[0]["image"],
+      api_params[0]["uri"],
+      original_url: api_params[0]["url"],
+      ingredients: api_params[0]["ingredientLines"],
+      diet_labels: api_params[0]["dietLabels"],
+      health_labels: api_params[0]["healthLabels"],
+      source: api_params[0]["source"]
+    )
   end
 end

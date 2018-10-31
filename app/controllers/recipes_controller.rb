@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = EdamamApiWrapper.recipe_details(params[:id])
-    if @recipe.id != params[:id]
+    if @recipe == []
       flash[:status] = :warning
       flash[:message] = "This recipe does not exist."
       redirect_to root_path
