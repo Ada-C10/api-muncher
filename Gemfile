@@ -85,3 +85,8 @@ group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
 end
+
+
+
+gem 'httparty'
+gem 'bootstrap', '~> 4.1.3'
