@@ -1,7 +1,10 @@
-<% @recipes.each do |rec| %>
-<%= rec.label %>
-<%= rec.image %>
-<%= link_to "#{rec.label}", recipe_path(rec.id) %>
 
+<% @recipes.each do |recipe| %>
+
+<div class="card" style="width:400px">
+  <%= link_to image_tag(recipe.image, alt: "#{recipe.label}", class: "card-img-top  "), recipe_path(recipe.id) %>
+<div class="card-body">
+  <h5 class="card-title"><%= recipe.label %></h5>
+</div>
 
 <% end %>
