@@ -49,7 +49,7 @@ def self.create_recipe(api_params)
       {
         image: api_params["image"],
         url: api_params["url"],
-        ingredients: api_params["ingredients"],
+        ingredients: api_params["ingredientLines"],
         health: api_params["healthLabels"]
       }
     )

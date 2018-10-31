@@ -1,4 +1,8 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<h1><%= @recipe.label %></h1>
 
-<%= @recipe.label %>
+
+<%=image_tag(@recipe.image)%>
+
+<% @recipe.ingredients.each do |ingredient|%>
+<%= ingredient %>
+<% end %>
