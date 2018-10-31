@@ -6,9 +6,10 @@
     <ul>
       <% @recipes.each do |recipe| %>
         <li>
-          <%= "#{recipe.label}" %>
+          <%= link_to "#{recipe.label}", recipe_path(recipe.id) %>
         </li>
       <% end %>
     </ul>
   <% end %>
+  <%= will_paginate @recipes %>
 </section>
