@@ -2,8 +2,8 @@ class Recipe
   attr_reader :label, :recipe_uri, :image_uri, :source, :source_uri, :recipe_yield, :health_labels, :ingredient_lines, :total_time
 
   def initialize(args)
-    args.each do |arg|
-      raise ArgumentError if arg == nil || arg == ""
+    args.each do |key, value|
+      raise ArgumentError if value == nil || value == "" || value == []
     end
 
     @label = args[:label]

@@ -29,7 +29,6 @@ class EdamamApiWrapper
 
     args[:label] = api_params["recipe"]["label"]
     args[:recipe_uri] = URI(api_params["recipe"]["uri"])
-    # http://www.edamam.com/ontologies/edamam.owl#recipe_3d81878cd040aa6a73a2c3f11293102a
     args[:image_uri] = api_params["recipe"]["image"]
     args[:source] = api_params["recipe"]["source"]
     args[:source_uri] = api_params["recipe"]["url"]
@@ -42,6 +41,9 @@ class EdamamApiWrapper
   end
 
 end
+
+# Sample :recipe_uri
+# http://www.edamam.com/ontologies/edamam.owl#recipe_3d81878cd040aa6a73a2c3f11293102a
 
 # Sample Request:
 # https://api.edamam.com/search?q=lemongrass&app_id=beffb2cc&app_key=a902dd278d98d1d773adffc24a34dd1f&from=0&to=3
