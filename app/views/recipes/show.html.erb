@@ -1,13 +1,17 @@
-<%= @recipe.label %>
-<%= @recipe.image %>
-<a href=<%=@recipe.url%>>Source</a>
-<ul>
-  <% @recipe.ingredientLines.each do |ingredient| %>
-    <li><%=ingredient%></li>
-  <% end %>
-</ul>
-<ul>
-  <% @recipe.healthLabels.each do |label| %>
-    <li><%=label%></li>
-  <% end %>
-</ul>
+<% if @recipe %>
+  <%= @recipe.label %>
+  <%= @recipe.image %>
+  <a href=<%=@recipe.url%>>Source</a>
+  <ul>
+    <% @recipe.ingredientLines.each do |ingredient| %>
+      <li><%=ingredient%></li>
+    <% end %>
+  </ul>
+  <ul>
+    <% @recipe.healthLabels.each do |label| %>
+      <li><%=label%></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h2>Sorry, that recipe doesn't exist.  Try again!</h2>
+<% end %>
