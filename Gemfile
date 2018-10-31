@@ -43,6 +43,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
+  gem 'minitest-vcr'
+  gem 'webmock' # use with vcr to imitate http responses from the api service
 end
 
 group :development do
