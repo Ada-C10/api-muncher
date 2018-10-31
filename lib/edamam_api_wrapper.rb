@@ -43,15 +43,19 @@ class EdamamApiWrapper
   end
 
   def self.recipe_data(api_params)
-    return Recipe.new(
-      api_params[0]["label"],
-      api_params[0]["image"],
-      api_params[0]["uri"],
-      original_url: api_params[0]["url"],
-      ingredients: api_params[0]["ingredientLines"],
-      diet_labels: api_params[0]["dietLabels"],
-      health_labels: api_params[0]["healthLabels"],
-      source: api_params[0]["source"]
-    )
+    if api_params.parsed_response.empty?
+      return Recipe.new("Not Found", "Not Found", "Not Found")
+    else
+      return Recipe.new(
+        api_params[0]["label"],
+        api_params[0]["image"],
+        api_params[0]["uri"],
+        original_url: api_params[0]["url"],
+        ingredients: api_params[0]["ingredientLines"],
+        diet_labels: api_params[0]["dietLabels"],
+        health_labels: api_params[0]["healthLabels"],
+        source: api_params[0]["source"]
+      )
+    end
   end
 end
