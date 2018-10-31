@@ -40,4 +40,15 @@ describe EdamamApiWrapper do
     end
 
   end
+
+  it 'can find recipe given a valid path' do
+    VCR.use_cassette('find_valid') do
+      find = "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2"
+      recipe = EdamamApiWrapper.find_recipe(find)
+
+      expect(recipe).must_respond_to :label
+      expect(recipe).must_respond_to :uri
+
+    end
+  end
 end
