@@ -9,6 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <h1>Muncher</h1>
+    <%= form_tag(recipes_path, method: :get) do %>
+      <%= text_field_tag :q, params[:q] %>
+      <%= submit_tag("Search", name: nil) %>
+    <% end %>
+  </header>
+
   <body>
     <%= yield %>
   </body>

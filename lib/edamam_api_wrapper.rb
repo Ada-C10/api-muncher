@@ -6,6 +6,10 @@ class EdamamApiWrapper
   APP_KEY = ENV["EDAMAM_KEY"]
 
   def self.list_recipes(search_terms)
+    if search_terms == nil
+      return []
+    end
+
     url = BASE_URL + "search?q=" + search_terms + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     encoded_uri = URI.encode(url)
     data = HTTParty.get(encoded_uri)
@@ -23,7 +27,12 @@ class EdamamApiWrapper
     url = BASE_URL + "search?r=" + "http://www.edamam.com/ontologies/edamam.owl#" + id + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     encoded_uri = URI.encode(url)
     data = HTTParty.get(encoded_uri)
-    return data[0]
+
+    if data.nil?
+      return nil
+    else
+      return data[0]
+    end
   end
 
   private
