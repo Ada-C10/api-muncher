@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'omniauth'
+gem 'omniauth-github'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -48,6 +50,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -66,11 +69,11 @@ gem 'jquery-turbolinks'
 gem 'bootstrap', '~> 4.1.3'
 group :development, :test do
   gem 'pry-rails'
+  gem 'binding_of_caller'
 end
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'guard'
   gem 'guard-minitest'
 end
@@ -78,4 +81,5 @@ end
 group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
+  gem 'minitest-spec-rails'
 end
