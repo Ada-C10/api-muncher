@@ -1,9 +1,16 @@
-<h1>RecipeSearch#show</h1>
-<p>Find me in app/views/recipe_search/show.html.erb</p>
 <% if @recipe %>
-  <%= @recipe.label %>
-  <%= link_to "From: #{@recipe.source}", @recipe.source_uri, target: "_blank" %>
-  <%# @recipe.ingredients.each do |ingredient_line| %>
-
-  <%# end %>
+  <h1><%= @recipe.label %></h1>
+  <%= image_tag(@recipe.image_uri, size: "400x400", alt: "#{@recipe.label} image") %>
+  <p><%= link_to "From: #{@recipe.source}", @recipe.source_uri, target: "_blank" %></p>
+  <p>Serves <%= @recipe.recipe_yield.to_i %></p>
+  <p><small>
+    <% @recipe.health_labels.each do |label| %>
+    <%= label %>
+    <% end %></small></p>
+  <h2>Ingredients:</h2>
+  <ul>
+  <% @recipe.ingredient_lines.each do |line| %>
+    <li><%= line %></li>
+  <% end %>
+  </ul>
 <% end %>
