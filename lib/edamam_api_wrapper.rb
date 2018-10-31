@@ -29,26 +29,21 @@ class EdamamApiWrapper
     url = BASE_URL + uri_start + "#{id}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
     data = HTTParty.get(url)
 
-    # if data is valid
-    label = data[0]["label"]
-    image = data[0]["image"]
-    uri = data[0]["uri"]
-    rec_url = data[0]["url"]
-    ingredientLines = data[0]["ingredientLines"]  # this is an array
-    healthLabels = data[0]["healthLabels"] # this is an array
+    if data.any?
+      label = data[0]["label"]
+      image = data[0]["image"]
+      uri = data[0]["uri"]
+      rec_url = data[0]["url"]
+      ingredientLines = data[0]["ingredientLines"]  # this is an array
+      healthLabels = data[0]["healthLabels"] # this is an array
 
-    recipe = Recipe.new(label, image, uri, {url: rec_url, ingredientLines: ingredientLines, healthLabels: healthLabels})
+      recipe = Recipe.new(label, image, uri, {url: rec_url, ingredientLines: ingredientLines, healthLabels: healthLabels})
 
-    return recipe
+      return recipe
 
-    #else return an error message
-
-
-    #
-# Name
-# Link to the original recipe (opens in a new tab)
-# Ingredients
-# Dietary information  which info????
+    else
+      return nil
+    end
 
   end
 

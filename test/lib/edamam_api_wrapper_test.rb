@@ -13,6 +13,7 @@ describe EdamamApiWrapper do
           expect(recipe).must_respond_to :label
           expect(recipe).must_respond_to :image
           expect(recipe).must_respond_to :uri
+          expect(recipe).must_respond_to :id
         end
       end
     end
@@ -30,9 +31,25 @@ describe EdamamApiWrapper do
 
   describe 'show_recipe' do
     it 'shows a recipe given a valid id' do
+      VCR.use_cassette('show_recipe') do
+        recipe = EdamamApiWrapper.show_recipe("5c16802dd815e76ce94487b567073877")
+
+        expect(recipe).must_respond_to :label
+        expect(recipe).must_respond_to :image
+        expect(recipe).must_respond_to :uri
+        expect(recipe).must_respond_to :id
+        expect(recipe).must_respond_to :ingredientLines
+        expect(recipe).must_respond_to :healthLabels
+
+      end
     end
 
-    it 'does something else given an invalid id' do
+    it 'returns nil given an invalid id' do
+      VCR.use_cassette('show_recipe') do
+        recipe = EdamamApiWrapper.show_recipe("absolutegarbage")
+
+        expect(recipe).must_be_nil
+      end
     end
 
   end
