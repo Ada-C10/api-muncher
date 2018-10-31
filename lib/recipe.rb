@@ -1,5 +1,5 @@
 class Recipe
-  attr_reader :name, :id, :purpose, :is_archived, :members
+  attr_reader :name, :photo, :ingredients, :dietary_information
 
   def initialize(name, photo, ingredients, options = {} )
     raise ArgumentError if name == nil || name == "" ||

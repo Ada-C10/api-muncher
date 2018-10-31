@@ -29,7 +29,6 @@ end
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
-require "minitest/rails/capybara"
 
 
 class ActiveSupport::TestCase
