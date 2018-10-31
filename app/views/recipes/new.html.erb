@@ -1,8 +1,0 @@
-<h1>Find Your Flavor</h1>
-  <!-- <span class="ingredient-name"> </span> </h1> -->
-
-<%= form_tag recipe_create_path(@recipe), method: "post" do %>
-  <%= text_field_tag(:search_terms) %>
-  <%= submit_tag("Send") %>
-
-<% end %>

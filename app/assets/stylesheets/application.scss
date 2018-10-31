@@ -16,3 +16,25 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+.recipe-finder {
+  padding: 2rem;
+  background-color: #C1C2C4;
+}
+
+.recipe-finder h1 {
+  text-align: center;
+}
+
+#recipe_results {
+  margin: 2rem;
+}
+
+.recipe_container {
+  // display: flex;
+  // flex-wrap: wrap;
+}
+
+.recipe_container .card {
+
+}

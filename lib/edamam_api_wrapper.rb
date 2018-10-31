@@ -27,16 +27,40 @@ class EdamamApiWrapper
 
   end
 
+  def self.send_msg(search_terms)
+    puts "Sending search terms to find recipes"
+
+    url = "#{BASE_URL}?q=#{search_terms}&app_id=#{ID}&app_key=#{TOKEN}"
+    response = HTTParty.post(url,
+      body: {
+
+      },
+      :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' }
+    )
+    return response.success?
+
+    # url = BASE_URL +
+
+  end
+
+  # def self.send_search(message)
+  #   url = BASE_URL +
+  #
+  # end
+
+
+
   private
 
   def self.create_recipe(api_params)
+
     return Recipe.new(
       api_params["label"],
       api_params["image"],
       api_params["uri"],
       api_params["url"],
       api_params["ingredients"],
-      api_params["dietLabels"]
+      dietLabels: api_params["dietLabels"]
     )
 
   end
