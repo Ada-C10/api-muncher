@@ -7,5 +7,11 @@ class Recipe
     @uri = uri
     @label = label
     @image = image
+    @recipe_id = @uri[41]
+  end
+
+  def recipe_id
+    uri_length = self.uri.length
+    return self.uri[41..uri_length]
   end
 end

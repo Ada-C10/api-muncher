@@ -1,2 +1,18 @@
-<h1>Recipes#show</h1>
-<%= @recipe["label"] %>
+<h2><%= @recipe["label"] %></h2>
+
+<%= image_tag(@recipe["image"]) %>
+<%= link_to "Make it!", @recipe["url"], target: :_blank, class: "btn btn-primary" %>
+<article>
+  <h3>Ingredients</h3>
+  <ul>
+  <% @recipe["ingredientLines"].each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+  </ul>
+
+  <h3>Dietary Information</h3>
+  <ul>
+  <% @recipe["dietLabels"].each do |diet| %>
+    <li><%= diet %>
+  <% end %>
+</article>
