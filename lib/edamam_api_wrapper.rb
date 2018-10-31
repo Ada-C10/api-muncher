@@ -19,7 +19,7 @@ class EdamamApiWrapper
 
       end
     else
-      #do something if no recipes found
+      return "No recipes found!  You've entered a food desert!"
     end
     return recipe_list
   end

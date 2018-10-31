@@ -18,7 +18,7 @@ Minitest::Reporters.use!(
 # require "minitest/rails/capybara"
 
 # Uncomment for awesome colorful output
-require "minitest/pride"
+# require "minitest/pride"
 
 VCR.configure do |config|
   #where to save cassettes
