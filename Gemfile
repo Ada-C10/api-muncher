@@ -83,3 +83,5 @@ group :test do
   gem 'minitest-reporters'
   gem 'minitest-spec-rails'
 end
+
+gem 'httparty'
