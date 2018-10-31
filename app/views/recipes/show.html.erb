@@ -1,0 +1,23 @@
+<h1> <% @recipe.name %></h1>
+
+<h3><%= link_to "View full recipe", @recipe.url, target: :_blank %></h3>
+<div class="card w-25 card-container">
+  <%= image_tag @recipe.image, class: "card-img-top"%>
+</div>
+<h3> Ingredients: </h3>
+  <ul>
+    <% @recipe.ingredients.each do |item| %>
+      <li>
+        <%= item %>
+      </li>
+    <% end %>
+  </ul>
+<h3> Calories: <%= @recipe.calories %> </h3>
+<h3> Health Categories: </h3>
+<ul>
+  <% @recipe.health_labels.each do |label| %>
+    <li>
+      <%= label %>
+    </li>
+  <% end %>
+</ul>

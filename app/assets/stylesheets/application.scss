@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+@import 'bootstrap';
+
+ .card-group-container {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   padding: 3em;
+ }
+
+ .card-container {
+  margin: 1em;
+}
+
+.card-title a {
+  color: black;
+}
+
+.card-title a:hover {
+  color: #FF8514;
+  list-style: none;
+}

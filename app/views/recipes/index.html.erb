@@ -1,4 +1,19 @@
 <h1> Your recipe search: <h1>
 <% if @recipes != nil %>
-  <%= @recipes.first %>
+<section class="all-products">
+
+  <h2> Search Results </h2>
+  <div class="card-group-container">
+    <% @recipes.each do |recipe| %>
+    <div class="card w-25 card-container">
+      <%= image_tag recipe.image, class: "card-img-top"%>
+      <div class="card-body">
+        <h3 class="card-title"> <%= link_to recipe.name, recipe_path(recipe.id) %> </h3>
+        <p class="card-text"><small class="text-muted">Calories per serving: <%= recipe.calories %></small></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</section>
+
 <% end %>

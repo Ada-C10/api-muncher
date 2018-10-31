@@ -4,13 +4,12 @@ class RecipesController < ApplicationController
   def index
     if params[:user_search]
       @query = params[:user_search]
-      @response = EdamamApiWrapper.send_msg(@query)
+      @response = EdamamApiWrapper.send_search(@query)
 
       @recipes = []
       @response["hits"].each do |recipe|
-         @recipes << EdamamApiWrapper.create_recipe(recipe)
+         @recipes << EdamamApiWrapper.create_recipe(recipe["recipe"])
       end
-      binding.pry
 
       if @recipes
         flash.now[:success] = "Search results found:"
@@ -23,8 +22,9 @@ class RecipesController < ApplicationController
   end
 
   def show
-
-
+    id = params[:recipe]
+    response = EdamamApiWrapper.retrieve_recipe(id)
+    @recipe = EdamamApiWrapper.create_recipe(response[0])
   end
 
 
