@@ -1,4 +1,12 @@
+require 'httparty'
+
 class Recipe
+  # Mixin - Can now do get/post requests like you would with httparty.
+  # Could just type in the HTTParty
+  # include HTTParty
+  # format :json
+  # base_uri ''
+
   attr_reader :name, :image, :uri, :url, :ingredients, :dietLabels
 
   def initialize(label, image, uri, url, ingredients, dietLabels, options = {})
