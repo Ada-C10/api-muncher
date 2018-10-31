@@ -3,20 +3,18 @@
     <h1 class="text-center mt-5 mb-5">List of Recipes for: <%= @search %></h1>
 
     <% if @recipes %>
-      <% @recipes.each_slice(3) do |row| %>
-        <div class="row mb-5">
-          <% row.each do |recipe| %>
-            <div class="col-sm-4 mb-4 text-center">
-              <div class="card">
-                <img src="<%= recipe.image %>" width="500" alt="<%= recipe.label %>" class="card-img-top">
-              </div>
-              <div class="card-body">
-                <p class="card-title"><%= link_to recipe.label, recipe_path(recipe.label, :query => recipe.uri) %></p>
-              </div>
+      <div class="row mb-5">
+        <% @recipes.each do |recipe| %>
+          <div class="col-sm-6 col-md-4 mb-4 text-center">
+            <div class="card">
+              <img src="<%= recipe.image %>" width="500" alt="<%= recipe.label %>" class="card-img-top">
             </div>
-          <% end %>
-        </div>
-      <% end %>
+            <div class="card-body">
+              <p class="card-title"><%= link_to recipe.label, recipe_path(recipe.label, :query => recipe.uri) %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
 
     <div class="flickr_pagination">

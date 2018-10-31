@@ -43,7 +43,7 @@ footer {
 
 .flickr_pagination {
   text-align: center;
-  padding: 0.3em;
+  padding: 0.7em;
   cursor: default;
 }
 
@@ -64,7 +64,6 @@ footer {
 }
 
 .flickr_pagination a {
-  border: 1px solid #dddddd;
   color: #0063dc;
   text-decoration: none;
 }
@@ -78,12 +77,7 @@ footer {
 
 .flickr_pagination .page_info {
   color: #aaaaaa;
-  padding-top: 0.8em;
-}
-
-.flickr_pagination .previous_page,
-.flickr_pagination .next_page {
-  border-width: 2px;
+  padding: 0.8em 0;
 }
 
 .flickr_pagination .previous_page {
