@@ -1,20 +1,22 @@
 class RecipesController < ApplicationController
 
-  def search
-    @query = params[:user_search]
-  end
+  # def search
+  #   @query = params[:user_search]
+  # end
 
-  def display
+  def index
     @query = params[:user_search]
-    response = EdamamApiWrapper.send_msg(@query)
-    if response
-      binding.pry
-      flash[:success] = "Search successful"
+    @response = EdamamApiWrapper.send_msg(@query)
+    binding.pry
+    if @response
+      flash.now[:success] = "Search results found:"
+      render :index
     else
       flash.now[:warning] = "Search failed, try again."
       render :search
     end
   end
+
 
 
 end

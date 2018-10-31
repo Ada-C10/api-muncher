@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <h1>Muncher</h1>
+
+    <%= form_tag recipes_path(@query), method: "post" do %>
+      <%= label_tag(:user_search, "Find your flavor...") %>
+      <%= text_field_tag(:user_search) %>
+      <%= submit_tag("Search Recipes") %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
