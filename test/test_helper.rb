@@ -1,4 +1,8 @@
 ENV["RAILS_ENV"] = "test" # what's this?
+
+RECIPE_VALID_ATTRS = [:label, :recipe_uri, :image_uri, :source, :source_uri, :recipe_yield, :health_labels, :ingredient_lines, :total_time]
+RECIPE_VALID_VALUES = ["some recipe", "http://", "http://", "source", "http://", "http://", "yields 100", ["labels"], ["ingredients"], 30]
+
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
