@@ -1,5 +1,9 @@
 <h1>RecipeSearch#show</h1>
 <p>Find me in app/views/recipe_search/show.html.erb</p>
 <% if @recipe %>
-<%= @recipe.label %>
+  <%= @recipe.label %>
+  <%= link_to "From: #{@recipe.source}", @recipe.source_uri, target: "_blank" %>
+  <%# @recipe.ingredients.each do |ingredient_line| %>
+
+  <%# end %>
 <% end %>
