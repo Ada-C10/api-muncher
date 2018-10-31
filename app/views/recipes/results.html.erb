@@ -1,0 +1,11 @@
+<h2> Results for "<%= @query %>"</h2>
+
+
+<ul>
+<% @recipes.each do |recipe| %>
+  <li>
+    <%= image_tag recipe.photo, alt: recipe.name %>
+    <%= recipe.name %>
+  </li>
+<% end %>
+</ul>

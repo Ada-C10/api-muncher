@@ -9,7 +9,10 @@ class RecipesController < ApplicationController
   end
 
   def results
-    
+    @query = params[:query]
+
+    @recipes = EdamamApiWrapper.search_recipes(@query)
+
   end
 
   def show
