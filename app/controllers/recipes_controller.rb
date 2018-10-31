@@ -3,6 +3,12 @@ class RecipesController < ApplicationController
     @search = search_params[:search]
     # Consider if search is ""(controller), cannot be found (wrapper)
     @recipes = EdamamApiWrapper.list_recipes(@search).paginate(:page => params[:page], :per_page => 10)
+
+    if @recipes == []
+      flash[:status] = :warning
+      flash[:message] = "No results for your search."
+      redirect_to root_path
+    end
   end
 
   def show
