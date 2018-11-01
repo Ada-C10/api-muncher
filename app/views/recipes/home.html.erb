@@ -3,21 +3,23 @@
   <h3>welcome to munchbot</h3>
   <p></p>
   <p class= "text-center">
-    <% 31.times do %>
-    0101010101010101010101010101010
+    <% output = "" %>
+    <% 200.times do %>
+    <% output += '0 1 ' %>
     <% end %>
-    01010 beep beep boop boop 01010
-    <% 30.times do %>
-    0101010101010101010101010101010
+    <% output += '0 beep beep boop boop 0' %>
+    <% 200.times do %>
+    <% output += ' 1 0' %>
     <% end %>
-    01010 enter search term 0101010
-    <% 30.times do %>
-    0101010101010101010101010101010
+    <% output += ' enter search term ' %>
+    <% 200.times do %>
+    <% output += '0 1 ' %>
     <% end %>
-    0101010 end of message 10101010
-    <% 50.times do %>
-    0101010101010101010101010101010
+    <% output += '0 end of message 0' %>
+    <% 400.times do %>
+    <% output += ' 1 0' %>
     <% end %>
+    <%= output %>
   </p>
 
 </section>
