@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
   def index
-    #@recipes = SlackApiWrapper.list_channels
+    @recipes = EdamamApiWrapper.list_recipes
   end
 
   def new
