@@ -23,6 +23,27 @@ body, html {
   font-size: 5rem;
 }
 
+.input {
+  padding-left: 3rem;
+}
+
+.input-phrase {
+  padding-left: 4rem;
+}
+
+input[type=text] {
+  width: 15rem;
+  height: 3rem;
+  border: 2px solid black;
+}
+
+input[type=submit] {
+  height: 3rem;
+  width: 5rem;
+  background-color: #9ACD32;
+  border: 2px solid black;
+}
+
 // SHOW
 
 .show-container {
