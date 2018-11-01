@@ -7,22 +7,21 @@
   </section>
 
 
-<section class="channels-list">
+
+
   <h1>Edamam Recipes</h1>
   <% if @recipes %>
-    <ul>
+  <%= paginate @recipes , outer_window: 3%>
+  <%= page_entries_info @recipes %>
+
+    <ul >
       <% @recipes.each do |recipe| %>
-        <li>
-        <%= recipe.label %>
-        </li>
-        <li>
-          <%= link_to "Details", recipe_path(recipe.uri) %>
-        </li>
-        <li>
-          <%= image_tag recipe.image %>
-        </li>
+        <li><%= recipe.label %></li>
+        <li><%= link_to "Details", recipe_path(recipe.uri) %></li>
+        <li><%= image_tag recipe.image%></li>
       <% end %>
     </ul>
+
   <% end %>
 </section>
 <%# the recipe.uri is coming from ..http://localhost:3000/recipes/uri%>

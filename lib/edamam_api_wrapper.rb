@@ -45,7 +45,8 @@ class EdamamApiWrapper
   private
 
   def self.create_recipe(api_params)
-    # need to parse this: http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_7543ecfa28b7506a97360748f017a83e
+    # need to parse this
+    #uri:: http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_7543ecfa28b7506a97360748f017a83e
     parsed_uri = api_params["uri"].partition('_').last
 
     return Recipe.new(

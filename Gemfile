@@ -84,4 +84,5 @@ group :test do
 end
 
 gem 'httparty'
-gem 'bootstrap', '~> 4.1.3'
+#paginate gem 
+gem 'kaminari'
