@@ -47,15 +47,15 @@ class EdamamApiWrapper
   def self.find_specific_recipe(recipe_id)
     base = "https://api.edamam.com/search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23"
     id = recipe_id
-    base_url = "#{base}" + "#{id}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
-# binding.pry
-    # encoded_url = URI.encode(base_url)
-# binding.pry
-    response = HTTParty.get(base_url)
+    encoded_front_base_url = "#{base}"
+    non_encoded_rear_base_url = "#{id}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    encoded_rear_base_url = URI.encode(non_encoded_rear_base_url)
+    encoded_total_base_url = "#{encoded_front_base_url}" + "#{encoded_rear_base_url}"
+
+    response = HTTParty.get(encoded_total_base_url)
     parsed_response = response[0]
     recipe = create_recipe(parsed_response)
-# binding.pry
-    # recipe = create_recipe(response)
+
     return recipe
   end
 
