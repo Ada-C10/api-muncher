@@ -36,9 +36,7 @@ class EdamamApiWrapper
     input_hash[:image] = recipe["image"]
     input_hash[:url] = recipe["url"]
 
-    # parse uri
-
-    input_hash[:uri] = parse_recipe_id(recipe["uri"])
+    input_hash[:id] = parse_recipe_id(recipe["uri"])
     input_hash[:dietLabels] = recipe["dietLabels"]
     input_hash[:healthLabels] = recipe["healthLabels"]
     input_hash[:ingredientLines] = recipe["ingredientLines"]
@@ -53,15 +51,10 @@ class EdamamApiWrapper
   #http://www.edamam.com/ontologies/edamam.owl#recipe_b79327d05b8e5b838ad6cfd9576b30b6
   def self.parse_recipe_id(unparsed_uri)
     unparsed = unparsed_uri
-    binding.pry
     location_of_ampersant = unparsed.index("#")
-    binding.pry
     id_start = location_of_ampersant + 1
-    binding.pry
     end_of_id = unparsed.length - 1
-    binding.pry
     recipe_id = unparsed.slice(id_start...end_of_id)
-    binding.pry
     return recipe_id
   end
 end
