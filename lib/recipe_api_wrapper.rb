@@ -1,14 +1,15 @@
 require 'httparty'
+require 'pry'
 
 class RecipeApiWrapper
   BASE_URL = "https://api.edamam.com"
   APP_ID = ENV["APP_ID"]
   APP_KEY = ENV["APP_KEY"]
 
-  def self.list_recipes
-    url = BASE_URL + "/search?q=" + "#{@food_search}" + "&app_id=" + APP_ID + "&app_key=" + APP_KEY
+  def self.list_recipes(food_search)
+    recipes_url = "#{BASE_URL}/search?q=#{food_search}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
 
-    data = HTTParty.get(url)
+    data = HTTParty.get(recipes_url)
 
     recipe_list = []
 
@@ -33,9 +34,7 @@ class RecipeApiWrapper
         ingredients: recipe_api_params["recipe"]["ingredientLines"],
         yield: recipe_api_params["recipe"]["yield"],
         diet: recipe_api_params["recipe"]["dietLabels"],
-
       }
-
     )
   end
 end
