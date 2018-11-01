@@ -7,6 +7,12 @@ require 'vcr'
 require 'webmock/minitest'
 
 
+Minitest::Reporters.use!(
+  Minitest::Reporters::SpecReporter.new,
+  ENV,
+  Minitest.backtrace_filter
+)
+
 VCR.configure do |config|
   config.cassette_library_dir =
     "test/cassettes"

@@ -1,7 +1,7 @@
 class Recipe
   attr_reader :name, :id, :url, :image, :ingredients, :calories, :health_labels
 
-  def initialize(name, id, url: "", image: "", ingredients: [], calories: "", health_labels:[])
+  def initialize(name:, id:, url: "", image: "", ingredients: [], calories: "", health_labels:[])
       # raise ArgumentError if name == nil || name == "" || id == nil || id == ""
 
       @name = name
