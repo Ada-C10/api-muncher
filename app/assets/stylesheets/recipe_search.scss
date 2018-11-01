@@ -5,18 +5,20 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 @import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
 
+// search bar
+
 body {
-	background: #DDD;
+	background: #eee;
 	font-size: 15px;
 }
 #wrap {
   margin: 50px 100px;
   display: inline-block;
-  position: relative;
   height: 60px;
   float: right;
   padding: 0;
-  position: relative;
+	position: relative;
+	background: #eee;
 }
 
 input[type="text"] {
@@ -75,7 +77,6 @@ input[type="submit"]:hover {
 
 // Flipping cards
 
-
 #team {
     background: #eee !important;
 }
@@ -101,7 +102,6 @@ section {
 section .section-title {
     text-align: center;
     color: #007b5e;
-    margin-bottom: 50px;
     text-transform: uppercase;
 }
 
@@ -184,7 +184,7 @@ section .section-title {
 
 .frontside .card,
 .backside .card {
-    min-height: 312px;
+    height: 312px;
 }
 
 .backside .card a {
@@ -201,4 +201,14 @@ section .section-title {
     width: 120px;
     height: 120px;
     border-radius: 50%;
+}
+
+// Scrolling backsides
+.scroll {
+		height: 312px;
+    overflow-y: auto;
+}
+
+.fa-plus {
+	color: white;
 }
