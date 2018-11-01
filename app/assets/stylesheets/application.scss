@@ -16,3 +16,12 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+.card {
+  width: 22rem;
+  display:inline-block;
+}
+
+.card-body {
+  padding-bottom: 0rem;
+}

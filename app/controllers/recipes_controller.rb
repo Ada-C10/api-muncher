@@ -3,7 +3,7 @@ require 'will_paginate/array'
 class RecipesController < ApplicationController
   def index
     if params[:recipe]
-      @recipes = (EdamamApiWrapper.list_recipes(params[:recipe])).paginate(:page => params[:page], :per_page => 10)
+      @recipes = (EdamamApiWrapper.list_recipes(params[:recipe])).paginate(:page => params[:page], :per_page => 12)
     end
     # binding.pry
   end
