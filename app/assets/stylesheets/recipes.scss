@@ -8,8 +8,9 @@
 }
 
 .pagination * {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
+
 
 .recipes-container {
   display: flex;
@@ -23,20 +24,21 @@
   color: black;
 }
 
-h2 {
-  font-family: monospace;  //for some reason h2 was not inheriting this from *
+h2, h3 {
+  font-family: monospace;  //for some reason not inheriting this from above *
 }
 
 nav {
   margin-bottom: 50px;
 }
 
-nav h1 a {
+nav h1 a, .pagination li a {
   color: tomato;
 }
 
-.nav-link:hover {
+.nav-link:hover, .pagination li a:hover {
   color: lightgreen;
+  text-decoration: none;
 }
 
 .homepage {

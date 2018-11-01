@@ -7,12 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+
   </head>
 
 
   <nav class="navbar navbar-dark bg-dark sticky-top">
-    <h1><%= link_to "muncher.", root_path, class: "nav-link"%></h1>
+    <h1><%= link_to "muncher", root_path, class: "nav-link"%></h1>
     <%= form_tag recipes_path, method: :get do %>
     <%= text_field_tag :keyword %>
     <%= submit_tag "Recipe Search" %>
@@ -25,6 +25,10 @@
   </body>
 
   <footer class="bg-dark">
-    <div class= "text-center" id="edamam-badge" data-color="light"></div>
+    <div class= "text-center" id="edamam-badge" data-color="light">
+      <a href="https://www.edamam.com" title="Powered by Edamam" target="_blank">
+      <img alt="Powered by Edamam" src="https://developer.edamam.com/images/light.png" height="40" width="200">
+      </a>
+    </div>
   </footer>
 </html>

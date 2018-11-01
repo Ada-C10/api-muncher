@@ -1,7 +1,7 @@
 <% if @recipes.any? %>
 
-<h2>Search results for "<%=@keyword%>":</h2>
-
+<h3 class="p-3">search results for <strong><%=@keyword%></strong>:</h3>
+<br>
   <%= will_paginate @recipes, renderer: BootstrapPagination::Rails %>
 
 <section class='recipes-container'>
@@ -16,11 +16,9 @@
 
   <% end %>
 <% else %>
-  <h2 class='text-center'>01010101010 search for <strong><%=@keyword%></strong> does not compute 01010101010</h2>
+  <h2 class='text-center'>010101010 <strong><%=@keyword%></strong> search does not compute 010101010101010</h2>
   <br>
   <h2 class='text-center'>0101010 please search again 0101010101010 boop beep boop 010</h2>
 <% end %>
 
 </section>
-<!-- enter your search terms above if no search was made (first visit) -->
-<!-- no recipes found message if search comes back empty -->
