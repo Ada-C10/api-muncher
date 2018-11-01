@@ -9,20 +9,26 @@
   </div>
 </div>
 
-<h1><%= @recipe.name %></h1>
-<p><%= image_tag(@recipe.image, alt: "recipe image") %></p>
-<p>Ingredients:</p>
-<% @recipe.ingredients.each do |ingredient| %>
-<ul>
-  <li><%= ingredient %></li>
-</ul>
-<% end %>
-
-<p>Dietary Info:</p>
-<% @recipe.dietary_info.each do |diet| %>
-<ul>
-  <li><%= diet %></li>
-</ul>
-<% end %>
-
-<p>Link to Website: <%= @recipe.uri %></p>
+<div class="container show-container col-lg-7 mx-auto">
+  <h1 class="text-center show-header"><strong><%= @recipe.name %></strong></h1>
+    <div class="row">
+        <div class="col-md-6">
+          <p><%= image_tag(@recipe.image, alt: "recipe image") %></p>
+          <h5 class="show-headers"><strong>Dietary Info:</strong></h5>
+          <% @recipe.dietary_info.each do |diet| %>
+          <ul class="dietary_info">
+            <li><%= diet %></li>
+          </ul>
+          <% end %>
+        </div>
+        <div class="col-md-6">
+          <h4 class="show-headers"><strong>Ingredients:</strong></h4>
+          <% @recipe.ingredients.each do |ingredient| %>
+          <ul class="ingredients">
+            <li><%= ingredient %></li>
+          </ul>
+          <% end %>
+        </div>
+    </div>
+  <p></p>
+</div>

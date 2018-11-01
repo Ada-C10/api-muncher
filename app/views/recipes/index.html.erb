@@ -11,20 +11,16 @@
 
 </header>
 
-
-
 <% if @recipes %>
 <div class="container index-container mx-auto">
-  <!-- <div class="card-deck"> -->
   <% @recipes.each do |recipe| %>
-    <div class="card bg-white">
+    <div class="card index-card bg-white">
       <%= image_tag(recipe.image, alt: "recipe image", class: "card-img-top" ) %>
       <div class="card-body">
         <p class="card-title text-center"><strong><%=link_to recipe.name, recipe_path(recipe.id), class: "recipe" %></strong></p>
       </div>
     </div>
   <%end%>
-  <!-- </div> -->
 </div>
 <% end %>
 
