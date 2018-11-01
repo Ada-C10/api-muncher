@@ -1,6 +1,6 @@
 <% if @recipes.any? %>
 
-<h3 class="p-3">search results for <strong><%=@keyword%></strong>:</h3>
+<h3 class="p-3 text-center">search results for <strong><%=@keyword%></strong></h3>
 <br>
   <%= will_paginate @recipes, renderer: BootstrapPagination::Rails %>
 

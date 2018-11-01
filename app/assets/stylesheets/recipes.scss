@@ -7,7 +7,7 @@
   margin-bottom: 30px;
 }
 
-.pagination * {
+figcaption, .pagination * {
   font-size: 1.2rem;
 }
 
@@ -17,6 +17,8 @@
   flex-wrap: wrap;
   justify-content: space-around;
   padding-bottom: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 * {
@@ -24,7 +26,7 @@
   color: black;
 }
 
-h2, h3 {
+h1, h2, h3 {
   font-family: monospace;  //for some reason not inheriting this from above *
 }
 
@@ -32,11 +34,11 @@ nav {
   margin-bottom: 50px;
 }
 
-nav h1 a, .pagination li a {
+nav h1 a, .pagination li a, .recipe_link {
   color: tomato;
 }
 
-.nav-link:hover, .pagination li a:hover {
+.nav-link:hover, .pagination li a:hover, .recipe_link:hover{
   color: lightgreen;
   text-decoration: none;
 }
@@ -56,4 +58,15 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+}
+
+.recipe_show {
+  display: grid;
+  grid-column-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.recipe_photo {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
