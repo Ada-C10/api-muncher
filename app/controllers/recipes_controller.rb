@@ -1,6 +1,15 @@
 class RecipesController < ApplicationController
 
-def index
+def search
 end 
+
+def index
+end
+
+def show
+
+end
+
+
 
 end
