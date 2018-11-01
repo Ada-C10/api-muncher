@@ -1,7 +1,12 @@
 class RecipesController < ApplicationController
-  def index
+
+  def finder
     food_to_search = params[:food_type]
-    @food_to_search = food_to_search
-    @matching_recipes = EdamamApiWrapper.find_recipe(food_to_search)
+    redirect_to recipes_path(food_to_search)
+  end
+
+  def index
+    @food_to_search = params[:food]
+    @matching_recipes = EdamamApiWrapper.find_recipe(@food_to_search)
   end
 end
