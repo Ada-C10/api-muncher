@@ -1,4 +1,9 @@
 <section>
   <h2>Results for "<%= @food_to_search %>"</h2>
-  <%= @matching_recipes %>
+  <% @matching_recipes.each do |recipe| %>
+    <div class="results">
+      <img src="<%= recipe.image %> " alt="<%= recipe.label %>" class = "results_pic"><br>
+      <%= recipe.label %>
+    </div>
+  <% end %>
 </section>
