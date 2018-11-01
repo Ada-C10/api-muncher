@@ -19,13 +19,18 @@ describe "Recipe" do
 
   end
 
-  it "assigns a name, photo, and ingredients at initialization" do
+  it "assigns a name, photo, uri, ingredients, and dietary information at initialization" do
 
-    recipe = Recipe.new('name', 'photo', ['ingredient'])
+    recipe = Recipe.new('name', 'photo', 'uri', {
+      ingredients: ['ingredients'],
+      dietary_information: ['dietary information']
+      })
 
     expect(recipe.name).must_equal 'name'
     expect(recipe.photo).must_equal 'photo'
-    expect(recipe.ingredients).must_equal ['ingredient']
+    expect(recipe.uri).must_equal 'uri'
+    expect(recipe.ingredients).must_equal ['ingredients']
+    expect(recipe.dietary_information).must_equal ['dietary information']
 
   end
 
@@ -33,22 +38,18 @@ describe "Recipe" do
 
     empty_string = ''
     valid = 'valid'
-    valid_arr = ['valid']
+
 
     expect{
-      Recipe.new(empty_string, valid, valid_arr )
+      Recipe.new(empty_string, valid, valid )
     }.must_raise ArgumentError
 
     expect{
-      Recipe.new(valid, empty_string, valid_arr )
+      Recipe.new(valid, empty_string, valid )
     }.must_raise ArgumentError
 
-  end
-
-  it "raises an error if ingredients is empty array" do
-
     expect{
-      Recipe.new('name', 'photo', [])
+      Recipe.new(valid, valid, empty_string )
     }.must_raise ArgumentError
 
   end

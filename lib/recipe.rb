@@ -4,7 +4,7 @@ class Recipe
   def initialize(name, photo, uri, options = {} )
     raise ArgumentError if name == nil || name == "" ||
     photo == nil || photo == "" ||
-    uri == nil || uri == []
+    uri == nil || uri == ""
 
     @name = name
     @photo = photo

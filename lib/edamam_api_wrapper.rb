@@ -24,10 +24,14 @@ class EdamamApiWrapper
 
     encoded_uri = URI.encode_www_form_component(uri)
     url = BASE_URL + "r=#{encoded_uri}" + TOKENS_URL
-    
+
     response = HTTParty.get(url)
 
-    return create_recipe(response[0])
+    if response_valid?(response)
+      return create_recipe(response[0])
+    else
+      return nil
+    end
   end
 
   private
@@ -47,5 +51,9 @@ class EdamamApiWrapper
         ingredients: ingredients
       }
     )
+  end
+
+  def self.response_valid?(response)
+    return response.to_s.length > 10
   end
 end
