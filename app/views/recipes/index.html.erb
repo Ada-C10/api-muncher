@@ -1,6 +1,9 @@
 <%= render partial: "header" %>
 
 <article class="recipes-list">
+  <% if flash[:message] %>
+    <div class="alert alert-primary" role="alert"><%= flash[:message] %></div>
+  <% end %>
   <h2>Results for "<%= @query %>"</h2>
   <%= will_paginate @recipes %>
   <hr>
