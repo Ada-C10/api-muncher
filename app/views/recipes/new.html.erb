@@ -1,0 +1,9 @@
+<h1> Muncher </h1>
+
+<%= form_with url: new_path do |form| %>
+<%= form.label "Find your flavor..." %>
+<%= form.text_field :dish %>
+<%= form.submit "Search", class: "btn btn-primary" %>
+<% end %>
+
+<footer>Powered by Edamam</footer>
