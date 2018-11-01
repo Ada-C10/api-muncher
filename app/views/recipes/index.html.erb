@@ -1,0 +1,21 @@
+<section class="recipe-list">
+
+  <h1>Search a recipe <span class="recipe-name"></span> </h1>
+
+  <%= form_tag receipes_path(@recipes), method: "get" do %>
+    <%= label_tag(:name, "Enter keyword") %>
+    <%= text_field_tag(:name) %>
+    <%= submit_tag("Search") %>
+
+  <% end %>
+
+  <% if @recipes %>
+    <ul>
+      <% @recipes.each do |recipe| %>
+        <li>
+          <%= link_to recipe.name %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
