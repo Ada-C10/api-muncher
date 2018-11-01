@@ -1,31 +1,36 @@
 require 'test_helper' # load in minitest, etc.
 
-describe Channel do
+describe Recipe do
   it 'will raise an ArgumentError if created without required arguments' do
     expect {
-      Channel.new
+      Recipe.new
     }.must_raise ArgumentError
 
     expect {
-      Channel.new 'nodes'
+      Recipe.new 'chicken'
+    }.must_raise ArgumentError
+
+    expect {
+      Recipe.new 'chicken', 'food.jpg'
     }.must_raise ArgumentError
   end
 
-  it 'can be created with a name and id' do
-    myChannel = Channel.new('nodes', '12345')
+  it 'can be created with a label, image, and uri' do
+    myRecipe = Recipe.new('chicken', 'food.jpg', 'http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_421df807e21c65c842ec62870604aed3')
 
-    expect(myChannel.name).must_equal 'nodes'
-    expect(myChannel.id).must_equal '12345'
+    expect(myRecipe.label).must_equal 'chicken'
+    expect(myRecipe.image).must_equal 'food.jpg'
+    expect(myRecipe.id).must_equal '421df807e21c65c842ec62870604aed3'
   end
 
   it 'can be created with optional arguments' do
-    myChannel = Channel.new('nodes', '12345', { purpose: 'fun', is_archived: false, is_general: true, members: ['1', '2', '3'] })
+    myRecipe = Recipe.new('chicken', 'food.jpg', 'http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_421df807e21c65c842ec62870604aed3', ingredients: ['eggs', 'sauce'], health_info: 'gluten-free', url: 'http://www.google.com' )
 
-    expect(myChannel.name).must_equal 'nodes'
-    expect(myChannel.id).must_equal '12345'
-    expect(myChannel.purpose).must_equal 'fun'
-    expect(myChannel.is_archived).must_equal false
-    expect(myChannel.is_general).must_equal true
-    expect(myChannel.members).must_equal ['1', '2', '3']
+    expect(myRecipe.label).must_equal 'chicken'
+    expect(myRecipe.image).must_equal 'food.jpg'
+    expect(myRecipe.id).must_equal '421df807e21c65c842ec62870604aed3'
+    expect(myRecipe.ingredients).must_equal ['eggs', 'sauce']
+    expect(myRecipe.health_info).must_equal 'gluten-free'
+    expect(myRecipe.url).must_equal 'http://www.google.com'
   end
 end
