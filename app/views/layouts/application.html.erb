@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ApiMuncher</title>
+    <title>MunchBot-2000</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= favicon_link_tag(source="favicon.ico", options={})%>
   </head>
 
 
   <nav class="navbar navbar-dark bg-dark sticky-top">
-    <h1><%= link_to "muncher", root_path, class: "nav-link"%></h1>
+    <h1><%= link_to "munchbot-2000", root_path, class: "nav-link"%></h1>
     <%= form_tag recipes_path, method: :get do %>
     <%= text_field_tag :keyword %>
-    <%= submit_tag "Recipe Search" %>
+    <%= submit_tag "recipe search" %>
     <% end %>
   </nav>
 
