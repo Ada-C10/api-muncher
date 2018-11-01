@@ -1,4 +1,15 @@
 <section>
-  <h1>Recipes</h1>
+  <h1>Search Results for <%="#{@food.capitalize}"%></h1>
+
+  <% if @recipes %>
+    <ul>
+      <% @recipes.each do |recipe| %>
+        <li>
+          <%= recipe.name %>
+          <img src="<%= recipe.image %>">
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 
 </section>

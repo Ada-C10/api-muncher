@@ -1,0 +1,7 @@
+<h1>Muncher Home Page</h1>
+
+<%= form_tag recipes_path, method: "get" do %>
+<%= label_tag(:food, "Enter Food") %>
+<%= text_field_tag(:food) %>
+<%= submit_tag("Search") %>
+<% end %>

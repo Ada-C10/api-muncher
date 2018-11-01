@@ -10,6 +10,36 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+
+      <section class="logo">
+        <h1>Muncher</h1>
+      </section>
+
+      <section class="seach-bar">
+        <p>Add Search Bar Here</p>
+      </section>
+
+      <section class="flash">
+        <% flash.each do |name, message| %>
+          <% if message.class == Array %>
+            <% message.each do |msg| %>
+              <div class="alert-<%= name %>">
+                <strong><%= "#{name}:" %></strong><%= " #{msg}" %></div>
+            <% end %>
+          <% else %>
+            <div class="alert-<%= name %>">
+                <%= message %>
+            </div>
+          <% end %>
+        <% end %>
+      </section>
+
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
   </body>
 </html>
