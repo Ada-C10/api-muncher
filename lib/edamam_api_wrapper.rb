@@ -48,7 +48,8 @@ class EdamamApiWrapper
       api_params["uri"],
       {
         dietary_information: api_params["dietLabels"],
-        ingredients: ingredients
+        ingredients: ingredients,
+        link: api_params["url"]
       }
     )
   end
