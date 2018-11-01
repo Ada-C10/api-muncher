@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   get 'recipes/index', to: 'recipes#index', as: 'recipe_index'
   # What is show route? # Run search for URI of recipe?
-  get ':recipe/show', to: 'recipes#show', as: 'recipe'
+  # get 'recipes/:uri', to: 'recipes#show', as: 'recipe'
+  get 'recipes/:id', to: 'recipes#show', as: 'recipe'
 end

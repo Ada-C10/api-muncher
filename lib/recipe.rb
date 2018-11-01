@@ -8,8 +8,9 @@ class Recipe
   # base_uri ''
 
   attr_reader :name, :image, :uri, :url, :ingredients, :dietLabels
+  attr_accessor :id
 
-  def initialize(label, image, uri, url, ingredients, dietLabels: [])
+  def initialize(label, image, uri, url, ingredients, id, dietLabels: [])
 
     raise ArgumentError if label == nil || label.empty?
     raise ArgumentError if image == nil || image.empty?
@@ -22,6 +23,7 @@ class Recipe
     @uri = uri
     @url = url
     @ingredients = ingredients
+    @id = ( URI.encode( @uri ) )[/[^_]+$/]
     @dietLabels = dietLabels
 
   end
