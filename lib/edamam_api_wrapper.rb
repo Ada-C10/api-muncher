@@ -14,7 +14,6 @@ class EdamamApiWrapper
     if data["hits"]
         data["hits"].each do |recipe_data|
           recipes_search_result << create_recipe(recipe_data["recipe"])
-
         end
     else
       #error no recipe found
@@ -24,8 +23,8 @@ class EdamamApiWrapper
   end
 
   def self.create_recipe(api_params)
-    
     return Recipe.new(
+      uri: api_params["uri"],
       name: api_params["label"],
       creator: api_params["source"],
       image: api_params["image"],
@@ -33,6 +32,20 @@ class EdamamApiWrapper
       ingredients: api_params["ingredientLines"],
       dietary_labels: api_params["dietLabels"]
     )
+  end
+
+  def self.find_recipe(uri)
+    parsed_uri = uri.split("_")[1]
+
+    url = BASE_URL + "app_id=#{APP_ID}" + "&app_key=#{TOKEN}" + "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{parsed_uri}"
+    data = HTTParty.get(url)
+
+    if data
+      recipe = create_recipe(data[0])
+      return recipe
+    else
+       #return a not found
+    end
   end
 
 end

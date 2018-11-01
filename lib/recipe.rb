@@ -1,10 +1,11 @@
 class Recipe
-  attr_reader :name, :creator, :image, :recipe_link, :ingredients, :dietary_labels
+  attr_reader :uri, :name, :creator, :image, :recipe_link, :ingredients, :dietary_labels
 
-  def initialize(name: "", creator: "", image: "", recipe_link: "", ingredients: "", dietary_labels: [])
+  def initialize(uri: "", name: "", creator: "", image: "", recipe_link: "", ingredients: "", dietary_labels: [])
 
-    raise ArgumentError if name == nil
+    raise ArgumentError if uri == nil
 
+    @uri = uri
     @name = name
     @creator = creator
     @image = image

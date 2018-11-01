@@ -14,7 +14,13 @@ class RecipesController < ApplicationController
   end
 
   def show
-    
+    @uri = params[:uri]
+    @recipe = EdamamApiWrapper.find_recipe(uri)
+
+    if @recipe.nil?
+      render :notfound, status: :not_found
+    end
+
   end
 
 end
