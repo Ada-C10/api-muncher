@@ -9,4 +9,8 @@ class RecipesController < ApplicationController
     @food_to_search = params[:food]
     @matching_recipes = EdamamApiWrapper.find_recipe(@food_to_search)
   end
+
+  def show
+
+  end
 end

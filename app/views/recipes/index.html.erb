@@ -3,7 +3,7 @@
   <% @matching_recipes.each do |recipe| %>
     <div class="results">
       <img src="<%= recipe.image %> " alt="<%= recipe.label %>" class = "results_pic"><br>
-      <%= recipe.label %>
+      <%= link_to recipe.label, recipe_path(recipe.url) %>
     </div>
   <% end %>
 </section>
