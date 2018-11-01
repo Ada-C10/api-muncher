@@ -3,7 +3,7 @@ require 'httparty'
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search?"
   KEY = ENV["APP_KEY"]
-  APP_ID = "248ddc1b"
+  APP_ID = "248ddc1b" #ENV["APP_ID"] 
 
   def self.list_recipes(word)
     url = BASE_URL + "q=#{word}" + "&app_id=#{ APP_ID }" +
