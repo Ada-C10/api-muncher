@@ -56,9 +56,9 @@ class EdamamApiWrapper
         api_params[:image],
         api_params[:uri],
         {
-          url: [:url],
-          ingredientLines: [:ingredientLines],
-          healthLabels: [:healthLabels]
+          url: api_params[:url],
+          ingredientLines: api_params[:ingredientLines],
+          healthLabels: api_params[:healthLabels]
         }
       )
     end
