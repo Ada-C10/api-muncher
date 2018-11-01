@@ -18,6 +18,26 @@ Minitest::Reporters.use!(
 # Uncomment for awesome colorful output
 require "minitest/pride"
 
+VCR.configure do |config|
+  #tell where to save the casettes
+  config.cassette_library_dir = 'test/cassettes'
+
+  # tie VCR and webmock together
+  config.hook_into :webmock
+
+  #very important
+  config.default_cassette_options = {
+    record: :new_episodes,   #record only if it is new
+    match_requests_on: [:method, :uri, :body] #if same http verb, same url and same req body, replay an exisiting episode, if not record new episode
+  }
+
+  #hide api tokens with code below, can hide multiple items with multiple blocks
+  config.filter_sensitive_data('<SLACK_TOKEN>') do
+    ENV['SLACK_TOKEN']#if sees this, replaces with <SLACK_TOKEN>
+  end
+
+end
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
