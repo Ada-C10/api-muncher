@@ -1,10 +1,11 @@
 <% if @recipe %>
   <h1 class='text-center'><%= @recipe.label.downcase %></h1>
   <br>
+  <br>
   <section class='recipe_show'>
     <section class='recipe_photo'>
       <div class='text-center'><img src=<%= @recipe.image %>></div>
-      <a href=<%=@recipe.url%> class='text-center recipe_link'>view recipe source</a>
+      <a href=<%=@recipe.url%> class='text-center recipe_link', target="_blank" >view recipe source</a>
     </section>
 
     <section class='recipe_details'>
