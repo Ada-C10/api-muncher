@@ -1,67 +1,63 @@
+<div id="wrap">
+  <form action= "<%= recipe_searches_path %>" method="get" autocomplete="on">
+    <input id="search" name="q" type="text" placeholder="I want a recipe for...">
+    <input id="search_submit" value="Submit" type="submit">
+  </form>
+</div>
+<br>
+<br>
+<br>
+
+
 <section id="team" class="pb-5">
   <div class="container">
     <h5 class="section-title h1">Search: <%= @query %></h5>
     <% if @recipes %>
-    <% @recipes.each_slice(3) do |recipe_row| %>
 
-    <div class="row">
-      <% recipe_row.each do |recipe| %>
 
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-          <div class="mainflip">
+      <div class="munch_pagination">
+        <%= will_paginate @recipes, :previous_label => previous_label, :next_label => next_label %>
+      </div>
 
-            <div class="frontside">
-              <div class="card">
-                <div class="card-body text-center">
-                  <p><img class=" img-fluid" src="<%= recipe.image_uri %>" alt="card image"></p>
-                  <h4 class="card-title"><%= recipe.label %></h4>
-                  <p class="card-text"><%= link_to "From: #{recipe.source}", recipe.source_uri, target: "_blank" %></p>
-                  <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="backside">
-                      <div class="card">
-                <div class="card-body text-center mt-4">
-                  <h4 class="card-title ">
-                    <%= link_to recipe.label, recipe_path(recipe.recipe_uri.fragment) %>
-                  </h4>
-                  <% recipe.ingredient_lines.each do |line| %>
-                  <p class="card-text m-0 p-0"><%= line %></p>
-                  <% end %>
-                  <ul class="list-inline">
-                    <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="#">
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="#">
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="#">
-                        <i class="fa fa-skype"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="#">
-                        <i class="fa fa-google"></i>
-                      </a>
-                    </li>
-                  </ul>
+
+      <div class="card-deck">
+        <% @recipes.each do |recipe| %>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+            <div class="mainflip">
+
+              <div class="frontside">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <p><img class="img-fluid" src="<%= recipe.image_uri %>" alt="card image"></p>
+                    <h4 class="card-title"><%= recipe.label %></h4>
+                    <p class="card-text"><%= "From: #{recipe.source}" %></p>
+                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                   </div>
                 </div>
               </div>
 
+              <div class="backside scroll">
+                <div class="card">
+                  <div class="card-body text-center mt-4">
+                    <h4 class="card-title "><%= link_to recipe.label, recipe_path(recipe.recipe_uri.fragment) %></h4>
+                      <% recipe.ingredient_lines[1..5].each do |line| %>
+                    <p class="card-text"><%= line %></p>
+                      <% end %>
+                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
           </div>
         </div>
-      </div>
-      <% end %>
-    </div>
+
+
     <% end %>
+    </div>
     <% end %>
   </div>
 </section>

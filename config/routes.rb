@@ -2,6 +2,6 @@
 
 Rails.application.routes.draw do
   root 'recipe_search#search'
-  get 'recipe_search/search', to: 'recipe_search#index', as: 'recipe_searches'
+  get 'recipe_search', to: 'recipe_search#index', as: 'recipe_searches'
   get 'recipe_search/:uri', to: 'recipe_search#show', as: 'recipe'
 end
