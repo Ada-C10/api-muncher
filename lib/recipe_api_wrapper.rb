@@ -1,5 +1,4 @@
 require 'httparty'
-require 'pry'
 
 class RecipeApiWrapper
   BASE_URL = "https://api.edamam.com"
@@ -11,7 +10,7 @@ class RecipeApiWrapper
 
     data = HTTParty.get(recipes_url)
 
-    recipe_list = []
+    recipe_list = Array.new
 
     if data["hits"]
       data["hits"].each do | recipe |

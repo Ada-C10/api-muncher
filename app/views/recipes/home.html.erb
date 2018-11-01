@@ -1,0 +1,8 @@
+<h1>MUNCHER</h1>
+<section>
+  <%= form_tag(recipe_list_path, method: :get) do %>
+    <%= label_tag(:food_search, "Find your flavor...") %>
+    <%= text_field_tag(:food_search) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</section>
