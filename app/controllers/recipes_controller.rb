@@ -4,11 +4,12 @@ class RecipesController < ApplicationController
    end
 
    def show
-     # @receipt = Recipe.find_by()
+     @recipe = ApiMuncherWrapper.recipe_detail(params[:uri])
+
    end
 
    def index
-     @recipes = ApiMuncherWrapper.list_recipes(params[:name])
+     @recipes = ApiMuncherWrapper.list_recipes(params[:title])
    end
 
 
