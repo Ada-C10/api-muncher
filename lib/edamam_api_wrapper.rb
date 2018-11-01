@@ -31,6 +31,13 @@ class EdamamApiWrapper
 
   # x["hits"][0]["recipe"]["label"]
   def self.create_recipe(recipe)
-
+    input_hash = {}
+    input_hash[:label] = recipe["label"]
+    input_hash[:image] = recipe["image"]
+    input_hash[:url] = recipe["url"]
+    input_hash[:dietLabels] = recipe["dietLabels"]
+    input_hash[:healthLabels] = recipe["healthLabels"]
+    input_hash[:ingredientLines] = recipe["ingredientLines"]
+    return Recipe.new(input_hash)
   end
 end
