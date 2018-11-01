@@ -13,9 +13,24 @@ class EdamamApiWrapper
     encoded_url = URI.encode(base_url)
     response = HTTParty.get(encoded_url)
 
-    # if successful
-    return response
-    # if not successful
-    # do this instead
+    recipe_list = []
+    if response
+      index = 0
+      while index < response["hits"].length do
+        single_recipe = response["hits"][index]["recipe"]
+        recipe_list << create_recipe(single_recipe)
+        index += 1
+      end
+      return recipe_list
+
+    else
+      return nil
+    end
+
+  end
+
+  # x["hits"][0]["recipe"]["label"]
+  def self.create_recipe(recipe)
+
   end
 end
