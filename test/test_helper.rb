@@ -23,6 +23,9 @@ VCR.configure do |config|
   config.filter_sensitive_data("<SLACK_TOKEN>") do
     ENV['SLACK_TOKEN']
   end
+  config.filter_sensitive_data("<SLACK_TOKEN>") do
+    ENV['APP_ID']
+  end
 end
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
