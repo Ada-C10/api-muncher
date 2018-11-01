@@ -1,7 +1,9 @@
 ENV["RAILS_ENV"] = "test" # what's this?
 
-RECIPE_VALID_ATTRS = [:label, :recipe_uri, :image_uri, :source, :source_uri, :recipe_yield, :health_labels, :ingredient_lines, :total_time]
-RECIPE_VALID_VALUES = ["some recipe", "http://", "http://", "source", "http://", "http://", "yields 100", ["labels"], ["ingredients"], 30]
+RECIPE_VALID_ATTRS = [:label, :recipe_uri, :source, :source_uri, :ingredient_lines]
+RECIPE_VALID_VALUES = ["some recipe", "http://recipe_uri", "source", "http://source_uri", ["ingredients"]]
+RECIPE_OPT_ATTRS = [:image_uri, :recipe_yield, :total_time, :health_labels]
+RECIPE_OPT_VALUES = ["http://image_uri", "yields 100", 30, ["labels"]]
 EDAMAM_ID_PREFIX = "http://www.edamam.com/ontologies/edamam.owl#"
 
 require File.expand_path("../../config/environment", __FILE__)

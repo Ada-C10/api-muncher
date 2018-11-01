@@ -4,7 +4,7 @@ class RecipeSearchController < ApplicationController
 
   def index
     @query = params[:q]
-    @recipes = EdamamApiWrapper.list_recipes(@query, from: 0, to: 12).paginate(:page => params[:page], :per_page => 6)
+    @recipes = EdamamApiWrapper.list_recipes(@query).paginate(:page => params[:page], :per_page => 6)
   end
 
   def show

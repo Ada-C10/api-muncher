@@ -184,7 +184,7 @@ section .section-title {
 
 .frontside .card,
 .backside .card {
-    min-height: 312px;
+    height: 312px;
 }
 
 .backside .card a {
@@ -205,7 +205,7 @@ section .section-title {
 
 // Scrolling backsides
 .scroll {
-		max-height: 312px;
+		height: 312px;
     overflow-y: auto;
 }
 

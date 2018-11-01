@@ -8,7 +8,7 @@ class EdamamApiWrapper
   APP_ID = ENV["EDAMAM_APP_ID"]
   APP_KEY = ENV["EDAMAM_APP_KEY"]
 
-  def self.list_recipes(query, from: 0, to: 6)
+  def self.list_recipes(query, from: 0, to: 120)
     uri = BASE_URI + "/search?q=#{query}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&from=#{from}" + "&to=#{to}"
     data = HTTParty.get(uri)
     recipe_list = []
@@ -37,18 +37,20 @@ class EdamamApiWrapper
 # this will be the only method we need to update.)
   def self.build_recipe(api_params)
     args = Hash.new
+      args[:label] = api_params["label"]
+      args[:recipe_uri] = URI(api_params["uri"])
+      args[:source] = api_params["source"]
+      args[:source_uri] = api_params["url"]
+      args[:ingredient_lines] = api_params["ingredientLines"]
 
-    args[:label] = api_params["label"]
-    args[:recipe_uri] = URI(api_params["uri"])
-    args[:image_uri] = api_params["image"]
-    args[:source] = api_params["source"]
-    args[:source_uri] = api_params["url"]
-    args[:recipe_yield] = api_params["yield"]
-    args[:health_labels] = api_params["healthLabels"]
-    args[:ingredient_lines] = api_params["ingredientLines"]
-    args[:total_time] = api_params["totalTime"]
+    options = Hash.new
+      options[:image_uri] = api_params["image"]
+      options[:recipe_yield] = api_params["yield"]
+      options[:total_time] = api_params["totalTime"]
+      options[:health_labels] = api_params["healthLabels"]
 
-    return Recipe.new(args)
+    return Recipe.new(args, options)
+    # TODO: handle exception
   end
 
 end
