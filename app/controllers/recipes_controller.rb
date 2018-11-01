@@ -5,8 +5,9 @@ require 'will_paginate/array'
   end
 
   def index
-    recipes = EdamamApiWrapper.recipe_search(params[:keyword])
     @keyword = params[:keyword]
+
+    recipes = EdamamApiWrapper.recipe_search(params[:keyword])
     @recipes = recipes.paginate(:page => params[:page], :per_page => 10)
     if !recipes.any?
       render :index, status: :bad_request
