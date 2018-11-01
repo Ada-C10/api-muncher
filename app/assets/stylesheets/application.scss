@@ -19,15 +19,38 @@
 
 body, html {
   height: 100%;
+  font-family: 'Comfortaa', cursive;
 }
 
+a:link {
+  text-decoration: none;
+  font-family: 'Comfortaa', cursive;
+}
+
+.home {
+  color: white;
+}
+
+a:hover {
+  color: #9DC7C8;
+}
+
+a {
+  color: black;
+}
+
+.recipe_page_link a {
+  color: #748386;
+}
 .greeting {
-  height: 30%;
+  padding: 10%;
+  background-color: #748386;
 }
 
 h1 {
   text-align: center;
   font-size: 5.5em;
+  font-family: 'Comfortaa', cursive;
 }
 
  .card-group-container {
@@ -46,7 +69,7 @@ h1 {
 }
 
 .card-title a:hover {
-  color: #FF8514;
+  color: #9DC7C8;
   list-style: none;
 }
 
@@ -64,4 +87,49 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.fa {
+  color: white;
+}
+
+.search-heading {
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+.recipe-detail {
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  grid-template-columns: repeat(3, 2fr);
+  grid-gap: 10px;
+  margin: 10px auto;
+}
+
+.image {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.ingredients {
+  grid-column: 2 / 6;
+  grid-row: 1 / 2;
+}
+
+.nutrition {
+  grid-column: 2 / 6;
+  grid-row: 3 / auto;
+}
+
+.categories {
+  grid-column: 1 / 3;
+  grid-row: 3 / auto;
+}
+
+.show-recipe {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

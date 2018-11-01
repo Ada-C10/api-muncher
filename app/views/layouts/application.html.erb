@@ -8,11 +8,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
   </head>
 
   <body>
     <div class="greeting">
-      <h1>Muncher</h1>
+      <h1><%= link_to "Muncher", root_path, class: "home" %></h1>
       <section class="search">
       <%= form_tag recipes_path(@query), class: "form-inline", method: "post" do %>
         <div class="form-group">
@@ -25,7 +26,7 @@
 
     <%= yield %>
     <footer>
-      <div id="edamam-badge" data-color="white"></div>
+      <div id="edamam-badge" data-color="transparent"></div>
     </footer>
   </body>
 </html>
