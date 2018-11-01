@@ -1,3 +1,24 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+  height: 100%;
+}
+.homepage {
+  background-image: url("https://i.pinimg.com/originals/89/1d/27/891d2738ee6efd492c10913bf79c2cbc.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: 'Paytone One', sans-serif;
+}
+
+.homepage-text {
+  padding-top: 7rem;
+}
+
+.homepage-title {
+  padding: 3rem;
+  font-size: 5rem;
+}
