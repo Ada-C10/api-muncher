@@ -1,9 +1,8 @@
 require "test_helper"
 
 describe HomeController do
-  it "should get index" do
-    get home_index_url
-    value(response).must_be :success?
+  it "index should pull up the homepage" do
+    get root_path
+    must_respond_with :success
   end
-
 end
