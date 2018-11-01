@@ -11,8 +11,10 @@ class EdamamApiWrapper
 
 
   #list the channels  **
-  def self.list_recipes(user_search)
-    url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{user_search}"
+  # base_url = https://api.edamam.com/search?app_id=cce9a91f&app_key=d0f4da3c9d8a64a9be87b192561284b7&q=chocolate mouse
+
+  def self.list_recipes(user_search) #i passed search_term in the controller and view to use this
+    url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{user_search}" + "&to=100"
     encoded_url = URI.encode(url) #add this because the user might search for something with spaces and this gets rid
     data = HTTParty.get(encoded_url)
     recipe_list = []
@@ -23,8 +25,19 @@ class EdamamApiWrapper
     end
     return recipe_list
   end
+  # chocolate mouse "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_7543ecfa28b7506a97360748f017a83e",
+  # kimchi pasta "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_b3ce18c4a415f62086a858c54f2c3f19",
+  # https://api.edamam.com/search?app_id=cce9a91f&app_key=d0f4da3c9d8a64a9be87b192561284b7&r=http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_b3ce18c4a415f62086a858c54f2c3f19
 
-  def self.search_recipes(user_search)
+  #this method takes a uri (which will come from params) and returns a recipe
+  def self.find_recipe_by(uri)
+    url = BASE_URL + "search?" + "r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{uri}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    # encoded_url = URI.encode(url) #add this because the user might search for something with spaces and this gets rid
+    data = HTTParty.get(url)
+    if data[0]
+      recipe = self.create_recipe(data[0])
+    end
+    return recipe
   end
 
 
@@ -32,9 +45,12 @@ class EdamamApiWrapper
   private
 
   def self.create_recipe(api_params)
+    # need to parse this: http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_7543ecfa28b7506a97360748f017a83e
+    parsed_uri = api_params["uri"].partition('_').last
+
     return Recipe.new(
       api_params["label"],
-      api_params["uri"],
+      parsed_uri,
       {
         healthLabels: api_params["healthLabels"],
         ingredients: api_params["ingredients"],

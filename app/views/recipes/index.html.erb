@@ -13,9 +13,18 @@
     <ul>
       <% @recipes.each do |recipe| %>
         <li>
-          <%= link_to recipe.label, recipes_path(recipe.label) %>
+        <%= recipe.label %>
+        </li>
+        <li>
+          <%= link_to "Details", recipe_path(recipe.uri) %>
+        </li>
+        <li>
+          <%= image_tag recipe.image %>
         </li>
       <% end %>
     </ul>
   <% end %>
 </section>
+<%# the recipe.uri is coming from ..http://localhost:3000/recipes/uri%>
+<%# the recipe path recipe_path(recipe.uri) is calling the route below%>
+<%# get '/recipes/:uid', to: 'recipes#show', as: 'recipe' %>
