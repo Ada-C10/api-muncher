@@ -1,5 +1,4 @@
 require 'httparty'
-require 'pry'
 require 'uri'
 
 class EdamamApiWrapper
