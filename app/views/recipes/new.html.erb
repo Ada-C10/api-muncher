@@ -1,8 +1,17 @@
-<h1>Search recipes</h1>
+<div id="home">
+  <div class="landing-text">
+    <div class= "row">
+      <div class="col-5"></div>
+      <div class="col-6">
+        <h1>Search recipes</h1>
+        <%= form_tag recipes_path, method: :get do %>
+        <%= text_field_tag(:search, "Enter Recipe Here", class: "form-control form-control-lg") %>
+        <br />
+        <%= submit_tag("Look Up Recipes", class: "btn btn-default btn-lg mt-2") %>
 
-<%= form_tag recipes_path, method: :get do %>
-  <%= label_tag(:search, "Enter Ingredient") %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Look Up Recipes") %>
-
-<% end %>
+        <% end %>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </div>
+</div>

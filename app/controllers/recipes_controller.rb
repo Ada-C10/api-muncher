@@ -1,7 +1,12 @@
 class RecipesController < ApplicationController
   def index
     @search = params[:search]
-    @recipes = EdamamApiWrapper.list_recipes(@search)
+    if @search.empty?
+      redirect_to root_path
+    else
+
+      @recipes = EdamamApiWrapper.list_recipes(@search)
+    end
   end
 
 
@@ -10,5 +15,8 @@ class RecipesController < ApplicationController
   end
 
   def search
+  end
+
+  def new
   end
 end
