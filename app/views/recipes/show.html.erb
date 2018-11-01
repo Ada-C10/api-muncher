@@ -1,24 +1,30 @@
-<h2> <%= @recipe.label %></h2>
+<h2> <%= link_to @recipe.label, @recipe.url %></h2>
 
 <section class="container">
   <h3 class="user-votes__header">Ingredients</h3>
 
   <div>
-    <img src="#{@recipe.image}" alt="#{@recipe.label}">
+    <%=image_tag(@recipe.image, alt: @recipe.label)%>
     <div>
 
       <div>
+
         <ol>
-          <% @recipe.ingredients.each do |list| %>
-          <li><%= ingredients %></li>
+          <% @recipe.ingredients.each do |ingredient| %>
+          <li><%= ingredient %></li>
+          <%end%>
         </ol>
+
       </div>
 
 
 
       <div>
+
         <ol>
-          <li><%= list.health %>
+          <% @recipe.health.each do |health| %>
+          <li><%= health %></li>
+            <%end%>
           </ol>
-          <% end %>
+
         </div>

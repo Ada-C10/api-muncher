@@ -12,22 +12,23 @@ Minitest::Reporters.use!(
   Minitest.backtrace_filter
 )
 
-VCR.configure do |config|
-  #where to save the cassettes
-  config.cassette_library_dir = "test/cassettes"
-  #tie vcr and webmock together
-  config.hook_into :webmock
-  #match the verb, uri and body
-  config.default_cassette_options = {
-    record: :new_episodes,
-    match_request_on: [:method, :uri, :body]
-  }
-
+  VCR.configure do |config|
+    config.cassette_library_dir = 'test/cassettes' # folder where casettes will be located
+    config.hook_into :webmock # tie into this other tool called webmock
+    config.default_cassette_options = {
+      :record => :new_episodes,    # record new data when we don't have it yet
+      :match_requests_on => [:method, :uri, :body] # The http method, URI and body of a request all need to match
+    }
   #hide your token so peopel on the internet do not see it
   #otherwise keys will save in your test files
   config.filter_sensitive_data('<TOKEN>') do
-    ENV['APP_ID'],ENV['APP_KEY']
+    ENV['APP_ID']
   end
+
+  config.filter_sensitive_data('<TOKEN>') do
+    ENV['APP_KEY']
+  end
+
 end
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
