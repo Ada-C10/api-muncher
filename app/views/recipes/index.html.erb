@@ -1,5 +1,7 @@
+<%= render partial: "header_search" %>
+
 <section class="recipes-list">
-  <h1>Results for <%= "#{@food_search.upcase}" %> Recipes </h1>
+  <h1>Results for <%= "#{@food_search.upcase}" %></h1>
   <% if @recipes %>
     <ul>
       <% @recipes.each do |recipe| %>
