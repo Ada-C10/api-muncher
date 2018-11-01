@@ -1,2 +1,12 @@
-<h1>Recepies#index</h1>
-<p>Find me in app/views/recepies/index.html.erb</p>
+<section class="channels-list">
+  <h1>Recepies</h1>
+  <% if @recepies %>
+    <ul>
+      <% @recepies.each do |recepie| %>
+        <!-- <li>
+          <%# link_to channel.name, chat_new_path(channel.name) %>
+        </li> -->
+      <% end %>
+    </ul>
+  <% end %>
+</section>
