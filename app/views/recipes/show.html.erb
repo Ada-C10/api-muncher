@@ -14,9 +14,12 @@
     <% end %>
   </ul>
 </section>
+
+<section>
 <h3> Dietary Labels </h3>
 <ul>
   <% @recipe.dietary_information.each do |diet_info| %>
     <li> <%= diet_info %> </li>
   <% end %>
 </ul>
+</section>
