@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body, html {
   height: 100%;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
 }
 .homepage {
   background-image: url("https://i.pinimg.com/originals/89/1d/27/891d2738ee6efd492c10913bf79c2cbc.jpg");
@@ -11,11 +12,11 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  font-family: 'Paytone One', sans-serif;
+  font-family: 'Changa One', cursive;
 }
 
 .homepage-text {
-  padding-top: 7rem;
+  padding-top: 6rem;
 }
 
 .homepage-title {

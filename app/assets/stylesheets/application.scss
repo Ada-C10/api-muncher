@@ -20,8 +20,69 @@
 .card {
   width: 22rem;
   display:inline-block;
+  border: none;
+  padding: 2rem;
 }
 
 .card-body {
   padding-bottom: 0rem;
+}
+
+.navbar {
+  background-color: black;
+  color: white;
+  font-family: 'Changa One', cursive;
+}
+
+.navbar {
+  height: 15rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar a:hover {
+  color: gray;
+}
+
+.recipe a {
+  color: black
+}
+
+.recipe a:hover {
+  color: tomato;
+}
+
+.card-title a {
+  color: black;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  font-family: 'Changa One', cursive;
+  height: 7rem;
+}
+
+.footer-text {
+  padding: 2rem;
+}
+
+.index-container {
+  padding-top: 3rem;
+}
+
+.paginate {
+  padding: 2rem;
+  padding-bottom: 4rem;
 }
