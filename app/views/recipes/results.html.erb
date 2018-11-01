@@ -5,7 +5,14 @@
 <% @recipes.each do |recipe| %>
   <li>
     <%= image_tag recipe.photo, alt: recipe.name %>
-    <%= link_to recipe.name, recipe_path(recipe.uri) %>
+
+    <%= form_tag recipe_path(recipe.name), method: "post" do %>
+      <%= hidden_field_tag(:uri, recipe.uri ) %>
+      <%= submit_tag(recipe.name) %>
+    <% end %>
+
+
+
   </li>
 <% end %>
 </ul>
