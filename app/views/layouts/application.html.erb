@@ -7,17 +7,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
   </head>
 
   <body>
-    <h1>Muncher</h1>
-
-    <%= form_tag recipes_path(@query), method: "post" do %>
-      <%= label_tag(:user_search, "Find your flavor...") %>
-      <%= text_field_tag(:user_search) %>
-      <%= submit_tag("Search Recipes") %>
-    <% end %>
+    <div class="greeting">
+      <h1>Muncher</h1>
+      <section class="search">
+      <%= form_tag recipes_path(@query), class: "form-inline", method: "post" do %>
+        <div class="form-group">
+            <%= text_field_tag :user_search, nil, placeholder: "Search", class: 'form-control mr-3 w-75' %>
+            <i class="fa fa-search" aria-hidden="true"></i>
+        <% end %>
+        </div>
+      </section>
+    </div>
 
     <%= yield %>
+    <footer>
+      <div id="edamam-badge" data-color="white"></div>
+    </footer>
   </body>
 </html>

@@ -13,7 +13,22 @@
  *= require_tree .
  *= require_self
  */
-@import 'bootstrap';
+
+@import "bootstrap";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body, html {
+  height: 100%;
+}
+
+.greeting {
+  height: 30%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5.5em;
+}
 
  .card-group-container {
    display: flex;
@@ -33,4 +48,9 @@
 .card-title a:hover {
   color: #FF8514;
   list-style: none;
+}
+
+.search, footer {
+  display: flex;
+  justify-content: center;
 }
