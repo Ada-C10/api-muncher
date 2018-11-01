@@ -21,7 +21,7 @@ VCR.configure do |config|
 
   config.default_cassette_options = {
     record: :new_episodes,
-    match_request_on: [:method, :uri, :body]
+    match_requests_on: [:method, :uri, :body]
   }
 
   config.filter_sensitive_data('<EDAMAM_ID>') do

@@ -24,7 +24,11 @@ class RecipesController < ApplicationController
   def show
     id = params[:recipe]
     response = EdamamApiWrapper.retrieve_recipe(id)
-    @recipe = EdamamApiWrapper.create_recipe(response[0])
+    if response.empty?
+      render :notfound, status: :not_found
+    else
+      @recipe = EdamamApiWrapper.create_recipe(response[0])
+    end
   end
 
 
