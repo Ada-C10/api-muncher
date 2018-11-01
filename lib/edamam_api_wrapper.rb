@@ -8,7 +8,7 @@ class EdamamApiWrapper
 
 
   # Rails Console Test: EdamamApiWrapper.find_recipe("chicken")
-  def self.find_recipe(search_term)
+  def self.find_recipes(search_term)
     base_url = "#{BASE_URL}" + "q=#{search_term}" + "&" + "app_id=#{APP_ID}" + "&" + "app_key=#{APP_KEY}"
     encoded_url = URI.encode(base_url)
     response = HTTParty.get(encoded_url)
@@ -35,9 +35,33 @@ class EdamamApiWrapper
     input_hash[:label] = recipe["label"]
     input_hash[:image] = recipe["image"]
     input_hash[:url] = recipe["url"]
+
+    # parse uri
+
+    input_hash[:uri] = parse_recipe_id(recipe["uri"])
     input_hash[:dietLabels] = recipe["dietLabels"]
     input_hash[:healthLabels] = recipe["healthLabels"]
     input_hash[:ingredientLines] = recipe["ingredientLines"]
     return Recipe.new(input_hash)
+  end
+
+  #https://api.edamam.com/search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_7bf4a371c6884d809682a72808da7dc2&app_id=05485fbf&app_key=7c36d5a80f584cf96980d40f9dbdafa4
+  def self.find_specific_recipe(recipe_id)
+
+  end
+
+  #http://www.edamam.com/ontologies/edamam.owl#recipe_b79327d05b8e5b838ad6cfd9576b30b6
+  def self.parse_recipe_id(unparsed_uri)
+    unparsed = unparsed_uri
+    binding.pry
+    location_of_ampersant = unparsed.index("#")
+    binding.pry
+    id_start = location_of_ampersant + 1
+    binding.pry
+    end_of_id = unparsed.length - 1
+    binding.pry
+    recipe_id = unparsed.slice(id_start...end_of_id)
+    binding.pry
+    return recipe_id
   end
 end

@@ -7,10 +7,10 @@ class RecipesController < ApplicationController
 
   def index
     @food_to_search = params[:food]
-    @matching_recipes = EdamamApiWrapper.find_recipe(@food_to_search)
+    @matching_recipes = EdamamApiWrapper.find_recipes(@food_to_search)
   end
 
   def show
-
+    @recipe_url = params[:recipe_url]
   end
 end
