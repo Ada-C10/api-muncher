@@ -15,6 +15,14 @@ describe EdamamApiWrapper do
     end
   end
 
+  it 'will return an empty array if no recipes are found' do
+    VCR.use_cassette('list_recipes') do
+      recipes = EdamamApiWrapper.list_recipes("")
+
+      expect(recipes.length).must_equal 0
+    end
+  end
+
   it 'can create a recipe object given a valid id' do
     VCR.use_cassette('display_recipe') do
       recipe = EdamamApiWrapper.display_recipe('1ba32b41f9f507c048b50b1704b13b8f')
