@@ -15,7 +15,7 @@ class EdamamApiWrapper
         image = hit["recipe"]["image"]
         uri = hit["recipe"]["uri"]
 
-        recipe_list << Recipe.new(label, image, uri)
+        recipe_list << create_recipe({label: label, image: image, uri: uri})
 
       end
     else
@@ -37,7 +37,7 @@ class EdamamApiWrapper
       ingredientLines = data[0]["ingredientLines"]  # this is an array
       healthLabels = data[0]["healthLabels"] # this is an array
 
-      recipe = Recipe.new(label, image, uri, {url: rec_url, ingredientLines: ingredientLines, healthLabels: healthLabels})
+      recipe = create_recipe({label: label, image: image, uri: uri, url: rec_url, ingredientLines: ingredientLines, healthLabels: healthLabels})
 
       return recipe
 
@@ -52,13 +52,13 @@ class EdamamApiWrapper
 
     def self.create_recipe(api_params)
       return Recipe.new(
-        api_params["label"],
-        api_params["image"],
-        api_params["uri"],
+        api_params[:label],
+        api_params[:image],
+        api_params[:uri],
         {
-          url: api_params[:details][:url],
-          ingredientLines: api_params[:details][:ingredientLines],
-          healthLabels: api_params[:details][:healthLabels]
+          url: [:url],
+          ingredientLines: [:ingredientLines],
+          healthLabels: [:healthLabels]
         }
       )
     end
