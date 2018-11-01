@@ -1,5 +1,7 @@
 <% if @recipes.any? %>
 
+<h2>Search results for "<%=@keyword%>":</h2>
+
   <%= will_paginate @recipes, renderer: BootstrapPagination::Rails %>
 
 <section class='recipes-container'>
@@ -8,13 +10,15 @@
     <div class="card shadow p-3 mb-5 bg-white rounded" style="width:18%">
       <%= link_to image_tag(recipe.image, alt: "#{recipe.label}", class: "card-img-top"), recipe_path(recipe.id) %>
       <div class="card-body">
-        <h5 class="card-title"><%= recipe.label %></h5>
+        <h5 class="card-title text-center"><%= recipe.label %></h5>
       </div>
     </div>
 
   <% end %>
 <% else %>
-  <h2>No results found.  Please search again!</h2>
+  <h2 class='text-center'>01010101010 search for <strong><%=@keyword%></strong> does not compute 01010101010</h2>
+  <br>
+  <h2 class='text-center'>0101010 please search again 0101010101010 boop beep boop 010</h2>
 <% end %>
 
 </section>
