@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'recipe#new'
-  # post 'recipe#new', to: 'recipe#create', as: 'create_recipe'
+root 'recipes#new'
+post '/', to: 'recipes#new', as: 'new_path'
+get '/:dish', to: 'recipes#index', as: 'list_recipes'
 
-  # get ':channel/new', to: 'chat#new', as: 'chat_new'
-  # post ':channel', to: 'chat#create', as: 'chat_create'
 end
