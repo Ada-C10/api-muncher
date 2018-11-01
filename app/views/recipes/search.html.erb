@@ -1,7 +1,3 @@
 <h2> Find your flavor... </h2>
 
-<%= form_tag recipe_results_path, method: "post" do %>
-  <%= label_tag(:query, "Enter Query") %>
-  <%= text_field_tag(:query) %>
-  <%= submit_tag("Submit") %>
-<% end %>
+<%= render partial: "layouts/search_bar" %>

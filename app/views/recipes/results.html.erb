@@ -6,13 +6,10 @@
   <li>
     <%= image_tag recipe.photo, alt: recipe.name %>
 
-    <%= form_tag recipe_path(recipe.name), method: "post" do %>
+    <%= form_tag recipe_path(recipe.name), method: "get" do %>
       <%= hidden_field_tag(:uri, recipe.uri ) %>
       <%= submit_tag(recipe.name) %>
     <% end %>
-
-
-
   </li>
 <% end %>
 </ul>
