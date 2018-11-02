@@ -6,13 +6,46 @@ class EdamamApiWrapper
   EDAMAM_APP_ID = ENV['EDAMAM_APP_ID']
   EDAMAM_APP_KEY = ENV['EDAMAM_APP_KEY']
 
-  def self.find_recipes(dish_name)
-    url = BASE_URL + '?q=' + dish_name + '&app_id=' + EDAMAM_APP_ID + '&app_key=' + EDAMAM_APP_KEY
+  def self.find_recipes(query_type, query_string)
+
+    url = BASE_URL + '?'+ query_type + '=' + URI.encode(query_string)+ '&app_id=' + EDAMAM_APP_ID + '&app_key=' + EDAMAM_APP_KEY
+
     response = HTTParty.get(url)
 
+    if response.key? "hits"
+      return_recipes(response)
+    elsif response.key? "uri"
+
+      return_single_recipe(response)
+
+    end
+  end
+
+  private
+
+  def self.return_single_recipe(api_params)
+
+    if api_params[0]
+      return Recipe.new( api_params["label"],
+        {
+          ingredients: api_params["ingredientLines"],
+          uri: api_params["uri"],
+          url: api_params["url"],
+          image_url: api_params["image"],
+          dietary_info: api_params["dietLabels"],
+          health_info: api_params["healthLabels"]
+        }
+      )
+
+    else
+      return "Not Found"
+    end
+  end
+
+  def self.return_recipes(response)
     if response["hits"]
       recipe_list = response["hits"].map do |hit|
-        create_recipe(hit)
+        create_recipe_from_hit(hit)
       end
     else
       return []
@@ -20,12 +53,11 @@ class EdamamApiWrapper
     return recipe_list
   end
 
-  private
-
-  def self.create_recipe(api_params)
+  def self.create_recipe_from_hit(api_params)
     return Recipe.new( api_params["recipe"]["label"],
-    {
-      ingredients: api_params["recipe"]["ingredientLines"],
+      {
+        ingredients: api_params["recipe"]["ingredientLines"],
+        uri: api_params["recipe"]["uri"],
         url: api_params["recipe"]["url"],
         image_url: api_params["recipe"]["image"],
         dietary_info: api_params["recipe"]["dietLabels"],

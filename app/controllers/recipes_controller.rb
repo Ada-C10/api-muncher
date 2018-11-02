@@ -1,18 +1,13 @@
 class RecipesController < ApplicationController
-  before_action :find_searched_dish, only: [:new, :index]
+  before_action :find_searched_dish
 
   def new
-    # @dish = params[:dish]
-    if @dish
-      redirect_to list_recipes_path(@dish)
-    else
-      render :new
-    end
   end
 
   def index
     # @dish = params[:dish]
-    @recipes = EdamamApiWrapper.find_recipes(@dish)
+    @recipes = EdamamApiWrapper.find_recipes('q',@dish)
+
 
     if @recipes
       render :index
@@ -23,6 +18,9 @@ class RecipesController < ApplicationController
   end
 
   def show
+    # @recipe = EdamamApiWrapper.find_recipes('r', params[:uri])
+    # #use params[:uri] to find recipe in wrapper
+    # @recipe = #
   end
 
   private
