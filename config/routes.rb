@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   root 'recipes#search'
   get 'recipes/index', to: 'recipes#index', as: 'recipes'
+  get 'recipes/show', to: 'recipes#show', as: 'recipe'
 
 end

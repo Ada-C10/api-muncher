@@ -14,6 +14,8 @@ class RecipesController < ApplicationController
   end
 
   def show
+    recipe_id = params[:link]
+    @recipe = RecipeSearchApiWrapper.get_recipe(recipe_id)
   end
 
   private

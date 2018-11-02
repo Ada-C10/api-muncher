@@ -1,3 +1,5 @@
+require 'uri'
+
 class RecipeSearchApiWrapper
   BASE_URL = "https://api.edamam.com/search"
   ID = ENV["APP_ID"]
@@ -15,7 +17,7 @@ class RecipeSearchApiWrapper
       if first_response["more"]
         url += "&from=0&to=#{first_response["count"]}"
         response = HTTParty.get(url)
-        recipes = response["hits"].map { |recipe_hit| create_recipe(recipe_hit) }
+        recipes = response["hits"].map { |recipe_hit| create_recipe(recipe_hit["recipe"]) }
       end
     end
 
@@ -23,16 +25,24 @@ class RecipeSearchApiWrapper
 
   end
 
+  def self.get_recipe(link)
+
+    url = BASE_URL + "?r=#{CGI.escape(link)}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
+    response = HTTParty.get(url)
+    return create_recipe(response[0])
+
+  end
+
   private
 
   def self.create_recipe(api_params)
     return Recipe.new(
-      api_params["recipe"]["label"],
-      api_params["recipe"]["uri"],
-      api_params["recipe"]["source"],
-      api_params["recipe"]["image"],
-      api_params["recipe"]["ingredientLines"],
-      api_params["recipe"]["dietLabels"]
+      api_params["label"],
+      api_params["uri"],
+      api_params["source"],
+      api_params["image"],
+      api_params["ingredientLines"],
+      api_params["dietLabels"]
     )
 
   end
