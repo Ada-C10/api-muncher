@@ -1,0 +1,7 @@
+<h1>Food.</h1>
+
+<%= form_tag search_path do %>
+  <%= label_tag(:queery, "Ingredient?") %>
+  <%= text_field_tag(:queery) %>
+  <%= submit_tag("Explore") %>
+<% end %>
