@@ -62,12 +62,14 @@ class EdamamApiWrapper
     list_of_recipe_hashes = []
 
     raw_hits_list.each do |recipe|
+      # QUESTION: maybe overkill?
       recipe_hash = {}
 
       recipe_hash[:name] = recipe["recipe"]["label"]
       recipe_hash[:url] = recipe["recipe"]["url"]
       recipe_hash[:ingredients_list] = recipe["recipe"]["ingredientLines"] #array
       recipe_hash[:photo] = recipe["recipe"]["image"]
+      recipe_hash[:uri] = recipe["recipe"]["uri"]
       # TODO: add dietary info here
 
       list_of_recipe_hashes<< recipe_hash
@@ -83,6 +85,7 @@ class EdamamApiWrapper
       url: recipe_hash[:url],
       ingredients_list: recipe_hash[:ingredients_list],
       photo: recipe_hash[:photo],
+      uri_num: recipe_hash[:uri]
     )
   end
 end

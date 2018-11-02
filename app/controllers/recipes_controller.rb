@@ -8,7 +8,6 @@ class RecipesController < ApplicationController
 
   def search_splash
 
-
   end
 
   def searcher
@@ -21,7 +20,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = params[:recipe_name]
+    # maybe call a method in the api wrapper to locate the recipe
+    # @recipe = Recipe.find_by(name: params[:name])
   end
 
 end
