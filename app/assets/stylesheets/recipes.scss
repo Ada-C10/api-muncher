@@ -13,24 +13,45 @@
   background-color: rgb(176, 255, 163);
 }
 
-.results h2 {
+#results h2 {
   padding: 1%;
   text-align: center;
 }
 
-.results ul{
+#results ul{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.results li {
+#results li {
   list-style-type: none;
   text-align: center;
 }
-.results img {
+#results img {
   border-radius: 3rem;
   border-color: rgb(9, 79, 9);
   border-style: solid;
+}
+
+
+#show {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+  padding: 2% 10% 0% 10%;
+}
+
+#show section {
+  padding: 2%;
+}
+#show .title-photo {
+  grid-column: 1 / 2;
+  text-align: center;
+}
+
+#show .ingredients {
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
 }
