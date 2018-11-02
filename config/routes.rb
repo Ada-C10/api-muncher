@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # root 'chat#index' 'welcome#index' ? put edit update params? b/c search bar in index
   # search as a post or put -- own route
 
-
+  root 'recipes#search_splash'
+  post '/recipes', to: 'recipes#searcher', as: "searcher"
   get '/recipes', to: 'recipes#index', as: 'recipes'
   get '/recipes/:recipe/', to: 'recipes#show', as: 'recipe'
 
