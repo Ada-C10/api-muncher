@@ -14,6 +14,18 @@ class EdamamApiWrapper
         recipe_list << create_recipe(recipe_data)
       end
     end
+    return recipe_list #returns list of recipes from api
+  end
+
+  def self.find_a_recipe(food)
+    encoded = "http://www.edamam.com/ontologies/edamam.owl#" + food
+    url_parsed = URI.encode(encoded)
+    url = BASE_URL  + "r=#{url_parsed}&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    data = HTTParty.get(url) #use httparty to send of the url
+    recipe_list = []
+    data.parsed_response.each do |recipe_data|
+      recipe_list << keyboard(recipe_data)
+    end
     return recipe_list
   end
 
@@ -21,14 +33,27 @@ class EdamamApiWrapper
 
   def self.create_recipe(api_params) #<--holds all the logic
     return Recipe.new(
-      uri: api_params["uri"],
-      api_params["label"],
-      api_params["image"],
-      api_params["yield"],
-      api_params["label"],
-      api_params["dietLabels"],
-      api_params["healthLabels"],
-      api_params["ingredients"],
+      uri: api_params["recipe"]["uri"],
+      label: api_params["recipe"]["label"],
+      image: api_params["recipe"]["image"],
+      serving: api_params["recipe"]["yield"],
+      dietLabels: api_params["recipe"]["dietLabels"],
+      healthLabels: api_params["recipe"]["healthLabels"],
+      ingredients: api_params["recipe"]["ingredients"],
+      calories: api_params["recipe"]["calories"]
     )
-    end
   end
+
+  def self.keyboard(api_params)
+    return Recipe.new(
+      uri: api_params["uri"],
+      label: api_params["label"],
+      image: api_params["image"],
+      serving: api_params["yield"],
+      dietLabels: api_params["dietLabels"],
+      healthLabels: api_params["healthLabels"],
+      ingredients: api_params["ingredients"],
+      calories: api_params["calories"]
+   )
+  end
+end
