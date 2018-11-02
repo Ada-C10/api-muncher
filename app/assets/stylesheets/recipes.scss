@@ -28,13 +28,10 @@
 #results li {
   list-style-type: none;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
 }
-#results img {
-  border-radius: 3rem;
-  border-color: rgb(9, 79, 9);
-  border-style: solid;
-}
-
 
 #show {
   display: grid;
