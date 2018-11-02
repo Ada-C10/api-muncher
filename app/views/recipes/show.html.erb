@@ -1,24 +1,35 @@
 <div class="container" id="recipe_information_wrapper">
   <section id="recipe_information">
 
-    <section id="recipe_information">
+    <section id="recipe_basics">
       <h1><%= @name %></h1>
       <h2><%= "Recipe by: #{@creator}" %></h2>
-      <img class="card-img-top" src= <%= "#{@photo}"%> alt="#{recipe.name}">
+      <img class="image-thumbnail float-left" src= <%= "#{@photo}"%> alt="#{recipe.name}">
     </section>
 
+    <section id="recipe_details">
+      <section id="diet_labels_container">
+        <h3><%= "Diet Types" %></h3>
+        <ul id="diet_label_list">
+          <% @dietLabels.each do |label| %>
+            <li>
+              <%= label %>
+            </li>
+          <% end %>
+        </ul>
+      </section>
 
+      <section id="ingredients_container">
+        <h3><%= "Ingredients" %></h3>
+        <ul id="ingredient_list">
+          <% @ingredients.each do |ingredient| %>
+            <li>
+              <%= ingredient["text"] %>
+            </li>
 
-    <section id="ingredients_container">
-      <h3><%= "Ingredients" %></h3>
-      <ul id="ingredient_list">
-        <% @ingredients.each do |ingredient| %>
-          <li class="list-group-item">
-            <%= ingredient %>
-          </li>
-        <% end %>
-      </ul>
+          <% end %>
+        </ul>
+      </section>
     </section>
-
-
+  </section>
 </div>

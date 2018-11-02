@@ -3,13 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #recipe_information_wrapper {
-
+  padding: 2rem;
 }
 
-#ingredients_container {
-
+#recipe_information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
-#ingredient_list {
+#recipe_basics {
+  grid-column: 1 / 1;
+  grid-row: 1 / 2
+}
+
+#recipe_details {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  
+}
+
+// #diet_labels_container {
+//   grid-column: 2 / 3;
+//   grid-row: 2 / 3;
+// }
+
+img {
 
 }
