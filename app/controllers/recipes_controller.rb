@@ -1,4 +1,10 @@
+
 class RecipesController < ApplicationController
+
+  def home
+    render layout: "home_layout"
+  end
+
   def index
     @search_terms = params[:q]
     @recipes = EdamamApiWrapper.list_recipes(params[:q])

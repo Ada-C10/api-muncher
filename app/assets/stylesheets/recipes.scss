@@ -1,3 +1,40 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url("https://soulspring.org/images/easyblog_articles/2301/culinary-background-with-spices-on-wooden-table-picture-id544598354.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white ;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
+.home h1 {
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.homepage {
+  display: grid;
+  grid-template-rows: 2fr 1fr 2fr;
+}
+
+.homepage section {
+  grid-row: 2;
+}
+
+.btn-primary {
+  background-color: teal;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: teal;
+  opacity: .5;
+}
