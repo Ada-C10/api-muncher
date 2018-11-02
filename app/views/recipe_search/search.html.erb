@@ -1,6 +1,7 @@
 <div id="wrap">
-  <form action= "<%= recipe_searches_path %>" method="get" autocomplete="on">
-    <input id="search" name="q" type="text" placeholder="I want a recipe for...">
+  <form action= "<%= recipe_searches_path %>" method="get">
+    <label for="search" class="pl-5"></label>
+    <input id="search" name="q" type="text" placeholder="I want a recipe for..." maxlength= 50 autocomplete= "off" spellcheck="false">
     <input id="search_submit" value="Submit" type="submit">
   </form>
 </div>

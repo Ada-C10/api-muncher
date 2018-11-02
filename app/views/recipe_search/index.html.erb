@@ -1,18 +1,18 @@
-<div id="wrap">
-  <form action= "<%= recipe_searches_path %>" method="get" autocomplete="on">
-    <input id="search" name="q" type="text" placeholder="I want a recipe for...">
+<div id="wrap" class="mt-0">
+  <form action= "<%= recipe_searches_path %>" method="get">
+    <label for="search"></label>
+    <input id="search" name="q" type="text" placeholder="I want a recipe for..." maxlength= 50 autocomplete="off" spellcheck="false">
     <input id="search_submit" value="Submit" type="submit">
   </form>
 </div>
-<br>
-<br>
-<br>
+<% if @recipes.any? %>
+  <h1 class="section-title">Search: <%= @query %></h1>
+<% end %>
 
 
-<section id="team" class="pb-5">
+<section id="team" class="pb-5 pt-0">
   <div class="container">
-    <h5 class="section-title h1">Search: <%= @query %></h5>
-    <% if @recipes %>
+    <% if @recipes.any? %>
 
 
       <div class="munch_pagination">
@@ -58,6 +58,8 @@
 
     <% end %>
     </div>
+    <% else %>
+    <h5 class="no-result-title text-center mt-5 pt-5">No results.</h5>
     <% end %>
   </div>
 </section>
