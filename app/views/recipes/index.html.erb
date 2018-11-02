@@ -7,6 +7,7 @@
     <% if @recipes %>
       <% @recipes.each do |recipe| %>
         <li>
+          <%= image_tag(recipe.image, alt: "Recipe Image") %>
           <%= link_to recipe.label, recipe_path(params: {uri: recipe.uri, label: recipe.label}) %>
         </li>
       <% end %>

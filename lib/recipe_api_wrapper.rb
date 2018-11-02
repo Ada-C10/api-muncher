@@ -38,6 +38,7 @@ class RecipeApiWrapper
     return Recipe.new(
       recipe_api_params["recipe"]["label"],
       {
+        image: recipe_api_params["recipe"]["image"],
         uri: recipe_api_params["recipe"]["uri"]
       }
     )
