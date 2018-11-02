@@ -11,12 +11,11 @@ class EdamamApiWrapper
     url = BASE_URL + '?'+ query_type + '=' + URI.encode(query_string)+ '&app_id=' + EDAMAM_APP_ID + '&app_key=' + EDAMAM_APP_KEY
 
     response = HTTParty.get(url)
-
     if response.key? "hits"
       return_recipes(response)
-    elsif response.key? "uri"
+    elsif response[0].key? "uri"
 
-      return_single_recipe(response)
+      return_single_recipe(response[0])
 
     end
   end
@@ -25,7 +24,7 @@ class EdamamApiWrapper
 
   def self.return_single_recipe(api_params)
 
-    if api_params[0]
+    if api_params
       return Recipe.new( api_params["label"],
         {
           ingredients: api_params["ingredientLines"],
