@@ -13,6 +13,7 @@ describe EdamamApiWrapper do
         expect(recipe).must_respond_to :id
         expect(recipe).must_respond_to :ingredients
         expect(recipe).must_respond_to :dietary_info
+        expect(recipe).must_respond_to :recipe_link
       end
     end
   end
@@ -27,6 +28,7 @@ describe EdamamApiWrapper do
       expect(recipe).must_respond_to :id
       expect(recipe).must_respond_to :ingredients
       expect(recipe).must_respond_to :dietary_info
+      expect(recipe).must_respond_to :recipe_link
     end
   end
 
