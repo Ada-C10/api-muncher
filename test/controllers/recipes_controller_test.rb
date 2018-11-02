@@ -4,7 +4,7 @@ describe RecipesController do
 
   #should I test for home or root?
 
-  it "can get the root path" do
+  it "can get the root/home path" do
     VCR.use_cassette('show_rootpage_file') do
 
       get root_path
@@ -43,19 +43,5 @@ describe RecipesController do
       must_respond_with :bad_request
     end
   end
-
-  # it "can get the new message form" do
-  #   get chat_new_path("nodes-api-testing")
-  #
-  #   must_respond_with :ok
-  # end
-  #
-  # it "can send a message" do
-  #   VCR.use_cassette('send_message') do
-  #     post chat_create_path("nodes-api-testing"), params: {message: 'Happy Halloween'}
-  #
-  #     must_redirect_to root_path
-  #   end
-  # end
 
 end
