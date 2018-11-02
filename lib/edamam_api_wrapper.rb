@@ -22,6 +22,8 @@ class EdamamApiWrapper
       data["hits"].each do |recipe_data|
         recipe_list << create_recipe(recipe_data["recipe"])
       end
+    else
+      return []
     end
     return recipe_list
   end
@@ -37,7 +39,7 @@ class EdamamApiWrapper
     if data[0]
       recipe = self.create_recipe(data[0])
     else
-      return nil 
+      return nil
     end
     return recipe
   end
@@ -65,16 +67,3 @@ class EdamamApiWrapper
 
 
 end #end of class method
-
-#### delete everything under here
-# [1] pry(EdamamApiWrapper)> create_recipe(data["hits"][0]["recipe"])
-# => #<Recipe:0x007f9902d61f08
-#  @healthLabels=["Vegetarian", "Peanut-Free", "Tree-Nut-Free", "Alcohol-Free"],
-#  @image="https://www.edamam.com/web-img/bb2/bb221d581497fa559f5817ca1800ea65.jpg",
-#  @ingredients=
-#   [{"text"=>"1 ounce semisweet or bittersweet chocolate, per person", "weight"=>28.349523125, "foodCategory"=>"Pantry"},
-#    {"text"=>"1 tablespoon water, per person", "weight"=>14.786764781, "foodCategory"=>"Beverages"},
-#    {"text"=>"1 large egg, per person", "weight"=>50.0, "foodCategory"=>"Dairy"}],
-#  @label="Chocolate Mousse",
-#  @uri="http://www.edamam.com/ontologies/edamam.owl#recipe_7543ecfa28b7506a97360748f017a83e",
-#  @url="http://leitesculinaria.com/74504/recipes-chocolate-mousse.html">
