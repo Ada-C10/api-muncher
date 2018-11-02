@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
-@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
 
 // search bar
 
@@ -19,6 +18,15 @@ body {
   padding: 0;
 	position: relative;
 	background: #eee;
+}
+
+#wrap label {
+	width: 800px;
+	height: 300px;
+	cursor: pointer;
+	position: absolute;
+	top: -50px;
+	right: -100px;
 }
 
 input[type="text"] {
@@ -99,10 +107,8 @@ section {
     padding: 60px 0;
 }
 
-section .section-title {
-    text-align: center;
+.section-title {
     color: #007b5e;
-    text-transform: uppercase;
 }
 
 #team .card {
