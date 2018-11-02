@@ -1,1 +1,14 @@
 <strong>THIS IS THE INDEX</strong>
+
+<h1>List of recipies</h1>
+
+<% if @recipies %>
+<ul>
+  <% @recipies.each do |recipe| %>
+  <li>
+    <%= image_tag("#{recipe.image}", :alt => 'recipe-img', :class => 'image-tag') %>
+    <%= recipe.label %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
