@@ -5,13 +5,10 @@
 
       <% @recipes.each do |recipe| %>
         <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src= <%= "#{recipe.image}" %> alt="Card image cap">
+          <img class="card-img-top" src= <%= "#{recipe.image}"%> alt="#{recipe.name}">
           <div class="card-body">
             <h5 class="card-title"> <%= "#{recipe.name}" %> </h5>
-            <!-- Use uri in place of id? Does this work? -->
-            <!-- <%# link_to "See Recipe", recipe_path(:uri => recipe.uri), class: "btn btn-primary" #%> -->
             <%= link_to "See Recipe", recipe_path( recipe.id ), class: "btn btn-primary"  %>
-            <!-- <a href="#{recipe.uid}" class="btn btn-primary"><% "See Recipe" %></a> -->
           </div>
         </div>
 

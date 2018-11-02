@@ -1,1 +1,24 @@
-<h1>Show Here</h1>
+<div class="container" id="recipe_information_wrapper">
+  <section id="recipe_information">
+
+    <section id="recipe_information">
+      <h1><%= @name %></h1>
+      <h2><%= "Recipe by: #{@creator}" %></h2>
+      <img class="card-img-top" src= <%= "#{@photo}"%> alt="#{recipe.name}">
+    </section>
+
+
+
+    <section id="ingredients_container">
+      <h3><%= "Ingredients" %></h3>
+      <ul id="ingredient_list">
+        <% @ingredients.each do |ingredient| %>
+          <li class="list-group-item">
+            <%= ingredient %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+
+
+</div>

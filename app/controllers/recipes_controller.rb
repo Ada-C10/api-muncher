@@ -6,12 +6,13 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = EdamamApiWrapper.list_recipe(params["id"])
-    @name = @recipe[0]["label"]
-    @ingredients = @recipe[0]["ingredients"]
-    @dietLabels = @recipe[0]["dietLabels"]
-    @photo = @recipe[0]["image"]
-    @creator = @recipe[0]["sources"]
+    @recipe = EdamamApiWrapper.list_recipe(params["id"])[0]
+    @name = @recipe["label"]
+    @ingredients = @recipe["ingredients"]
+    @dietLabels = @recipe["dietLabels"]
+    @photo = @recipe["image"]
+    @creator = @recipe["source"]
+    # binding.pry
   end
 
 end
