@@ -14,18 +14,19 @@ class EdamamApiWrapper
     response = HTTParty.get(encoded_url)
 
     recipe_list = []
-    # if (response.status === 200)
-    if response
-      index = 0
-      while index < response["hits"].length do
-        single_recipe = response["hits"][index]["recipe"]
-        recipe_list << create_recipe(single_recipe)
-        index += 1
-      end
-      return recipe_list
 
+    # An HTTParty response object returns a code (status). Edamam will return either a 200, 404, or 401 status code with the HTTParty response. This status code travels with the HTTParty response object, it is not within the JSON data that is returned with the api call.
+    if response.code == 200
+        index = 0
+        while index < response["hits"].length do
+          single_recipe = response["hits"][index]["recipe"]
+          recipe_list << create_recipe(single_recipe)
+          index += 1
+        end
+        return recipe_list
+    elsif response.code == 401 || response.code == 404
+      return nil
     else
-      flash[:error] = "/'#{search_term}/' could not be found. Please try again!"
       return nil
     end
 

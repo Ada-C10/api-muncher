@@ -1,10 +1,9 @@
 <section>
   <h2>Results for "<%= @food_to_search %>"</h2>
   <% @matching_recipes.each do |recipe| %>
-    <div class="results">
+    <div id="easyPaginate">
       <img src="<%= recipe.image %> " alt="<%= recipe.label %>" class = "results_pic"><br>
       <%= link_to recipe.label, recipe_path(recipe.id) %>
-
     </div>
   <% end %>
 </section>
