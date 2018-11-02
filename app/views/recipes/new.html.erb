@@ -1,8 +1,9 @@
 <strong>THIS IS THE HOMEPAGE</strong>
 
- <%= form_tag recipes_path, method: :post do%>
- <%= label_tag(:word, "Search")%>
- <%= text_field_tag(:word)%>
- <%= submit_tag("Submit")%>
+ <%= form_with url: recipes_path, method: :post do |f| %>
+ <%= f.label(:word, "Search")%>
+ <%= hidden_field_tag :os, :value => :word %>
+ <%= f.text_field(:word)%>
+ <%= f.submit("Submit")%>
 
  <% end %>

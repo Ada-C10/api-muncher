@@ -1,14 +1,19 @@
-<strong>THIS IS THE INDEX</strong>
+<section>
+<div id="home-container">
+  <h2 class="title-page">List of Recipes</h2>
 
-<h1>List of recipies</h1>
-
-<% if @recipies %>
-<ul>
-  <% @recipies.each do |recipe| %>
-  <li>
-    <%= image_tag("#{recipe.image}", :alt => 'recipe-img', :class => 'image-tag') %>
-    <%= recipe.label %>
-  </li>
-  <% end %>
-</ul>
-<% end %>
+  <div class="flex-container">
+    <% if @recipies %>
+      <% @recipies.each do |recipe| %>
+        <div class="card">
+          <%= image_tag("#{recipe.image}", :alt => 'recipe-img', :class => 'image-tag') %>
+          <div class="card-body">
+            <%= recipe.label %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= will_paginate @recipies, class: "pagination" %>
+</div>
+</section>
