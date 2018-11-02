@@ -1,30 +1,37 @@
-<h2> <%= link_to @recipe.label, @recipe.url , target: "_blank" %></h2>
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">MUNCHER</a>
+  <div class="nav app-header__user-nav-container right-items">
+    <%= form_tag recipes_path, method: :get do %>
+      <%= label_tag(:query, "Feel inspired, search again?", class: "label_tag") %>
+      <%= text_field_tag(:query) %>
+      <%= submit_tag "Search", class: "btn btn-outline-warning btn-rounded btn-sm my-0" %>
+      <% end %>
+    </div>
+</nav>
 
-<section class="container">
-  <h3 class="user-votes__header">Ingredients</h3>
 
-  <div>
-    <%=image_tag(@recipe.image, alt: @recipe.label)%>
-    <div>
+<h2 id="show_title"> <%= link_to @recipe.label, @recipe.url , target: "_blank" %></h2>
 
-      <div>
+<div id="show_center"
+  <div class="image_show">
+    <%=image_tag(@recipe.image, alt: @recipe.label )%>
+    <h4>Diet Restrictions:</h4>
+          <ol>
+            <% @recipe.health.each do |health| %>
+            <li><%= health %></li>
+              <%end%>
+            </ol>
+          </div>
 
+
+      <div class="ingredients_list">
+        <h2> Ingredients </h2>
         <ol>
           <% @recipe.ingredients.each do |ingredient| %>
           <li><%= ingredient %></li>
           <%end%>
         </ol>
-
       </div>
+    </div>
 
-
-
-      <div>
-
-        <ol>
-          <% @recipe.health.each do |health| %>
-          <li><%= health %></li>
-            <%end%>
-          </ol>
-
-        </div>
+  </div>
