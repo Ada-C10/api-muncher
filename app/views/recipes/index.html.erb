@@ -2,17 +2,18 @@
 
 <section class="recipes-list">
   <h1>Results for <%= "#{@food_search.upcase}" %></h1>
-  <% if @recipes %>
-    <ul>
+
+  <ul>
+    <% if @recipes %>
       <% @recipes.each do |recipe| %>
         <li>
           <%= recipe.label %>
         </li>
       <% end %>
-    <% else %>
-      <p>
-        No recipes match <%= "#{@food_search}" %>
-      </p>
-    </ul>
+  </ul>
+  <% else %>
+    <p>
+      No recipes match <%= "#{@food_search}" %>
+    </p>
   <% end %>
 </section>
