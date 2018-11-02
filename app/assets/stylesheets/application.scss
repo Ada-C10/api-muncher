@@ -1,4 +1,6 @@
 /*
+font-family: 'Shrikhand', cursive;
+font-family: 'Roboto', sans-serif;
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -16,3 +18,35 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+
+body{
+  font-family: 'Shrikhand', cursive;
+}
+
+ #munch{
+  color: white;
+  font-size: 7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3{
+  color: white;
+  text-align: center
+}
+
+footer{
+  text-align: center;
+  padding-top: 25em
+}
+
+#search{
+
+  background-image: url("foodiesfeed.com_summer-barbeque-feast.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
