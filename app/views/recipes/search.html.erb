@@ -2,5 +2,8 @@
 <h1> MUNCHER </h1>
 <h2> Find your flavor... </h2>
 
-<%= render partial: "layouts/search_bar" %>
+<%= form_tag recipe_results_path, method: "get" do %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Search") %>
+<% end %>
 </section>

@@ -1,6 +1,7 @@
-<section>
-<%= form_tag recipe_results_path, method: "get" do %>
+<section class="search-bar">
+  <h1> MUNCHER </h1>
+  <%= form_tag recipe_results_path, method: "get" do %>
   <%= text_field_tag(:query) %>
   <%= submit_tag("Search") %>
-<% end %>
+  <% end %>
 </section>

@@ -25,11 +25,12 @@ html {
 body {
   min-height: 100%;
   display: grid;
-  grid-template-rows: 95% 5%;
+  grid-template-rows: auto 3rem;
 }
 
-main {
-  background-color: rgb(176, 255, 163);
+.section-body {
+  background-color: white;
+  padding: 0 5% 0 5%;
 }
 
 footer {

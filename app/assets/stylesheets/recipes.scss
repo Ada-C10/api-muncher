@@ -6,3 +6,31 @@
   text-align: center;
   padding: 5% 0 0 0;
 }
+
+.search-bar {
+  padding: 1% 0 3% 0;
+  text-align: center;
+  background-color: rgb(176, 255, 163);
+}
+
+.results h2 {
+  padding: 1%;
+  text-align: center;
+}
+
+.results ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.results li {
+  list-style-type: none;
+  text-align: center;
+}
+.results img {
+  border-radius: 3rem;
+  border-color: rgb(9, 79, 9);
+  border-style: solid;
+}

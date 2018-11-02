@@ -1,3 +1,6 @@
+<%= render partial: "layouts/search_bar" %>
+
+<section class="section-body results">
 <h2> Results for "<%= @query %>"</h2>
 
 
@@ -11,10 +14,11 @@
 
       <%= form_tag recipe_path(recipe.name), method: "get" do %>
         <%= hidden_field_tag(:uri, recipe.uri ) %>
-        <%= submit_tag(recipe.name) %>
+        <%= submit_tag(recipe.name, {class: 'recipe-link btn btn-link'}) %>
       <% end %>
     </li>
   <% end %>
   </ul>
   <%= will_paginate @recipes %>
 <% end %>
+</section>
