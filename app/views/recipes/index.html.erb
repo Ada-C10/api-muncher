@@ -1,2 +1,17 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<h1> Results for "<%= @query %>"</h1>
+<div class="">
+
+  <section class="recipes-list">
+    <% if @recipes %>
+    <ul>
+      <% @recipes.each do |recipe| %>
+      <li>
+        <%= image_tag(recipe.image) %>
+        <%= link_to recipe.label, recipe_path(recipe.uri), class: "single-recipe" %>
+      </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <% end %>
+</div>
