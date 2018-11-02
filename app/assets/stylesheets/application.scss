@@ -28,14 +28,20 @@ body {
   grid-template-rows: auto 3rem;
 }
 
-.section-body {
-  background-color: white;
-  padding: 0 5% 0 5%;
+main {
+  background-color: rgb(176, 255, 163);
 }
 
 footer {
   background-color: rgb(29, 181, 76);
 }
+
+.section-body {
+  background-color: white;
+  padding: 0 5% 0 5%;
+  height: 100%;
+}
+
 
 #edamam-badge {
   text-align: center;
