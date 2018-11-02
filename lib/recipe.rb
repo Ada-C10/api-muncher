@@ -7,14 +7,10 @@ class Recipe
   def initialize(args, options = {})
     @valid = true
 
-    begin
-      REQUIRED_ARGS.each do |attr|
-        if args[attr] == nil || args[attr] == ""
-          raise ArgumentError
-        end
+    REQUIRED_ARGS.each do |attr|
+      if args[attr] == nil || args[attr] == ""
+        return @valid = false
       end
-    rescue
-      return @valid = false
     end
 
     @label = args[:label]

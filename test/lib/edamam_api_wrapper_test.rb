@@ -45,7 +45,17 @@ describe EdamamApiWrapper do
         assert_nil(recipe)
       end
     end
+  end
 
+  describe 'self.list_tags' do
+    it 'returns a set union of health_labels that are all unique' do
+      VCR.use_cassette('recipe_queries') do
+        recipe_list = EdamamApiWrapper.list_recipes("bitter melon")
+        tags = EdamamApiWrapper.list_tags(recipe_list, :health_labels)
+        expect(tags).must_be_instance_of Array
+        expect(tags.size).must_equal tags.uniq.size
+      end
+    end
   end
 
 end

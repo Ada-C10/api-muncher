@@ -19,6 +19,13 @@
         <%= will_paginate @recipes, :previous_label => previous_label, :next_label => next_label %>
       </div>
 
+      <div class="filters">
+        <ul>
+        <% @health_labels.each do |label| %>
+          <li><%= label %></li>
+        <% end %>
+        </ul>
+      </div>
 
       <div class="card-deck">
         <% @recipes.each do |recipe| %>
@@ -59,6 +66,8 @@
     <% end %>
     </div>
     <% else %>
+    <br>
+    <br>
     <h5 class="no-result-title text-center mt-5 pt-5">No results.</h5>
     <% end %>
   </div>

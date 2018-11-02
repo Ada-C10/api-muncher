@@ -9,12 +9,19 @@ describe RecipeSearchController do
   end
 
   describe 'index' do
-    it "should get index" do
+    it "should get index with a valid query" do
       VCR.use_cassette('list_recipes_file') do
-        get recipe_searches_path
+        get recipe_searches_path, params: {q: "SOME QueRY!993"}
         must_respond_with :success
       end
     end
+
+    # it "can handle a bogus query that looks like a uri" do
+    #   VCR.use_cassette('list_recipes_file') do
+    #     get recipe_searches_path, params: {q: "http://www.edamam.com/ontologies/edamam.owl#"}
+    #     must_respond_with :success
+    #   end
+    # end
   end
 
   describe 'show' do

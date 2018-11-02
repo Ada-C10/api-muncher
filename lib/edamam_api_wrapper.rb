@@ -32,6 +32,17 @@ class EdamamApiWrapper
     end
   end
 
+  def self.list_tags(recipe_list, kind_of_tag)
+    # Takes an array of recipes (recipe_list)
+    # Takes a symbol that recipe must respond to (kind_of_tag)
+    # Returns the set union of tags, removing all duplicates
+    tags = []
+    recipe_list.each do |recipe|
+      tags = tags | recipe.send(kind_of_tag)
+    end
+    return tags
+  end
+
   private
 
 # Concentrate all the logic that relies on the specific Edamam API data
