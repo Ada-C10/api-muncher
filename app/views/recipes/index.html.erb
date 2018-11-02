@@ -1,13 +1,13 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
-<h1>Recipes</h1>
-  <% if @recipes %>
-    <ul>
-      <% @recipes.each do |recipe| %>
-        <li>
 
-          <%= link_to recipe.label, show_path(recipe.uri) %>
-        </li>
+<h1>Search Results: <%= @search %> </h1>
+
+<div class="card-columns">
+  <% if @recipes %>
+      <% @recipes.each do |recipe| %>
+        <div class="card" style="width: 15rem">
+          <img src="<%= recipe.image %>" width="300" alt="<%= recipe.label %>" class="card-img-top">
+          <%= link_to "#{recipe.label}", show_path(recipe.uri) %>
+        </div>
       <% end %>
-    </ul>
   <% end %>
+</div>

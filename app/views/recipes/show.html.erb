@@ -1,8 +1,23 @@
 <h1><%= @recipe.label %></h1>
 
-
 <%=image_tag(@recipe.image)%>
 
+<ul>
+  Ingredients:
 <% @recipe.ingredients.each do |ingredient|%>
+<li>
 <%= ingredient %>
+</li>
 <% end %>
+</ul>
+
+<ul>
+  Health Information:
+<% @recipe.health.each do |health|%>
+<li>
+<%= health %>
+</li>
+<% end %>
+</ul>
+
+<a href="<%=@recipe.url%>" target="_blank">Check out the full recipe! </a>
