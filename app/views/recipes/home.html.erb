@@ -1,0 +1,15 @@
+<div class="home-page">
+  <h1><%= link_to "Muncher", root_path, class: "home" %></h1>
+  <section class="search">
+  <%= form_tag recipes_path(@query), class: "form-inline", method: "post" do %>
+    <div class="form-group">
+        <%= text_field_tag :user_search, nil, placeholder: "Search", class: 'form-control mr-3 form-width' %>
+        <%= button_tag( :class => "input-group-append btn-background") do %>
+        <span class="input-group-text btn-background" id="basic-text1">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+        <% end %>
+    <% end %>
+    </div>
+  </section>
+</div>

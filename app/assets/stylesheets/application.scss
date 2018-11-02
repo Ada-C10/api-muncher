@@ -25,6 +25,11 @@ body, html {
 a:link {
   text-decoration: none;
   font-family: 'Comfortaa', cursive;
+  color: #748386;
+}
+
+.page-item {
+  color: #748386;
 }
 
 .home {
@@ -132,4 +137,42 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.home-page {
+  padding-top: 25%;
+  padding-bottom: 30%;
+  background-color: #748386;
+}
+
+.form-inline .form-control {
+  width: 400px;
+}
+
+.search {
+  padding-left: 60px;
+  padding-top: 20px;
+}
+
+.btn-background {
+  background-color: #748386;
+  border-color: #748386;
+}
+
+.pagination {
+  padding-top: 3%;
+}
+
+.page-item.active .page-link {
+  background-color: #748386;
+  color: white;
+  border-color: #748386;
+}
+
+.page-item.active a:hover {
+  color: white;
+}
+
+.page-item .page-link {
+  color: #748386;
 }

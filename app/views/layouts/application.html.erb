@@ -12,17 +12,6 @@
   </head>
 
   <body>
-    <div class="greeting">
-      <h1><%= link_to "Muncher", root_path, class: "home" %></h1>
-      <section class="search">
-      <%= form_tag recipes_path(@query), class: "form-inline", method: "post" do %>
-        <div class="form-group">
-            <%= text_field_tag :user_search, nil, placeholder: "Search", class: 'form-control mr-3 w-75' %>
-            <i class="fa fa-search" aria-hidden="true"></i>
-        <% end %>
-        </div>
-      </section>
-    </div>
 
     <%= yield %>
     <footer>
