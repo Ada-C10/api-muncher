@@ -4,9 +4,10 @@ class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search"
   TOKEN = ENV["app_key"]
   ID = ENV["app_id"]
+  NUM = 50
 
   def self.list_recipes(word)
-    url = BASE_URL + "?app_id=#{ID}" + "&app_key=#{TOKEN}" + "&q=#{word}"
+    url = BASE_URL + "?app_id=#{ID}" + "&app_key=#{TOKEN}" + "&q=#{word}" + "&to=#{NUM}"
     url = URI.encode(url)
 
     data = HTTParty.get(url)
