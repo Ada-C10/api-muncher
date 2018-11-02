@@ -9,36 +9,30 @@ class EdamamApiWrapper
     url = BASE_URL + "?" + "app_id=#{ID}" + "&app_key=#{KEY}" + "&q=#{query}"
     #if doesn't work - change & to be included in string before it
 
-    data = HTTParty.get(url)
+    encoded_url = URI.encode(url)
+    response = HTTParty.get(encoded_url)
 
-    search_list = []
+    recipe_list = []
 
-    if data["hits"]
-      data["hits"].each do |query_data|
-        search_list << create_result_list(query_data)
+    if response["hits"]
+      response["hits"].each do |hit|
+        recipe_list << create_recipe(hit)
+
       end
     end
-
     return search_list
   end
 
   private
 
-  def self.create_result_list(api_params)
+  def self.create_recipe(api_params)
     return Recipe.new(
-<<<<<<< HEAD
       {
-        label: api_params["label"],
-        image: api_params["label"],
-        url: api_params["url"],
-=======
-      api_params["label"],
-      api_params["image"],
-      api_params["url"],
-      {
->>>>>>> 273789d7df17bf7c77e9864cfca23e94f8566734
-        ingredientLines: api_params["ingredientLines"],
-        healthLabels: api_params["healthLabels"]
+        label: api_params["recipe"]["label"],
+        image: api_params["recipe"]["label"],
+        url: api_params["recipe"]["url"],
+        ingredientLines: api_params["recipe"]["ingredientLines"],
+        healthLabels: api_params["recipe"]["healthLabels"]
       }
     )
   end
