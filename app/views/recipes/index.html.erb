@@ -2,7 +2,6 @@
   <h1><%= "Recipes for #{params["search_terms"].capitalize}" %></h1>
   <% if @recipes %>
   <div class="recipe_container">
-
       <% @recipes.each do |recipe| %>
         <div class="card" style="width: 18rem;">
           <img class="card-img-top" src= <%= "#{recipe.image}"%> alt="#{recipe.name}">
@@ -11,8 +10,6 @@
             <%= link_to "See Recipe", recipe_path( recipe.id ), class: "btn btn-primary"  %>
           </div>
         </div>
-
-          <div class="card" style="width: 18rem;">
         <% end %>
     </div>
 

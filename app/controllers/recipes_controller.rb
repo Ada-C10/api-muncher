@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
 
   def index
-    # Params not making it here...
     @recipes = EdamamApiWrapper.list_recipes(params["search_terms"])
+    # @test = Recipe.paginate(page: params[:page], per_page: 10)
   end
 
   def show
