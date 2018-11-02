@@ -5,7 +5,8 @@ class RecipeSearchController < ApplicationController
   def index
     @query = params[:q].downcase
     @recipes = EdamamApiWrapper.list_recipes(@query).paginate(:page => params[:page], :per_page => 6)
-
+    @health_labels = EdamamApiWrapper.list_tags(@recipes, :health_labels)
+#TODO: put this back before production
     # begin
     #   @recipes = EdamamApiWrapper.list_recipes(@query).paginate(:page => params[:page], :per_page => 6)
     # rescue
