@@ -25,7 +25,7 @@ class ApiMuncherWrapper
     data = HTTParty.get(url).parsed_response
 
     if data[0]
-        result = Recipe.new(data[0]["label"], data[0]["uri"],data[0]["ingredients"],data[0]["totalNutrients"])
+        result = Recipe.new(data[0]["label"], data[0]["uri"],data[0]["ingredients"],data[0]["totalNutrients"],data[0]["image"], data[0]["url"] )
 
     end
     return result
@@ -36,7 +36,7 @@ class ApiMuncherWrapper
   def self.create_recipe(recipe_data)
 
     return Recipe.new(
-      recipe_data["recipe"]["label"],recipe_data["recipe"]["uri"],recipe_data["recipe"]["ingredients"],recipe_data["recipe"]["totalNutrients"]
+      recipe_data["recipe"]["label"],recipe_data["recipe"]["uri"],recipe_data["recipe"]["ingredients"],recipe_data["recipe"]["totalNutrients"], recipe_data["recipe"]["image"],recipe_data["recipe"]["url"]
 
     )
   end
