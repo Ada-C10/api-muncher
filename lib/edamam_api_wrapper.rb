@@ -23,8 +23,10 @@ class EdamamApiWrapper
   end
 
   def self.create_recipe(api_params)
+    parsed_uri = api_params["uri"].split("_")[1]
+
     return Recipe.new(
-      uri: api_params["uri"],
+      uri: parsed_uri,
       name: api_params["label"],
       creator: api_params["source"],
       image: api_params["image"],
@@ -35,9 +37,8 @@ class EdamamApiWrapper
   end
 
   def self.find_recipe(uri)
-    parsed_uri = uri.split("_")[1]
 
-    url = BASE_URL + "app_id=#{APP_ID}" + "&app_key=#{TOKEN}" + "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{parsed_uri}"
+    url = BASE_URL + "app_id=#{APP_ID}" + "&app_key=#{TOKEN}" + "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{uri}"
     data = HTTParty.get(url)
 
     if data

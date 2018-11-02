@@ -10,17 +10,15 @@ class RecipesController < ApplicationController
       flash[:warning] = "No recipes found for #{@food}"
       redirect root, status: :not_found
     end
-
   end
 
   def show
-    @uri = params[:uri]
+    uri = params[:uri]
     @recipe = EdamamApiWrapper.find_recipe(uri)
 
     if @recipe.nil?
       render :notfound, status: :not_found
     end
-
   end
 
 end

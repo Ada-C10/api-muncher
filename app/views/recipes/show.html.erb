@@ -1,7 +1,7 @@
 <h1>Recipe Show Page</h1>
 
 <h2><%= @recipe.name %></h2>
-<p>by</p> <%= @recipe.creator %>
+<p>by</p><%= @recipe.creator %>
 
 <h3>Ingredients</<h3>
 <ul>
@@ -14,7 +14,7 @@
 
 <h3>Dietary Labels</h3>
 <ul>
-  <%= @recipe.dietary_labels.each do |label| %>
+  <% @recipe.dietary_labels.each do |label| %>
     <li><%= label %></li>
   <% end %>
 </ul>
