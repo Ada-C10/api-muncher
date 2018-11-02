@@ -36,6 +36,12 @@ footer {
   background-color: rgb(29, 181, 76);
 }
 
+img {
+  border-radius: 3rem;
+  border-color: rgb(9, 79, 9);
+  border-style: solid;
+}
+
 .section-body {
   background-color: white;
   padding: 0 5% 0 5%;
@@ -45,4 +51,18 @@ footer {
 
 #edamam-badge {
   text-align: center;
+}
+
+.muncher-link {
+  color: black;
+  text-decoration: none;
+}
+
+.muncher-link:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.muncher-link {
+  font-size: 2rem;
 }
