@@ -9,7 +9,7 @@ class EdamamApiWrapper
 
 
   def self.list_recipes(ingredients)
-  url = BASE_URL + "search?" + "app_id=#{ID}&app_key=#{KEY}"
+  url = BASE_URL + "search?" + "app_id=#{ID}&app_key=#{KEY}" + "&to=30"
 
   data = HTTParty.post(url,
 

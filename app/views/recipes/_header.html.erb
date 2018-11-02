@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <%=  link_to "Muncher Home", root_path %>
+  <%= form_tag recipes_path, method: :get do %>
+    <%= label_tag %>
+    <%= text_field_tag :label %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+
+</nav>
