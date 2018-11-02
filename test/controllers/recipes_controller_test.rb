@@ -16,7 +16,8 @@ describe RecipesController do
   it "can get the index path " do
     VCR.use_cassette('list_recipes_file') do
 
-      get search_path
+#come back to this 
+      get search_path(search_term: "chocolate roll")
 
       must_respond_with :ok
     end
