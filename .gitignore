@@ -28,3 +28,6 @@
 
 # Environment file for all my secrets
 .env
+
+# SimpleCov
+/coverage/*

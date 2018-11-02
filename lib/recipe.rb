@@ -1,9 +1,18 @@
 class Recipe
-  attr_reader :label, :recipe_uri, :source, :source_uri, :ingredient_lines, :image_uri, :recipe_yield, :total_time, :health_labels
+  attr_reader :label, :recipe_uri, :source, :source_uri, :ingredient_lines,
+              :image_uri, :recipe_yield, :total_time, :health_labels
 
   def initialize(args, options = {})
-    args.each do |key, value|
-      raise ArgumentError if value == nil || value == ""
+    @valid = true
+
+    begin
+      args.each do |key, value|
+        if value == nil || value == ""
+          raise ArgumentError
+        end
+      end
+    rescue
+      return @valid = false
     end
 
     @label = args[:label]
@@ -16,5 +25,9 @@ class Recipe
     @recipe_yield = options[:recipe_yield]
     @total_time = options[:total_time]
     @health_labels = options[:health_labels]
+  end
+
+  def valid?
+    return @valid
   end
 end

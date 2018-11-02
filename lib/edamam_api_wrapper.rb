@@ -13,7 +13,10 @@ class EdamamApiWrapper
     recipe_list = []
     if data["hits"]
       data["hits"].each do |hit_data|
-        recipe_list << build_recipe(hit_data["recipe"])
+        recipe = build_recipe(hit_data["recipe"])
+        if recipe.valid?
+          recipe_list << recipe
+        end
       end
     end
     return recipe_list
@@ -49,7 +52,6 @@ class EdamamApiWrapper
       options[:health_labels] = api_params["healthLabels"]
 
     return Recipe.new(args, options)
-    # TODO: handle exception
   end
 
 end

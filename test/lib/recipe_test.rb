@@ -3,14 +3,13 @@ require 'test_helper'
 describe Recipe do
 
   describe 'initialize' do
-    it 'raises ArgumentError if any args are nil or empty' do
+    it 'responds to .valid? and returns false if any required args are nil or empty' do
       invalid_args = {key1: nil, key2: "", key3: []}
       invalid_args.each_pair do |pair|
-        expect {
-          Recipe.new(pair)
-        }.must_raise ArgumentError
+        recipe = Recipe.new(pair)
+        expect(recipe).must_respond_to .valid?
+        expect(recipe.valid?).must_equal false
       end
-
     end
 
     it 'can be created with valid arguments' do

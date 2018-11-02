@@ -1,4 +1,8 @@
+require 'simplecov'
+SimpleCov.start
+
 ENV["RAILS_ENV"] = "test" # what's this?
+
 
 RECIPE_VALID_ATTRS = [:label, :recipe_uri, :source, :source_uri, :ingredient_lines]
 RECIPE_VALID_VALUES = ["some recipe", "http://recipe_uri", "source", "http://source_uri", ["ingredients"]]
