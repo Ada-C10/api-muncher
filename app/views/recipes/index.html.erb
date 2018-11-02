@@ -12,9 +12,15 @@
   <% if @recipes %>
     <ul>
       <% @recipes.each do |recipe| %>
-        <li>
-          <%= link_to recipe.label, recipe_path(recipe.uri)%>
-        </li>
+        <p>
+          <%= recipe.label%>
+        </p>
+        <p>
+          <%= link_to "view recipe details", recipe_path(recipe.uri)%>
+        </p>
+        <p>
+          <%= image_tag(recipe.image)%>
+        </p>
       <% end %>
     </ul>
   <% end %>
