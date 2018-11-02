@@ -1,4 +1,9 @@
 
+<%if @recipes.empty? %>
+  <%= "We're sorry we could night find any recipes for '#{@search}'" %>
+
+<% else %>
+
 <section class="recipes-list">
   <h1>Recipes for <%= "#{@search}" %></h1>
   <% if @recipes %>
@@ -13,10 +18,9 @@
 </section>
 
 
-<div class="card-deck">
+<div class="card-columns">
 <% @recipes.each do |recipe| %>
   <div class="card">
-
     <%=image_tag(recipe.image, class:"card-img-top", alt: "#{recipe.label}")%>
     <div class="card-body">
       <h5 class="card-title"><%= link_to recipe.label, recipe_path(recipe.id)%></h5>
@@ -31,3 +35,8 @@
 
 <% end %>
 </div>
+<aside class="page-index">
+  <%= paginate @recipes %>
+</aside>
+
+<% end %>

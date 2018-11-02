@@ -11,7 +11,7 @@ class EdamamApiWrapper
 
 
   def self.list_recipes(ingredients)
-    url = BASE_URL + "search?" + "app_id=#{ID}" + "&app_key=#{KEY}"
+    url = BASE_URL + "search?" + "app_id=#{ID}" + "&app_key=#{KEY}" + "&to=100" + "&to=100"
 
     data = HTTParty.post(url,
       body:  {
@@ -34,7 +34,7 @@ class EdamamApiWrapper
     url = BASE_URL + "search?" + "app_id=#{ID}" + "&app_key=#{KEY}" + "&r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{recipe_id}"
 
     data = HTTParty.get(url)
-    
+
     if data.empty?
       return data.parsed_response
     else
