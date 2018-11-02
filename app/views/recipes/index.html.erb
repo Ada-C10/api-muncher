@@ -7,7 +7,7 @@
     <% if @recipes %>
       <% @recipes.each do |recipe| %>
         <li>
-          <%= link_to recipe.label, recipe_path(recipe.uri) %>
+          <%= link_to recipe.label, recipe_path(params: {uri: recipe.uri, label: recipe.label}) %>
         </li>
       <% end %>
   </ul>

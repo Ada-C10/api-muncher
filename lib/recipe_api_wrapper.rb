@@ -25,7 +25,9 @@ class RecipeApiWrapper
   def self.show_recipe_detail(uri)
     recipe_uri = "#{BASE_URL}/search?r=#{uri}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
 
-    recipe = HTTParty.get(recipe_uri)
+    encoded_recipe_uri = URI.encode(recipe_uri)
+
+    recipe = HTTParty.get(encoded_recipe_uri)
     recipe_detail = create_recipe_detail(recipe)
     return recipe_detail
   end
