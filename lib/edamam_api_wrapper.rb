@@ -34,6 +34,7 @@ class EdamamApiWrapper
     input_hash = {}
     input_hash[:label] = recipe["label"]
     input_hash[:image] = recipe["image"]
+    input_hash[:source] = recipe["source"]
     input_hash[:url] = recipe["url"]
 
     input_hash[:id] = parse_recipe_id(recipe["uri"])

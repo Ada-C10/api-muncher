@@ -1,3 +1,29 @@
-<section>
+<article>
   <h2><%= @specific_recipe.label %></h2>
-</section>
+  <p>by <%= @specific_recipe.source %></p>
+  <img src="<%= @specific_recipe.image %>" alt="<%= @specific_recipe.label %>">
+
+  <section>
+    <h3>Ingredients</h3>
+    <ul>
+      <% @specific_recipe.ingredientLines.each do |ingredient| %>
+        <li>
+          <%= ingredient %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+  <section>
+    <h3>Dietary Labels</h3>
+
+
+    <ul>
+      <% @specific_recipe.healthLabels.each do |label| %>
+        <li><%= label %></li>
+      <% end %>
+      <% @specific_recipe.dietLabels.each do |label| %>
+        <li><%= label %></li>
+      <% end %>
+    </ul>
+  </section>
+</article>
