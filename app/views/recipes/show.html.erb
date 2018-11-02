@@ -1,0 +1,31 @@
+<%= render partial: "header_search" %>
+
+<section>
+  <h2>
+    <%= "#{@recipe.label}" %>
+    <span>by<%= "#{@recipe.source}" %></span>
+  </h2>
+</section>
+
+<section>
+  <%= image_tag(@recipe.image) %>
+  <h3>Ingredients</h3>
+  <ul>
+  <% @recipe.ingredients.each do |ingredient|%>
+    <li>
+      <%= ingredient %>
+    </li>
+  <% end %>
+  </ul>
+</section>
+
+<section>
+  <h3>Dietary Labels</h3>
+    <ul>
+      <% @recipe.diet.each do |diet_label|%>
+      <li>
+        <%= diet_label %>
+      </li>
+      <% end %>
+    </ul>
+</section>

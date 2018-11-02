@@ -1,5 +1,5 @@
 <header>
-  <h1>MUNCHER</h1>
+  <h1><%= link_to "MUNCHER", root_path %></h1>
   <section>
     <%= form_tag(recipe_list_path, method: :get) do %>
       <%= label_tag(:food_search, "Find your flavor...") %>

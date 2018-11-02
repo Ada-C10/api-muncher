@@ -29,4 +29,15 @@ describe RecipesController do
       end
     end
   end
+
+  describe "show" do
+    it "will display a recipe given a valid uri" do
+      VCR.use_cassette("show_recipes") do
+        get recipe_path, params: {uri: "http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_7bf4a371c6884d809682a72808da7dc2"}
+        must_respond_with :success
+      end
+
+    end
+
+  end
 end
