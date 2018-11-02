@@ -4,7 +4,11 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe =  EdamamApiWrapper.find_recipe(params[:id])
+    if @recipe.nil?
+      redirect_to recipes_path
+    else
+      @recipe =  EdamamApiWrapper.find_recipe(params[:id])
+    end
   end
 
   def new

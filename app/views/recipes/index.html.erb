@@ -10,11 +10,12 @@
     </div>
 </nav>
 
+<body id="show_form">
 
-  <h1>Your Food Journey</h1>
+  <h1 id="recipe_results">Your Recipe Results</h1>
 
   <% if @recipes.empty? %>
-  <div class="center-screen">
+  <div class="center_nil">
   <p>Looks like there were no results for your search. Discover something scrumptious and search again.</p>
   </div>
 <% else %>
@@ -49,3 +50,5 @@
     </div>
   </div>
 </div>
+
+</body>

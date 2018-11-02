@@ -7,14 +7,17 @@
 );
 }
 
-#show_page {
-  background-size: cover;
-  background-image: url(https://www.readersdigest.ca/wp-content/uploads/sites/14/2017/10/speed-up-your-metabolism-spice-it-up.jpg
-);
+.center_nil {
+  color: black;
+  text-align: center;
 }
 
-.container_show {
-  background-color: white;
+p > .btn {
+  color: black;
+}
+
+.label_tag_show {
+  color: black;
 }
 
 .center-screen {
@@ -30,6 +33,9 @@
   color: white;
 }
 
+.product-image6 {
+  border: lightgrey solid 1px;
+}
 
 .product-grid6,.product-grid6 .product-image6{overflow:hidden}
 .product-grid6{font-family:'Open Sans',sans-serif;text-align:center;position:relative;transition:all .5s ease 0s}
@@ -143,19 +149,27 @@
 #show_title {
   text-align: center;
   padding-top: 30px;
-  padding-bottom: 20px;
+  font-family: 'Satisfy', cursive;
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+#sub {
+  text-align: center;
+  padding-bottom: 10px;
+  font-family: 'Satisfy', cursive;
 }
 
 #show_title > a {
   list-style: none;
   text-decoration: none;
-  color: coral;
+  color: teal;
 }
 
 #show_title > a:hover {
   list-style: none;
   text-decoration: none;
-  color: teal;
+  color: #FF4040;
 }
 
 #health_list {
@@ -163,5 +177,29 @@
 }
 
 #show_center {
-  align-content: center;
+  background-color: white;
+}
+
+#diet {
+  background-color: powderblue;
+  padding-bottom: 3px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+
+//######### index PAGE
+#recipe_results {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Satisfy', cursive;
+}
+
+.product-content {
+  background-color: white;
+}
+
+.social {
+  background-color: white;
 }

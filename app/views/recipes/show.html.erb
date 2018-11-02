@@ -10,28 +10,32 @@
 </nav>
 
 
-<h2 id="show_title"> <%= link_to @recipe.label, @recipe.url , target: "_blank" %></h2>
+<h2 id="show_title"><%= link_to @recipe.label, @recipe.url , target: "_blank" %></h2>
+<p id="sub">click the title to view the original ariticle</p>
 
 <div id="show_center"
   <div class="image_show">
     <%=image_tag(@recipe.image, alt: @recipe.label )%>
+    <div id="diet">
     <h4>Diet Restrictions:</h4>
-          <ol>
+          <ul>
             <% @recipe.health.each do |health| %>
             <li><%= health %></li>
               <%end%>
-            </ol>
+            </ul>
+          </div>
           </div>
 
 
       <div class="ingredients_list">
         <h2> Ingredients </h2>
-        <ol>
+        <ul>
           <% @recipe.ingredients.each do |ingredient| %>
           <li><%= ingredient %></li>
           <%end%>
-        </ol>
+        </ul>
       </div>
     </div>
 
   </div>
+</body>

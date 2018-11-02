@@ -44,5 +44,15 @@ describe RecipesController do
     must_respond_with :ok
   end
 
+  it "with redirect to the home page for an invalid uri" do
+    VCR.use_cassette('invalid_uri_file') do
+      id = "9b5945e03f0"
+
+      get recipes_path(id)
+      
+      value(response).must_be :successful?
+    end
+  end
+
 
 end
