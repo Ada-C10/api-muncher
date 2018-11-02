@@ -13,15 +13,9 @@ class EdamamApiWrapper
     # binding.pry
     if data["hits"]
       data["hits"].each do |hit_data|
-        # name = hit["recipe"]["label"]
-        # image = hit["recipe"]["image"]
-        # uri = hit["recipe"]["uri"]
         recipe_list << create_recipe(hit_data)
       end
-      # binding.pry
-      # recipe_list << Recipe.new(name, image, uri)
       return recipe_list
-
     else
       return []
     end
@@ -37,8 +31,6 @@ class EdamamApiWrapper
       name = data[0]["label"]
       image = data[0]["image"]
       uri = data[0]["uri"]
-      # ingredients = data[0]["ingredientLines"]
-      # dietary_info = data[0]["healthLabels"]
 
       Recipe.new(name, image, uri, {dietary_info: data[0]["healthLabels"], ingredients: data[0]["ingredientLines"], recipe_link: data[0]["url"] })
     else
