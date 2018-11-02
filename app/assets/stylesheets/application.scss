@@ -17,6 +17,16 @@
 /* Import scss content */
 @import "**/*";
 
+*, label, input {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+
 .recipe-finder {
   padding: 2rem;
   background-color: #C1C2C4;
