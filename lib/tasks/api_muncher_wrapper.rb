@@ -1,5 +1,6 @@
 require 'httparty'
 
+
 class ApiMuncherWrapper
 
   BASE_URL = "https://api.edamam.com/search"
@@ -8,7 +9,7 @@ class ApiMuncherWrapper
 
 
   def self.list_recipes
-    url = BASE_URL + "?q=tempeh" + "&app_id=#{APP_ID}" +  "&app_key=#{APP_KEY}"
+    url = BASE_URL + "?q=chicken" + "&app_id=#{APP_ID}" +  "&app_key=#{APP_KEY}"
 
     # "&exclude_archived=1"
 
@@ -33,6 +34,7 @@ private
 
         {
           image: api_params["image"],
+          url: api_params["url"]
 
         }
       )
