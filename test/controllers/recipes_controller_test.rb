@@ -6,6 +6,16 @@ describe RecipesController do
     value(response).must_be :success?
   end
 
+  it "should get new" do
+    get recipes_new_url
+    value(response).must_be :success?
+  end
+
+  it "should get create" do
+    get recipes_create_url
+    value(response).must_be :success?
+  end
+
   it "should get show" do
     get recipes_show_url
     value(response).must_be :success?
