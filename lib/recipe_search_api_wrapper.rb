@@ -9,12 +9,15 @@ class RecipeSearchApiWrapper
 
     url = BASE_URL + "?q=#{flavor}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
 
-    response = HTTParty.get(url)
+    first_response = HTTParty.get(url)
 
-    if response["hits"]
-      recipes = response["hits"].map { |recipe_hit| create_recipe(recipe_hit) }
+    if first_response["hits"]
+      if first_response["more"]
+        url += "&from=0&to=#{first_response["count"]}"
+        response = HTTParty.get(url)
+        recipes = response["hits"].map { |recipe_hit| create_recipe(recipe_hit) }
+      end
     end
-    # fail
 
     return recipes
 

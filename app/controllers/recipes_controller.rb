@@ -8,8 +8,8 @@ class RecipesController < ApplicationController
   def index
     if @valid_search
       flavor = params[:search]
-      @recipes = RecipeSearchApiWrapper.get_recipes(flavor)
-      # fail
+      recipes = RecipeSearchApiWrapper.get_recipes(flavor)
+      @recipes = recipes.paginate(:page => params[:page], :per_page => 10)
     end
   end
 
