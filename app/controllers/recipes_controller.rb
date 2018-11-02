@@ -6,13 +6,12 @@ class RecipesController < ApplicationController
     if @dish
       redirect_to list_recipes_path(@dish)
     else
-      render :new 
+      render :new
     end
   end
 
   def index
     # @dish = params[:dish]
-    # raise
     @recipes = EdamamApiWrapper.find_recipes(@dish)
 
     if @recipes

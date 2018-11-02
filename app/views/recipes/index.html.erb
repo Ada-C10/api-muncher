@@ -2,7 +2,14 @@
 
 
 <% @recipes.each do |recipe| %>
-<li><%= recipe %></li>
+<li><%= recipe.name %></li>
+<li><%= image_tag recipe.image_url %></li>
+<li>[LINK TO RECIPE PAGE]</li>
 <%end%>
 
   </ul>
+
+  <!-- As a user, when I look at the list of recipes that were the result of a search, then the web app:
+shows a paged list of recipes for a given search term, ten at a time
+shows the name of the recipe and the corresponding photo
+shows next to within each listed recipe a link to that recipe's detail page -->
