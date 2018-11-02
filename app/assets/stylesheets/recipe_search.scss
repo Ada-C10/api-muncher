@@ -56,7 +56,6 @@ input[type="text"]:focus:hover {
 
 input[type="text"]:focus {
   width: 700px;
-  z-index: 1;
   border-bottom: 1px solid #BBB;
   cursor: text;
 }
@@ -72,7 +71,6 @@ input[type="submit"] {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
   cursor: pointer;
   opacity: 0.4;
   cursor: pointer;
@@ -152,7 +150,6 @@ section {
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
     z-index: 2;
-    margin-bottom: 30px;
 }
 
 .backside {
@@ -186,11 +183,14 @@ section {
     -ms-transform-style: preserve-3d;
     transition: 1s;
     transform-style: preserve-3d;
+		margin: 0 0 30px 0;
+		padding: 0;
 }
 
 .frontside .card,
 .backside .card {
-    height: 312px;
+	height: 312px;
+	width: 312px;
 }
 
 .backside .card a {
@@ -209,10 +209,14 @@ section {
     border-radius: 50%;
 }
 
+.frontside .card {
+	overflow-y: hidden;
+}
+
 // Scrolling backsides
 .scroll {
-		height: 312px;
     overflow-y: auto;
+		overflow-x: hidden;
 }
 
 .fa-plus {
