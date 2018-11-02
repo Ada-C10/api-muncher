@@ -50,12 +50,30 @@ input[type=submit] {
   padding-top: 6rem;
     padding-bottom: 7rem;
 }
+
+.topper {
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+
+}
+
 .show-header {
-  padding-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.recipe-link {
+  padding-bottom: 1rem;
+  color: black;
+  text-decoration: underline;
 }
 
 .show-headers {
   text-decoration: underline;
+}
+
+.show-body {
+  padding-top: 2rem;
 }
 
 .ingredients li {

@@ -31,7 +31,6 @@
 
 .navbar {
   background-color: #FF4500;
-  // color: white;
   font-family: 'Changa One', cursive;
   height: 15rem;
   border-bottom: 15px solid black;
@@ -112,3 +111,7 @@ footer {
     color: black; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
+
+.not_found {
+  height: 100%;
+}

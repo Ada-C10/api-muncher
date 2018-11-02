@@ -40,7 +40,7 @@ class EdamamApiWrapper
       # ingredients = data[0]["ingredientLines"]
       # dietary_info = data[0]["healthLabels"]
 
-      Recipe.new(name, image, uri, {dietary_info: data[0]["healthLabels"], ingredients: data[0]["ingredientLines"] })
+      Recipe.new(name, image, uri, {dietary_info: data[0]["healthLabels"], ingredients: data[0]["ingredientLines"], recipe_link: data[0]["url"] })
     else
       return nil #or does ArgumentError in recipe class take care of this?
     end
@@ -55,7 +55,8 @@ class EdamamApiWrapper
     api_params["recipe"]["uri"],
     {
       dietary_info: api_params["healthLabels"],
-      ingredients: api_params["ingredients"]
+      ingredients: api_params["ingredients"],
+      recipe_lnk: api_params["url"]
     }
   )
   end

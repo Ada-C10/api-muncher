@@ -10,8 +10,11 @@
 </div>
 
 <div class="container show-container col-lg-7 mx-auto">
-  <h1 class="text-center show-header"><strong><%= @recipe.name %></strong></h1>
-    <div class="row">
+  <div class = "topper">
+    <h1 class="text-center show-header"><strong><%= @recipe.name %></strong></h1>
+    <p class="text-center recipe-link"><%=link_to "Link to Recipe", @recipe.recipe_link, target: :_blank, class: "recipe-link" %></p>
+  </div>
+    <div class="row show-body">
         <div class="col-md-6">
           <p><%= image_tag(@recipe.image, alt: "recipe image") %></p>
           <h5 class="show-headers"><strong>Dietary Info:</strong></h5>

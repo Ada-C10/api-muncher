@@ -10,6 +10,27 @@
     <link href="https://fonts.googleapis.com/css?family=Changa+One|IBM+Plex+Sans+Condensed|Paytone+One" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://images-na.ssl-images-amazon.com/images/I/71W0e43eZ%2BL._SX466_.jpg">
   <body>
+    <% if flash.any? %>
+      <section class='alert__container'>
+        <% flash.each do |name, message| %>
+        <% if name == 'warning' || name == 'success' %>
+        <div class="alert alert-<%= name %> text-center">
+          <span><%= message %></span>
+          <% if flash[:validation_errors] %>
+          <ul>
+            <% flash[:validation_errors].each do |message|%>
+            <li class="error-list text-center">
+              <%= message %>
+            </li>
+            <%end%>
+          </ul>
+          <% end %>
+        </div>
+        <% end %>
+        <%end%>
+      </section>
+      <% end%>
+      
     <%= yield %>
     <footer>
       <h3 class="footer-text text-center">Edamam</h3>
