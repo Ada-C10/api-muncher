@@ -17,6 +17,7 @@ Minitest::Reporters.use!(
 
 # Uncomment for awesome colorful output
 require "minitest/pride"
+require "awesome_print"
 
 VCR.configure do |config|
   #tell where to save the casettes
