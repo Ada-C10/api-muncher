@@ -32,16 +32,15 @@ describe RecipesController do
   end
 
   describe "show" do
-    it "can get show page for a valid recipe" do
+    it "can get show page for a valid recipe uri" do
+      VCR.use_cassette("recipe") do
 
+        get recipe_path('chicken'), params: params
+
+        must_respond_with :success
+
+      end
     end
 
-    it "responds with not found for an invalid recipe name" do
-
-      name = 'test recipe'
-
-      get recipe_path(name)
-
-    end
   end
 end
