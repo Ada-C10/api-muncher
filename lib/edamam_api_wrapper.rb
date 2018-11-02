@@ -32,7 +32,7 @@ class EdamamApiWrapper
     end
 
     if !recipe_uri_list.include?(uri)
-      encoded_uri = URI.encode("#{URL}?r=http://www.edamam.com/ontologies/edamam.owl#recipe_#{uri}&app_id=#{APP_ID}&app_key=#{APP_KEY}")
+      encoded_uri = URI.encode("#{BASE_URL}?r=http://www.edamam.com/ontologies/edamam.owl#recipe_#{uri}&app_id=#{APP_ID}&app_key=#{APP_KEY}")
 
       response = HTTParty.get(encoded_uri)
       return Recipe.new(response[0])
