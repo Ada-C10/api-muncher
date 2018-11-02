@@ -1,36 +1,33 @@
-# require 'test_helper'
-#
-# describe SlackApiWrapper do
-#   it 'can list channels' do
-#     #list_channels_file is the name of the cassette file
-#     #this is where the list_channels_file is made..by calling .use_cassette
-#     VCR.use_cassette('list_channels_file') do
-#       #its only going to call the API once and then if the
-#       channels = SlackApiWrapper.list_channels
-#
-#       expect(channels.length).must_be :>, 0
-#       channels.each do |channel|
-#         expect(channel).must_respond_to :name
-#         expect(channel).must_respond_to :id
-#       end
-#     end
-#   end
-#
-#   it 'can send messages to valid channels' do
-#     VCR.use_cassette('send_msg_file') do
-#       worked = SlackApiWrapper.send_msg('nodes-api-testing', 'test message here!')
-#
-#       expect(worked).must_equal true
-#     end
-#   end
-#
-#   it 'cannt send messages to invalid channels' do
-#     VCR.use_cassette('send_msg_file') do
-#       worked = SlackApiWrapper.send_msg('bogus-fake-testing', 'test message here!')
-#
-#       expect(worked).must_equal false
-#     end
-#   end
-#
-#
-# end  #end of slackapi wrapper block
+require 'test_helper'
+
+describe EdamamApiWrapper do
+  it 'can list recipess' do
+    VCR.use_cassette('list_recipes_file') do
+      recipes = EdamamApiWrapper.list_recipes("chicken")
+
+      expect(recipes.length).must_be :>, 0
+      recipes.each do |recipe|
+        expect(recipe).must_respond_to :label
+        expect(recipe).must_respond_to :uri
+      end
+    end
+  end
+
+  it 'can find a single recipe by its uri' do
+    VCR.use_cassette('single_recipe_file') do
+      recipe = EdamamApiWrapper.find_recipe_by('7543ecfa28b7506a97360748f017a83e')
+
+      expect(recipe).must_be_instance_of Recipe
+    end
+  end
+
+  it 'returns nil if non-existing uri is passed ' do
+    VCR.use_cassette('single_recipe_file') do
+      recipe = EdamamApiWrapper.find_recipe_by('bogus-uri')
+
+      expect(recipe).must_equal nil
+    end
+  end
+
+
+end  #end of slackapi wrapper block

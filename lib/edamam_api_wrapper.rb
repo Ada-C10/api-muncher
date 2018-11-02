@@ -36,6 +36,8 @@ class EdamamApiWrapper
     data = HTTParty.get(url)
     if data[0]
       recipe = self.create_recipe(data[0])
+    else
+      return nil 
     end
     return recipe
   end
