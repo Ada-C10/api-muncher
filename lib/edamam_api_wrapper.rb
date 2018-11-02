@@ -26,10 +26,17 @@ class EdamamApiWrapper
 
   def self.create_result_list(api_params)
     return Recipe.new(
+<<<<<<< HEAD
       {
         label: api_params["label"],
         image: api_params["label"],
         url: api_params["url"],
+=======
+      api_params["label"],
+      api_params["image"],
+      api_params["url"],
+      {
+>>>>>>> 273789d7df17bf7c77e9864cfca23e94f8566734
         ingredientLines: api_params["ingredientLines"],
         healthLabels: api_params["healthLabels"]
       }
