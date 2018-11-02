@@ -1,4 +1,7 @@
-<h1><%= @recipe.name%></h1>
-<a href="#">[LINK TO URL]</a>
-
-ingredient, dietary info, link to recipe
+<h1><%= @recipe.name%> Details:</h1>
+<ul>
+  <li>Ingredients: <%= @recipe.ingredients%></li>
+  <li>Dietary Info: <%= @recipe.dietary_info%></li>
+  <li>Health Info: <%= @recipe.health_info%></li>
+  <li><%=link_to "Recipe Source", @recipe.url, class: "btn btn-primary" %></li>
+</ul>
