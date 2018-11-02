@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = params[:hits]
+    # @recipe = params[:hits]
   end
 
 

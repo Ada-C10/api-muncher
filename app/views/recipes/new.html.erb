@@ -1,8 +1,14 @@
+<body id = "new_form">
+
+<div class="center-screen">
 <h1>Search for a Recipe</h1>
 
 <%= form_tag recipes_path, method: :get do %>
   <%= label_tag(:query, "What flavors are you intersted in?") %>
   <%= text_field_tag(:query) %>
-  <%= submit_tag("Search") %>
+  <%= submit_tag "Search", class: "btn btn-outline-warning btn-rounded btn-sm my-0" %>
+  <% end %>
+</div>
 
-<% end %>
+
+</body>
