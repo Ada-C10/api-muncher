@@ -9,7 +9,7 @@ describe EdamamApiWrapper do
 
         expect(recipes.length).must_be :>, 0
         recipes.each do |recipe|
-          RECIPE_VALID_ATTRS.each do |attr|
+          RECIPE_REQUIRED_ARGS.each do |attr|
             expect(recipe).must_respond_to attr
           end
         end
@@ -32,7 +32,7 @@ describe EdamamApiWrapper do
       fragment = "recipe_3d81878cd040aa6a73a2c3f11293102a"
       VCR.use_cassette('recipe_requests') do
         recipe = EdamamApiWrapper.get_recipe(fragment)
-        RECIPE_VALID_ATTRS.each do |attr|
+        RECIPE_REQUIRED_ARGS.each do |attr|
           expect(recipe).must_respond_to attr
         end
       end

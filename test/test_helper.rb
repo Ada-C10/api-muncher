@@ -3,13 +3,6 @@ SimpleCov.start
 
 ENV["RAILS_ENV"] = "test" # what's this?
 
-
-RECIPE_VALID_ATTRS = [:label, :recipe_uri, :source, :source_uri, :ingredient_lines]
-RECIPE_VALID_VALUES = ["some recipe", "http://recipe_uri", "source", "http://source_uri", ["ingredients"]]
-RECIPE_OPT_ATTRS = [:image_uri, :recipe_yield, :total_time, :health_labels]
-RECIPE_OPT_VALUES = ["http://image_uri", "yields 100", 30, ["labels"]]
-EDAMAM_ID_PREFIX = "http://www.edamam.com/ontologies/edamam.owl#"
-
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
@@ -47,6 +40,14 @@ end
 
 # Uncomment for awesome colorful output
 # require "minitest/pride"
+
+RECIPE_REQUIRED_ARGS = [:label, :recipe_uri, :source, :source_uri, :ingredient_lines]
+RECIPE_REQUIRED_VALUES = ["some recipe", "http://recipe_uri", "source", "http://source_uri", ["ingredients"]]
+RECIPE_REQUIRED_ARGS_HASH = {:label=>"some recipe", :recipe_uri=>"http://recipe_uri", :source=>"source", :source_uri=>"http://source_uri", :ingredient_lines=>["ingredients"]}
+
+RECIPE_OPT_ARGS = [:image_uri, :recipe_yield, :total_time, :health_labels]
+RECIPE_OPT_VALUES = ["http://image_uri", "yields 100", 30, ["labels"]]
+EDAMAM_ID_PREFIX = "http://www.edamam.com/ontologies/edamam.owl#"
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

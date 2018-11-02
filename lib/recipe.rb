@@ -2,12 +2,14 @@ class Recipe
   attr_reader :label, :recipe_uri, :source, :source_uri, :ingredient_lines,
               :image_uri, :recipe_yield, :total_time, :health_labels
 
+  REQUIRED_ARGS = [:label, :recipe_uri, :source, :source_uri, :ingredient_lines]
+
   def initialize(args, options = {})
     @valid = true
 
     begin
-      args.each do |key, value|
-        if value == nil || value == ""
+      REQUIRED_ARGS.each do |attr|
+        if args[attr] == nil || args[attr] == ""
           raise ArgumentError
         end
       end

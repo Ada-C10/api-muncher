@@ -4,24 +4,19 @@ describe Recipe do
 
   describe 'initialize' do
     it 'responds to .valid? and returns false if any required args are nil or empty' do
-      invalid_args = {key1: nil, key2: "", key3: []}
-      invalid_args.each_pair do |pair|
-        recipe = Recipe.new(pair)
-        expect(recipe).must_respond_to .valid?
-        expect(recipe.valid?).must_equal false
-      end
+      args = {label: ""}
+      recipe = Recipe.new(args)
+      expect(recipe.valid?).must_equal false
+      expect(recipe).must_respond_to :ingredient_lines
     end
 
     it 'can be created with valid arguments' do
-      args = Hash.new
-      RECIPE_VALID_ATTRS.each do |key|
-        RECIPE_VALID_VALUES.each do |value|
-          args[key] = value
-          recipe = Recipe.new(args)
-          expect(recipe.send(key)).must_equal value
-        end
+      recipe = Recipe.new(RECIPE_REQUIRED_ARGS_HASH)
+      expect(recipe.valid?).must_equal true
+      RECIPE_REQUIRED_ARGS.each_with_index do |key, index|
+        expect(recipe.send(key)).must_equal RECIPE_REQUIRED_VALUES[index]
       end
-
     end
+
   end
 end
