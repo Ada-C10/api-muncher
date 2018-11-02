@@ -15,26 +15,60 @@
 }
 
 .home h1 {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
   padding-bottom: 1rem;
 }
 
 .homepage {
   display: grid;
-  grid-template-rows: 2fr 1fr 2fr;
+  grid-template-rows: 1.5fr 1fr 2fr;
 }
 
 .homepage section {
   grid-row: 2;
 }
 
-.btn-primary {
-  background-color: teal;
-  border: none;
+main {
+  padding: 2rem 2rem;
 }
 
-.btn-primary:hover {
-  background-color: teal;
-  opacity: .5;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+figure {
+  padding: 1rem 1rem;
+  width: 350px;
+  height: auto;
+}
+
+figcaption {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-container {
+  display: grid;
+  grid-template: 100px 1fr / 1fr 1fr;
+}
+
+.recipe-header {
+  grid-row: 1;
+  grid-column: 1 / 3;
+  text-align: center;
+}
+
+.recipe-title {
+  font-weight: bold;
+  color: teal;
+}
+
+.recipe-container section {
+  margin: auto;
+}
+
+.recipe {
+  margin-top: 1rem;
 }

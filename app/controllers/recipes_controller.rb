@@ -1,4 +1,3 @@
-
 class RecipesController < ApplicationController
 
   def home
@@ -7,11 +6,15 @@ class RecipesController < ApplicationController
 
   def index
     @search_terms = params[:q]
-    @recipes = EdamamApiWrapper.list_recipes(params[:q])
+    recipes = EdamamApiWrapper.list_recipes(params[:q])
 
-    if @recipes.empty?
+    if recipes.empty?
       flash[:warning] = "No results found"
     end
+
+
+
+    @recipes = Kaminari.paginate_array(recipes).page(params[:page]).per(5)
   end
 
   def show

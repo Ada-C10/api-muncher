@@ -16,3 +16,41 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+header {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url("https://soulspring.org/images/easyblog_articles/2301/culinary-background-with-spices-on-wooden-table-picture-id544598354.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white ;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  padding: 2rem 2rem;
+}
+
+header h1 {
+  font-size: 50px;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: teal;
+  border: solid;
+  border-width: thin;
+  border-color: white;
+}
+
+.btn-primary:hover {
+  background-color: teal;
+  opacity: .75;
+  border: solid;
+  border-width: thin;
+  border-color: white;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}

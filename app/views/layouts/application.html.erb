@@ -7,14 +7,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   </head>
 
   <header>
     <h1>Muncher</h1>
     <%= form_tag(recipes_path, method: :get) do %>
       <%= text_field_tag :q, params[:q] %>
-      <%= submit_tag("Search", name: nil) %>
+      <%= submit_tag("Search", name: nil, class: "btn btn-primary") %>
     <% end %>
   </header>
 
