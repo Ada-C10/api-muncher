@@ -4,7 +4,8 @@
     <section id="recipe_basics">
       <h1><%= @name %></h1>
       <h2><%= "Recipe by: #{@creator}" %></h2>
-      <img class="image-thumbnail float-left" src= <%= "#{@photo}"%> alt="#{recipe.name}">
+      <img class="image-thumbnail" src= <%= "#{@photo}"%> alt="#{recipe.name}">
+      <%= link_to "See Original Recipe", @url, class: "btn btn-primary" , target: :_blank %>
     </section>
 
     <section id="recipe_details">

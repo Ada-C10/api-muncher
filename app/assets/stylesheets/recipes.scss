@@ -14,20 +14,24 @@
 
 #recipe_basics {
   grid-column: 1 / 1;
-  grid-row: 1 / 2
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#recipe_basics img {
+  align-self: center;
+  padding: 1rem;
 }
 
 #recipe_details {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  
+
 }
 
-// #diet_labels_container {
-//   grid-column: 2 / 3;
-//   grid-row: 2 / 3;
-// }
-
-img {
-
+li {
+  padding: 0.5rem;
 }

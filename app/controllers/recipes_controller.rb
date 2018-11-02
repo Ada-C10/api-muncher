@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
     @dietLabels = @recipe["dietLabels"]
     @photo = @recipe["image"]
     @creator = @recipe["source"]
+    @url = @recipe["url"]
     # binding.pry
   end
 
