@@ -14,6 +14,7 @@ class EdamamApiWrapper
     response = HTTParty.get(encoded_url)
 
     recipe_list = []
+    # if (response.status === 200)
     if response
       index = 0
       while index < response["hits"].length do
