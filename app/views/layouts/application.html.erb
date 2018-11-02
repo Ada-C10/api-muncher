@@ -10,6 +10,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <section class="flash_messages">
+        <p>
+          <% flash.each do |key, message| %>
+            <% if flash[:success] %>
+              <div id="flash_success">
+                <%= message %>
+              </div>
+            <% else %>
+              <div id="flash_error">
+                <%= message %>
+              </div>
+            <% end %>
+          <% end %>
+        </p>
+    </section>
+    <section>
+      <%= yield %>
+    </section>  
   </body>
 </html>

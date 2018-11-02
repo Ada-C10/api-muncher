@@ -9,7 +9,7 @@ class EdamamApiWrapper
 
   # Rails Console Test: EdamamApiWrapper.find_recipe("chicken")
   def self.find_recipes(search_term)
-    base_url = "#{BASE_URL}" + "q=#{search_term}" + "&" + "app_id=#{APP_ID}" + "&" + "app_key=#{APP_KEY}"
+    base_url = "#{BASE_URL}" + "q=#{search_term}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&to=50"
     encoded_url = URI.encode(base_url)
     response = HTTParty.get(encoded_url)
 
@@ -24,6 +24,7 @@ class EdamamApiWrapper
       return recipe_list
 
     else
+      flash[:error] = "/'#{search_term}/' could not be found. Please try again!"
       return nil
     end
 
