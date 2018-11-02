@@ -10,6 +10,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  column-gap: 2rem;
+  margin: 1rem;
 }
 
 #recipe_basics {

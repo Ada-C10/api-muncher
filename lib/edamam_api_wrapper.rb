@@ -14,13 +14,12 @@ class EdamamApiWrapper
       data["hits"].each do |recipe_data|
         recipe_list << create_recipe(recipe_data["recipe"])
       end
-      # binding.pry
     end
     return recipe_list
   end
 
   def self.list_recipe(id)
-    url = "#{BASE_URL}?app_id=#{ID}&app_key=#{TOKEN}&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_#{id}"
+    url = "#{BASE_URL}?app_id=#{ID}&app_key=#{TOKEN}&to=50&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_#{id}"
     # Send the request
     HTTParty.get(url).parsed_response
   end

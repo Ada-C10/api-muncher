@@ -7,10 +7,10 @@ class Recipe
   # format :json
   # base_uri ''
 
-  attr_reader :name, :image, :uri, :url, :ingredients, :dietLabels
+  attr_reader :name, :image, :uri, :url, :ingredients
   attr_accessor :id
 
-  def initialize(label, image, uri, url, ingredients, id, dietLabels: [])
+  def initialize(label, image, uri, url, ingredients, id, dietLabels: [] )
 
     raise ArgumentError if label == nil || label.empty?
     raise ArgumentError if image == nil || image.empty?
@@ -28,5 +28,6 @@ class Recipe
 
   end
 
+  # WillPaginate.per_page = 10 
 
 end
