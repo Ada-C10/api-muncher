@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+// .card-group {
+//   flex-wrap: wrap;
+// }
+
+.card {
+  border: none;
+}
+
+// * {
+//   border: 1px darkgray solid;
+// }
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
