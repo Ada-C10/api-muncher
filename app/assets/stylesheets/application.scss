@@ -16,3 +16,26 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 95% 5%;
+}
+
+main {
+  background-color: rgb(176, 255, 163);
+}
+
+footer {
+  background-color: rgb(29, 181, 76);
+}
+
+#edamam-badge {
+  text-align: center;
+}
