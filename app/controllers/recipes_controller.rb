@@ -8,5 +8,10 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe = EdamamApiWrapper.show_recipe(params[:id])
+    if @recipe.nil?
+      flash[:alert] = "That recipe does not exist"
+      redirect_back fallback_location: recipes_path
+    end
   end
 end
