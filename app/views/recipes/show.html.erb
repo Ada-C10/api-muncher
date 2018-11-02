@@ -1,32 +1,32 @@
 <%= render partial: "layouts/search_bar" %>
 
-<section class="section-body show">
-<% if @recipe.nil? %>
-  <h2> Error: Recipe not found. </h2>
-<% else %>
+<section class="section-body" id="show">
+  <section class="title-photo">
+    <% if @recipe.nil? %>
+    <h2> Error: Recipe not found. </h2>
+    <% else %>
 
-  <h2> <%= link_to @recipe.name, @recipe.link, target: :_blank %> </h2>
+    <h2> <%= link_to @recipe.name, @recipe.link, target: :_blank %> </h2>
 
-  <section>
     <%= image_tag @recipe.photo, alt: @recipe.name %>
   </section>
 
-  <section>
+  <section class="ingredients">
     <h3> Ingredients </h3>
     <ul>
       <% @recipe.ingredients.each do |ingredient| %>
-        <li> <%= ingredient %> </li>
+      <li> <%= ingredient %> </li>
       <% end %>
     </ul>
   </section>
 
   <section>
-  <h3> Dietary Labels </h3>
-  <ul>
-    <% @recipe.dietary_information.each do |diet_info| %>
+    <h3> Dietary Labels </h3>
+    <ul>
+      <% @recipe.dietary_information.each do |diet_info| %>
       <li> <%= diet_info %> </li>
-    <% end %>
-  </ul>
+      <% end %>
+    </ul>
   </section>
-<% end %>
+  <% end %>
 </section>
