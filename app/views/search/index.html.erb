@@ -1,0 +1,16 @@
+
+
+<section class="recipe-list">
+  <h1>Recipes</h1>
+  <% if @recipes %>
+    <ul>
+
+      <% @recipes.each do |recipe| %>
+        <li>
+          <%= recipe.label %>
+          <%= recipe.url %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>

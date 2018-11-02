@@ -1,17 +1,14 @@
 class SearchController < ApplicationController
 
   def index
-    @hits = params[:hits]
+      @recipes = EdamamApiWrapper.search_recipes(params[:q])
   end
 
   def new
-    @hits = params[:hit]
   end
 
   def create
-    EdamamApiWrapper.search_recipes(params[:q])
-
-    redirect_to root_path
+    redirect_to search_index_path(params[:q])
   end
 
 end
