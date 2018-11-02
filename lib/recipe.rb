@@ -8,10 +8,15 @@ class Recipe
     @label = label
     @uri = uri
 
-#we're going to package the @purpose etc into the options hash in another method
+    #we're going to package the @purpose etc into the options hash in another method
     @healthLabels = options[:healthLabels]
     @ingredients = options[:ingredients]
     @image = options[:image]
     @url = options[:url]
   end
+
+
+
 end
+
+# [{"text"=>"1 ounce semisweet or bittersweet chocolate, per person","weight"=>28.349523125},{"text"=>"1 tablespoon water, per person", "weight"=>14.786764781}, {"text"=>"1 large egg, per person", "weight"=>50.0}]

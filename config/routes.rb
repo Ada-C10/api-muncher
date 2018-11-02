@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # get '/recipes'
   get '/recipes', to: 'recipes#index', as: 'search'
+  # get '/recipes/:url', to: 'recipes#show', as: 'recipe_url'
 
   get '/recipes/:uri', to: 'recipes#show', as: 'recipe'
 

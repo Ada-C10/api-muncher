@@ -54,12 +54,14 @@ class EdamamApiWrapper
       parsed_uri,
       {
         healthLabels: api_params["healthLabels"],
-        ingredients: api_params["ingredients"],
+        ingredients: api_params["ingredientLines"],
         image: api_params["image"],
         url:  api_params["url"]
       }
     )
   end
+
+
 end #end of class method
 
 #### delete everything under here

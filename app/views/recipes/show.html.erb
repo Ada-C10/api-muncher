@@ -1,4 +1,24 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<h1><%= link_to "Edemam", root_path %> </h1>
 
-<%= image_tag @recipe.image %>
+<h2><%= @recipe.label %></h2>
+
+<ul>
+  <li><%= image_tag @recipe.image %></li>
+  <li><%= link_to @recipe.url, @recipe.url %></li>
+
+  <h5>Ingredients</h5>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient %></li>
+    <% end  %>
+  </ul>
+
+
+  <h5>Dietary Information</h5>
+  <ul>
+    <% @recipe.healthLabels.each do |healthlabel| %>
+    <li><%= healthlabel %></li>
+    <% end  %>
+  </ul>
+
+</ul>
