@@ -2,7 +2,7 @@
 <h2>Find your flavor...</h2>
 <section>
 
-  <%= form_with url: "recipe_new_path", method: "post" do |f| %>
+  <%= form_with url: "recipes_path", method: "post" do |f| %>
   <%= f.text_field :author %>
   <%= f.submit "Search" %>
   <% end %>

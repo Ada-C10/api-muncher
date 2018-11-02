@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
   root 'recipes#new'
-  get 'recipes/index', to: 'recipes#index', as: 'recipes'
-  get 'recipe/new', to: 'recipes#new', as: 'recipe_new'
+  get ':recipe/new', to: 'recipes#new', as: 'recipe_new'
   post ':recipe', to: 'recipes#create', as: 'recipe_create'
+  get ':recipes/index', to: 'recipes#index', as: 'recipes'
   get ':recipe/show', to: 'recipes#show', as: 'recipe_show'
 
 
