@@ -10,7 +10,7 @@
     <script src="https://developer.edamam.com/attribution/badge.js"></script>
 
   </head>
-  
+  <body>
   <% if flash[:result_text] or flash[:messages] %>
     <section class="alert__container">
       <div class="alert alert-<%= flash[:status].to_s == 'failure' ? 'warning' : flash[:status] %>">
@@ -27,7 +27,7 @@
       </div>
     </section>
   <% end %>
-  <body>
+
     <%= yield %>
 
     <footer class="footer no-gutters">

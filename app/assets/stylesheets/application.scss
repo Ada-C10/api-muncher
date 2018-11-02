@@ -16,11 +16,12 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+@import url('https://fonts.googleapis.com/css?family=Archivo');
 
 html,body {
   height: 100%;
   width: 100%;
-  font-family: sans-serif;
+  font-family: 'Archivo', sans-serif;
 }
 
 #home {
@@ -43,4 +44,26 @@ html,body {
 
 .alert {
   margin-bottom: 0rem;
+}
+
+.search {
+  color: #EEE5E9;
+  font-weight: bold;
+  float: left;
+}
+
+#search {
+  background-image: url(https://image.flaticon.com/icons/svg/149/149852.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+.feedback-input {
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+}
+
+.feedback-input:focus{
+  padding: 13px 13px 13px 54px;
 }

@@ -20,12 +20,12 @@ class EdamamApiWrapper
       :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' })
 
     recipe_list = []
-
     if data["hits"]
       data["hits"].each do |recipe_data|
         recipe_list << create_recipe(recipe_data["recipe"])
       end
     end
+    
     return recipe_list
   end
 
@@ -42,23 +42,6 @@ class EdamamApiWrapper
     end
   end
 
-
-  def self.send_msg(channel, msg)
-    puts "Sending message to channel #{channel}: #{msg}"
-
-    url = BASE_URL + "chat.postMessage?" + "token=#{TOKEN}"
-    response = HTTParty.post(url,
-      body:  {
-        "text" => "#{msg}",
-        "channel" => "#{channel}",
-        "username" => "Roberts-Robit",
-        "icon_emoji" => ":robot_face:",
-        "as_user" => "false"
-      },
-      :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' })
-      #headers are important for encoding how the data is coming in
-    return response.success?
-  end
 
   private
 

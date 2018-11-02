@@ -1,23 +1,3 @@
-
-<%if @recipes.empty? %>
-  <%= "We're sorry we could night find any recipes for '#{@search}'" %>
-
-<% else %>
-
-<section class="recipes-list">
-  <h1>Recipes for <%= "#{@search}" %></h1>
-  <% if @recipes %>
-    <ul>
-      <% @recipes.each do |recipe| %>
-        <li>
-          <%= link_to recipe.label, recipe_path(recipe.id)%>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
-</section>
-
-
 <div class="card-columns">
 <% @recipes.each do |recipe| %>
   <div class="card">
@@ -35,8 +15,6 @@
 
 <% end %>
 </div>
-<aside class="page-index">
-  <%= paginate @recipes %>
-</aside>
 
-<% end %>
+
+  <%= paginate @recipes %>
