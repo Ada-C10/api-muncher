@@ -3,9 +3,25 @@
     <ul>
       <% @recipe.each do |recipe| %>
         <ul>
-          <li><%=recipe.label%></li>
-          <li><%=recipe.ingredients%></li>
-          <li><%=recipe.dietaryinformation%></li>
+          <h1><%=recipe.label%></h1>
+          <li>Ingredients:
+            <%recipe.ingredients.each do |item|%>
+              <%if item == recipe.ingredients.last%>
+                <%=item%>
+              <%else%>
+              <%=item + ","%>
+              <%end%>
+            <%end%>
+          </li>
+          <li>Dietary information:
+            <%recipe.dietaryinformation.each do |item|%>
+              <%if item == recipe.dietaryinformation.last%>
+                <%=item%>
+              <%else%>
+              <%=item + ","%>
+              <%end%>
+            <%end%>
+          </li>
           <a href="<%= recipe.recipe_url%>"><img src="<%=recipe.image_url%>" alt="picture of food recipe"></a>
         </ul>
       <% end %>

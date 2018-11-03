@@ -6,7 +6,7 @@
         <ul>
           <li><%=recipe.label%></li>
           <%#send to show page #%>
-          <%=link_to 'Check recipe', recipes_show_path(recipe.uri) %>
+          <%=link_to 'Check recipe', recipes_show_path(recipe.id) %>
         </ul>
       <% end %>
     </ul>

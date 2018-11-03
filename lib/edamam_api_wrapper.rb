@@ -26,14 +26,16 @@ class EdamamApiWrapper
 
   def self.format_uri(uri)
     uri = uri.split("#")
-    base_uri = "http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23"
+    base_uri = "http://www.edamam.com/ontologies/edamam.owl#"
     r = base_uri + uri.last
-    return r
+    return CGI.escape(r)
   end
 
   def self.find_recipe(uri)
-    url = BASE_URL + "search?r=#{uri}" + "&app_id=#{APP_ID}&app_key=#{APP_KEY}"
+    new_uri = CGI.escape("http://www.edamam.com/ontologies/edamam.owl#recipe_#{uri}")
+    url = BASE_URL + "search?r=#{new_uri}" + "&app_id=#{APP_ID}&app_key=#{APP_KEY}"
     data = HTTParty.get(url)
+    #binding.pry
     if data
       data.map do |array|
         uri = format_uri(array["uri"])
