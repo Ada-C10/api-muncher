@@ -27,14 +27,9 @@ class EdamamApiWrapper
     url = BASE_URL + RETURN_RECIPE + "#{recipe_uri}" + "&app_id=" + ID + "&app_key=" + KEY
     recipe = HTTParty.get(url)
 
-    binding.pry
-    if recipe["hits"]
-      recipe["hits"].each do |recipe_data|
-        recipes_found << create_recipe(recipe_data["recipe"])
-      end
-    end
+    recipe = create_recipe(recipe[0])
 
-    return recipes_found
+    return recipe
   end
 
   private
