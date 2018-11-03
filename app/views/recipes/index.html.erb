@@ -3,7 +3,7 @@
   <img class="card-img-top" src="recipe.img" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">recipe.ingredients</p>
-
+<a href="<%= recipes_path(recipe.id) %>"class="recipe-card-link"</a>
 <%= recipe.name %>
 <%= recipe.id %>
 <%= recipe.url %>
@@ -12,7 +12,7 @@
 <%= recipe.author %>
 <% end %>
 <br>
-<div class="card" style="width: 18rem;">
+<div class="card">
   <div class="card-body">
     <h5 class="card-title">recipe.name</h5>
     <h6 class="card-subtitle mb-2 text-muted">recipe.author</h6>
