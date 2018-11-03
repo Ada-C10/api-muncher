@@ -12,12 +12,16 @@
   <body>
     <header>
 
-      <section class="logo">
-        <h1>Muncher</h1>
+      <section class="logo-wrapper">
+        <%= link_to "Ghost Muncher", root_path, class: "logo" %>
       </section>
 
       <section class="seach-bar">
-        <p>Add Search Bar Here</p>
+        <%= form_tag recipes_path, method: "get" do %>
+        <%= label_tag(:food, "Enter Food") %>
+        <%= text_field_tag(:food) %>
+        <%= submit_tag("Search") %>
+        <% end %>
       </section>
 
       <section class="flash">

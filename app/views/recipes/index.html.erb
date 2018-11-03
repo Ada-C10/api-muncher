@@ -1,12 +1,15 @@
 <section>
-  <h1>Search Results for <%="#{@food.capitalize}"%></h1>
+  <h2>Search Results for <%="#{@food.capitalize}"%></h2>
 
   <% if @recipes %>
-    <ul>
+    <ul class="cards-container" style="width: 18rem;">
       <% @recipes.each do |recipe| %>
-        <li>
-          <%= link_to "#{recipe.name}", recipe_path(recipe.uri) %>
-          <img src="<%= recipe.image %>">
+        <li class="card">
+          <img class="card-img-top" src="<%= recipe.image %>" alt="Card image cap">
+
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to "#{recipe.name}", recipe_path(recipe.uri) %></h5>
+            </div>
         </li>
       <% end %>
     </ul>
