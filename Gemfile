@@ -85,6 +85,5 @@ end
 
 gem 'httparty'
 # gem 'jquery-rails'
-gem 'will_paginate', '~> 3.1.1'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate'
 gem 'kaminari'
