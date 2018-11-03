@@ -1,18 +1,79 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*/
 
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Nunito Black', sans-serif;
+  background: #fff;
+  color: #3f4042;
+}
+
+li {
+  list-style: none;
+}
+
+.search-wrapper {
+  min-height: 100vh;
+}
+
+.search-wrapper  {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-wrapper span {
+  margin-top: 50%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.search-wrapper span {
+  margin-bottom: 0.5rem;
+}
+
+.search-wrapper span h1 {
+  color: black;
+  font-family: 'Halant', serif;
+  margin-bottom: 4rem;
+}
+
+.search-wrapper span.footer {
+  text-align: center;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #386659;
+  background-color:#a8b3be;
+  border-color: #9ca8b4;
+}
+
+ul .recipe-index {
+  display: flex;
+}
+
+ul .recipe-index span {
+  display: flex;
+  flex-direction: column;
+}

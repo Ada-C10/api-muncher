@@ -1,9 +1,13 @@
-<h1> Muncher </h1>
+
+<div class= "search-wrapper">
+
+<span><h1> Muncher </h1></span>
 
 <%= form_with url: list_recipes_path, local: true do |form| %>
-<%= form.label "Find your flavor..." %>
-<%= form.text_field :dish %>
-<%= form.submit "Search", class: "btn btn-primary" %>
+<span><%= form.label "Find your flavor..." %></span>
+<span><%= form.text_field :dish %></span>
+<span><%= form.submit "Search", class: "btn btn-primary" %></span>
 <% end %>
+<span class="footer"><footer class="footer">Powered by Edamam</footer></span>
 
-<footer>Powered by Edamam</footer>
+</div>

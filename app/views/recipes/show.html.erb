@@ -1,7 +1,11 @@
-<h1><%= @recipe.name%> Details:</h1>
+<div class="recipe-index"
+<span><strong><h2><%= @recipe.name%> Details:</h2></strong></span>
 <ul>
+  <span>
   <li>Ingredients: <%= @recipe.ingredients%></li>
   <li>Dietary Info: <%= @recipe.dietary_info%></li>
   <li>Health Info: <%= @recipe.health_info%></li>
   <li><%=link_to "Recipe Source", @recipe.url, class: "btn btn-primary" %></li>
+  </span>
 </ul>
+</div>
