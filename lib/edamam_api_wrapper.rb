@@ -13,8 +13,10 @@ class EdamamApiWrapper
       data["hits"].each do |recipe_data|
         recipe_list << create_recipe(recipe_data)
       end
+      return recipe_list #returns list of recipes from api
+    else
+      ArgumentError
     end
-    return recipe_list #returns list of recipes from api
   end
 
   def self.find_a_recipe(food)
@@ -22,11 +24,15 @@ class EdamamApiWrapper
     url_parsed = URI.encode(encoded)
     url = BASE_URL  + "r=#{url_parsed}&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     data = HTTParty.get(url) #use httparty to send of the url
-    recipe_list = []
-    data.parsed_response.each do |recipe_data|
-      recipe_list << keyboard(recipe_data)
+    if data
+      recipe_list = []
+      data.parsed_response.each do |recipe_data|
+        recipe_list << keyboard(recipe_data)
+      end
+      return recipe_list
+    else
+      ArgumentError
     end
-    return recipe_list
   end
 
   private
@@ -46,7 +52,7 @@ class EdamamApiWrapper
 
   def self.keyboard(api_params)
     return Recipe.new(
-      uri: api_params["uri"],
+      uri: api_params["uri"], #already in recipe
       label: api_params["label"],
       image: api_params["image"],
       serving: api_params["yield"],
