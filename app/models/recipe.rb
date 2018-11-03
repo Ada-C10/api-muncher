@@ -1,6 +1,6 @@
 class Recipe < ApplicationRecord
 
-  def self.get_uri(url)
+  def get_uri(url)
 
     pattern = /recipe_(.*)/
 

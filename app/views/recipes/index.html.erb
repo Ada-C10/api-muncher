@@ -1,4 +1,4 @@
-<p>Here are your recipes!</p>
+<p>Results for: <%= params[:input] %></p>
 
 <p>PARAMS: <%= params.inspect %> </p>
 
@@ -11,8 +11,7 @@
          <% pattern = /recipe_(.*)/ %>
          <% uri = pattern.match(url) %>
 
-
-
+        <img src = <%= recipe["recipe"]["image"] %> >
          <%= link_to recipe["recipe"]["label"], recipe_path(uri[1]) %>
          <p>URI: <%= recipe["recipe"]["uri"] %></p>
          <p>hard-coded REGEX: <%= uri[1] %></p>

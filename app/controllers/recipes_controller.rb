@@ -4,6 +4,7 @@ class RecipesController < ApplicationController
     ingredient = params[:input]
     @recipes = ApiMuncherWrapper.recipes_by_ingredient(ingredient)
 
+    
   end
 
   def show
