@@ -2,13 +2,13 @@ class RecipesController < ApplicationController
 
   before_action :ingredients, except: [:main, :show]
 
-  # def self.paginate(term, current_page)
-  #   if term
-  #     where('name LIKE ?', "%#{term}").paginate(page: page, per_page: 5).order('id DESC')
-  #   else
-  #     paginate(page: page, per_page: 5).order('id DESC')
-  #   end
-  # end
+  def self.paginate(term, current_page)
+    if term
+      where('name LIKE ?', "%#{term}").paginate(page: page, per_page: 5).order('id DESC')
+    else
+      paginate(page: page, per_page: 5).order('id DESC')
+    end
+  end
 
   def index
     @recipes = EdamamApiWrapper.list_recipes(@ingredients)
@@ -17,12 +17,12 @@ class RecipesController < ApplicationController
       flash[:result_text] = "No recipes with #{@ingredients}. Please try a different ingredient or word."
       redirect_to root_path
     else
-      @recipes_paginated = will_paginate.paginate_array(@recipes).page(params[:page]).per(10)
+      @recipes_paginated = kaminari.paginate_array(@recipes).page(params[:page]).per(10)
     end
   end
 
   def show
-    @recipe = EdamamApiWrapper.find_recipe(params[:id])
+    @recipe = EdamamApiWrapper.search_specific(params[:id])
     if @recipe.nil?
       flash[:status] = :danger
       flash[:result_text] = "Recipe not found. Please try again."
