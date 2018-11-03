@@ -1,0 +1,13 @@
+Recipes.
+<section>
+  <% if @recipes %>
+    <ul>
+      <% @recipes.each do |recipe| %>
+        <li>
+          <%= image_tag recipe.image %>
+          <%= recipe.name %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>

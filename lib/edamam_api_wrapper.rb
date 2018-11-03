@@ -1,20 +1,21 @@
-class EdamamAPIWrapper
+require 'httparty'
+class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/"
   QUERY_ALL = "search?q="
   RETURN_RECIPE = ""
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
+# def self.search_recipes(search_param)
+  def self.search_recipes(search_term)
 
-  def self.search_recipes(search_param)
-
-    url = BASE_URL + QUERY_ALL + search_param + "&app_id=" + ID + "&app_key=" + KEY
+    url = BASE_URL + QUERY_ALL + "#{search_term}" + "&app_id=" + ID + "&app_key=" + KEY
     recipes = HTTParty.get(url)
 
     recipes_found = []
 
-    if data["recipe"]
-      data["recipe"].each do |recipe_data|
-        recipes_found << create_recipe(recipe_data)
+    if recipes["hits"]
+      recipes["hits"].each do |recipe_data|
+        recipes_found << create_recipe(recipe_data["recipe"])
       end
     end
 

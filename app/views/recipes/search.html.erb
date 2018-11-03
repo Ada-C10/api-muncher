@@ -1,0 +1,9 @@
+<h1>Addymame</h1>
+
+<%= form_tag recipes_index_path, method: :get do%>
+
+<%= label_tag(:search, "Find yr flavor...") %>
+<%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+
+<% end %>
