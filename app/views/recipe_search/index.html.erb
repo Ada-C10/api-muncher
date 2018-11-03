@@ -1,15 +1,13 @@
 <nav>
   <div id="searchbar" class="mt-0">
     <form action= "<%= recipe_searches_path %>" method="get">
-      <label for="search" id="search_label"></label>
+      <label for="search_text" id="search_label_index"></label>
       <input id="search_text" name="q" type="text" placeholder="I want a recipe for..." maxlength= 50 autocomplete="off" spellcheck="false">
       <input id="search_submit" value="Submit" type="submit">
     </form>
   </div>
 
-<% if @recipes.any? %>
   <h1 class="section-title">Search: <%= @query %></h1>
-<% end %>
 
   <a href="<%= root_path %>" class="navbar-brand">Home</a>
 </nav>
@@ -25,11 +23,11 @@
 
       <div class="filters">
         <% if @health_labels.any? %>
-          <form action="<%= recipe_searches_path %>" method="get">
-            <% @health_labels.each do |label| %>
-              <input type="checkbox" name="health[]" value="<%= label.downcase %>"><%= label %>
-            <% end %>
-              <input type="hidden" name="q" value= "<%= @query %>">
+          <form action="<%= recipe_searches_path %>" method="get" class="form health-filter">
+          <% @health_labels.each do |label| %>
+            <input type="checkbox" name="health[]" value="<%= label.downcase %>"><%= label %>
+          <% end %>
+            <input type="hidden" name="q" value= "<%= @query %>">
             <input type="submit" value="Apply Filters!">
           </form>
         <% end %>
