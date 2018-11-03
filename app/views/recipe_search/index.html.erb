@@ -25,7 +25,7 @@
         <% if @health_labels.any? %>
           <form action="<%= recipe_searches_path %>" method="get" class="form health-filter">
           <% @health_labels.each do |label| %>
-            <input type="checkbox" name="health[]" value="<%= label.downcase %>"><%= label %>
+            <%= checkbox_field(label, params) %><%= label.capitalize %>
           <% end %>
             <input type="hidden" name="q" value= "<%= @query %>">
             <input type="submit" value="Apply Filters!">
