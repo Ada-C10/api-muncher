@@ -17,10 +17,14 @@
       <% end %>
     </div>
   </section>
-  <%= paginate @recipes %>
+  <div class="pagination-box">
+    <%= paginate @recipes %>
+  </div>
   <% elsif @error %>
+  <svg-icon><src href="sprite.svg#si-glyph-ghost" /></svg-icon>
     <h2 class="warning"><%=@error %></h2>
   <% else %>
+  <svg-icon><src href="sprite.svg#si-glyph-ghost" /></svg-icon>
   <h2 class="search-heading"> Don't be shy! Try searching for some recipes. <h2>
   <% end %>
 </section>
