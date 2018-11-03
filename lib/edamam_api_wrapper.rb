@@ -10,7 +10,7 @@ class EdamamApiWrapper
       return []
     end
 
-    url = BASE_URL + "search?q=" + search_terms + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    url = BASE_URL + "search?q=" + search_terms + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&to=50"
     encoded_uri = URI.encode(url)
     data = HTTParty.get(encoded_uri)
 

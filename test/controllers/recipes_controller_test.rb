@@ -12,21 +12,15 @@ describe RecipesController do
       end
     end
 
-    it 'will flash warning if no search terms provided' do
+    it 'will flash warning if search results in 0 entries found' do
       VCR.use_cassette('list_recipes') do
         get recipes_path, params: { q: nil }
 
         must_respond_with :ok
+        expect(flash[:warning]).must_equal "No results found"
       end
     end
 
-    it "will flash warning if search terms are invalid" do
-      VCR.use_cassette('list_recipes') do
-        get recipes_path, params: { q: -1 }
-
-        must_respond_with :ok
-      end
-    end
   end
 
   describe 'show' do
@@ -42,6 +36,7 @@ describe RecipesController do
       VCR.use_cassette('find_recipe') do
         get recipe_path(-1)
         must_respond_with :not_found
+        expect(flash.now[:danger]).must_equal "Recipe does not exist"
       end
     end
   end

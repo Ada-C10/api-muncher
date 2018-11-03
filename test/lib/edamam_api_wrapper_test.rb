@@ -10,6 +10,7 @@ describe EdamamApiWrapper do
         expect(recipe).must_respond_to :label
         expect(recipe).must_respond_to :uri
         expect(recipe).must_respond_to :image
+        expect(recipe).must_respond_to :source
       end
     end
   end

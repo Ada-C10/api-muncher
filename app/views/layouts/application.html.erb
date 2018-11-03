@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   </head>
 
@@ -17,8 +18,26 @@
       <%= submit_tag("Search", name: nil, class: "btn btn-primary") %>
     <% end %>
   </header>
+  <section class="flash">
+    <% flash.each do |name, message| %>
+      <% if message.class == Array %>
+        <div class="alert-warning">
+          <% message.each do |msg| %>
+            <p><strong><%= "#{name}:" %></strong><%= " #{msg}" %></p>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="alert-<%= name %>">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
 
   <body>
     <%= yield %>
   </body>
+  <footer>
+    <div id="edamam-badge" data-color="white"></div>
+  </footer>
 </html>

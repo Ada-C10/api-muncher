@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home {
+.homepage {
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
@@ -71,4 +71,8 @@ figcaption {
 
 .recipe {
   margin-top: 1rem;
+}
+
+#edamam-badge a {
+  margin: auto;
 }
