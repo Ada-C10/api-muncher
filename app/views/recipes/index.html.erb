@@ -2,6 +2,7 @@
 
 
 <% if @recipes %>
+
   <ul class='container'>
     <% @recipes.each do |recipe| %>
       <div class="col-md-6">
@@ -11,11 +12,11 @@
           </div>
           <div class ="media-body">
             <p> <%= recipe.label%>  </p>
-            <p><%= link_to "view recipe details", recipe_path(recipe.uri)%></p>
+            <p><%= link_to "view recipe details", recipe_path(recipe.uri),target: :_blank %></p>
           </div>
         </div>
       </div>
     <% end %>
-  </ul
+  </ul>
 <% end %>
 </section>

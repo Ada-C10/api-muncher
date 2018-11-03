@@ -11,7 +11,10 @@
 
   <body>
     <nav>
-      <%= render partial: "form" %>
+      <ul class = "nav_home">
+        <li class = "home"><%= link_to "Home page", root_path,target: :_blank %></li>
+        <li> <%= render partial: "form" %></li>
+      </ul>
     </nav>
     <%= yield %>
     <foot>
