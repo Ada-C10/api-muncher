@@ -13,9 +13,5 @@ class Recipe
 
 
   end
-  #
-  # def parsed_uri
-  #   return self.uri.partition("_").last
-  # end
 
 end

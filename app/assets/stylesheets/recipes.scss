@@ -7,12 +7,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  text-align: center;
+  text-align: left;
 
 }
 
-// .recipe {
-//   display:flex;
-//   flex-direction: column;
-//
-// }
+.show_page {
+  margin: 5%;
+
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+.media-left {
+  margin-right:  5%;
+}
