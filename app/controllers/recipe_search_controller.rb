@@ -5,13 +5,23 @@ class RecipeSearchController < ApplicationController
   def index
     params[:q] ||= ""
     @query = params[:q].downcase
+
     filters = {}
-    
     if params[:health]
       filters[:health] = params[:health]
     end
 
-    @recipes = EdamamApiWrapper.list_recipes(@query, filters: filters).paginate(:page => params[:page], :per_page => 6)
+    recipes = EdamamApiWrapper.list_recipes(@query, filters: filters)
+
+    if params["shuffle"] == "t"
+      length = recipes.length
+      recipes = recipes.sample(length)
+    else
+      recipes = recipes
+    end
+
+    @recipes = recipes.paginate(:page => params[:page], :per_page => 6)
+
     @health_labels = EdamamApiWrapper.list_tags(@recipes, :health_labels)
 #TODO: put this back before production
     # begin

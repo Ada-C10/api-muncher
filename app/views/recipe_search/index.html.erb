@@ -22,6 +22,15 @@
       </div>
 
       <div class="filters">
+        <form action="<%= recipe_searches_path %>" method="get" class="form shuffle">
+          <input type="hidden" name="shuffle" value="t">
+          <input type="hidden" name="q" value= "<%= @query %>">
+          <button type="submit" class="btn btn-primary">Shuffle My Recipes!</button>
+        </form>
+        <form action="<%= recipe_searches_path %>" method="get" class="form unshuffle">
+          <input type="hidden" name="q" value= "<%= @query %>">
+          <button type="submit" class="btn btn-primary">Default Order</button>
+        </form>
         <% if @health_labels.any? %>
           <form action="<%= recipe_searches_path %>" method="get" class="form health-filter">
           <% @health_labels.each do |label| %>
@@ -32,6 +41,7 @@
           </form>
         <% end %>
       </div>
+
 
       <div class="card-deck">
         <% @recipes.each do |recipe| %>
