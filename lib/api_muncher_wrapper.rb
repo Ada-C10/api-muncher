@@ -1,5 +1,5 @@
 require 'httparty'
-require 'pry'
+
 
 class ApiMuncherWrapper
   BASE_URL = "https://api.edamam.com/search"
@@ -25,7 +25,7 @@ class ApiMuncherWrapper
     data = HTTParty.get(url).parsed_response
 
     if data[0]
-        result = Recipe.new(data[0]["label"], data[0]["uri"],data[0]["ingredients"],data[0]["totalNutrients"])
+        result = Recipe.new(data[0]["label"], data[0]["uri"],data[0]["ingredientLines"],data[0]["dietLabels"],data[0]["image"], data[0]["url"] )
 
     end
     return result
@@ -36,15 +36,8 @@ class ApiMuncherWrapper
   def self.create_recipe(recipe_data)
 
     return Recipe.new(
-      recipe_data["recipe"]["label"],recipe_data["recipe"]["uri"],recipe_data["recipe"]["ingredients"],recipe_data["recipe"]["totalNutrients"]
+      recipe_data["recipe"]["label"],recipe_data["recipe"]["uri"],recipe_data["recipe"]["ingredientLines"],recipe_data["recipe"]["dietLabels"], recipe_data["recipe"]["image"],recipe_data["recipe"]["url"]
 
     )
   end
 end
-
-
-# a = HTTParty.get("https://api.edamam.com/search?q=chicken&app_id=0d591779&app_key=90beed83e3ea9fb311a8e2085c7b8112&from=0&to=3&calories=591-722&health=alcohol-free")
-# puts a.body
-#
-# response = HTTParty.get("https://api.edamam.com/search?q=chicken dumpline&app_id=0d591779&app_key=90beed83e3ea9fb311a8e2085c7b8112")
-# parsed_response = response.parsed_response

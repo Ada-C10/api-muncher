@@ -16,3 +16,29 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+body {
+  // background: url('dinner.jpg') center;
+  // background-size: cover;
+  text-align: center;
+}
+
+nav {
+  // background-color: darkgray;
+  background: url('dinner.jpg') center;
+  background-size: cover;
+
+}
+
+.nav_home {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+.home {
+  padding-right: 15%;
+
+}
