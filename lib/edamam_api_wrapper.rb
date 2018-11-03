@@ -23,6 +23,10 @@ class EdamamApiWrapper
     return recipe_list
   end
 
+  def show_recipe(uri)
+
+  end
+
   private
 
   def self.create_recipe(api_params)

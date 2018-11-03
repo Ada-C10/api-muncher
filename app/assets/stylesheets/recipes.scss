@@ -43,3 +43,21 @@
   margin-right: 10px;
 
 }
+
+.index-page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+
+}
+
+.title {
+  padding: 24px;
+}
+
+.food-item {
+  padding: 12px; 
+}

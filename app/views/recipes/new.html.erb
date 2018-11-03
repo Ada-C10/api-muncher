@@ -1,9 +1,13 @@
-<strong>THIS IS THE HOMEPAGE</strong>
+
+<section class="index-page">
+
+<h1 class="title"><strong>WELCOME TO MUNCHER</strong></h1>
 
  <%= form_with url: recipes_path, method: :post do |f| %>
- <%= f.label(:word, "Search")%>
+ <%= f.label(:word, "Enter Food Item")%>
  <%= hidden_field_tag :os, :value => :word %>
  <%= f.text_field(:word)%>
- <%= f.submit("Submit")%>
+ <%= f.submit("SEARCH")%>
 
  <% end %>
+</section>

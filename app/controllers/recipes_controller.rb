@@ -16,6 +16,7 @@ end
 
 def show
 
+@recipe = EdamamApiWrapper.find_by(uri: params[:uri])
 
 
 end
