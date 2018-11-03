@@ -1,4 +1,5 @@
 class Recipe
+  
   attr_reader :label, :image, :source, :url, :id, :dietLabels, :healthLabels, :ingredientLines
 
   def initialize(input)
