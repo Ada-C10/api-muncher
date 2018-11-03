@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   root 'pages#show', page: "search"
   get 'pages/:page', to: 'pages#show', as: 'page'
+  get 'recipes', to: 'recipes#index', as: 'recipes'
 end
