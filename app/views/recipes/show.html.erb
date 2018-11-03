@@ -1,11 +1,29 @@
-<div class="recipe-index"
-<span><strong><h2><%= @recipe.name%> Details:</h2></strong></span>
-<ul>
-  <span>
-  <li>Ingredients: <%= @recipe.ingredients%></li>
-  <li>Dietary Info: <%= @recipe.dietary_info%></li>
-  <li>Health Info: <%= @recipe.health_info%></li>
-  <li><%=link_to "Recipe Source", @recipe.url, class: "btn btn-primary" %></li>
-  </span>
-</ul>
+<div class="recipe-detail">
+  <div>
+
+
+    <strong><h2><%= @recipe.name.capitalize%> Recipe:</h2></strong>  </div>
+  <div>
+    <ul>
+      <span>
+        <li><strong>Ingredients: </strong>
+          <ol>
+            <% @recipe.ingredients.each do |i|%>
+            <li><%= i %></li>
+            <% end %>
+          </ol>
+        </li>
+        <li><strong>Dietary Info: </strong>
+          <% @recipe.dietary_info.each do |i|%>
+          <span id="sentence"><%= "#{i}" %></span>
+          <% end %>
+        </li>
+        <li><strong>Health Info: </strong><% @recipe.health_info.each do |i|%>
+          <span id="sentence"><%= "#{i}" %></span>
+          <% end %>
+        </li>
+        <li><%=link_to "Recipe Source", @recipe.url, class: "btn btn-primary" %></li>
+      </span>
+    </ul>
+  </div>
 </div>

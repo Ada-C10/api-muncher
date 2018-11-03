@@ -19,3 +19,17 @@
   margin-left: 2rem;
   margin-top: 1rem;
 }
+
+.recipe-detail {
+  background-color: white;
+  margin: 2rem;
+}
+
+.recipe-detail li, h2 {
+  padding: 1rem;
+  max-width: 65%;
+}
+
+span#sentence:not(:last-of-type):after {
+  content: ", ";
+}
