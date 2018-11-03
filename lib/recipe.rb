@@ -1,13 +1,14 @@
 class Recipe
-  attr_reader :name, :id, :source, :image, :source_url
+  attr_reader :name, :id, :source, :image, :source_url, :ingredients, :dietary
 
   def initialize(args)
-    # raise ArgumentError if name == nil || name == "" || id == nil || id == ""
+    raise ArgumentError if args["uri"] == nil || args["uri"] == "" || args["label"] == nil || args["label"] == ""
+
     @id = format_uri(args["uri"])
     @name = args["label"]
     @source = args["source"]
-    # @ingredients =
-    # @dietary
+    @ingredients = args["ingredientLines"]
+    @dietary = args["healthLabels"]
     @image = args["image"]
     @source_url = args["url"]
   end
