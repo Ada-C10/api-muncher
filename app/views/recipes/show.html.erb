@@ -1,2 +1,30 @@
-<h1>Recipes#show</h1>
+<h1><%="#{@recipe.label}"%></h1>
+
+<%= link_to "#{@recipe.url}", target: :_blank do %>
+  <%= image_tag(@recipe.image, class: :food_image, alt: "food") %>
+<% end %>
+
+<%#image_tag(@recipe.image) %>
+<h3>Ingredients</h3>
+<%@recipe.ingredients.each do|ing| %>
+  <ul>
+    <li><%=ing %></li>
+  </ul>
+<% end %>
+
+<h3>Health</h3>
+<%@recipe.health.each do|h| %>
+  <ul>
+    <li><%= h %></li>
+  </ul>
+<% end %>
+
+
+<h3>Cautions</h3>
+<%@recipe.cautions.each do|x| %>
+  <ul>
+    <li><%= x %></li>
+  </ul>
+<% end %>
+
 <p>Find me in app/views/recipes/show.html.erb</p>

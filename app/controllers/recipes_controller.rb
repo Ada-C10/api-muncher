@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  def find
+  def show
     if params[:find]
       @find = params[:find]
       @recipe = EdamamApiWrapper.find_recipe(@find)
@@ -11,10 +11,9 @@ class RecipesController < ApplicationController
 
   end
 
-  def list
+  def index
     if params[:search]
-      @search = params[:search]
-      @recipes = EdamamApiWrapper.list_recipes(@search)
+      @recipes = EdamamApiWrapper.list_recipes(params[:search]).paginate(page: params[:page], per_page: 10)
     else
       @recipes = []
     end

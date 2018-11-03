@@ -87,15 +87,15 @@ You have creative control over the design and layout of this project. Below are 
 
 ### Homepage
 
-  ![Splash Page Wireframe](assets/Muncher_splash_wireframe.png )
+  ![Splash Page Wireframe](app/assets/images/Muncher_splash_wireframe.png )
 
 ### Results Page
 
-  ![Results Page Wireframe](assets/muncher_results_wireframe.png )
+  ![Results Page Wireframe](app/assets/images/muncher_results_wireframe.png )
 
 ### Recipe Show Page
 
-  ![Results Page Wireframe](assets/muncher_recipe_wireframe.png )
+  ![Results Page Wireframe](app/assets/images/muncher_recipe_wireframe.png )
 
 
 Can you make your layout responsive? When the screen width shrinks to a medium screen, have a row with only two recipes. On a small screen width, have only a single recipe per line.  

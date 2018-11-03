@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'awesome_print'
 gem 'httparty'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap'
+
+gem 'font-awesome-sass'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
