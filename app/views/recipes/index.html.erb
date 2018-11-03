@@ -1,0 +1,13 @@
+<main>
+  <h2>Results for "<%= @search_terms %>"</h2>
+  <section class="flex-container">
+    <% @recipes.each do |recipe| %>
+    <figure class="figure">
+      <%= link_to image_tag(recipe.image, class: "figure-img img-fluid rounded"), recipe_path(recipe.recipe_id) %>
+      <figcaption><%= link_to recipe.label, recipe_path(recipe.recipe_id), class: "figure-caption" %></figcaption>
+    </figure>
+    <% end %>
+  </section>
+  <%= paginate @recipes %>
+  <%= page_entries_info @recipes %>
+</main>

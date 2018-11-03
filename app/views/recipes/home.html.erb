@@ -1,0 +1,9 @@
+<main class="homepage">
+  <section>
+    <h1>Find your flavors... </h1>
+    <%= form_tag(recipes_path, method: :get) do %>
+      <%= text_field_tag :q, params[:q] %>
+      <%= submit_tag("Search", name: nil, class: "btn btn-primary") %>
+    <% end %>
+  </section>
+</main>

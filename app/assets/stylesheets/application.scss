@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+
+header {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url("https://soulspring.org/images/easyblog_articles/2301/culinary-background-with-spices-on-wooden-table-picture-id544598354.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white ;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  padding: 2rem 2rem;
+}
+
+header h1 {
+  font-size: 50px;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: teal;
+  border: solid;
+  border-width: thin;
+  border-color: white;
+}
+
+.btn-primary:hover {
+  background-color: teal;
+  opacity: .75;
+  border: solid;
+  border-width: thin;
+  border-color: white;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+#edamam-badge a {
+  margin: auto;
+}

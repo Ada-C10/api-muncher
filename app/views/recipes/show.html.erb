@@ -1,0 +1,27 @@
+<main >
+  <section class="recipe-container">
+    <div class="recipe-header">
+      <h2 class="recipe-title"><%= @recipe["label"] %></h2>
+      <p>By <%= @recipe["source"] %></p>
+    </div>
+    <section>
+      <%= image_tag(@recipe["image"]) %>
+      <div>
+        <%= link_to "Make it!", @recipe["url"], target: :_blank, class: "btn btn-primary recipe" %>
+      </div>
+    </section>
+    <article class="ingredients">
+      <h3>Ingredients</h3>
+      <ul>
+      <% @recipe["ingredientLines"].each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+      </ul>
+      <h3>Dietary Information</h3>
+      <ul>
+      <% @recipe["dietLabels"].each do |diet| %>
+        <li><%= diet %>
+      <% end %>
+    </article>
+  </section>
+</main>
