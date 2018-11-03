@@ -1,12 +1,13 @@
 <%= render partial:"header" %>
 
+<section class="show">
 
 <h1><%= @recipe.label %></h1>
 
 <%=image_tag(@recipe.image)%>
 
 <ul>
-  Ingredients:
+  <h3>Ingredients:</h3>
 <% @recipe.ingredients.each do |ingredient|%>
 <li>
 <%= ingredient %>
@@ -15,7 +16,7 @@
 </ul>
 
 <ul>
-  Health Information:
+  <h3>Health Information:</h3>
 <% @recipe.health.each do |health|%>
 <li>
 <%= health %>
@@ -24,3 +25,6 @@
 </ul>
 
 <a href="<%=@recipe.url%>" target="_blank">Check out the full recipe! </a>
+
+<div id="edamam-badge" data-color="white"></div>
+</show>

@@ -1,16 +1,20 @@
 <%= render partial:"header" %>
 
-<h1>Search Results: <%= @search %> </h1>
+<h1 class="indexhead">Search Results: <%= @search %> </h1>
 
-<div class="card-columns">
-  <% if @recipes %>
-      <% @recipes.each do |recipe| %>
-        <div class="card" style="width: 15rem">
-          <img src="<%= recipe.image %>" width="300" alt="<%= recipe.label %>" class="card-img-top">
+<% if @recipes %>
+  <div class="row mb-5">
+    <% @recipes.each do |recipe| %>
+      <div class="col-sm-4 mb-4 text-center d-flex justify-content-around">
+        <div class="card" style="width: 15rem;">
+          <img src="<%= recipe.image %>" width="500" alt="<%= recipe.label %>" class="card-img-top">
           <%= link_to "#{recipe.label}", show_path(recipe.uri) %>
         </div>
-      <% end %>
-  <% end %>
-</div>
+      </div>
+        <% end %>
+        <%end %>
 
-<%= paginate @recipes %>
+        <section class="pag">
+        <%= paginate @recipes %>
+        <div id="edamam-badge" data-color="white"></div>
+      </section>
