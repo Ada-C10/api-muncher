@@ -3,11 +3,13 @@
   <% if @recipes %>
     <ul>
       <% @recipes.each do |recipe| %>
-        <ul>
-          <li><%=recipe.label%></li>
-          <%#send to show page #%>
-          <%=link_to 'Check recipe', recipes_show_path(recipe.id) %>
-        </ul>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="<%=recipe.image_url%>" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title"<%=recipe.label%></h5>
+        <%=link_to 'Check recipe', recipes_show_path(recipe.id) %>
+        </div>
+      </div>
       <% end %>
     </ul>
   <% end %>
