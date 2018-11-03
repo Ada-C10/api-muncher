@@ -22,10 +22,16 @@ html {
 }
 
 body {
+
   min-height: 100vh;
   font-family: 'Nunito', sans-serif;
   background: #fff;
   color: #3f4042;
+  background-image: url("https://www.weightwatchers.com.au/images/3081/dynamic/foodandrecipes/2014/08/BaconMshrmPasta_800.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 li {
@@ -53,7 +59,7 @@ li {
 }
 
 .search-wrapper span h1 {
-color: #262728;
+  color: #262728;
   font-family: 'Halant', serif;
   font-size: 6rem;
   margin-bottom: 4rem;
@@ -73,12 +79,40 @@ color: #262728;
 .search-wrapper span label{
   margin-right: 14rem;
 }
+
 .search-wrapper span input#dish {
-padding-right: 6rem;
-padding-left: 6rem;
-padding-top: .5em;
-padding-bottom: .5em;
-border-radius: 0.5rem;
+  padding-right: 6rem;
+  padding-left: 6rem;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border-radius: 0.5rem;
+
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+
+  opacity: 0.75;
+  background-color:#FFFFFF;
+  border-color:#666666 #CCCCCC #CCCCCC;
+  border-style:solid;
+  border-width:1px;
+  color: #800000;
+  font-weight: bold;
+}
+
+.search-wrapper span input#dish:focus {
+  outline-style:none;
+  outline-width:0;
+  border:2px solid #73A6FF;
+  margin:0;
+  outline-color:-moz-use-text-color;
+  outline-style:none;
+  outline-width:0;
 }
 
 .search-wrapper span input.btn.btn-primary{
@@ -97,8 +131,6 @@ border-radius: 0.5rem;
   background-color:#a8b3be;
   border-color: #9ca8b4;
 }
-
-
 
 ul .recipe-index {
   display: flex;
