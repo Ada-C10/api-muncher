@@ -1,0 +1,209 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+body, html {
+  height: 100%;
+  font-family: 'Comfortaa', cursive;
+}
+
+a:link {
+  text-decoration: none;
+  font-family: 'Comfortaa', cursive;
+  color: #748386;
+}
+
+.page-item {
+  color: #748386;
+}
+
+.home {
+  color: white;
+}
+
+a:hover {
+  color: #9DC7C8;
+}
+
+a {
+  color: black;
+}
+
+.recipe_page_link a {
+  color: #748386;
+}
+.greeting {
+  padding: 5% 10% 5% 10%;
+  background-color: #748386;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5.5em;
+  font-family: 'Comfortaa', cursive;
+}
+
+ .card-group-container {
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   padding: 2em;
+   padding-top: 0;
+ }
+
+ .card-container {
+  margin: 1em;
+}
+
+.card-title a {
+  color: black;
+}
+
+.card-title a:hover {
+  color: #9DC7C8;
+  list-style: none;
+}
+
+.search, footer {
+  display: flex;
+  justify-content: center;
+}
+
+.not_found {
+  font-size: 4rem;
+  text-align: center;
+  padding: 2%;
+  font-size: xx-large;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.results-body {
+  padding: 5% 2% 2% 2%;
+}
+
+.fa {
+  color: white;
+}
+
+.search-heading {
+  padding-left: 5%;
+}
+
+.recipe-detail {
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  // grid-template-columns: repeat(3, 2fr);
+  grid-gap: 10px;
+  margin: 10px auto;
+}
+
+.image {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+
+}
+
+.recipe-title {
+  align-self: center;
+  padding-top: 5%;
+  padding-right: 10%;
+}
+
+.image img {
+  border-radius: 2%;
+}
+
+.ingredients {
+  grid-column: 3 / 6;
+  grid-row: 1 / 2;
+}
+
+.nutrition {
+  grid-column: 3 / 6;
+  grid-row: 3 / auto;
+}
+
+.categories {
+  grid-column: 1 / 3;
+  grid-row: 3 / auto;
+}
+
+.show-recipe {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-page {
+  padding-top: 15%;
+  padding-bottom: 30%;
+  background-color: #748386;
+}
+
+
+.search {
+  padding-top: 10px;
+  padding-left: 3%;
+}
+
+.btn-background {
+  background-color: #748386;
+  border-color: #748386;
+}
+
+.pagination {
+  padding-top: 3%;
+}
+
+.page-item.active .page-link {
+  background-color: #748386;
+  color: white;
+  border-color: #748386;
+}
+
+.page-item.active a:hover {
+  color: white;
+}
+
+.page-item .page-link {
+  color: #748386;
+}
+
+.custom-form {
+  width: 500px;
+  padding-left: 3%;
+}
+
+.option {
+  padding: 2%;
+  color: white;
+}
+
+.item {
+  padding: 8%;
+}
+
+.pagination-box {
+  padding-bottom: 10%;
+}

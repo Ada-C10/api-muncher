@@ -1,0 +1,35 @@
+<%= render partial: "form" %>
+
+<article class="show-recipe">
+  <h3 class="recipe-title"> <%= @recipe.name %></h1>
+
+  <section class="recipe-detail">
+    <div class="w-25 image item">
+      <%= image_tag @recipe.image %>
+    </div>
+    <div class="ingredients item">
+      <h3> Ingredients: </h3>
+        <ul>
+          <% @recipe.ingredients.each do |item| %>
+            <li>
+              <%= item %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <div class="nutrition item">
+      <h3> Calories: <%= @recipe.calories %> </h3>
+      <h3><%= link_to "Recipe Source ->", @recipe.url, target: :_blank, class: "recipe_page_link"%></h3>
+    </div>
+    <div class="categories item">
+    <h3> Category labels: </h3>
+      <ul>
+        <% @recipe.health_labels.each do |label| %>
+          <li>
+            <%= label %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+</article>
