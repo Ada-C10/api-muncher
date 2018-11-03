@@ -14,7 +14,7 @@
     <%= image_tag("#{@recipe.photo}") %>
   </li>
   <li>
-    <%= @recipe.original_recipe %>
+    <%= link_to @recipe.original_recipe, @recipe.original_recipe %>
   </li>
   <li>
     <ul>
