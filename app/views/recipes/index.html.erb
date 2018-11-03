@@ -7,8 +7,7 @@
         <img src="<%= recipe.image %> " alt="<%= recipe.label %>" class = "results_pic"><br>
         <%= link_to recipe.label, recipe_path(recipe.id) %>
       </div>
-      
+
   <% end %>
   </div>
 </section>
-<%= will_paginate @matching_recipes %>

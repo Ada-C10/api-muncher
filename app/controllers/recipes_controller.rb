@@ -15,7 +15,8 @@ class RecipesController < ApplicationController
   def index
     @food_to_search = params[:food]
     recipe_list = EdamamApiWrapper.find_recipes(@food_to_search)
-    @matching_recipes = recipe_list.paginate(:page => params[:page], :per_page => 10)
+    @matching_recipes = recipe_list
+    # @matching_recipes = recipe_list.paginate(:page => params[:page], :per_page => 10)
 
     # Covering status codes 401, 404 and 200(when no recipes are found)
     if recipe_list == nil || recipe_list.length == 0
