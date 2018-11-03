@@ -51,7 +51,7 @@ class EdamamApiWrapper
   # this is to send in the parse
  # initialize(label, uri, url, image, ingredientLines, dietLabels)
   def self.create_recipe(api_params)
-    #binding.pry
+
     return Recipe.new(
       api_params["label"],
       id_from_uri(api_params["uri"]),
