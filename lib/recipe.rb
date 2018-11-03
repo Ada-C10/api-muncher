@@ -1,14 +1,15 @@
 class Recipe
-  attr_reader :id, :name, :photo, :original_recipe, :ingredients, :nutrition
+  attr_reader :id, :name, :photo, :original_recipe, :ingredients, :diet_labels, :source
 
-  def initialize(id, name, photo, org_recipe, ingredients, nutrition)
-    raise ArgumentError if name == nil || name == "" || id == nil || id == ""
+  def initialize(uri, name, photo, org_recipe, ingredients, diet_labels, source)
+    raise ArgumentError if name == nil || name == "" || uri == nil || uri == ""
 
-    @id = id
+    @id = uri
     @name = name
     @photo = photo
     @original_recipe = org_recipe
     @ingredients = ingredients
-    @nutrition = nutrition
+    @diet_labels = diet_labels
+    @source = source
   end
 end

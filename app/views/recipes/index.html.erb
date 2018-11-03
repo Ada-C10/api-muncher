@@ -1,6 +1,17 @@
-<h1>Recipes</h1>
+<h1>Muncher</h1>
+<section>
+  <%= render partial: "form" %>
+</section>
+<h2>Results for <%= "#{@search_term}" %></h2>
 <ul>
   <% @recipes.each do |recipe| %>
-  <li><%= "#{recipe.name}" %></li>
+  <li>
+
+    <%= link_to(image_tag("#{recipe.photo}", alt:  "picture of recipe.name"), recipe_show_path(recipe.id)) %>
+  </li>
+  <li>
+    <%= "#{recipe.name}" %>
+    <%= "#{recipe.id}" %>
+  </li>
   <% end %>
 </ul>

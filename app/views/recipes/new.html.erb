@@ -1,10 +1,5 @@
 <h1>Muncher</h1>
 <h2>Find your flavor...</h2>
-<section>
-
-  <%= form_with url: "recipes_path", method: "post" do |f| %>
-  <%= f.text_field :author %>
-  <%= f.submit "Search" %>
-  <% end %>
-
+<section class="form">
+  <%= render partial: "form" %>
 </section>
