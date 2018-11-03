@@ -6,7 +6,17 @@
    <ul>
      <% @recipes.each do |recipe| %>
        <li>
-         <%= recipe["recipe"]["label"] %>
+
+         <% url = recipe["recipe"]["uri"] %>
+         <% pattern = /recipe_(.*)/ %>
+         <% uri = pattern.match(url) %>
+
+
+
+         <%= link_to recipe["recipe"]["label"], recipe_path(uri[1]) %>
+         <p>URI: <%= recipe["recipe"]["uri"] %></p>
+         <p>hard-coded REGEX: <%= uri[1] %></p>
+
        </li>
      <% end %>
    </ul>
