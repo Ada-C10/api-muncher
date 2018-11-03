@@ -1,21 +1,20 @@
+require 'pry'
 class RecipesController < ApplicationController
 
   def home
-
   end
 
 
   def index
     if params[:user_search]
       query = params[:user_search]
-      @recipes = EdamamApiWrapper.send_search(query)
-
-      if @recipes == []
-        flash.now[:warning] = "No recipes found for this search, try again."
+      labels = params[:health_labels].select { |label| label != "0" }
+      @recipes = EdamamApiWrapper.send_search(query, labels)
+      if @recipes == nil
+        @error = "Looks like we couldn't return recipe results for that search. Try again?"
         render :index
       else
         @recipes = Kaminari.paginate_array(@recipes).page(params[:page]).per(10)
-        flash.now[:success] = "Search results found:"
         render :index
       end
     end

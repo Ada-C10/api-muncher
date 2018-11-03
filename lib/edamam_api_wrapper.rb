@@ -7,14 +7,21 @@ class EdamamApiWrapper
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
 
-  def self.send_search(search)
+  def self.send_search(search, labels)
     puts "Retrieving EDAMAM Recipes for the search term #{search}"
 
     url = BASE_URL + "?q=#{search}" + "&app_id=#{ID}&app_key=#{KEY}" + "&from=0&to=29"
+
+    if !labels.empty?
+      url << "&health="
+      labels.each do |tag|
+        url << tag + "&"
+      end
+    end
     response = HTTParty.get(url)
-    # EXAMPLE CALL - HTTParty.get("https://api.edamam.com/search?q=chocolate&app_id=5d462879&app_key=21e92c993e17ec0b8fd8a81096405aa9&from=0&to=19"
-    if response["hits"].empty?
-      return []
+    # EXAMPLE CALL - HTTParty.get("https://api.edamam.com/search?q=chocolate&app_id=5d462879&app_key=21e92c993e17ec0b8fd8a81096405aa9&health=peanut-free&health=gluten-free&from=0&to=19"
+    if response["hits"] == nil || response["hits"] == []
+      return nil
     else
       return response["hits"].map {|recipe| EdamamApiWrapper.create_recipe(recipe["recipe"])}
     end

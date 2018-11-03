@@ -5,14 +5,33 @@ describe EdamamApiWrapper do
 
   describe "EdamamApiWrapper#send_search" do
 
-    it 'can return a response for a given query string' do
+    it 'can return a response for a given query string and no health labels' do
       VCR.use_cassette('send_search') do
-        response = EdamamApiWrapper.send_search("chicken pot pie")
+        response = EdamamApiWrapper.send_search("chicken pot pie", [])
 
-      expect(response["hits"].length).must_be :>, 0
-        response["hits"].each do |item|
-          expect(item["recipe"]).wont_be_nil
+        expect(response.length).must_be :>, 0
+        response.each do |item|
+          expect(item).must_be_instance_of Recipe
         end
+      end
+    end
+
+    it 'can return a response for a given query string with health labels' do
+      VCR.use_cassette('send_search') do
+        response = EdamamApiWrapper.send_search("muffin", ["peanut-free"])
+
+        expect(response.length).must_be :>, 0
+        response.each do |item|
+          expect(item).must_be_instance_of Recipe
+        end
+      end
+    end
+
+    it 'returns nil when given an invalid search' do
+      VCR.use_cassette('bogus_search') do
+        response = EdamamApiWrapper.send_search("28402850528ad", [])
+
+        expect(response).must_equal nil
       end
     end
 
@@ -40,15 +59,11 @@ describe EdamamApiWrapper do
   describe "EdamamApiWrapper#create_recipe" do
     it "can appropriately parse the params response so recipe can be created" do
       VCR.use_cassette('send_search') do
-        response = EdamamApiWrapper.send_search("chicken pot pie")
+        response = EdamamApiWrapper.send_search("chicken pot pie", [])
+        expect(response.length).must_be :>, 0
 
-        #set-up - check that we have some recipe params to work with
-        expect(response["hits"].length).must_be :>, 0
 
-        #creating recipe
-        recipe = EdamamApiWrapper.create_recipe(response["hits"][0]["recipe"])
-
-        expect(recipe).must_be_instance_of Recipe
+        expect(response.first).must_be_instance_of Recipe
       end
     end
 

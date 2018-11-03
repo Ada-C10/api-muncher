@@ -49,6 +49,7 @@ a {
 }
 .greeting {
   padding: 10%;
+  padding-bottom: 5%;
   background-color: #748386;
 }
 
@@ -62,7 +63,8 @@ h1 {
    display: flex;
    justify-content: space-around;
    flex-wrap: wrap;
-   padding: 3em;
+   padding: 2em;
+   padding-top: 0;
  }
 
  .card-container {
@@ -140,18 +142,14 @@ h1 {
 }
 
 .home-page {
-  padding-top: 25%;
+  padding-top: 15%;
   padding-bottom: 30%;
   background-color: #748386;
 }
 
-.form-inline .form-control {
-  width: 400px;
-}
 
 .search {
-  padding-left: 60px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .btn-background {
@@ -175,4 +173,14 @@ h1 {
 
 .page-item .page-link {
   color: #748386;
+}
+
+.custom-form {
+  width: 500px;
+  padding-left: 3%;
+}
+
+.option {
+  padding: 2%;
+  color: white;
 }

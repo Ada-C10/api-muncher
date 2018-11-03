@@ -1,10 +1,9 @@
 <%= render partial: "form" %>
-<%= paginate @recipes %>
 
 <section class="results-body">
   <% if @recipes != nil %>
   <h2 class="search-heading"> Your search results: <h2>
-  <section class="all-products">
+  <section>
 
     <div class="card-group-container">
       <% @recipes.each do |recipe| %>
@@ -12,12 +11,15 @@
         <%= image_tag recipe.image, class: "card-img-top"%>
         <div class="card-body">
           <h3 class="card-title"> <%= link_to recipe.name, recipe_path(recipe.id) %> </h3>
-          <p class="card-text"><small class="text-muted">Calories per serving: <%= recipe.calories %></small></p>
+          <p class="card-text"><small class="text-muted"><%= link_to "Recipe Source ->", recipe.url %></small></p>
         </div>
       </div>
       <% end %>
     </div>
   </section>
+  <%= paginate @recipes %>
+  <% elsif @error %>
+    <h2 class="warning"><%=@error %></h2>
   <% else %>
   <h2 class="search-heading"> Don't be shy! Try searching for some recipes. <h2>
   <% end %>

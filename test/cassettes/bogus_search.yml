@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=<EDAMAM_ID>&app_key=<EDAMAM_KEY>&from=0&q=28402850528ad&to=29
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Sat, 03 Nov 2018 15:49:18 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - route=e631c7ba5082b8aedfb6e067f8f8e739; Path=/
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Served-By:
+      - ip-10-157-133-209/10.157.133.209
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "q" : "28402850528ad",
+          "from" : 0,
+          "to" : 29,
+          "params" : {
+            "sane" : [ ],
+            "q" : [ "28402850528ad" ],
+            "from" : [ "0" ],
+            "app_key" : [ "<EDAMAM_KEY>" ],
+            "to" : [ "29" ],
+            "app_id" : [ "<EDAMAM_ID>" ]
+          },
+          "more" : false,
+          "count" : 0,
+          "hits" : [ ]
+        }
+    http_version: 
+  recorded_at: Sat, 03 Nov 2018 15:49:18 GMT
+recorded_with: VCR 4.0.0
