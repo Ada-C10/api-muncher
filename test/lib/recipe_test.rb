@@ -1,7 +1,7 @@
 require 'test_helper'
 
 describe Recipe do
-  it "raises an error if both url and label are not passed in" do
+  it "raises an error if both uri and label are not passed in" do
     expect {
       Recipe.new
     }.must_raise ArgumentError
@@ -11,10 +11,10 @@ describe Recipe do
   }.must_raise ArgumentError
   end
 
-  it "assigns a url and label at initialization" do
-    recipe = Recipe.new('some url', 'some label')
-    expect(recipe.url).wont_be_nil
-    expect(recipe.url).must_equal 'some url'
+  it "assigns a uri and label at initialization" do
+    recipe = Recipe.new('some uri', 'some label')
+    expect(recipe.uri).wont_be_nil
+    expect(recipe.uri).must_equal 'some uri'
 
     expect(recipe.label).wont_be_nil
     expect(recipe.label).must_equal 'some label'
