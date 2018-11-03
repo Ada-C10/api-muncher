@@ -24,7 +24,7 @@ html {
 body {
 
   min-height: 100vh;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway', sans-serif;
   background: #fff;
   color: #3f4042;
   background-image: url("https://www.weightwatchers.com.au/images/3081/dynamic/foodandrecipes/2014/08/BaconMshrmPasta_800.jpg");
@@ -59,7 +59,7 @@ li {
 }
 
 .search-wrapper span h1 {
-  color: #262728;
+  color: #990000;
   font-family: 'Halant', serif;
   font-size: 6rem;
   margin-bottom: 4rem;
@@ -116,6 +116,7 @@ li {
 }
 
 .search-wrapper span input.btn.btn-primary{
+  font-family: 'Nunito', sans-serif;
   margin-left: 14rem;
   padding-right: 2rem;
   padding-left: 2rem;
