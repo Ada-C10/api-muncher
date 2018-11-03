@@ -1,3 +1,15 @@
-Show
+<a href="<%= @recipe.source_url %>"><h1><%= @recipe.name %>
+<small>By: <%= @recipe.source %></small></h1></a>
 <%= image_tag @recipe.image %>
-<%= @recipe.name %>
+<h3>Ingredients</h3>
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+  <li><%= ingredient %></li>
+  <% end %>
+</ul>
+<h3>Dietary Labels</h3>
+<ul>
+  <% @recipe.dietary.each do |label| %>
+  <li><%= label %></li>
+  <% end %>
+</ul>
