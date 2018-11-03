@@ -1,11 +1,34 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1, h2, .form {
+body {
+  font-family: 'Concert One', cursive;
+}
+
+h1, h2 {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  margin: auto;
-  height: auto;
+}
+
+#root-pg-h1 {
+  top: 35%;
+  left: 44%;
+  position: fixed;
+  margin-top: 1em;
+}
+
+#root-pg-h2 {
+  top: 40%;
+  left: 41%;
+  position: fixed;
+  margin-top: 1em;
+}
+
+.root-pg-search {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
