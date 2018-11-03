@@ -3,8 +3,13 @@ class RecipeSearchesController < ApplicationController
   end
 
   def index
+    if params[:q]
+      search_term = Query.create()
+    end
+
     params[:q] ||= ""
     @query = params[:q].downcase
+
 
     filters = {}
     if params[:health]
@@ -16,8 +21,6 @@ class RecipeSearchesController < ApplicationController
     if @shuffle == "t"
       length = recipes.length
       recipes = recipes.sample(length)
-    else
-      recipes = recipes
     end
 
     @recipes = recipes.paginate(:page => params[:page], :per_page => 6)

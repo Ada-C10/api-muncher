@@ -1,2 +1,3 @@
-class Query < ApplicationRecord
+class Query < ApplicationRecord  
+  validates :search_term, presence: true, length: {in: 0..50}
 end
