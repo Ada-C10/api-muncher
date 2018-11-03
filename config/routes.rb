@@ -3,5 +3,8 @@ Rails.application.routes.draw do
 
   root 'search#index'
 
+  resources 'recipes'
+
+  # get 'recipes#index', to: 'recipes#index', as: 'recipes'
 
 end

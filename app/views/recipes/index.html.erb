@@ -1,0 +1,15 @@
+<p>Here are your recipes!</p>
+
+<p>PARAMS: <%= params.inspect %> </p>
+
+<% if @recipes %>
+   <ul>
+     <% @recipes.each do |recipe| %>
+       <li>
+         <%= recipe["recipe"]["label"] %>
+       </li>
+     <% end %>
+   </ul>
+ <% end %>
+
+<p><%= @recipes.count %></p>
