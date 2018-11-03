@@ -1,7 +1,6 @@
 require 'httparty'
 
 class EdamamApiWrapper
-
   BASE_URL = "https://api.edamam.com/search?"
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
@@ -9,8 +8,7 @@ class EdamamApiWrapper
 
   def self.search_recipes
     @url = BASE_URL + 'search?' + "q=#{@search_term}" + "&app_id=#{EDAMAM_ID}" + "&app_key=#{EDAMAM_KEYS}"
-    data = httparty.get(url)
-
+    data = HTTParty.get(url)
     @recipe_list = []
     if data['hits'] > 0
       data['hits'].each do |recipe_data|
@@ -20,9 +18,10 @@ class EdamamApiWrapper
     else
       return nil
     end
+end 
     def self.find_recipe(id)
       url = BASE_URL + "search?" + "r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{id}" + "&app_id=#{ID}&app_key=#{KEY}"
-      data = httparty.get(url)
+      data = HTTParty.get(url)
       if data.length > 0
         recipe = create_recipe(data[0])
         return recipe
@@ -51,12 +50,3 @@ class EdamamApiWrapper
       )
     end
   end
-
-
-  def initialize(response)
-    @label = response['hits']['label']
-    @location = response['hits']['image']
-    @icon = response['hits']['url']
-    @desc = response['hits']['dietLabels']
-  end
-end

@@ -7,6 +7,7 @@ describe RecipesController do
         get recipes_path
 
         must_respond_with :ok
+      end
     end
   end
 end
