@@ -7,10 +7,18 @@
 }
 
 .recipe{
-  width: 100vw;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.recipe{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+}
 
+.recipes_box{
+  padding-left: 100px;
+  padding-right: 100px;
 }

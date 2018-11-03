@@ -1,7 +1,9 @@
 <article>
   <h2><%= @specific_recipe.label %></h2>
   <p>by <%= @specific_recipe.source %></p>
+  <p><%= link_to "Original Recipe", @specific_recipe.url, target: "_blank" %></p>
   <img src="<%= @specific_recipe.image %>" alt="<%= @specific_recipe.label %>">
+
 
   <section>
     <h3>Ingredients</h3>
