@@ -6,10 +6,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= yield %>
   </body>
+
+  <footer class="navbar_brand fixed-bottom text-center navbar-light">
+    <p>Powered by Edamam</p>
+  </footer>
+
 </html>
