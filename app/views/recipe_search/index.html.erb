@@ -1,30 +1,38 @@
-<div id="wrap" class="mt-0">
-  <form action= "<%= recipe_searches_path %>" method="get">
-    <label for="search"></label>
-    <input id="search" name="q" type="text" placeholder="I want a recipe for..." maxlength= 50 autocomplete="off" spellcheck="false">
-    <input id="search_submit" value="Submit" type="submit">
-  </form>
-</div>
+<nav>
+  <div id="searchbar" class="mt-0">
+    <form action= "<%= recipe_searches_path %>" method="get">
+      <label for="search" id="search_label"></label>
+      <input id="search_text" name="q" type="text" placeholder="I want a recipe for..." maxlength= 50 autocomplete="off" spellcheck="false">
+      <input id="search_submit" value="Submit" type="submit">
+    </form>
+  </div>
+
 <% if @recipes.any? %>
   <h1 class="section-title">Search: <%= @query %></h1>
 <% end %>
 
+  <a href="<%= root_path %>" class="navbar-brand">Home</a>
+</nav>
 
-<section id="team" class="pb-5 pt-0">
+
+<section id="recipecards" class="pb-5 pt-0">
   <div class="container">
     <% if @recipes.any? %>
-
 
       <div class="munch_pagination">
         <%= will_paginate @recipes, :previous_label => previous_label, :next_label => next_label %>
       </div>
 
       <div class="filters">
-        <ul>
-        <% @health_labels.each do |label| %>
-          <li><%= label %></li>
+        <% if @health_labels.any? %>
+          <form action="<%= recipe_searches_path %>" method="get">
+            <% @health_labels.each do |label| %>
+              <input type="checkbox" name="health[]" value="<%= label.downcase %>"><%= label %>
+            <% end %>
+              <input type="hidden" name="q" value= "<%= @query %>">
+            <input type="submit" value="Apply Filters!">
+          </form>
         <% end %>
-        </ul>
       </div>
 
       <div class="card-deck">

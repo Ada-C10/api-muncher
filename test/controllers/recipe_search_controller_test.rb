@@ -16,6 +16,13 @@ describe RecipeSearchController do
       end
     end
 
+    it "gets index when the query is nil (when there are no params)" do
+      VCR.use_cassette('list_recipes_file') do
+        get recipe_searches_path
+        must_respond_with :success
+      end
+    end
+
     # it "can handle a bogus query that looks like a uri" do
     #   VCR.use_cassette('list_recipes_file') do
     #     get recipe_searches_path, params: {q: "http://www.edamam.com/ontologies/edamam.owl#"}
