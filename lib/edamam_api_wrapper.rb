@@ -4,8 +4,8 @@ require 'pry'
 
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/"
-  KEY = ENV["APP_KEY"]
-  ID = ENV["APP_ID"]
+  KEY = ENV["EDAMAM_KEY"]
+  ID = ENV["EDAMAM_ID"]
 
 
   def self.list_recipes(ingredients)
