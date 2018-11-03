@@ -41,8 +41,9 @@ class RecipeSearchApiWrapper
       api_params["uri"],
       api_params["source"],
       api_params["image"],
-      api_params["ingredientLines"],
-      api_params["dietLabels"]
+      api_params["ingredients"],
+      api_params["dietLabels"],
+      api_params["url"],
     )
 
   end

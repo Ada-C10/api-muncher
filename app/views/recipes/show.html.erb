@@ -1,1 +1,26 @@
-<h4>This is the recipe detail page</h4>
+<h4><%= link_to @recipe.name, @recipe.recipe_source %></h4>
+<p>by <%= @recipe.source %></p>
+
+<%= link_to image_tag(@recipe.image), @recipe.recipe_source, target: "_blank", alt: "photo of #{@recipe.name}"  %>
+
+<section class="ingredients" %>
+  <h5>Ingredients</h5>
+  <ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <li>
+      <%=ingredient["text"]%>
+    </li>
+    <% end %>
+  </ul>
+</section>
+
+<section class="dietary_info" >
+  <h5>Dietary Labels</h5>
+  <ul>
+    <% @recipe.dietary_info.each do |label| %>
+    <li>
+      <%= label %>
+    </li>
+    <% end %>
+  </ul>
+</section>
