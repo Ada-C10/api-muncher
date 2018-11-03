@@ -1,0 +1,14 @@
+<section class="channels-list">
+  <% if @recipe %>
+    <ul>
+      <% @recipe.each do |recipe| %>
+        <ul>
+          <li><%=recipe.label%></li>
+          <li><%=recipe.ingredients%></li>
+          <li><%=recipe.dietaryinformation%></li>
+          <a href="<%= recipe.recipe_url%>"><img src="<%=recipe.image_url%>" alt="picture of food recipe"></a>
+        </ul>
+      <% end %>
+    </ul>
+  <% end %>
+</section>

@@ -1,10 +1,12 @@
 <section class="channels-list">
   <h1>Recepies for <%=params[:message]%></h1>
-  <% if @recepes %>
+  <% if @recipes %>
     <ul>
-      <% @recepes.each do |recipe| %>
+      <% @recipes.each do |recipe| %>
         <ul>
           <li><%=recipe.label%></li>
+          <%#send to show page #%>
+          <%=link_to 'Check recipe', recipes_show_path(recipe.uri) %>
         </ul>
       <% end %>
     </ul>
