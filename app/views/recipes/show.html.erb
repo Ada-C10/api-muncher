@@ -1,1 +1,28 @@
-<h1><%= @recipe.label %></h1>
+
+<div class="recipe-container">
+  <div class="header">
+    <div class="image">
+      <div class="tape">
+      </div>
+      <%= image_tag(@recipe.image, id: "recipe-img") %>
+    </div>
+
+    <h2><%= @recipe.label %></h2>
+
+    <article class="notepad">
+      <h2>Ingredients: </h2>
+      <ul>
+        <% @recipe.ingredientLines.each do |ingredient| %>
+        <li>
+          <%= ingredient %>
+        </li>
+        <% end %>
+      </ul>
+    </article>
+
+    <article class="notepad">
+      <p>This is zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby.</p>
+    </article>
+  </div>
+
+</div>
