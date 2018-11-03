@@ -1,6 +1,6 @@
 require_dependency '../../lib/EdamamApiWrapper.rb'
 require_dependency '../../lib/recipe.rb'
-
+require 'kaminari'
 
 class RecipesController < ApplicationController
 
@@ -15,13 +15,14 @@ class RecipesController < ApplicationController
         @recipes = nil
       end
 
-    # if @recipes.nil?
-    #   flash[:status] = :warning
-    #   flash[:result_text] = "No recipes with that param. Please try a different ingredient or word."
-    #   redirect_to root_path
-    # else
-    #   @recipes_paginated = kaminari.paginate_array(@recipes).page(params[:page]).per(10)
-    # end
+    if @recipes.nil?
+      flash[:status] = :warning
+      flash[:result_text] = "No recipes with that param. Please try a different ingredient or word."
+      # redirect_to root_path
+    else
+      @recipes 
+      # @recipes_paginated = kaminari.paginate_array(@recipes).page(params[:page]).per(10)
+    end
   end
 
   def show
