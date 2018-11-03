@@ -1,0 +1,10 @@
+<% require 'pry' %>
+<section class="recipe-list">
+  <h1>Recipes</h1>
+  <% if @recipe %>
+  <ul>
+
+    <li><%= image_tag "#{@recipe.image}" %></li>
+  </ul>
+  <% end %>
+</section>

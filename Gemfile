@@ -70,6 +70,8 @@ gem 'jquery-turbolinks'
 gem 'bootstrap', '~> 4.1.3'
 group :development, :test do
   gem 'pry-rails'
+  gem 'minitest-vcr'
+  gem 'webmock'
 end
 
 group :development do
@@ -84,6 +86,7 @@ end
 group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
+  gem 'dotenv-rails'
 end
 
 
