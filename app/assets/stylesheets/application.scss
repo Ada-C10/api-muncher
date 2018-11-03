@@ -27,11 +27,15 @@ body {
   font-family: 'Raleway', sans-serif;
   background: #fff;
   color: #3f4042;
-  background-image: url("https://www.weightwatchers.com.au/images/3081/dynamic/foodandrecipes/2014/08/BaconMshrmPasta_800.jpg");
+  background-color: #FFFFF0;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+body.homepage {
+  background-image: url("https://www.weightwatchers.com.au/images/3081/dynamic/foodandrecipes/2014/08/BaconMshrmPasta_800.jpg");
 }
 
 li {

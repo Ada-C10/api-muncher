@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   before_action :find_searched_dish
 
   def new
+    @homepage = true
   end
 
   def index
