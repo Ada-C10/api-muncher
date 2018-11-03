@@ -5,13 +5,13 @@
   </section>
 </header>
 
-
+<section id="show-result">>
 <h1><%= @recipe.name %></h1>
 <h2>by <%= @recipe.source %></h2>
 
 <ul>
   <li>
-    <%= @recipe.photo %>
+    <%= image_tag("#{@recipe.photo}") %>
   </li>
   <li>
     <%= @recipe.original_recipe %>
@@ -37,3 +37,4 @@
     </ul>
   </li>
 </ul>
+</section>

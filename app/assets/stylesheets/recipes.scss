@@ -46,4 +46,8 @@ h1, h2 {
 
 section > ul {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
 }

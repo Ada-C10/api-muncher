@@ -1,5 +1,5 @@
 <header>
-  <h1>Muncher</h1>
+  <h1><%= link_to "Muncher", root_path %></h1>
   <section class="other-pg-search">
     <%= render partial: "form" %>
   </section>
@@ -7,9 +7,12 @@
 
 <h2 id="show-result">Results for "<%= "#{@search_term}" %>"</h2>
 
+<%= will_paginate @recipes %>
 
 <section>
+
   <ul>
+
     <% @recipes.each do |recipe| %>
     <li>
 
