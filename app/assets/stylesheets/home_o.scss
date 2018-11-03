@@ -1,0 +1,25 @@
+
+.flexContainer {
+    display: flex;
+}
+.flexCenter {
+    justify-content: center;
+}
+.fullHeight {
+    height: 100vh;
+}
+.itemCenter {
+    align-items: center;
+}
+.fullHeight {
+    height: 100vh;
+}
+.centerImage {
+    background: url('dinner.jpg') center;
+    background-size: cover;
+}
+
+#edamam-badge {
+  display: flex;
+  justify-content: flex-end;
+}

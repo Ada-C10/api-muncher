@@ -16,3 +16,13 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+body {
+  // background: url('dinner.jpg') center;
+  // background-size: cover;
+  text-align: center;
+}
+
+nav {
+  background-color: darkgray;
+}

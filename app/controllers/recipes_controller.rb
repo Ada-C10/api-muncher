@@ -1,6 +1,14 @@
+require 'kaminari/config'
+require 'kaminari/helpers/paginator'
+require 'kaminari/models/page_scope_methods'
+require 'kaminari/models/configuration_methods'
+
+
+
 class RecipesController < ApplicationController
 
    def home
+     render  layout:  "home_o"
    end
 
    def show
@@ -9,8 +17,9 @@ class RecipesController < ApplicationController
    end
 
    def index
-     @recipes = ApiMuncherWrapper.list_recipes(params[:title])
+     page = params[:page] || 1
+     recipe_list = ApiMuncherWrapper.list_recipes(params[:title])
+     @recipes = Kaminari.paginate_array(recipe_list).page(page).per(10)
    end
-
 
 end
