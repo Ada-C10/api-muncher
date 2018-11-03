@@ -1,4 +1,5 @@
 require 'httparty'
+
 class EdamamApiWrapper
 
   BASE_URL = "https://api.edamam.com/search?"
@@ -7,7 +8,7 @@ class EdamamApiWrapper
 
 
   def self.search_recipes
-    @url = BASE_URL + 'search?' + "q=#{search_term}" + "&app_id=#{EDAMAM_ID}" + "&app_key=#{EDAMAM_KEYS}"
+    @url = BASE_URL + 'search?' + "q=#{@search_term}" + "&app_id=#{EDAMAM_ID}" + "&app_key=#{EDAMAM_KEYS}"
     data = httparty.get(url)
 
     @recipe_list = []
@@ -19,7 +20,7 @@ class EdamamApiWrapper
     else
       return nil
     end
-    def self.search_specific(id)
+    def self.find_recipe(id)
       url = BASE_URL + "search?" + "r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{id}" + "&app_id=#{ID}&app_key=#{KEY}"
       data = httparty.get(url)
       if data.length > 0
