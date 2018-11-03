@@ -27,10 +27,12 @@
           <input type="hidden" name="q" value= "<%= @query %>">
           <button type="submit" class="btn btn-primary">Shuffle My Recipes!</button>
         </form>
-        <form action="<%= recipe_searches_path %>" method="get" class="form unshuffle">
-          <input type="hidden" name="q" value= "<%= @query %>">
-          <button type="submit" class="btn btn-primary">Default Order</button>
-        </form>
+        <% if @shuffle %>
+          <form action="<%= recipe_searches_path %>" method="get" class="form unshuffle">
+            <input type="hidden" name="q" value= "<%= @query %>">
+            <button type="submit" class="btn btn-primary">Default Order</button>
+          </form>
+        <% end %>
         <% if @health_labels.any? %>
           <form action="<%= recipe_searches_path %>" method="get" class="form health-filter">
           <% @health_labels.each do |label| %>
