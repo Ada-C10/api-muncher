@@ -1,9 +1,11 @@
 <section class="channels-list">
-  <h1>Recepies</h1>
+  <h1>Recepies for <%=params[:message]%></h1>
   <% if @recepes %>
     <ul>
       <% @recepes.each do |recipe| %>
-        <%=recipe.label%>
+        <ul>
+          <li><%=recipe.label%></li>
+        </ul>
       <% end %>
     </ul>
   <% end %>
