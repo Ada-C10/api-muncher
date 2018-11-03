@@ -99,12 +99,13 @@ li {
   text-shadow: none;
   display: inline-block;
   text-align: start;
-
+  border: none;
+  outline: none;
+  background: transparent;
   opacity: 0.75;
   background-color:#FFFFFF;
-  border-color:#666666 #CCCCCC #CCCCCC;
-  border-style:solid;
-  border-width:1px;
+
+
   color: #800000;
   font-weight: bold;
 }
