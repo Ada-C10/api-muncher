@@ -1,13 +1,15 @@
 Recipes.
 <section>
   <% if @recipes %>
+  <% @recipes.each do |recipe| %>
+  <a href="<%= recipes_show_path(recipe.id) %>" class="recipe-card-link">
     <ul>
-      <% @recipes.each do |recipe| %>
-        <li>
-          <%= image_tag recipe.image %>
-          <%= recipe.name %>
-        </li>
-      <% end %>
+      <li>
+        <%= image_tag recipe.image %>
+        <%= recipe.name %>
+      </li>
     </ul>
+  </a>
+  <% end %>
   <% end %>
 </section>
