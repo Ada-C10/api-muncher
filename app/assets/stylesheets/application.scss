@@ -23,7 +23,7 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: 'Nunito Black', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background: #fff;
   color: #3f4042;
 }
@@ -53,7 +53,7 @@ li {
 }
 
 .search-wrapper span h1 {
-  color: black;
+color: #262728;
   font-family: 'Halant', serif;
   font-size: 6rem;
   margin-bottom: 4rem;
@@ -64,12 +64,27 @@ li {
   padding-left: 6rem;
 }
 
+.search-wrapper span label{
+  margin-bottom: 0rem;
+  margin-left: 3rem;
+  font-size: 1.5rem;
+}
+
+.search-wrapper span label{
+  margin-right: 14rem;
+}
 .search-wrapper span input#dish {
 padding-right: 6rem;
 padding-left: 6rem;
-padding-top: .25em;
-padding-bottom: .25em;
+padding-top: .5em;
+padding-bottom: .5em;
 border-radius: 0.5rem;
+}
+
+.search-wrapper span input.btn.btn-primary{
+  margin-left: 14rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
 }
 
 .search-wrapper span.footer {
