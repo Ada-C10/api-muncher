@@ -1,9 +1,14 @@
 <section>
   <h2>Results for "<%= @food_to_search %>"</h2>
+  <div class="recipe">
   <% @matching_recipes.each do |recipe| %>
-    <div id="easyPaginate">
-      <img src="<%= recipe.image %> " alt="<%= recipe.label %>" class = "results_pic"><br>
-      <%= link_to recipe.label, recipe_path(recipe.id) %>
-    </div>
+
+      <div class="recipe_pic">
+        <img src="<%= recipe.image %> " alt="<%= recipe.label %>" class = "results_pic"><br>
+        <%= link_to recipe.label, recipe_path(recipe.id) %>
+      </div>
+      
   <% end %>
+  </div>
 </section>
+<%= will_paginate @matching_recipes %>
