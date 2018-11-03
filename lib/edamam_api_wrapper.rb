@@ -7,10 +7,6 @@ class EdamamApiWrapper
   APP_ID = ENV["EDAMAM_APP_ID"]
   APP_KEY = ENV["EDAMAM_APP_KEY"]
 
-  def self.param_helper(params)
-
-  end
-
   def self.list_recipes(query, from: 0, to: 120, filters: {})
     uri = BASE_URI + "/search?q=#{query}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&from=#{from}" + "&to=#{to}"
     unless filters == {}
@@ -51,7 +47,7 @@ class EdamamApiWrapper
     recipe_list.each do |recipe|
       tags = tags | recipe.send(kind_of_tag)
     end
-    return tags
+    return tags.sort
   end
 
   private
