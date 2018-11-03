@@ -1,20 +1,24 @@
-<h1>Recipe Show Page</h1>
+<section class="page-content-wrapper">
+  <h1>Recipe</h1>
 
-<h2><%= @recipe.name %></h2>
-<p>by</p><%= @recipe.creator %>
+  <%= image_tag("#{@recipe.image}") %>
+  <h2><%= @recipe.name %></h2>
+  <h3>by <%= @recipe.creator %></h3>
 
-<h3>Ingredients</<h3>
-<ul>
-  <%= @recipe.ingredients.each do |item| %>
-    <li><%= item %></li>
-  <% end %>
-</ul>
+  <%#= image_tag("#{@recipe.image}") %>
+  <%# <img src="<% @recipe.image %>
 
-<img src="<% @recipe.image %>">
+  <h3>Ingredients</<h3>
+    <ul>
+      <%= @recipe.ingredients.each do |item| %>
+      <li><%= item %></li>
+      <% end %>
+    </ul>
 
-<h3>Dietary Labels</h3>
-<ul>
-  <% @recipe.dietary_labels.each do |label| %>
-    <li><%= label %></li>
-  <% end %>
-</ul>
+    <h3>Dietary Labels</h3>
+    <ul>
+      <% @recipe.dietary_labels.each do |label| %>
+      <li><%= label %></li>
+      <% end %>
+    </ul>
+</section>

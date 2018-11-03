@@ -18,8 +18,8 @@
 
       <section class="seach-bar">
         <%= form_tag recipes_path, method: "get" do %>
-        <%= label_tag(:food, "Enter Food") %>
-        <%= text_field_tag(:food) %>
+        <% label_tag(:food) %>
+        <%= text_field_tag(:food, "Search Food") %>
         <%= submit_tag("Search") %>
         <% end %>
       </section>
