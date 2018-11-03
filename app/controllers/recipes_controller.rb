@@ -17,23 +17,11 @@ class RecipesController < ApplicationController
     recipe_list = EdamamApiWrapper.find_recipes(@food_to_search)
     @matching_recipes = recipe_list.paginate(:page => params[:page], :per_page => 10)
 
-# <<<<<<< HEAD
     # Covering status codes 401, 404 and 200(when no recipes are found)
-    if @matching_recipes == nil || @matching_recipes.length == 0
+    if recipe_list == nil || recipe_list.length == 0
       flash[:error] = "Ooops. Looks like there are no recipes for '#{@food_to_search}'. Please try again."
       redirect_back(fallback_location: root_path)
-# =======
-#     # Covering status codes 401, 404
-#     if recipe_list == nil
-#       flash[:error] = "Ooops. Something happened. Please try again."
-#       redirect_back(fallback_location: root_path)
-#     # Covering status code 200 but no recipes are returned
-#     elsif recipe_list.length == 0
-#       flash[:error] = "Ooops. Looks like there are no recipes for #{@food_to_search}. Please try again."
-#       redirect_back(fallback_location: root_path)
-#     # Covering status code 200 and recipes are found
-#     else
-# >>>>>>> pagination
+
     end
   end
 
