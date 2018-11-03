@@ -12,8 +12,8 @@ class RecipeSearchController < ApplicationController
     end
 
     recipes = EdamamApiWrapper.list_recipes(@query, filters: filters)
-
-    if params["shuffle"] == "t"
+    @shuffle = params["shuffle"]
+    if @shuffle == "t"
       length = recipes.length
       recipes = recipes.sample(length)
     else
