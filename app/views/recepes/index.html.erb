@@ -1,11 +1,9 @@
 <section class="channels-list">
   <h1>Recepies</h1>
-  <% if @recipes %>
+  <% if @recepes %>
     <ul>
-      <% @recipes.each do |recipe| %>
-        <!-- <li>
-          <%# link_to channel.name, chat_new_path(channel.name) %>
-        </li> -->
+      <% @recepes.each do |recipe| %>
+        <%=recipe.label%>
       <% end %>
     </ul>
   <% end %>
