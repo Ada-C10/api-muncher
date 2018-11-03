@@ -1,0 +1,80 @@
+/*
+font-family: 'Shrikhand', cursive;
+font-family: 'Roboto', sans-serif;
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+$link-color: forestgreen;
+$success: forestgreen;
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+
+
+
+body{
+  font-family: 'Shrikhand', cursive;
+  background-color: #BCB8B1;
+  position: relative;
+}
+
+ #munch{
+  color: white;
+  font-size: 7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h3{
+  color: white;
+  text-align: center
+}
+
+h1{
+  text-align: center;
+
+}
+
+.search{
+
+  background-image: asset-data-url("foodiesfeed.com_summer-barbeque-feast.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.indexhead{
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em
+}
+
+.pag{
+  padding-top: 10em;
+
+  text-align: center;
+}
+
+#edamam-badge{
+  text-align: center;
+}
+
+.show{
+  text-align: center;
+}
+
+ul{
+list-style: none;
+}

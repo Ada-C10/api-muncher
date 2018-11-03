@@ -1,0 +1,14 @@
+<%= render partial:"header" %>
+
+
+
+
+<body class="search">
+      <h1>404 Not-Found</h1>
+      <h1>Nothing to see here, why not search for something else?</h1>
+      <%= form_tag recipes_path, method: :get, class: "form-inline d-flex justify-content-center" do %>
+        <%= label_tag %>
+        <%= text_field_tag :label %>
+        <%= submit_tag "Search", class: "btn btn-success" %>
+        <% end %>
+</body>

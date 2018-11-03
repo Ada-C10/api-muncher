@@ -1,0 +1,15 @@
+<body class="search">
+
+<h1 id="munch"> MUNCHER </h1>
+
+<h3> What's your flavor?</h3>
+
+<%= form_tag recipes_path, method: :get, class: "form-inline d-flex justify-content-center" do %>
+  <%= label_tag %>
+  <%= text_field_tag :label %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+
+<div id="edamam-badge" data-color="white"></div>
+</body>
