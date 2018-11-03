@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
   font-family: 'Concert One', cursive;
+  font-size: 2em;
 }
 
 h1, h2 {
@@ -12,15 +13,15 @@ h1, h2 {
 }
 
 #root-pg-h1 {
-  top: 35%;
-  left: 44%;
   position: fixed;
-  margin-top: 1em;
+  top: 8%;
+  left: 38%;
+  font-size: 10em;
 }
 
 #root-pg-h2 {
   top: 40%;
-  left: 41%;
+  left: 44%;
   position: fixed;
   margin-top: 1em;
 }
