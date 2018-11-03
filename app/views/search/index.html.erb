@@ -7,7 +7,11 @@
 
       <% @recipes.each do |recipe| %>
         <li>
-          <%= recipe.label %>
+         <img src= <%= recipe.image %> class="img-thumbnail, item_show" >
+         <%= recipe.label %>
+         <li><%= link_to "See Details",
+         search_show_path(recipe.uri),
+         class: "btn btn-primary"%></li>
 
         </li>
       <% end %>

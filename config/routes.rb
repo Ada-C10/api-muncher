@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get ':q', to: 'search#index', as: 'search_index'
 
-  # get  '/search/:id', to: 'search#show', as: search_path(:id)
+
+  get  ':uri/show', to: 'search#show', as: 'search_show'
 
 end
