@@ -33,3 +33,17 @@ h1, h2 {
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
+
+.other-pg-search {
+  position: fixed;
+  top: 5%;
+  left: 40%;
+}
+
+#show-result {
+  padding-top: 3em;
+}
+
+section > ul {
+  list-style: none;
+}
