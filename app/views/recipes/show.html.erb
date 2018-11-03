@@ -1,7 +1,7 @@
 <%= render partial:"header" %>
 
 <section class="show">
-
+<% if @recipe%>
 <h1><%= @recipe.label %></h1>
 
 <%=image_tag(@recipe.image)%>
@@ -25,6 +25,7 @@
 </ul>
 
 <a href="<%=@recipe.url%>" target="_blank">Check out the full recipe! </a>
-
+<%else%>
+<% end %>
 <div id="edamam-badge" data-color="white"></div>
 </show>

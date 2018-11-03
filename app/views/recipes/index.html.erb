@@ -2,7 +2,9 @@
 
 <h1 class="indexhead">Search Results: <%= @search %> </h1>
 
-<% if @recipes %>
+<% if @recipes.empty? %>
+    <h1> No Results Found </h1>
+    <% else %>
   <div class="row mb-5">
     <% @recipes.each do |recipe| %>
       <div class="col-sm-4 mb-4 text-center d-flex justify-content-around">

@@ -36,8 +36,11 @@ def self.single_recipe(id)
   url= BASE_URL + "search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{id}" + "&app_id=#{ID}&app_key=#{KEY}"
   data = HTTParty.get(url)
 
-  return create_recipe(data[0])
-
+  if data.empty?
+    return []
+  else
+   return create_recipe(data[0])
+end
 end
 
   private
