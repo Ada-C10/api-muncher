@@ -66,7 +66,7 @@
               <div class="backside scroll">
                 <div class="card">
                   <div class="card-body text-center mt-4">
-                    <h4 class="card-title "><%= link_to recipe.label, recipe_path(recipe.recipe_uri.fragment) %></h4>
+                    <h4 class="card-title "><%= link_to recipe.label, recipe_search_path(recipe.recipe_uri.fragment) %></h4>
                       <% recipe.ingredient_lines.each do |line| %>
                     <p class="card-text"><%= line %></p>
                       <% end %>

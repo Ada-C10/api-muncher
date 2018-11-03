@@ -1,5 +1,5 @@
-class RecipeSearchController < ApplicationController
-  def search
+class RecipeSearchesController < ApplicationController
+  def home
   end
 
   def index
@@ -32,7 +32,7 @@ class RecipeSearchController < ApplicationController
   end
 
   def show
-    @recipe = EdamamApiWrapper.get_recipe(params[:uri])
+    @recipe = EdamamApiWrapper.get_recipe(params[:id])
     if @recipe
     flash[:status] = :success
     else
