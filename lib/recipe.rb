@@ -1,13 +1,18 @@
 class Recipe
-  attr_reader :name, :url, :ingredients, :dietary
+  attr_reader :label, :uri, :ingredients, :dietaries
 
-  def initialize(name, url, ingredients, dietaries)
-    raise ArgumentError if name == nil || name == "" || url == nil || url == "" || ingredients == nil || ingredients =="" || dietaries == nil || dietaries ==""
+  def initialize(label, uri, ingredients, dietaries)
+    raise ArgumentError if label == nil || label == "" || uri == nil || uri == "" || ingredients == nil || ingredients =="" || dietaries == nil || dietaries ==""
 
-    @name = name
-    @url = url
+    @label = label
+    @uri = uri.partition("_").last
     @ingredients = ingredients
     @dietaries = dietaries
 
   end
+  #
+  # def parsed_uri
+  #   return self.uri.partition("_").last
+  # end
+
 end
