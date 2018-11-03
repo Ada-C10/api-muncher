@@ -1,3 +1,11 @@
+<a href="<%= root_path %>"><h1>Addymame</h1></a>
+<%= form_tag recipes_index_path, method: :get do%>
+
+<%= text_field_tag(:search) %>
+<%= submit_tag("Search") %>
+
+<% end %>
+
 <a href="<%= @recipe.source_url %>"><h1><%= @recipe.name %>
 <small>By: <%= @recipe.source %></small></h1></a>
 <%= image_tag @recipe.image %>

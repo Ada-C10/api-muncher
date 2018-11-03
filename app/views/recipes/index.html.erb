@@ -1,8 +1,16 @@
+<a href="<%= root_path %>"><h1>Addymame</h1></a>
+<%= form_tag recipes_index_path, method: :get do%>
+
+<%= text_field_tag(:search) %>
+<%= submit_tag("Search") %>
+
+<% end %>
+
 <h2>Results for "<%= @search_param.capitalize %>"</h2>
 <section>
   <% if @recipes %>
   <% @recipes.each do |recipe| %>
-  <a href="<%= recipes_show_path(recipe.id) %>" class="recipe-card-link">
+  <a href="<%= recipes_show_path(recipe.id) %>">
     <ul>
       <li>
         <%= image_tag recipe.image %>

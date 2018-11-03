@@ -8,7 +8,7 @@ class EdamamApiWrapper
 # def self.search_recipes(search_param)
   def self.search_recipes(search_term)
 
-    url = BASE_URL + QUERY_ALL + "#{search_term}" + "&app_id=" + ID + "&app_key=" + KEY
+    url = BASE_URL + QUERY_ALL + "#{search_term}" + "&app_id=" + ID + "&app_key=" + KEY + "&from=0&to=5000"
     recipes = HTTParty.get(url)
 
     recipes_found = []
