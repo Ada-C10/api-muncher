@@ -1,3 +1,10 @@
+<header class = "header">
+  <h1>MUNCHER</h1>
+  <%= render partial: "/layouts/form" %>
+</header>
+
+
+<main class = "recipe-container">
 <p>Here is your requested recipe</p>
 
 <p>URI URI URI FROM PARAMS<%= @uri %></p>
@@ -7,3 +14,10 @@
 <%= @recipe %>
 
 <%= params.inspect %>
+</main>
+
+
+<footer>
+
+<div id="edamam-badge" data-color="white"></div>
+</footer>

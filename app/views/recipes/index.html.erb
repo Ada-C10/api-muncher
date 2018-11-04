@@ -1,26 +1,56 @@
+<header class = "header">
+  <h1>MUNCHER</h1>
+  <%= render partial: "/layouts/form" %>
+</header>
+
+<main class = "main-container">
+  <h2>Results for "<%= params[:input] %>"</h2>
+
+  <div class = "recipe-grid">
 
 
-<p>Results for: <%= params[:input] %></p>
+    <% if @recipes %>
 
-<p>PARAMS: <%= params.inspect %> </p>
+    <ul>
 
-<% if @recipes %>
-   <ul>
-     <% @recipes.each do |recipe| %>
-       <li>
+      <% @recipes.each do |recipe| %>
 
-         <% url = recipe["recipe"]["uri"] %>
-         <% pattern = /recipe_(.*)/ %>
-         <% uri = pattern.match(url) %>
+      <li class = "individual-recipe">
 
-        <img src = <%= recipe["recipe"]["image"] %> >
-         <%= link_to recipe["recipe"]["label"], recipe_path(uri[1]) %>
-         <p>URI: <%= recipe["recipe"]["uri"] %></p>
-         <p>hard-coded REGEX: <%= uri[1] %></p>
+          <% url = recipe["recipe"]["uri"] %>
+          <% pattern = /recipe_(.*)/ %>
+          <% uri = pattern.match(url) %>
 
-       </li>
-     <% end %>
-   </ul>
- <% end %>
 
-<p><%= @recipes.count %></p>
+
+          <img src = <%= recipe["recipe"]["image"]%> alt = <%= recipe["recipe"]["label"] %> class = "recipe-image">
+          <h3><%= link_to recipe["recipe"]["label"], recipe_path(uri[1]) %></h3>
+
+
+      </li>
+
+      <% end %>
+
+    </ul>
+
+    <% end %>
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+  <p><%= @recipes.count %></p>
+</main>
+
+<footer>
+
+<div id="edamam-badge" data-color="white"></div>
+</footer>

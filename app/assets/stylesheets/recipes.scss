@@ -2,7 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.main-container {
+  padding: 2em 6em;
+}
 
-h1 {
-  font-size: 1em;
+.recipe-grid ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+
+
+}
+
+
+.individual-recipe{
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+
+.recipe-image{
+  grid-row: 1 / 2;
+  height: 250px;
+  width: 250px;
+  background-color: pink;
+}
+
+.individual-recipe h3 {
+  grid-row: 2 / 3;
+  text-align: center;
+  font-size: 14px;
+  background-color: yellow;
+
 }
