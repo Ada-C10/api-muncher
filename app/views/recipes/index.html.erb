@@ -4,6 +4,8 @@
   <% @recipes.each do |result| %>
     <li><%= image_tag("#{result["recipe"]["image"]}") %></li>
     <li><%= result["recipe"]["label"] %></li>
+    <% id = result['recipe']['uri'].last(32) %>
+    <li><%= link_to "Details", recipe_path(id) %></li>
     <% end %>
   </ul>
 <% else %>
