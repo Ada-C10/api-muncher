@@ -5,6 +5,7 @@
 
 
 <main class = "main-container recipe-container">
+
   <div class = "recipe-container-header">
     <h2><%= @recipe["label"] %></h2>
     <h3>By <%= @recipe["source"] %></h3>
@@ -25,8 +26,6 @@
     <% end %>
   </div>
 
-
-
   <div class = "recipe-container-nutrition">
     <h4>Dietary Labels:</h4>
     <% @recipe["dietLabels"].each do |label| %>
@@ -34,12 +33,11 @@
       <p><li><%= label %></li></p>
     </ul>
     <% end %>
-
   </div>
+
 </main>
 
 
 <footer>
-
   <div id="edamam-badge" data-color="white"></div>
 </footer>
