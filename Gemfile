@@ -68,6 +68,8 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap', '~> 4.1.3'
 group :development, :test do
+  gem 'minitest-vcr'
+  gem 'webmock'
   gem 'pry-rails'
 end
 
