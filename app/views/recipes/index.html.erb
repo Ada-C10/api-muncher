@@ -2,7 +2,7 @@ hello
 <br />
 <% @recipes.each do |recipe| %>
 <!-- encode :recipe show address using the name (remove spaces) -- or get an id? -->
-<%= link_to recipe.name, recipe_path(recipe.name) %>
+<%= link_to recipe.name, recipe_path(recipe.uri_num) %>
 <%= image_tag(recipe.photo, alt: "Food image: ") %>
 <%= recipe.uri_num %>
 <!-- image_tag "recipe.photo", alt: "Image of #{recipe.name}" -->

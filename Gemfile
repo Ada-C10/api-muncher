@@ -68,6 +68,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'dotenv-rails'
   gem 'httparty'
+  gem 'minitest-vcr'
+  gem 'webmock'
 end
 
 group :development do

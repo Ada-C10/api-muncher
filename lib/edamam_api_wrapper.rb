@@ -33,7 +33,9 @@ class EdamamApiWrapper
     return relevant_recipes_list #so else is like return []
   end
 
-  # def self.send_message(channel, message)
+
+# TODO: add uri-chopping method here - will likely reuse
+  def self.show_single_recipe(uri_num)
   #   url = BASE_URL + "chat.postMessage?" + "token=#{TOKEN}"
   #
   #   HTTParty.post(url,
@@ -47,7 +49,7 @@ class EdamamApiWrapper
   #     :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' })
   #     return response.success?
   #
-  #   end
+    end
 
   private
 
