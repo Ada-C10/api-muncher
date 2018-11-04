@@ -13,6 +13,11 @@
   <% end %>
 
 </section>
+<div class="flash-message">
+  <% flash.each do |key, value| %>
+  <%= value %>
+  <% end %>
+</div>
 <footer class = "edamam-footer">
   <div id="edamam-badge" data-color="white"></div>
 </footer>

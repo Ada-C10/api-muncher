@@ -8,8 +8,12 @@
       <%= submit_tag("Search") %>
     </div>
   </div>
-
   <% end %>
+  <div class="flash-message">
+    <% flash.each do |key, value| %>
+    <%= value %>
+    <% end %>
+  </div>
 
 </section>
 
