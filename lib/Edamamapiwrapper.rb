@@ -36,7 +36,7 @@
     def self.create_recipe(api_params)
       if api_params["uri"]
         uri = api_params["uri"]
-        uri =  api_params["uri"].partition("_").last if api_params["uri"].include? ("_")
+#        uri =  api_params["uri"].partition("_").last if api_params["uri"].include? ("_")
       end
       return Recipe.new(
         api_params["label"],

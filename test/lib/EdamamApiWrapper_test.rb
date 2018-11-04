@@ -28,7 +28,6 @@ describe EdamamApiWrapper do
   describe "find_recipe" do
     it "can find a recipe with valid uri" do
       VCR.use_cassette("recipe") do
-
         recipe = EdamamApiWrapper.find_recipe("00e89ef04a409f17dd01db6b92d83100")
 
         expect(recipe.id).must_equal "00e89ef04a409f17dd01db6b92d83100"
@@ -56,7 +55,7 @@ describe EdamamApiWrapper do
   describe "create_recipe" do
     it "can create a recipe with valid params" do
       params = {
-        "label" => "strawberry shortcake", "uri" => "_30798", "url" => "www.strawberrydelight.com", "image" => "www.strawberryshortcake.jpg", "ingredientLines" => ["butter", "sugar", "coconut-flour"], "healthLabels" => ["vegan"], "source" => "Duff CakeGuy"
+        "label" => "strawberry shortcake", "uri" => "30798", "url" => "www.strawberrydelight.com", "image" => "www.strawberryshortcake.jpg", "ingredientLines" => ["butter", "sugar", "coconut-flour"], "healthLabels" => ["vegan"], "source" => "Duff CakeGuy"
       }
       myRecipe = EdamamApiWrapper.create_recipe(params)
       expect(myRecipe).must_be_kind_of Recipe
