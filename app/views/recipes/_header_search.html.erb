@@ -1,10 +1,14 @@
-<header>
+<header class="jumbotron text-center">
   <h1><%= link_to "MUNCHER", root_path %></h1>
   <section>
     <%= form_tag(recipe_list_path, method: :get) do %>
-      <%= label_tag(:food_search, "Find your flavor...") %>
-      <%= text_field_tag(:food_search) %>
-      <%= submit_tag("Search") %>
+      <p>
+        <% label_tag(:food_search, "aria-label": "Search") %>
+        <%= text_field_tag(:food_search) %>
+      </p>
+      <p>
+        <%= submit_tag("Search") %>
+      </p>
     <% end %>
   </section>
 </header>

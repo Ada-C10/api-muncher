@@ -3,15 +3,19 @@
 <section class="recipes-list">
   <h1>Results for <%= "#{@food_search.upcase}" %></h1>
 
-  <ul>
+  <section class="d-flex flex-wrap d-flex justify-content-center">
     <% if @recipes %>
       <% @recipes.each do |recipe| %>
-        <li>
-          <%= image_tag(recipe.image, alt: "Recipe Image") %>
-          <%= link_to recipe.label, recipe_path(params: {uri: recipe.uri, label: recipe.label}) %>
-        </li>
+        <div class="recipes_list_entry">
+          <p class="recipes-list-image">
+            <%= link_to image_tag(recipe.image, alt: "Recipe Image"), recipe_path(params: {uri: recipe.uri, label: recipe.label}) %>
+          </p>
+          <p class="recipes-list-title">
+            <%= link_to recipe.label, recipe_path(params: {uri: recipe.uri, label: recipe.label}) %>
+          </p>
+        </div>
       <% end %>
-  </ul>
+  </section>
   <% else %>
     <p>
       No recipes match <%= "#{@food_search}" %>

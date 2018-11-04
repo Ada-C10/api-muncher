@@ -16,3 +16,32 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+li {
+  list-style: none;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.jumbotron {
+  padding: 1rem;
+  margin-bottom: 16px;
+}
+
+.home {
+  margin-top: 100px;
+}
+
+.home-search {
+  margin-top: 3rem;
+}
+
+.search-text {
+  margin-bottom: 0;
+}
