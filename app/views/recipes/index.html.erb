@@ -1,24 +1,25 @@
 <a href="<%= root_path %>"><h1>Addymame</h1></a>
 <%= form_tag recipes_index_path, method: :get do%>
 
-<%= text_field_tag(:search) %>
-<%= submit_tag("Search") %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
 
 <% end %>
 
 <h2>Results for "<%= @search_param.capitalize %>"</h2>
 <section>
   <% if @recipes %>
-  <% @recipes.each do |recipe| %>
-  <a href="<%= recipes_show_path(recipe.id) %>">
-    <ul>
-      <li>
-        <%= image_tag recipe.image %>
-        <%= recipe.name %>
-      </li>
-    </ul>
-  </a>
+    <% @recipes.each do |recipe| %>
+    <a href="<%= recipes_show_path(recipe.id) %>">
+      <ul>
+        <li>
+          <%= image_tag recipe.image %>
+          <%= recipe.name %>
+        </li>
+      </ul>
+    </a>
+    <% end %>
   <% end %>
-  <% end %>
+  <%= will_paginate @recipes, previous_label: h("<"), next_label: h(">") %>
 </section>
 <div id="edamam-badge" data-color="white"></div>
