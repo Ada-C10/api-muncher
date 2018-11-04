@@ -4,7 +4,7 @@ describe RecipesController do
   describe 'index' do
     it 'shows a list of recipes' do
       VCR.use_cassette("list_channels_file") do
-        get recipes_path, params: ingredients
+        get recipes_path, params: search
 
         must_respond_with :ok
       end

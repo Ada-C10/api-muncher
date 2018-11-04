@@ -18,8 +18,9 @@ describe EdamamApiWrapper do
 
     it "returns nil if not given a real word" do
       VCR.use_cassette("recipes") do
-        recipes = EdamamApiWrapper.search_recipes("akdshfajgsdfj")
-        expect(recipes).must_be_nil
+        recipes = EdamamApiWrapper.search_recipes("eooihshaljdhdj")
+
+        expect(recipes).must_equal []
       end
     end
 
@@ -54,12 +55,12 @@ describe EdamamApiWrapper do
   describe "create_recipe" do
     it "can create a recipe with valid params" do
       params = {
-        "label" => "choclate cake", "uri" => "_1234567", "url" => "www.cake.com", "image" => "www.cake.jpg", "ingredientLines" => ["butter", "choclate", "sugar"], "healthLabels" => ["vegan"], "source" => "Martha Stewart"
+        "label" => "strawberry shortcake", "uri" => "_30798", "url" => "www.strawberrydelight.com", "image" => "www.strawberryshortcake.jpg", "ingredientLines" => ["butter", "sugar", "coconut-flour"], "healthLabels" => ["vegan"], "source" => "Duff CakeGuy"
       }
       myRecipe = EdamamApiWrapper.create_recipe(params)
       expect(myRecipe).must_be_kind_of Recipe
       expect(myRecipe.name).must_equal params["label"]
-      expect(myRecipe.id).must_equal "1234567"
+      expect(myRecipe.id).must_equal "30798"
       expect(myRecipe.url).must_equal params["url"]
       expect(myRecipe.img).must_equal params["image"]
       expect(myRecipe.ingredients).must_equal params["ingredientLines"]
