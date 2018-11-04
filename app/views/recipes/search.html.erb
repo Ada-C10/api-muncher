@@ -1,12 +1,15 @@
 <section class="addymame-landing-page">
 
-<a href="<%= root_path %>"><h1>Addymame</h1></a>
+<h1>Addymame</h1>
 
 <%= form_tag recipes_index_path, method: :get do%>
-
-<%= label_tag(:search, "Find yr flavor...") %>
+<div class='addymame-landing-tagline'>
+  <%= label_tag(:search, "Find yr flavor...", :size => 100)%>
+</div>
 <%= text_field_tag(:search) %>
-<%= submit_tag("Search") %>
+<div class='addymame-landing-page-button'>
+  <%= submit_tag("Search") %>
+</div>
 
 <% end %>
 
