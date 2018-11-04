@@ -17,7 +17,7 @@ class ApiMuncherWrapper
 
     if data["hits"]
       data["hits"].each do |recipe_data|
-        recipe_list << add_recipe(recipe_data)
+        recipe_list << add_recipes(recipe_data)
       end
     end
     return recipe_list
@@ -33,25 +33,35 @@ class ApiMuncherWrapper
 
     response = HTTParty.get(url)
 
+
     if response[0]
-      return response[0]
-    else
-      return []
+      returned_recipe = get_single_recipe(response[0])
+      return returned_recipe
     end
-
   end
-
 
 
   private
 
-  def self.add_recipe(api_params)
+  def self.add_recipes(api_params)
     return Recipe.new(
       api_params["recipe"]["label"],
       api_params["recipe"]["uri"],
       api_params["recipe"]["image"],
       api_params["recipe"]["source"],
-      api_params["recipe"]["dietLabels"]
+      api_params["recipe"]["dietLabels"],
+      api_params["recipe"]["ingredientLines"]
+    )
+  end
+
+  def self.get_single_recipe(api_params)
+    return Recipe.new(
+      api_params["label"],
+      api_params["uri"],
+      api_params["image"],
+      api_params["source"],
+      api_params["dietLabels"],
+      api_params["ingredientLines"]
     )
   end
 

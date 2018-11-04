@@ -1,7 +1,7 @@
 class Recipe
-  attr_reader :label, :image, :uri, :source, :diet_labels
+  attr_reader :label, :image, :uri, :source, :diet_labels, :ingredients
 
-  def initialize(label, uri, image = nil, source = nil, diet_labels = [])
+  def initialize(label, uri, image = nil, source = nil, diet_labels = [], ingredients = [])
     raise ArgumentError if label == nil || label == "" || uri == nil || uri == ""
 
     @label = label
@@ -10,6 +10,7 @@ class Recipe
     @image = image
     @source = source
     @diet_labels = diet_labels
+    @ingredients = ingredients
 
   end
 
