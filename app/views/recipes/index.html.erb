@@ -10,17 +10,26 @@
 <%= will_paginate @recipes %>
 
 <section>
+  <div class="card-group">
+<div class="card mb-3" style="width: 30rem;">
 
   <ul>
 
-    <% @recipes.each do |recipe| %>
+<% @recipes.each do |recipe| %>
     <li>
 
-      <%= link_to(image_tag("#{recipe.photo}", alt:  "picture of recipe.name"), recipe_show_path(recipe.id)) %>
+      <%= link_to(image_tag("#{recipe.photo}", class: "card-img-top", alt: "picture of recipe.name"), recipe_show_path(recipe.id)) %>
+      <div class="card-body">
+      <p class="card-title">
+        <%= "#{recipe.name}" %>
+      </p>
+      </div>
     </li>
-    <li>
-      <%= "#{recipe.name}" %>
-    </li>
-    <% end %>
+
+
+<% end %>
   </ul>
+
+  </div>
+  </div>
 </section>
