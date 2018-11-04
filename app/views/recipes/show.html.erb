@@ -1,14 +1,14 @@
-<h2><%= @recipe[0]['label'] %></h2>
-<h4>By <%= @recipe[0]['source'] %></h4>
-<%= image_tag("#{@recipe[0]['image']}") %>
+<h2><%= @recipe.label %></h2>
+<h4>By <%= @recipe.source %></h4>
+<%= image_tag("#{@recipe.image}") %>
 <h5>Ingredients</h5>
-  <% @recipe[0]["ingredientLines"].each do |ingredient| %>
+  <% @recipe.ingredients.each do |ingredient| %>
   <ul>
   <li><%= ingredient %></li>
 </ul>
   <% end %>
   <h5>Dietary Labels</h5>
-    <% @recipe[0]["dietLabels"].each do |diet_label| %>
+    <% @recipe.diet_labels.each do |diet_label| %>
     <ul>
     <li><%= diet_label %></li>
   </ul>
