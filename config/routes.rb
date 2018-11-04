@@ -6,4 +6,6 @@ root 'recipes#new'
 post '/', to: 'recipes#index', as: 'list_recipes'
 
 get '/details', to: 'recipes#show', as: 'show_recipe'
+
+get '*path' => redirect('/')
 end
