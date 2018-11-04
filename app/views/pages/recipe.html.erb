@@ -1,14 +1,16 @@
 <ul>
   <li><h1><%= @recipe["title"] %></h1></li>
-  <li><%= image_tag(@recipe["image"]) %></li>
-  <li><%= link_to "full recipe", @recipe["url"] %></li>
-  <li>
-    health info: 
-    <%= reformat_array(@recipe["health_labels"]) %>
-  </li>
-  <li>dietary info: <%= reformat_array(@recipe["diet_labels"]) %></li>
-  <li>calories: <%= @recipe["calories"] %></li>
-  <% reformat_array(@recipe["ingredients"]).each do |ingredient| %>
-    <li><%= ingredient %></li>
+  <% if @recipe["image"] %>
+    <li><%= image_tag(@recipe["image"]) %></li>
+    <li><%= link_to "full recipe", @recipe["url"] %></li>
+    <li>
+      health info:
+      <%= reformat_array(@recipe["health_labels"]) %>
+    </li>
+    <li>dietary info: <%= reformat_array(@recipe["diet_labels"]) %></li>
+    <li>calories: <%= @recipe["calories"] %></li>
+    <% reformat_array(@recipe["ingredients"]).each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
   <% end %>
 </ul>

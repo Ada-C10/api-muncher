@@ -38,11 +38,22 @@ class EdamamWrapper
     return squeezed_recipes
   end
 
-  def self.recipe(title)
-    url = BASE_URL + "app_id=#{ID}&" + "app_key=#{KEY}&" + "q=#{title}"
-    data = HTTParty.get(url)
-    if data["hits"]
+  def self.recipe(ref)
+    if ref.include?("http://www.edamam.com/ontologies/edamam.owl")
+      url = BASE_URL + "app_id=#{ID}&" + "app_key=#{KEY}&" + "r=#{ref}"
+    else
+      url = BASE_URL + "app_id=#{ID}&" + "app_key=#{KEY}&" + "q=#{ref}"
+    end
+
+    encoded_url = URI.encode(url)
+    data = HTTParty.get(encoded_url)
+    if data.include?("hits") && data["hits"] != []
       recipe = recipe_squeezer(data["hits"]).first
+    elsif data["hits"] != []
+      formatted = [{"recipe"=> data[0]}]
+      recipe = recipe_squeezer(formatted).first
+    else
+      recipe = Recipe.new({"label"=> "sorry, no results for this query"})
     end
 
     return {

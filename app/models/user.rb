@@ -7,4 +7,12 @@ class User < ApplicationRecord
       user.save!
     end
   end
+
+  def add_to_favorites(uri)
+    unless self.favorites
+      self.favorites = []
+    end
+    
+    self.favorites << uri
+  end
 end

@@ -20,12 +20,10 @@ class PagesController < ApplicationController
   end
 
   def recipe
-    if params[:title]
-      if params[:url]
-        session[:recipe] = params
-      else
-        session[:recipe] = EdamamWrapper.recipe(params[:title])
-      end
+    if params[:uri]
+      session[:recipe] = EdamamWrapper.recipe(params[:uri])
+    else
+      session[:recipe] = EdamamWrapper.recipe(params[:title])
     end
     @recipe = session[:recipe]
   end

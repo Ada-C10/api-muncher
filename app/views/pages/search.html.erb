@@ -8,19 +8,7 @@
       <li><h1><%= recipe.title %></h1></li>
       <li><%= image_tag(recipe.image) %></li>
       <li>via <%= link_to "#{recipe.source}", recipe.url %></li>
-      <li>
-        <%= form_tag recipe_path do %>
-        <%= hidden_field_tag "title", "#{recipe.title}" %>
-        <%= hidden_field_tag "image", "#{recipe.image}" %>
-        <%= hidden_field_tag "url", "#{recipe.url}" %>
-        <%= hidden_field_tag "source", "#{recipe.source}" %>
-        <%= hidden_field_tag "health_labels", "#{recipe.health_labels}" %>
-        <%= hidden_field_tag "diet_labels", "#{recipe.diet_labels}" %>
-        <%= hidden_field_tag "calories", "#{recipe.calories}" %>
-        <%= hidden_field_tag "ingredients", "#{recipe.ingredients}" %>
-        <%= submit_tag("details") %>
-        <% end %>
-      </li>
+      <li><%= link_to "view details", recipe_path(:uri=> recipe.uri) %></li>
     </ul>
   <% end %>
 <% end %>

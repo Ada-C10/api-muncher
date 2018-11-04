@@ -5,10 +5,9 @@ Rails.application.routes.draw do
   root 'pages#home'
   post 'search', to: 'pages#search', as: 'search'
   get 'search/:queery', to: 'pages#search'
-  post 'recipe', to: 'pages#recipe', as: 'recipe'
   get 'recipe/:title', to: 'pages#recipe'
   get 'search', to: 'pages#search', as: 'search_get'
-  get 'recipe', to: 'pages#recipe', as: 'recipe_get'
+  get 'recipe', to: 'pages#recipe', as: 'recipe'
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'logout', to: 'sessions#destroy', as: 'logout'
