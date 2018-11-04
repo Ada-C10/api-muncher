@@ -1,5 +1,5 @@
 <header>
-  <h1>Muncher</h1>
+  <h1><%= link_to "Muncher", root_path %></h1>
   <section class="other-pg-search">
     <%= render partial: "form" %>
   </section>
@@ -7,14 +7,11 @@
 
 <section id="show-result">>
 <h1><%= @recipe.name %></h1>
-<h2>by <%= @recipe.source %></h2>
+<h2>by  <%= link_to @recipe.source, @recipe.original_recipe, target: :_blank  %></h2>
 
 <ul>
   <li>
     <%= image_tag("#{@recipe.photo}", :alt => "photo of recipe") %>
-  </li>
-  <li>
-    <%= link_to @recipe.original_recipe, @recipe.original_recipe, target: :_blank  %>
   </li>
   <li>
     <ul>
