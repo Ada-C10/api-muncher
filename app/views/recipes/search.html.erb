@@ -1,0 +1,16 @@
+<section class="homepage container-fluid align-middle">
+  <div class="search">
+
+
+    <h1>Muncher</h1>
+
+    <h5 class="text-left">Find your flavor...</h5>
+    <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], class: "searchbar" %>
+    <div class="submit-search">
+      <%= submit_tag "Search", :search => nil, class: 'btn btn-light btn-lg' %>
+    </div>
+    <% end %>
+  </div>
+
+</section>

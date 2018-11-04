@@ -1,0 +1,181 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+a, .search h5 {
+  text-decoration: none;
+}
+
+.brand {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: #CAE4DB;
+  border-top: 5px solid #7A9D96;
+  border-bottom: 5px solid #7A9D96;
+}
+
+.brand, .brand h1 a, .pagination a, .homepage  {
+  color: #e69815;
+}
+
+.brand h1 {
+  font-size: 500%;
+}
+
+.brand h1, .homepage h1 {
+  text-transform: uppercase;
+}
+
+.btn {
+  width: 30%;
+  background-color: #7A9D96;
+}
+
+.card img, .recipe-info img {
+  border: 5px solid #00303F;
+  border-radius: 15px;
+}
+
+.card-deck {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: space-between;
+}
+
+.card-deck .card {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+  width: 24rem;
+  flex-grow: 1;
+  flex: 0 0 33.3%;
+  border: none;
+}
+
+.dietary_info {
+  display: flex;
+  flex-flow: column wrap;
+  padding-top: 5%;
+}
+
+footer {
+  color: #DCAE1D;
+  background-color: #00303F;
+}
+
+h5 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.homepage h1 {
+  font-size: 800%;
+}
+
+.homepage {
+  height: stretch;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  padding-bottom: 10%;
+  background-color: #CAE4DB;
+}
+
+.ingredients {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+li {
+  list-style-type: none;
+}
+
+.paginate {
+  padding-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  font-size: 130%;
+}
+
+.pagination a:hover {
+  font-weight: bold;
+  color: #7A9D96;
+}
+
+.previous_page {
+  margin-right: 1rem;
+}
+
+.recipe-info {
+  padding: 5% 15% 15% 15%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.results {
+  margin: 2rem;
+}
+
+.results h2 {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search a:hover {
+  text-decoration: none;
+}
+
+.searchbar {
+  width: stretch;
+}
+
+.submit-search {
+  text-align: right;
+  padding-top: 2%;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.title, .recipe-info {
+  background-color: #ebddc7;
+}
+
+.title a, .recipe-info, .btn {
+  color: #00303F;
+}
+
+.title a:hover {
+  color: #08262f;
+  font-weight: bold;
+}
+
+.title h4 {
+  font-size: 200%;
+}
+
+.title p {
+  margin-bottom: 0;
+}
