@@ -1,0 +1,48 @@
+<div class="image-rounded">
+  <%= image_tag(@recipe.image, alt:"#{@recipe.name}") %>
+</div>
+
+<header class="align-center">
+  <br>
+  <h1><%= @recipe.name %></h1>
+  <h5>Recipe by: <%= link_to @recipe.source, @recipe.link, target:"_blank" %></h5>
+  <br>
+</header>
+
+<div class="Ingredients">
+  <div>
+    <h2>Ingredients</h2>
+  </div>
+
+  <section class="list">
+    <ul id="ingredients">
+      <% @recipe.ingredients.each do |line| %>
+      <div>
+        <%= line %>
+      </div>
+      <% end %>
+    </ul>
+  </section>
+  <br><br>
+</div>
+
+<div class="nutrition">
+  <section class="nutrition-wrapper">
+    <header>
+        <h2>Nutrition Facts</h2>
+    </header>
+    <section>
+      <ul>
+          <% @recipe.nutrients.each do |nutrient, value| %>
+          <div>
+            <% if ["FASAT", "FAMS","FAPU", "FATRN"].include?(nutrient) %>
+              <%= value["label"] %> Fat: <%= value["quantity"].to_i %> <%= value["unit"] %>
+            <% else %>
+              <%= value["label"] %>: <%= value["quantity"].to_i %> <%= value["unit"] %>
+          </div>
+            <% end %>
+          <% end %>
+      </ul>
+    </section>
+  </section>
+</div>
