@@ -6,11 +6,12 @@ class EdamamApiWrapper
   KEY = ENV["EDAMAM_KEY"]
 
   def self.search(string)
-    url = BASE_URL + "q=#{string}&" + "app_id=#{ID}&" + "app_key=#{KEY}"
-    
+    url = BASE_URL + "q=#{string}&" + "app_id=#{ID}&" + "app_key=#{KEY}&" + "to=100"
+
     response = HTTParty.get(url)
-    return response
+    return response["hits"]
   end
+
 end
 # index:
 #   syntax to get recipe name:

@@ -7,7 +7,7 @@ describe EdamamApiWrapper do
       VCR.use_cassette("recipes") do
         string = 'teriyaki'
         response = EdamamApiWrapper.search(string)
-        response["count"].must_equal 3388
+        response.must_respond_to :each
       end
     end
   end
