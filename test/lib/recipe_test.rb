@@ -2,7 +2,7 @@ require 'test_helper'
 
 describe Recipe do
 
-  it 'raises an error if recipe label is not passed in' do
+  it 'requires at least one parameter to be passed in' do
     expect{
       Recipe.new
     }.must_raise ArgumentError
@@ -13,14 +13,13 @@ describe Recipe do
     expect(recipe.label).must_equal "chicken"
   end
 
-  it 'raises an error if name is empty string or nil' do
-    expect {
-      Recipe.new("")
-    }.must_raise ArgumentError
-
-    expect {
-      Recipe.new(nil)
-    }.must_raise ArgumentError
+  it 'responds to all attribute methods' do
+    recipe_attrs = %i[diet_labels image ingredients label source uri]
+    recipe = Recipe.new("chicken")
+    recipe_attrs.each do |recipe_attr|
+      
+      expect(recipe).must_respond_to recipe_attr
+    end
   end
 
 end

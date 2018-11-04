@@ -2,7 +2,6 @@ class Recipe
   attr_reader :label, :uri, :source, :image, :ingredients, :diet_labels
 
   def initialize(label, options = {})
-    raise ArgumentError if label == nil || label == ""
 
     @label = label
 
