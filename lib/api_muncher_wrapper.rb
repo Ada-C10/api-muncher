@@ -12,15 +12,17 @@ class ApiMuncherWrapper
 
     url = BASE_URL + "?q=#{@ingredient}&from=0&to=100&app_id=" + APP_ID + "&app_key=" + APP_KEY
 
-    response = HTTParty.get(url)
+    data = HTTParty.get(url)
+    recipe_list = []
 
-    if response["hits"]
-      return response["hits"]
-    else
-      return []
+    if data["hits"]
+      data["hits"].each do |recipe_data|
+        recipe_list << add_recipe(recipe_data)
+      end
     end
-
+    return recipe_list
   end
+
 
 
   def self.recipe_by_uri(uri)
@@ -37,6 +39,20 @@ class ApiMuncherWrapper
       return []
     end
 
+  end
+
+
+
+  private
+
+  def self.add_recipe(api_params)
+    return Recipe.new(
+      api_params["recipe"]["label"],
+      api_params["recipe"]["uri"],
+      api_params["recipe"]["image"],
+      api_params["recipe"]["source"],
+      api_params["recipe"]["dietLabels"]
+    )
   end
 
 end

@@ -25,15 +25,14 @@
 
       <li class = "individual-recipe">
 
-        <% url = recipe["recipe"]["uri"] %>
         <% pattern = /recipe_(.*)/ %>
-        <% uri = pattern.match(url) %>
+        <% uri = pattern.match(recipe.uri) %>
 
-        <img src = <%= recipe["recipe"]["image"]%>
-        alt = <%= recipe["recipe"]["label"] %>
+        <img src = <%= recipe.image %>
+        alt = <%= recipe.label %>
         class = "recipe-image">
 
-        <h3><%= link_to recipe["recipe"]["label"], recipe_path(uri[1]) %></h3>
+        <h3><%= link_to recipe.label, recipe_path(uri[1]) %></h3>
 
       </li>
 
