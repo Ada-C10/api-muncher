@@ -1,25 +1,28 @@
 <%= render partial: "header_search" %>
 
-<section>
+<div class="d-flex flex-column text-center">
   <h2>
     <%= "#{@recipe.label}" %>
-    <span>by<%= "#{@recipe.source}" %></span>
   </h2>
-</section>
+  <p>by<%= " #{@recipe.source}" %>
+  </p>
+</div>
 
-<section>
-  <%= image_tag(@recipe.image) %>
-  <h3>Ingredients</h3>
-  <ul>
-  <% @recipe.ingredients.each do |ingredient|%>
-    <li>
-      <%= ingredient %>
-    </li>
-  <% end %>
-  </ul>
-</section>
+<div class="d-flex flex-row">
+  <span class="recipes_list_entry"><%= image_tag(@recipe.image) %></span>
+  <div class="recipes_list_entry">
+    <h3>Ingredients</h3>
+    <ul>
+    <% @recipe.ingredients.each do |ingredient|%>
+      <li>
+        <%= ingredient %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
 
-<section>
+<div>
   <h3>Dietary Labels</h3>
     <ul>
       <% @recipe.diet.each do |diet_label|%>
@@ -28,4 +31,4 @@
       </li>
       <% end %>
     </ul>
-</section>
+</div>
