@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
     end
   end
 
-  # Pagination on an array see: Gemfile (bottom), config/initializers/will_paginate_array_fix.rb, homepage/index.html.erb and index method
+  # Pagination on an array see: Gemfile (bottom), config/initializers/will_paginate_array_fix.rb, homepage/index.html.erb and index method. Pagination implemented is unstable. Works sometimes.
   def index
     @food_to_search = params[:food]
     recipe_list = EdamamApiWrapper.find_recipes(@food_to_search)
