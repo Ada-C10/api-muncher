@@ -4,7 +4,7 @@ require 'kaminari'
 
 class RecipesController < ApplicationController
 
-  # before_action :ingredients, except: [:main, :show]
+   # before_action :ingredients, except: [:main, :show]
 
 
   def index
@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
       flash[:result_text] = "No recipes with that param. Please try a different ingredient or word."
       # redirect_to root_path
     else
-      @recipes 
+      @recipes
       # @recipes_paginated = kaminari.paginate_array(@recipes).page(params[:page]).per(10)
     end
   end
@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = EdamamApiWrapper.find_recipe(params[:search_term])
     if @recipe.nil?
-      flash[:status] = :danger
+      flash[:status] = :warning
       flash[:result_text] = "Recipe not found. Please try again."
       redirect_to root_path
     end
@@ -43,7 +43,7 @@ class RecipesController < ApplicationController
     @ingredients = params[:ingredients]
 
     if @ingredients.nil?
-      flash[:status] = :danger
+      flash[:status] = :warning
       flash[:result_text] = "Could not find recipes. Invalid seach params."
       redirect_to root_path
     end
