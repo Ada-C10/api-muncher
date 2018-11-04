@@ -45,16 +45,20 @@ class RecipeApiWrapper
   end
 
   def self.create_recipe_detail(recipe_api_params)
-    return Recipe.new(
-      recipe_api_params[0]["label"],
-      {
-        image: recipe_api_params[0]["image"],
-        source: recipe_api_params[0]["source"],
-        url: recipe_api_params[0]["url"],
-        ingredients: recipe_api_params[0]["ingredientLines"],
-        yield: recipe_api_params[0]["yield"],
-        diet: recipe_api_params[0]["dietLabels"]
-      }
-    )
+    if recipe_api_params[0] == nil
+      return nil
+    else
+      recipe = Recipe.new(
+        recipe_api_params[0]["label"],
+        {
+          image: recipe_api_params[0]["image"],
+          source: recipe_api_params[0]["source"],
+          url: recipe_api_params[0]["url"],
+          ingredients: recipe_api_params[0]["ingredientLines"],
+          yield: recipe_api_params[0]["yield"],
+          diet: recipe_api_params[0]["dietLabels"]
+        }
+      )
+    end
   end
 end

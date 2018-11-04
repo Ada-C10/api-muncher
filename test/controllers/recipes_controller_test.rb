@@ -36,8 +36,13 @@ describe RecipesController do
         get recipe_path, params: {uri: "http://www.edamam.com/ontologies/edamam.owl#23recipe_7bf4a371c6884d809682a72808da7dc2"}
         must_respond_with :success
       end
-
     end
 
+    it "will return an error message when given an invalid uri" do
+      VCR.use_cassette("none_recipes_contr") do
+        get recipe_path, params: {uri: "http://www.edamam.com/ontologies/edamam.owl#23recipe"}
+        must_respond_with :bad_request
+      end
+    end
   end
 end

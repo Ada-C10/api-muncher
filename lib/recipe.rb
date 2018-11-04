@@ -3,7 +3,6 @@ class Recipe
 
   def initialize( label, options = {} )
     raise ArgumentError if label == nil || label == ""
-
     @label = label
     @image = options[:image]
     @source = options[:source]
