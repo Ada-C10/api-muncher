@@ -2,15 +2,18 @@
 
   <a href="<%= root_path %>"><h1>Addymame</h1></a>
   <%= form_tag recipes_index_path, method: :get do%>
-
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Search") %>
+  <div class="addymame-search-bar-search">
+    <%= text_field_tag(:search) %>
+    <div class="addymame-search-bar-button">
+      <%= submit_tag("Search") %>
+    </div>
+  </div>
 
   <% end %>
 
 </section>
 
-<h2>Results for "<%= @search_param.capitalize %>"</h2>
+<h2 class="addymame-search-results-header"><small>Results for</small> "<%= @search_param.capitalize %>"</h2>
 
 <section class="addymame-search-results">
 
@@ -27,11 +30,11 @@
   <% end %>
   <% end %>
 </section>
-<section class="index-footer">
-  <div>
-    <%= will_paginate @recipes, previous_label: h("<"), next_label: h(">") %>
+<footer class="index-footer">
+  <div class="index-footer-pagination">
+    <%= will_paginate @recipes, :class => 'recipe-pagination', previous_label: h("<"), next_label: h(">") %>
   </div>
-  <footer class = "edamam-footer">
+  <section class = "edamam-footer">
     <div id="edamam-badge" data-color="white"></div>
-  </footer>
-</section>
+  </section>
+</footer>
