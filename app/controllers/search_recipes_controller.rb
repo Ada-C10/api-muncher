@@ -2,8 +2,10 @@ class SearchRecipesController < ApplicationController
 
   def index
     if params[:search] && params[:search] != ""
-      @pagy, @recipes = pagy(EdamamApiWrapper.find_recipes_for(params[:search]), items: 10)
+      recipes = EdamamApiWrapper.find_recipes_for(params[:search])
     end
+
+    @recipes = recipes.paginate(:page => params[:page], per_page: 10)
   end
 
   def new
@@ -12,10 +14,8 @@ class SearchRecipesController < ApplicationController
     end
   end
 
-  def create
-  end
-
   def show
+    @recipe = Recipe.find_by(label: params[:label])
   end
 
 end
