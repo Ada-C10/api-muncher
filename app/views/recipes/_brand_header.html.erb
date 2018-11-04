@@ -3,7 +3,7 @@
     <div class="test">
 
 
-      <h1>Muncher</h1>
+      <h1><%= link_to "Muncher", root_path %></h1>
 
       <h5 class="text-left">Find your flavor...</h5>
       <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>

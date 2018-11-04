@@ -7,13 +7,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= yield %>
     <footer class="navbar_brand fixed-bottom text-center navbar-light">
-      <p>Powered by Edamam</p>
+      <div id="edamam-badge" data-color="badge" class="navbar_brand fixed-bottom text-center navbar-light"></div>
     </footer>
   </body>
 

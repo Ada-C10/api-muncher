@@ -6,6 +6,10 @@
   font-size: 500%;
   text-transform: uppercase;
 }
+.brand h1 a {
+  text-decoration: none;
+  color: #e69815;
+}
 
 .brand {
   height: 20%;
@@ -55,4 +59,66 @@
   display: flex;
   justify-content: center;
 
+}
+
+.title, .recipe-info {
+  background-color: #ebddc7;
+}
+
+.title p {
+  margin-bottom: 0;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: #00303F;
+  padding-top: 1rem;
+  // align-content: space-between;
+  // color: red;
+}
+.title h4 {
+  font-size: 200%;
+
+}
+.title a {
+  color: #00303F;
+  text-decoration: none;
+}
+
+.title a:hover {
+  color: #08262f;
+  // font-size: 150%;
+  font-weight: bold;
+}
+
+.recipe-info {
+  padding: 5% 15% 15% 15%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #00303F;
+}
+
+.photo {
+  display: flex;
+  justify-content: center;
+}
+
+.dietary_info {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.ingredients li {
+  list-style-type: none;
+}
+
+h5 {
+  font-weight: bold;
+  text-decoration: underline;
 }
