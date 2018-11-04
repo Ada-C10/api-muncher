@@ -84,3 +84,8 @@ end
 gem 'httparty'
 
 gem 'will_paginate', "~> 3.0.4"
+
+group :development, :test do
+  gem 'minitest-vcr'
+  gem 'webmock'
+end
