@@ -18,7 +18,7 @@ describe EdamamApiWrapper do
 
     it "returns nil if not given a real word" do
       VCR.use_cassette("recipes") do
-        recipes = EdamamApiWrapper.search_recipes("eooihshaljdhdj")
+        recipes = EdamamApiWrapper.search_recipes("akdshfajgsdfj")
 
         expect(recipes).must_equal []
       end
@@ -28,6 +28,7 @@ describe EdamamApiWrapper do
   describe "find_recipe" do
     it "can find a recipe with valid uri" do
       VCR.use_cassette("recipe") do
+
         recipe = EdamamApiWrapper.find_recipe("00e89ef04a409f17dd01db6b92d83100")
 
         expect(recipe.id).must_equal "00e89ef04a409f17dd01db6b92d83100"

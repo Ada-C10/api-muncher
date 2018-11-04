@@ -20,16 +20,16 @@
       end
     end
 
-    # def self.find_recipe(id)
-    #   url = BASE_URL + "search?" + "q=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{id}" + "&app_id=#{ID}&app_key=#{KEY}"
-    #   data = HTTParty.get(url)
-    #   if data.length > 0
-    #     recipe = create_recipe(data[0])
-    #     return recipe
-    #   else
-    #     return nil
-    #   end
-    # end
+    def self.find_recipe(id)
+      url = BASE_URL + "search?" + "q=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{id}" + "&app_id=#{ID}&app_key=#{KEY}"
+      data = HTTParty.get(url)
+      if data.length
+        recipe = create_recipe(recipe_data['recipe'])
+        return recipe
+      else
+        return nil
+      end
+    end
 
     private
 

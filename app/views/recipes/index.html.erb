@@ -1,11 +1,14 @@
 <% @recipes.each do |recipe| %>
 <div class="card-deck">
-<div class="card" >
-  <img class="card-img-top " src="https://www.edamam.com/web-img/recipe.id" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><%="#{recipe.name}"%></h5>
-    <p class="card-text"><%="#{recipe.ingredients}"%></p>
-    <h6 class="card-subtitle mb-2 text-muted"><%="#{recipe.author}"%></h6>
-    <a href="#" class="card-link"><%="#{recipe.name}"%></a>
-    <% end %>
-<br>
+  <div class="card w-25 card-padding text-center" >
+    <%= image_tag recipe.img, class: "card-img-top"%>
+  
+    <div class="card-body card-padding">
+      <h5 class="card-title"><%="#{recipe.name}"%></h5>
+      <p class="card-text"><%="#{recipe.ingredients}"%></p>
+      <h6 class="card-subtitle mb-2 text-muted"><%="#{recipe.author}"%></h6>
+      <p class="card-text btn btn-outline-dark"><%= link_to "Recipe Details", recipe_path(recipe.id) %></p>
+      <% end %>
+    </div>
+  </div>
+  <br>

@@ -3,7 +3,8 @@ require "test_helper"
 describe RecipesController do
   describe 'index' do
     it 'shows a list of recipes' do
-      VCR.use_cassette("list_channels_file") do
+      VCR.use_cassette('recipes') do
+
         get recipes_path, params: search
 
         must_respond_with :ok
@@ -45,7 +46,7 @@ end
 
 describe "show" do
   it "can get the show path with valid id" do
-    id = "fbdf4f457c6837f1f3dff02c2db242c0"
+    id = "00e89ef04a409f17dd01db6b92d83100"
     VCR.use_cassette('recipe') do
       get recipe_path(id)
 
@@ -59,17 +60,10 @@ describe "show" do
     VCR.use_cassette('recipe') do
       get recipe_path(id)
 
-      expect(flash[:status]).must_equal :danger
+      expect(flash[:status]).must_equal :warning
       expect(flash[:result_text]).must_equal "Could not find recipe. Please search again."
       must_respond_with :redirect
     end
   end
 
-end
-
-describe "main" do
-  it "succeeds" do
-    get root_path
-    must_respond_with :success
-  end
 end
