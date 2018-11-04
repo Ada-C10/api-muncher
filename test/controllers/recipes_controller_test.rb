@@ -6,7 +6,7 @@ describe RecipesController do
   # end
   it "can get the home path" do
       VCR.use_cassette('list_recipes_file') do
-        get root_path
+        render  layout:  "home_o"
 
         must_respond_with :ok
       end
@@ -19,14 +19,12 @@ describe RecipesController do
 
     it "can get the show patch" do
       VCR.use_cassette('recipe_detail') do
-        get recipe_create_path("uri"), params: { message: 'Happy Halloween' }
 
-        must_redirect_to root_path
+        expect(get recipe_path("uri"), params: { uri: '5ef38059cac69b777bc917b8c84bb79b' }).must_be_instance_of Recipe
+
+        must_respond_with :ok
+
       end
     end
-
-
-
-
 
 end
