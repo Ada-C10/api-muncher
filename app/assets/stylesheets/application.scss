@@ -16,3 +16,50 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+body {
+  font-family: 'Apple Chancery', cursive;
+  text-align: center;
+}
+
+body {
+  padding: 10px;
+  margin: 2px;
+}
+
+.top {background-color: #CCFFFF;
+      padding: 20px;}
+
+.recipe_display {
+  display: grid;
+  grid-template: auto auto / 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.recipe {padding: 2em}
+
+img {
+  border-radius: 2rem;
+  border-color: black;
+  border-style: solid;
+}
+
+em {color: black;
+    font-size: 1.5em;
+}
+em:hover {color: darkslateblue;}
+
+a:hover {text-decoration: none;
+        color: maroon;}
+
+.recipe-name {font-size: 1.25em;}
+
+h2 {color: mediumvioletred;
+    font-weight: bold}
+
+.pic {
+  background-image:  url("https://image.shutterstock.com/z/stock-photo-fresh-salad-with-chicken-tomatoes-and-mixed-greens-arugula-mesclun-mache-on-wooden-background-390942682.jpg");
+  background-repeat: no-repeat;
+  height: auto;
+  padding: 16rem 16rem;
+}
