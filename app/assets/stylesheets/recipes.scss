@@ -1,130 +1,74 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.brand h1 {
-  font-size: 500%;
-  text-transform: uppercase;
-}
-.brand h1 a {
+a, .search h5 {
   text-decoration: none;
-  color: #e69815;
 }
 
 .brand {
   height: 20%;
-  // max-width: 100%;
-  // max-height: 100%;
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
   flex: 1;
   justify-content: center;
-  // margin-top: -5%;
   padding-top: 2%;
   padding-bottom: 2%;
   background-color: #CAE4DB;
-  color: #e69815;
   border-top: 5px solid #7A9D96;
   border-bottom: 5px solid #7A9D96;
 }
 
-.paginate {
-  padding-bottom: 2.5rem;
-  display: flex;
-  justify-content: center;
-  text-decoration: none;
-  // margin-bottom: 1rem;
-}
-
-.previous_page {
-  margin-right: 1rem;
-}
-
-.pagination a {
+.brand, .brand h1 a, .pagination a, .homepage  {
   color: #e69815;
-  text-decoration: none;
-  font-size: 130%;
 }
 
-.pagination a:hover {
-  font-weight: bold;
-  color: #7A9D96;
-  // font-size: 150%;
-
+.brand h1 {
+  font-size: 500%;
 }
 
-.results h2 {
-  margin-bottom: 1rem;
+.brand h1, .homepage h1 {
+  text-transform: uppercase;
+}
+
+.btn {
+  width: 30%;
+  background-color: #7A9D96;
+}
+
+.card img, .recipe-info img {
+  border: 5px solid #00303F;
+  border-radius: 15px;
+}
+
+.card-deck {
   display: flex;
-  justify-content: center;
-
-}
-
-.title, .recipe-info {
-  background-color: #ebddc7;
-}
-
-.title p {
-  margin-bottom: 0;
-}
-
-.title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  color: #00303F;
-  padding-top: 1rem;
-  // align-content: space-between;
-  // color: red;
-}
-.title h4 {
-  font-size: 200%;
-
-}
-.title a {
-  color: #00303F;
-  text-decoration: none;
-}
-
-.title a:hover {
-  color: #08262f;
-  // font-size: 150%;
-  font-weight: bold;
-}
-
-.recipe-info {
-  padding: 5% 15% 15% 15%;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  display: flex;
+  justify-content: space-around;
   flex-flow: row wrap;
-  justify-content: space-between;
-  color: #00303F;
+  align-items: space-between;
 }
 
-// .photo {
-//   display: flex;
-//   justify-content: center;
-// }
-
-.ingredients {
+.card-deck .card {
   display: flex;
   flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+  width: 24rem;
+  flex-grow: 1;
+  flex: 0 0 33.3%;
+  border: none;
 }
 
 .dietary_info {
   display: flex;
   flex-flow: column wrap;
-  // justify-content: center;
-  // text-align: center;
   padding-top: 5%;
 }
 
-li {
-  list-style-type: none;
+footer {
+  color: #DCAE1D;
+  background-color: #00303F;
 }
 
 h5 {
@@ -132,6 +76,106 @@ h5 {
   text-decoration: underline;
 }
 
-.search h5 {
+.homepage h1 {
+  font-size: 800%;
+}
+
+.homepage {
+  height: stretch;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  padding-bottom: 10%;
+  background-color: #CAE4DB;
+}
+
+.ingredients {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+li {
+  list-style-type: none;
+}
+
+.paginate {
+  padding-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  font-size: 130%;
+}
+
+.pagination a:hover {
+  font-weight: bold;
+  color: #7A9D96;
+}
+
+.previous_page {
+  margin-right: 1rem;
+}
+
+.recipe-info {
+  padding: 5% 15% 15% 15%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.results {
+  margin: 2rem;
+}
+
+.results h2 {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.search a:hover {
   text-decoration: none;
+}
+
+.searchbar {
+  width: stretch;
+}
+
+.submit-search {
+  text-align: right;
+  padding-top: 2%;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.title, .recipe-info {
+  background-color: #ebddc7;
+}
+
+.title a, .recipe-info, .btn {
+  color: #00303F;
+}
+
+.title a:hover {
+  color: #08262f;
+  font-weight: bold;
+}
+
+.title h4 {
+  font-size: 200%;
+}
+
+.title p {
+  margin-bottom: 0;
 }
