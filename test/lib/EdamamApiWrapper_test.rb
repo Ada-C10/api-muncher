@@ -5,7 +5,7 @@ describe EdamamApiWrapper do
   describe "list_recipes" do
     it "can list recipes" do
       VCR.use_cassette("recipes") do
-        recipes = EdamamApiWrapper.list_recipes("chocolate")
+        recipes = EdamamApiWrapper.search_recipes("chocolate")
 
         expect(recipes.length).must_be :>, 0
         expect(recipes.length).must_be :<=, 100
