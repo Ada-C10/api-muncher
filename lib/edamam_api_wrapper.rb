@@ -2,7 +2,6 @@ require 'httparty'
 
 class EdamamApiWrapper
   BASE_URL = "https://api.edamam.com/search"
-  URL2 =  "http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#"
   TOKEN = ENV["app_key"]
   ID = ENV["app_id"]
   NUM = 50
@@ -35,9 +34,9 @@ class EdamamApiWrapper
   end
 
   # in the uri there is a uniq sequence of numbers that is id for the recipe
-  def self.show_recipe(uri)
+  def self.show_recipe(word)
 
-    url = BASE_URL + "r=#{URL2}#{uri}" + "&app_id=#{ID}" + "&app_key=#{TOKEN}"
+    url = BASE_URL + "?app_id=#{ID}" + "&app_key=#{TOKEN}" + "&r=http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{word}"
 
     # url = URI.encode(url)
 
@@ -54,39 +53,11 @@ class EdamamApiWrapper
 
     )
 
+    # https://api.edamam.com/search?app_id=4725ac52&app_key=38d001a81b3e952ed69594b6172e18a0&r=http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_a91ad068e8956a7cda46bf41c57bb084
+
     return recipe
 
 
   end
-
-  private
-
-  # def self.create_recipe(api_params)
-  #
-  #   return Recipe.new(
-  #       label: api_params["label"],
-  #       uri: api_params["uri"],
-  #       image: api_params["image"],
-  #       url: api_params["url"],
-  #       dietLabels: api_params["dietLabels"],
-  #       healthLabels: api_params["healthLabels"],
-  #       ingredientLines: api_params["ingredientLines"]
-  #   )
-  # end
-  #
-  # def self.create_single_recipe(api_params)
-  #   return Recipe.new(
-  #     {
-  #       image: ["image"],
-  #       uri: ["uri"],
-  #       label: ["label"],
-  #       url: ["url"],
-  #       dietLabels: ["dietLabels"],
-  #       healthLabels: ["healthLabels"],
-  #       ingredientLines: ["ingredientLines"]
-  #     }
-  #   )
-  # end
-
 
 end

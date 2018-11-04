@@ -7,7 +7,8 @@
         <div class="card">
           <%= image_tag("#{recipe.image}", :alt => 'recipe-img', :class => 'image-tag') %>
           <div class="card-body">
-            <%= link_to recipe.label, recipe_path(recipe.uri.split("_")[1]) %>
+
+            <%= link_to recipe.label, recipe_detail_path(recipe.uri.split("_")[1]) %>
           </div>
         </div>
       <% end %>

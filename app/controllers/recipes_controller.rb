@@ -16,8 +16,7 @@ end
 
 def show
 
-@recipe = EdamamApiWrapper.show_recipe(params[:id])
-
+@recipe = EdamamApiWrapper.show_recipe(params[:word])
 
 end
 
