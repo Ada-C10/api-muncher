@@ -1,7 +1,7 @@
 <ul>
   <% @recipes.each do |recipe| %>
   <li> <%= link_to image_tag(recipe.image), recipe.url%> </li>
-  <li> <%= link_to recipe.label, recipe.url %> </li>
+  <li> <%= link_to recipe.label, search_recipe_path(recipe.uri.fragment), target: :blank  %> </li>
   <% end %>
 </ul>
 
