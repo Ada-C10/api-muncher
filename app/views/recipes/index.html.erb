@@ -1,26 +1,26 @@
-
-
-
-
 <header class = "header">
   <h1>MUNCHER</h1>
   <%= render partial: "/layouts/form" %>
 </header>
 
+
 <main class = "main-container">
+
+  <% if @recipes.count == 0 %>
+
+    <h2>There are no recipes for "<%= params[:input] %>". Please enter a new search above.</h2>
+
+  <% else %>
+
   <h2>Results for "<%= params[:input] %>"</h2>
 
   <div class = "paginate">
-<%= will_paginate @recipes %>
-</div>
+    <%= will_paginate @recipes %>
+  </div>
 
   <div class = "recipe-grid">
 
-
-    <% if @recipes %>
-
     <ul>
-
       <% @recipes.each do |recipe| %>
 
       <li class = "individual-recipe">
@@ -35,24 +35,17 @@
 
         <h3><%= link_to recipe["recipe"]["label"], recipe_path(uri[1]) %></h3>
 
-
       </li>
 
       <% end %>
-
     </ul>
-
-    <% end %>
-
 
   </div>
 
-
-
-
+  <% end %>
 </main>
 
-<footer>
 
+<footer>
   <div id="edamam-badge" data-color="white"></div>
 </footer>
