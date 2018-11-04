@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'recipe#homepage'
+  root 'recipes#homepage'
   # get 'recipe/homepage', to: 'recipe#search', as: 'recipe_search'
   # get 'index', to: 'recipes#index', as: 'recipe_index'
   # get 'show', to: 'recipes#show', as: 'recipe'
