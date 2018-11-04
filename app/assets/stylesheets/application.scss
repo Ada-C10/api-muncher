@@ -34,9 +34,11 @@ h3 {
 h4 {
   font-size: 1em;
 }
+
 p {
     text-align: center;
 }
+
 .seach-bar {
   display: flex;
   flex-wrap: wrap;
@@ -45,7 +47,11 @@ p {
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #181AE9;
+  // background-color: #181AE9;
+  border-top-style: dashed;
+  border-bottom-style: dashed;
+  border-color: #181AE9;
+  border-width: 5px;
 }
 
 .logo-wrapper a:hover {
@@ -63,23 +69,28 @@ p {
   border-radius: 20px;
 }
 
-.menu_icon {
- padding-right: 10px;
-}
-// .form-control {
-//   // border: 1px solid #FF8514;
-//   // box-shadow: 0 0 0 1px #FF8514;
-// }
-
 .logo {
-  padding-top: 15px;
   display: block;
-  padding-left: 1.5em;
   text-align: center;
+  width: 100%;
   position: relative;
   box-sizing: border-box;
   font-size: 4.5em;
   color: #FEFC34;
+}
+
+main img {
+ width: 100%;
+}
+
+.flash {
+  padding: 1em;
+}
+
+.section-title {
+  text-align: center;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
 }
 
 .cards-container {
@@ -88,8 +99,55 @@ p {
    justify-content: space-between;
    flex-direction: row;
   justify-content: center;
+
 }
 
 .card {
-   margin: 1rem .25em;
+   margin: 1rem 1em;
+}
+
+.recipe {
+  display: grid;
+  grid-template: auto auto / 1fr 1fr;
+  justify-items: left;
+}
+
+.recipe-intro h3 {
+  padding-top: 1em;
+}
+
+.ingredients {
+   padding: 2em;
+}
+
+.ingredients h3 {
+  padding-bottom: 1em;
+  padding-top: 3em;
+}
+
+.ingredients p {
+  text-align: left;
+  margin-bottom: .5em;
+}
+
+.labels {
+  padding-top: 1em;
+}
+
+.labels p {
+  text-align: left;
+}
+
+.recipe-link {
+  padding-top: 1em;
+  font-size: 1.5em;
+}
+
+.btn-primary {
+    background: #FEFC34;
+    color: #181AE9;
+}
+
+.btn-primary.raised {
+	box-shadow: 0 3px 0 0 #007299;
 }

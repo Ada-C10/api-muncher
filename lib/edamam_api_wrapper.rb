@@ -1,6 +1,7 @@
 require 'httparty'
 
 class EdamamApiWrapper
+
   BASE_URL = 'https://api.edamam.com/search?'
   TOKEN = ENV['EDAMAM_TOKEN']
   APP_ID = ENV['EDAMAM_APP_ID']
@@ -23,6 +24,9 @@ class EdamamApiWrapper
   end
 
   def self.create_recipe(api_params)
+
+    raise ArgumentError.new("recipe does not exist") if api_params.nil?
+
     parsed_uri = api_params["uri"].split("_")[1]
 
     return Recipe.new(

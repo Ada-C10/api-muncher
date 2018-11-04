@@ -1,24 +1,31 @@
 <section class="page-content-wrapper">
-  <h1>Recipe</h1>
 
-  <%= image_tag("#{@recipe.image}") %>
-  <h2><%= @recipe.name %></h2>
+<section class="recipe">
+  <section class="recipe-intro">
+  <h2><%= @recipe.name %> Recipe</h2>
   <h3>by <%= @recipe.creator %></h3>
+  <%= image_tag("#{@recipe.image}") %>
+  </section>
 
-  <%#= image_tag("#{@recipe.image}") %>
-  <%# <img src="<% @recipe.image %>
+  <section class="ingredients">
+    <h3>Ingredients</h3>
 
-  <h3>Ingredients</<h3>
-    <ul>
-      <%= @recipe.ingredients.each do |item| %>
-      <li><%= item %></li>
-      <% end %>
-    </ul>
+    <% @recipe.ingredients.each do |item| %>
+      <p><%= item %></p>
+    <% end %>
+  </section>
 
+  <section class="labels">
     <h3>Dietary Labels</h3>
-    <ul>
-      <% @recipe.dietary_labels.each do |label| %>
-      <li><%= label %></li>
-      <% end %>
-    </ul>
+    <% @recipe.dietary_labels.each do |label| %>
+      <p><%= label %></p>
+    <% end %>
+  </section>
+
+<section class="recipe-link">
+  <a href="<%= @recipe.recipe_link %>" target="_blank" class="btn btn-primary btn-lg raised">Go to Recipe</a>
+</section>
+
+</section>
+
 </section>

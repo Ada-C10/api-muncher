@@ -12,18 +12,24 @@
   <body>
     <header>
 
-      <section class="logo-wrapper">
-        <%= link_to "Ghost Muncher", root_path, class: "logo" %>
-      </section>
+      <nav class="navbar"
+        <section class="logo-wrapper">
+          <%= link_to "Ghost Muncher", root_path, class: "logo" %>
+        </section>
 
-      <section class="seach-bar">
-        <%= form_tag recipes_path, method: "get" do %>
-        <% label_tag(:food) %>
-        <%= text_field_tag(:food, "Search Food") %>
-        <%= submit_tag("Search") %>
-        <% end %>
-      </section>
+        <section class="seach-bar">
+          <%= form_tag recipes_path, method: "get" do %>
+          <% label_tag(:food) %>
+          <%= text_field_tag(:food, nil, placeholder: "Search Recipes") %>
+          <%= submit_tag("Munch", class: "btn btn-primary") %>
+          <% end %>
+        </section>
+      </nav>
 
+    </header>
+
+    <main>
+      
       <section class="flash">
         <% flash.each do |name, message| %>
           <% if message.class == Array %>
@@ -39,9 +45,6 @@
         <% end %>
       </section>
 
-    </header>
-
-    <main>
       <%= yield %>
     </main>
 
