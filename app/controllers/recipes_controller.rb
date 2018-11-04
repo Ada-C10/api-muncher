@@ -8,8 +8,6 @@ class RecipesController < ApplicationController
   def index
     # @dish = params[:dish]
     @recipes = EdamamApiWrapper.find_recipes('q',@dish)
-
-
     if @recipes
       render :index
       #list recipes

@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
 root 'recipes#new'
 
-# post '/', to: 'recipes#new', as: 'new'
-
 post '/recipes', to: 'recipes#index', as: 'list_recipes'
 
 get '/recipes/details', to: 'recipes#show', as: 'show_recipe'
