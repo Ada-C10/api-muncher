@@ -9,16 +9,18 @@ class RecipesController < ApplicationController
   def index
     # @dish = params[:dish]
 
-    @recipes = EdamamApiWrapper.find_recipes('q', @dish)
-
-    if @recipes == nil
-      flash[:error] = "Something went wrong."
-      redirect_to root_path
-    elsif @recipes.empty?
-      flash.now[:error] = "No recipes found for #{@dish}. Try another search."
-    else
+    if @dish == nil or @dish == ""
+      flash.now[:error] = "Please enter a dish. Search can't be blank."
       render :index
-      #list recipes
+    else
+      @recipes = EdamamApiWrapper.find_recipes('q', @dish)
+      if @recipes.empty?
+        flash[:error] = "Sorry, something went wrong. No recipes found for #{@dish}. Try another search."
+        redirect_to root_path
+      else
+        render :index
+        #list recipes
+      end
     end
   end
 

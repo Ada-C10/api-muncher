@@ -14,9 +14,9 @@ class EdamamApiWrapper
     if response.key? "hits"
       return_recipes(response)
     elsif response[0].key? "uri"
-
       return_single_recipe(response[0])
-
+    else
+      return []
     end
   end
 
