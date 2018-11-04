@@ -1,0 +1,17 @@
+<section class = "sub_search">
+  <%= render partial: 'layouts/search' %>
+</section>
+
+<section class = "recipes_box">
+  <h2>Results for "<%= @food_to_search %>"</h2>
+  <div class="recipe_list">
+  <% @matching_recipes.each do |recipe| %>
+
+      <div class="recipe">
+        <img src="<%= recipe.image %> " alt="<%= recipe.label %>" class = "results_pic"><br>
+        <%= link_to recipe.label, recipe_path(recipe.id) %>
+      </div>
+
+  <% end %>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+  </head>
+
+  <body>
+    <section class="flash_messages">
+        <p>
+          <% flash.each do |key, message| %>
+            <% if flash[:success] %>
+              <div id="flash_success">
+                <%= message %>
+              </div>
+            <% else %>
+              <div id="flash_error">
+                <%= message %>
+              </div>
+            <% end %>
+          <% end %>
+        </p>
+    </section>
+    <section>
+      <%= yield %>
+    </section>
+
+    
+  </body>
+</html>

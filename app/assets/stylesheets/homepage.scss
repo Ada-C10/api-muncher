@@ -1,0 +1,20 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.homepage_search{
+  text-align: center;
+  background-image: url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?auto=compress&cs=tinysrgb&h=350");
+  width: 100vw;
+  height: 500px;
+}
+
+.homepage_search > h2{
+  color: #e19d00;
+  font-size: 60px;
+  letter-spacing: 3px;
+}
+
+.homepage_search > p{
+  color: lightblue;
+  letter-spacing: 1px;
+}

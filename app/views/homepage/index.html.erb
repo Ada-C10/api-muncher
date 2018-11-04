@@ -1,0 +1,9 @@
+<section class = "homepage_search">
+  <h2>MUNCHER</h2>
+  <p>Whats your craving?</p>
+
+  <%= form_with url: find_path do |form| %>
+    <%= form.text_field :food_type %>
+    <%= form.submit "Submit" %>
+  <% end %>
+</section>
