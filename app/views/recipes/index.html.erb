@@ -1,3 +1,7 @@
+
+
+
+
 <header class = "header">
   <h1>MUNCHER</h1>
   <%= render partial: "/layouts/form" %>
@@ -5,7 +9,7 @@
 
 <main class = "main-container">
   <h2>Results for "<%= params[:input] %>"</h2>
-
+<%= will_paginate @recipes %>
   <div class = "recipe-grid">
 
 
@@ -17,14 +21,15 @@
 
       <li class = "individual-recipe">
 
-          <% url = recipe["recipe"]["uri"] %>
-          <% pattern = /recipe_(.*)/ %>
-          <% uri = pattern.match(url) %>
+        <% url = recipe["recipe"]["uri"] %>
+        <% pattern = /recipe_(.*)/ %>
+        <% uri = pattern.match(url) %>
 
+        <img src = <%= recipe["recipe"]["image"]%>
+        alt = <%= recipe["recipe"]["label"] %>
+        class = "recipe-image">
 
-
-          <img src = <%= recipe["recipe"]["image"]%> alt = <%= recipe["recipe"]["label"] %> class = "recipe-image">
-          <h3><%= link_to recipe["recipe"]["label"], recipe_path(uri[1]) %></h3>
+        <h3><%= link_to recipe["recipe"]["label"], recipe_path(uri[1]) %></h3>
 
 
       </li>
@@ -36,13 +41,7 @@
     <% end %>
 
 
-
-
   </div>
-
-
-
-
 
 
 
@@ -52,5 +51,5 @@
 
 <footer>
 
-<div id="edamam-badge" data-color="white"></div>
+  <div id="edamam-badge" data-color="white"></div>
 </footer>
