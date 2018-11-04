@@ -45,7 +45,12 @@ describe "Edamam Api Wrapper" do
          data = HTTParty.get(url).parsed_response
          response = EdamamApiWrapper.list_recipe("b79327d05b8e5b838ad6cfd9576b30b6")
          expect(response.length).must_equal 1
+         # test_show = HTTParty.get(recipe_path(id))
          # Can't find response code in data or response
+         # get recipe_path(id)
+         # binding.pry
+         # must_respond_with :ok
+         # binding.pry
          # response["ok"].must_equal true
          # reponse["error"].wont_be_nil
        end
@@ -65,7 +70,7 @@ describe "Edamam Api Wrapper" do
      end
    end
    #
-   # Could not figure out how to record the home page 
+   # Could not figure out how to record the home page
    # describe "root path" do
    #
    #   it "Can load the home page" do
