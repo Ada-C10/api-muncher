@@ -21,3 +21,19 @@
 ul {
   list-style-type: none;
 }
+
+
+
+.recipe-list {
+  display: grid;
+   grid-gap: 50px;
+   grid-template-columns: auto auto;
+   background-color: #fff0f5;
+   padding: 10px
+}
+
+.list {
+  border: 1px solid;
+  font-size: 30px;
+  text-align: center;
+}

@@ -1,20 +1,18 @@
+<h1>Recipes</h1>
 
-<section class="recipe-list">
-  <h1>Recipes</h1>
   <%= will_paginate @recipes %>
-
   <% if @recipes %>
-  <ul>
+  <div class="recipe-list">
+  <div class="list">
     <% @recipes.each do |recipe| %>
-    <li>
+    <div class="list">
       <%= link_to "#{recipe.id}",
       search_detail_path(recipe.label) %>
-
-    </li>
-    <li><%= image_tag "#{recipe.image}" %></li>
+    </div>
+    <div class="list"><%= image_tag "#{recipe.image}" %></div>
     <% end %>
-  </ul>
+  </div>
   <% end %>
 
 
-</section>
+</div>
