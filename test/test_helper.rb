@@ -5,6 +5,7 @@ require "minitest/rails"
 require "minitest/reporters"  # for Colorized output
 require 'vcr'
 require 'webmock/minitest'
+require 'pry'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
@@ -29,7 +30,7 @@ VCR.configure do |config|
     :record => :new_episodes,    # record new data when we don't have it yet
     :match_requests_on => [:method, :uri, :body] # The http method, URI and body of a request all need to match
   }
-  # Don't leave our Slack token lying around in a cassette file.
+  # Don't leave tokens or keys lying around in a cassette file.
   config.filter_sensitive_data("<NO_PEEKING>") do
     ENV['APP_KEY']
   end
