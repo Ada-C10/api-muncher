@@ -1,3 +1,5 @@
+<section class="addymame-search-bar">
+
 <a href="<%= root_path %>"><h1>Addymame</h1></a>
 <%= form_tag recipes_index_path, method: :get do%>
 
@@ -5,6 +7,9 @@
 <%= submit_tag("Search") %>
 
 <% end %>
+
+</section>
+<section class="recipe-show-section">
 
 <a href="<%= @recipe.source_url %>"><h1><%= @recipe.name %>
 <small>By: <%= @recipe.source %></small></h1></a>
@@ -22,3 +27,8 @@
   <% end %>
 </ul>
 <a href="<%= @recipe.source_url %>">See Recipe</a>
+
+</section>
+<footer class = "edamam-footer">
+  <div id="edamam-badge" data-color="white"></div>
+</footer>

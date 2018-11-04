@@ -1,3 +1,5 @@
+<section class="addymame-search-bar">
+
 <a href="<%= root_path %>"><h1>Addymame</h1></a>
 <%= form_tag recipes_index_path, method: :get do%>
 
@@ -6,8 +8,11 @@
 
 <% end %>
 
+</section>
+
+<section class="addymame-search-results">
+
 <h2>Results for "<%= @search_param.capitalize %>"</h2>
-<section>
   <% if @recipes %>
     <% @recipes.each do |recipe| %>
     <a href="<%= recipes_show_path(recipe.id) %>">
@@ -22,4 +27,7 @@
   <% end %>
   <%= will_paginate @recipes, previous_label: h("<"), next_label: h(">") %>
 </section>
-<div id="edamam-badge" data-color="white"></div>
+
+<footer class = "edamam-footer">
+  <div id="edamam-badge" data-color="white"></div>
+</footer>
