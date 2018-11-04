@@ -10,4 +10,14 @@ describe RecipesController do
       end
     end
   end
-end
+
+
+  it "can get the index path" do
+    ingredients = {ingredients: "chocolate"}
+    VCR.use_cassette('recipes') do
+      get recipes_path, params: ingredients
+
+      must_respond_with :ok
+    end
+  end
+end 

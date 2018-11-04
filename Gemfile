@@ -38,8 +38,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'minitest-vcr'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
+  gem 'minitest-vcr'
+  gem 'webmock'
 end
 
 group :development do
@@ -57,6 +59,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'simplecov', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -74,13 +77,11 @@ group :development do
   gem 'binding_of_caller'
   gem 'guard'
   gem 'guard-minitest'
-  gem 'dotenv-rails'
 end
 
 group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
-  gem 'dotenv-rails'
 end
 
 gem 'httparty'
