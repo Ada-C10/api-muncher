@@ -1,10 +1,12 @@
 class PagesController < ApplicationController
   def home
+    @recent_searches = Search.limit(10).reverse_order
   end
 
   def search
     if params[:queery]
       session[:queery] = params[:queery]
+      Search.create(queery: params[:queery])
     end
 
     if params[:page]

@@ -84,3 +84,5 @@ group :test do
 end
 
 gem 'httparty'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'

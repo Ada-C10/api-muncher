@@ -1,7 +1,13 @@
 <h1>Food.</h1>
-
 <%= form_tag search_path do %>
   <%= label_tag(:queery, "Ingredient?") %>
   <%= text_field_tag(:queery) %>
   <%= submit_tag("Explore") %>
 <% end %>
+
+<h2>most recent searches:</h2>
+<ul>
+<% @recent_searches.each do |search| %>
+  <li><%= link_to "#{search.queery}", search_path(:queery=> search.queery) %></li>
+<% end %>
+</ul>
