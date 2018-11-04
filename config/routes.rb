@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/recipes', to: 'recipes#index', as: 'recipes'
   get '/recipe/:uri', to: 'recipes#show', as: 'recipe'
 
+  match "*path", to: "recipes#catch_404", via: :all
 end
