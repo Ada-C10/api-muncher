@@ -31,4 +31,25 @@ describe EdamamApiWrapper do
       end
     end
   end
+
+  describe 'find_specific_recipe' do
+    it 'returns a specific recipe' do
+      recipe_id = "recipe_b79327d05b8e5b838ad6cfd9576b30b6"
+      VCR.use_cassette("recipes") do
+        specific_recipe = EdamamApiWrapper.find_specific_recipe(recipe_id)
+        expect(specific_recipe).must_be_kind_of Recipe
+      end
+    end
+  end
+
+  describe 'parse_recipe_id' do
+    it 'returns the recipe id' do
+      id = "recipe_b79327d05b8e5b838ad6cfd9576b30b6"
+      uri = "http://www.edamam.com/ontologies/edamam.owl#recipe_b79327d05b8e5b838ad6cfd9576b30b6"
+      VCR.use_cassette("recipes") do
+        recipe_id = EdamamApiWrapper.parse_recipe_id(uri)
+        expect(recipe_id).must_equal id
+      end
+    end
+  end
 end
