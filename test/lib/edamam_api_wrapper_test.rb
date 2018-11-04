@@ -45,19 +45,15 @@ describe EdamamApiWrapper do
       end
     end
 
-    it 'returns empty recipe instance if invalid id is provided' do
+    it 'returns nil if invalid id is provided' do
       VCR.use_cassette("recipes") do
         invalid_ids = ["", nil, "123", "123456789123456789123456789123456789123456789"]
         invalid_ids.each do |invalid_id|
           response = EdamamApiWrapper.find_recipe(invalid_id)
-          expect(response).must_be_kind_of Recipe
-          recipe_attrs = %i[diet_labels image ingredients label source uri]
-          recipe_attrs.each do |recipe_attr|
-            expect(response).must_respond_to recipe_attr
-          end
+          expect(response).must_equal nil
         end
       end
-      
+
     end
   end
 
