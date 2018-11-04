@@ -13,11 +13,9 @@
 
   <div class="container">
     <body>
-      <section class="flash">
-        <% flash.each do |name, message| %>
-          <div class="<%= name %>"><%= message %></div>
-        <% end %>
-      </section>
+      <% flash.each do |key, value| %>
+        <%= content_tag :div, value, class: "alert alert-#{key}", role: "alert" %>
+      <% end %>
 
       <%= yield %>
     </body>

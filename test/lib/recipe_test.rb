@@ -42,6 +42,7 @@ describe "Recipe" do
 
   it "Must initialize name, image, uri, url, ingredients, and id properly" do
       recipe = Recipe.new(recipe_name, image, uri, url, ingredients)
+      
       expect(recipe.name).must_equal recipe_name
       expect(recipe.image).must_equal image
       expect(recipe.uri).must_equal uri
@@ -51,7 +52,6 @@ describe "Recipe" do
   end
 
   it "can have optional fields" do
-    dietLabels = ["vegan", "egg-free"]
     recipe = Recipe.new(recipe_name, image, uri, url, ingredients, dietLabels)
 
     expect(recipe.name).must_equal recipe_name
