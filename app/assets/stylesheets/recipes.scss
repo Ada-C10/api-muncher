@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .image-tag {
   width: 300px;
   height: 200px;
@@ -59,5 +60,33 @@
 }
 
 .food-item {
-  padding: 12px; 
+  padding: 12px;
+}
+
+.general {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+img {
+  padding: 24px;
+}
+
+.health {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.form {
+  padding: 120px;
 }

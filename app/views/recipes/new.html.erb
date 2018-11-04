@@ -1,11 +1,24 @@
-
 <section class="index-page">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h1 class="title"><strong>Welcome to the Muncher.</strong>
+    </h1><br />
+  </nav>
+  <p>
+    One stop shop for healther living!
+  </p>
 
-<h1 class="title"><strong>WELCOME TO MUNCHER</strong></h1>
+  <section class="form">
 
- <%= form_tag recipe_list_path, method: "post" do %>
- <%= label_tag(:word, "Enter Food Item")%>
- <%= text_field_tag(:word)%>
- <%= submit_tag("SEARCH")%>
- <% end %>
+    <h2 class="title"><strong>Let's get started</strong></h2>
+
+    <%= form_tag recipe_list_path, method: "post" do %>
+    <%= label_tag(:word, "Enter Food Item")%>
+    <%= text_field_tag(:word)%>
+    <%= submit_tag("SEARCH")%>
+    <% end %>
+  </section>
+
+  <section>
+
+  </section>
 </section>
