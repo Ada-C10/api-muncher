@@ -10,15 +10,32 @@ class RecipesController < ApplicationController
   def index
     if @valid_search
       flavor = params[:search]
-      session[:search] = flavor
       recipes = RecipeSearchApiWrapper.get_recipes(flavor)
-      @recipes = recipes.paginate(:page => params[:page], :per_page => 10)
+      if recipes
+        session[:search] = flavor
+        @recipes = recipes.paginate(:page => params[:page], :per_page => 10)
+      else
+        session[:search] = nil
+        flash[:status] = :failure
+        flash[:result_text] = "No recipes found for #{flavor}"
+        redirect_to root_path
+      end
+    else
+      session[:search] = nil
+      flash[:status] = :failure
+      flash[:result_text] = "Please enter a flavor to search"
+      redirect_to root_path
     end
   end
 
   def show
     recipe_id = params[:link]
     @recipe = RecipeSearchApiWrapper.get_recipe(recipe_id)
+    if !@recipe
+      flash[:status] = :failure
+      flash[:result_text] = "Recipe not found"
+      redirect_to root_path
+    end
   end
 
   private

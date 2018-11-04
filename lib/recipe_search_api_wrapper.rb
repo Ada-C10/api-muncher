@@ -29,7 +29,11 @@ class RecipeSearchApiWrapper
 
     url = BASE_URL + "?r=#{CGI.escape(link)}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
     response = HTTParty.get(url)
-    return create_recipe(response[0])
+    if response.parsed_response.empty?
+      return nil
+    else
+      return create_recipe(response[0])
+    end
 
   end
 

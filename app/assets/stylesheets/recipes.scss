@@ -26,6 +26,7 @@
   padding-bottom: 2%;
   background-color: #CAE4DB;
   color: #e69815;
+  border-top: 5px solid #7A9D96;
   border-bottom: 5px solid #7A9D96;
 }
 
@@ -114,11 +115,15 @@
   padding-top: 5%;
 }
 
-.ingredients li {
+li {
   list-style-type: none;
 }
 
 h5 {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.search h5 {
+  text-decoration: none;
 }
