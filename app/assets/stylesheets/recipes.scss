@@ -96,22 +96,25 @@
 }
 
 .recipe-info {
-  padding: 5% 15% 15% 15%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  padding: 5% 25% 15% 25%;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   color: #00303F;
 }
 
-.photo {
-  display: flex;
-  justify-content: center;
-}
+// .photo {
+//   display: flex;
+//   justify-content: center;
+// }
 
 .dietary_info {
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
-  text-align: center;
+  // justify-content: center;
+  // text-align: center;
   padding-top: 5%;
 }
 

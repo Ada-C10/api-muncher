@@ -7,7 +7,20 @@
 
 <div class="recipe-info">
 
-  <%= link_to image_tag(@recipe.image), @recipe.recipe_source, target: "_blank", alt: "photo of #{@recipe.name}", class: "photo"  %>
+  <div class="snapshot">
+
+    <%= link_to image_tag(@recipe.image), @recipe.recipe_source, target: "_blank", alt: "photo of #{@recipe.name}", class: "photo"  %>
+    <section class="dietary_info" >
+      <h5>Dietary Labels</h5>
+      <ul>
+        <% @recipe.dietary_info.each do |label| %>
+        <li>
+          <%= label %>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
 
   <section class="ingredients" %>
     <h5>Ingredients</h5>
@@ -15,17 +28,6 @@
       <% @recipe.ingredients.each do |ingredient| %>
       <li>
         <%=ingredient["text"]%>
-      </li>
-      <% end %>
-    </ul>
-  </section>
-
-  <section class="dietary_info" >
-    <h5>Dietary Labels</h5>
-    <ul>
-      <% @recipe.dietary_info.each do |label| %>
-      <li>
-        <%= label %>
       </li>
       <% end %>
     </ul>
