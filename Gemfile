@@ -85,7 +85,7 @@ group :test do
 end
 
 gem 'httparty'
-gem 'bootstrap', '~> 4.1.3'
+
 
 ## Gemfile for Rails 3+
 gem 'will_paginate', '~> 3.1.1'
