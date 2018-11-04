@@ -20,6 +20,14 @@ class RecipesController < ApplicationController
      page = params[:page] || 1
      recipe_list = ApiMuncherWrapper.list_recipes(params[:title])
      @recipes = Kaminari.paginate_array(recipe_list).page(page).per(10)
+
+     if @recipes == [] || @recipes == nil
+        flash.now[:result_text] = "No result found, modify the search keyword and try again. "
+     end
+   end
+
+   def catch_404
+     raise ActionController::RoutingError.new(params[:path])
    end
 
 end
