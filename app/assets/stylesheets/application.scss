@@ -25,6 +25,17 @@ h1 {
   text-align: center;
   color: #f5d937;
   padding: 0em 1em 0em 1em;
+  text-decoration: none;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #f5d937;
+}
+
+h1 a:hover {
+  text-decoration: none;
+  color: #f5d937;
 }
 
 h2 {
