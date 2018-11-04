@@ -4,9 +4,6 @@ require 'kaminari'
 
 class RecipesController < ApplicationController
 
-   # before_action :ingredients, except: [:main, :show]
-
-
   def index
     @search_term = params[:search]
       if @search_term
@@ -17,7 +14,7 @@ class RecipesController < ApplicationController
 
     if @recipes.nil?
       flash[:status] = :warning
-      flash[:result_text] = "No recipes with that param. Please try a different ingredient or word."
+      flash[:result_text] = "No recipes with that ingredient. Please try a different ingredient or word."
       # redirect_to root_path
     else
       @recipes
