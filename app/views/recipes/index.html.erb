@@ -1,16 +1,4 @@
-
-<div class="container">
-  <section class="recipe-finder">
-    <h1>Recipe Finder</h1>
-    <div id="edamam-badge" data-color="light"></div>
-
-    <%= form_tag recipe_index_path, method: :get do %>
-    <%= label_tag(:search_terms, "Enter Ingredient") %>
-      <%= text_field_tag ( :search_terms ) %>
-      <%= submit_tag ( "Search" ) %>
-    <% end %>
-  </section>
-</div>
+<%= render partial: "searchbar" %>
 
 <%= paginate @test %>
 <section id="recipe_results">

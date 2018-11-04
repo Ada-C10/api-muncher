@@ -17,16 +17,15 @@ class RecipesController < ApplicationController
     # page, per_page = 2, 10
     # arr[((page - 1) * per_page)...(page * per_page)]
 
-
+    # TODO Only loading ten for some reason. Research.
     @recipes = EdamamApiWrapper.list_recipes(params["search_terms"])
-    binding.pry
+    # binding.pry
     if @recipes.empty?
       flash[:danger] = "There are no results for this search."
       redirect_to root_path
     end
     page = params[:page] || 1
-    @test = Kaminari.paginate_array(@recipes).page(page)
-    # @paginatable_array = Kaminari.paginate_array(@recipes, total_count: 100).page(params[:page]).per(10)
+    @test = Kaminari.paginate_array(@recipes).page(page).per(10)
   end
 
   def show

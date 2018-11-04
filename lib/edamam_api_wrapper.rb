@@ -7,7 +7,7 @@ class EdamamApiWrapper
   ID = ENV['EDAMAM_ID']
 
   def self.list_recipes(search_terms)
-    url = "#{BASE_URL}?q=#{search_terms}&app_id=#{ID}&app_key=#{TOKEN}"
+    url = "#{BASE_URL}?&app_id=#{ID}&app_key=#{TOKEN}&to=50&q=#{search_terms}"
     data = HTTParty.get(url)
     recipe_list = []
     if data["hits"]
@@ -19,7 +19,7 @@ class EdamamApiWrapper
   end
 
   def self.list_recipe(id)
-    url = "#{BASE_URL}?app_id=#{ID}&app_key=#{TOKEN}&to=50&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_#{id}"
+    url = "#{BASE_URL}?&app_id=#{ID}&app_key=#{TOKEN}&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_#{id}"
     # Send the request
     HTTParty.get(url).parsed_response
   end
