@@ -36,10 +36,19 @@
 
 body {
   font-family: 'proximanovasoft';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'cubano-regular';
+  color: rgba(0, 184, 148, 1);
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .addymame-landing-page {

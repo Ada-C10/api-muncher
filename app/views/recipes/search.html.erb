@@ -1,17 +1,16 @@
 <section class="addymame-landing-page">
+  <h1>Addymame</h1>
 
-<h1>Addymame</h1>
+  <%= form_tag recipes_index_path, method: :get do%>
+  <div class='addymame-landing-tagline'>
+    <%= label_tag(:search, "Find yr flavor...", :size => 100)%>
+  </div>
+  <%= text_field_tag(:search) %>
+  <div class='addymame-landing-page-button'>
+    <%= submit_tag("Search") %>
+  </div>
 
-<%= form_tag recipes_index_path, method: :get do%>
-<div class='addymame-landing-tagline'>
-  <%= label_tag(:search, "Find yr flavor...", :size => 100)%>
-</div>
-<%= text_field_tag(:search) %>
-<div class='addymame-landing-page-button'>
-  <%= submit_tag("Search") %>
-</div>
-
-<% end %>
+  <% end %>
 
 </section>
 <footer class = "edamam-footer">

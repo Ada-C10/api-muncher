@@ -1,33 +1,37 @@
 <section class="addymame-search-bar">
 
-<a href="<%= root_path %>"><h1>Addymame</h1></a>
-<%= form_tag recipes_index_path, method: :get do%>
+  <a href="<%= root_path %>"><h1>Addymame</h1></a>
+  <%= form_tag recipes_index_path, method: :get do%>
 
   <%= text_field_tag(:search) %>
   <%= submit_tag("Search") %>
 
-<% end %>
+  <% end %>
 
 </section>
+
+<h2>Results for "<%= @search_param.capitalize %>"</h2>
 
 <section class="addymame-search-results">
 
-<h2>Results for "<%= @search_param.capitalize %>"</h2>
   <% if @recipes %>
-    <% @recipes.each do |recipe| %>
-    <a href="<%= recipes_show_path(recipe.id) %>">
-      <ul>
-        <li>
-          <%= image_tag recipe.image %>
-          <%= recipe.name %>
-        </li>
-      </ul>
-    </a>
-    <% end %>
+  <% @recipes.each do |recipe| %>
+  <a href="<%= recipes_show_path(recipe.id) %>" class="recipe-card">
+    <ul>
+      <li class="recipe-card-items">
+        <%= image_tag recipe.image %>
+        <p><%= recipe.name %></p>
+      </li>
+    </ul>
+  </a>
   <% end %>
-  <%= will_paginate @recipes, previous_label: h("<"), next_label: h(">") %>
+  <% end %>
 </section>
-
-<footer class = "edamam-footer">
-  <div id="edamam-badge" data-color="white"></div>
-</footer>
+<section class="index-footer">
+  <div>
+    <%= will_paginate @recipes, previous_label: h("<"), next_label: h(">") %>
+  </div>
+  <footer class = "edamam-footer">
+    <div id="edamam-badge" data-color="white"></div>
+  </footer>
+</section>
