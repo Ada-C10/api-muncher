@@ -3,7 +3,7 @@ class Recipe
   attr_reader :name, :link, :source, :image, :ingredients, :dietary_info, :recipe_source
 
   def initialize(name, link, source, image, ingredients, dietary_info, recipe_source)
-    raise ArgumentError if name == nil || name == ""
+    raise ArgumentError if link == nil || name == ""
 
     @name = name
     @link = link

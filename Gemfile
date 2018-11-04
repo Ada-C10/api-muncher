@@ -68,3 +68,8 @@ gem 'httparty'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'will_paginate', '~> 3.1.6'
+
+group :test do
+  gem 'minitest-rails'
+  gem 'minitest-reporters'
+end
