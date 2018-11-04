@@ -36,10 +36,8 @@ class EdamamApiWrapper
     return relevant_recipes_list #so else is like return []
   end
 
-
-  # TODO: add uri-chopping method here - will likely reuse
   def self.show_single_recipe(uri_num)
-    #http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_186eac9959d3fc7e9415107ee77a1e2c
+    # ex: http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_186eac9959d3fc7e9415107ee77a1e2c
     uri_start = "http://www.edamam.com/ontologies/edamam.owl#"
 
     url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&r=#{uri_start}" + "#{uri_num}"
@@ -48,64 +46,23 @@ class EdamamApiWrapper
     data = HTTParty.get(encoded_url) #array with hash inside
 
     # data = data.parsed_response
-
-
     if data
       return build_recipe(data[0])
     end
 
-      #
-      #   HTTParty.post(url,
-      #     body: {
-      #       "text" => message,
-      #       "channel" => channel,
-      #       "username" => "Roberts-Robit",
-      #       "icon-emoji" => ":robot-face",
-      #       "as_user" => false
-      #     },
-      #     :headers => { 'Content-Type' => 'application/x-www-form-urlencoded' })
-      #     return response.success?
-      #
-    end
-
-    private
-
-    # def self.parse_api_hash(api_params_hash)
-    #   raw_hits_list = api_params_hash["hits"]
-    #
-    #   # QUESTION: maybe instead check # hits
-    #   # if !raw_hits_list
-    #   #   raise ArgumentError, "EXPECTED DATA NOT THERE" # TODO: if/else with [] tho
-    #   # end
-    #
-    #   list_of_recipe_hashes = []
-    #
-    #   raw_hits_list.each do |recipe|
-    #     # QUESTION: maybe overkill?
-    #     recipe_hash = {}
-    #
-    #     recipe_hash[:name] = recipe["recipe"]["label"]
-    #     recipe_hash[:url] = recipe["recipe"]["url"]
-    #     recipe_hash[:ingredients_list] = recipe["recipe"]["ingredientLines"] #array
-    #     recipe_hash[:photo] = recipe["recipe"]["image"]
-    #     recipe_hash[:uri] = recipe["recipe"]["uri"]
-    #     recipe_hash[:uri] = convert_uri_to_num(recipe_hash[:uri])
-    #     # TODO: add dietary info here
-    #
-    #     list_of_recipe_hashes<< recipe_hash
-    #   end
-    #
-    #   return list_of_recipe_hashes
-    # end
-
-
-    def self.build_recipe(recipe_hash)
-      return Recipe.new(
-        name: recipe_hash["label"],
-        url: recipe_hash["url"],
-        ingredients_list: recipe_hash["ingredientLines"], #array,
-        photo: recipe_hash["image"],
-        uri_num: recipe_hash["uri"]
-      )
-    end
   end
+
+  private
+
+  def self.build_recipe(recipe_hash)
+    return Recipe.new(
+      name: recipe_hash["label"],
+      url: recipe_hash["url"],
+      ingredients_list: recipe_hash["ingredientLines"], #array
+      dietary_info: recipe_hash["dietLabels"], #array
+      health_info: recipe_hash["healthLabels"], #array
+      photo: recipe_hash["image"],
+      uri_num: recipe_hash["uri"]
+    )
+  end
+end

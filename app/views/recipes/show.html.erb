@@ -2,9 +2,20 @@
 <!-- open in new window -->
 <%= link_to @recipe.name, @recipe.url, target: "_blank" %>
 
+
+<%= image_tag(@recipe.photo, alt: "Food image: #{@recipe.name}") %>
+
 Ingredients:
 <% @recipe.ingredients_list.each do |i| %>
-
 <%= i %>
+<% end %>
 
+Dietary Info:
+<% @recipe.dietary_info.each do |d| %>
+<%= d %>
+<% end %>
+
+Health Info:
+<% @recipe.health_info.each do |h| %>
+<%= h %>
 <% end %>

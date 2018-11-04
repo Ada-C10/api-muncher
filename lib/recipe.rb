@@ -1,8 +1,8 @@
 class Recipe
-  attr_reader :name, :url, :ingredients_list, :photo, :uri_num
+  attr_reader :name, :url, :ingredients_list, :dietary_info, :health_info, :photo, :uri_num
 
 
-def initialize( name:, url:, ingredients_list:, photo:, uri_num: )
+def initialize( name:, url:, ingredients_list:, dietary_info:, health_info:, photo:, uri_num: )
 	raise ArgumentError if name == nil || name == ""
   # || id == nil || id == ""
 
@@ -10,15 +10,16 @@ def initialize( name:, url:, ingredients_list:, photo:, uri_num: )
     # QUESTION: add an id (maybe pull from the URI???)
 
     @name = name
-    #@id = id
-
     @url = url
-
     @ingredients_list = ingredients_list
+    @dietary_info = dietary_info
+    @health_info = health_info
     @photo = photo
     @uri_num = convert_uri_to_num(uri_num)
     # TODO: add dietary info here
   end
+
+  private
 
   def convert_uri_to_num(uri)
     pattern = /#(.+)\z/
