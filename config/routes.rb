@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'search#index'
 
-  get 'recipe/show/:id', to: 'recipes#show', as: 'return_recipe'
+  # get 'recipe/show/:id', to: 'recipes#show', as: 'return_recipe'
   
   resources :recipes, only: [:index, :show]
 
