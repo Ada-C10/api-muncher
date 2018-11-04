@@ -4,20 +4,42 @@
 </header>
 
 
-<main class = "recipe-container">
-<p>Here is your requested recipe</p>
+<main class = "main-container recipe-container">
+  <div class = "recipe-container-header">
+    <h2><%= @recipe["label"] %></h2>
+    <h3>By <%= @recipe["source"] %></h3>
+  </div>
 
-<p>URI URI URI FROM PARAMS<%= @uri %></p>
+  <div class = "recipe-container-image">
+    <img src = <%= @recipe["image"]%>
+    alt = <%= @recipe["label"] %>
+    class = "food-image">
+  </div>
 
-<%= @recipe["label"] %>
-<br>
-<%= @recipe %>
+  <div class = "recipe-container-ingredients">
+    <h4>Ingredients</h4>
+    <% @recipe["ingredientLines"].each do |ingredient| %>
+    <ul>
+      <p><li><%= ingredient %></li></p>
+    </ul>
+    <% end %>
+  </div>
 
-<%= params.inspect %>
+
+
+  <div class = "recipe-container-nutrition">
+    <h4>Dietary Labels:</h4>
+    <% @recipe["dietLabels"].each do |label| %>
+    <ul>
+      <p><li><%= label %></li></p>
+    </ul>
+    <% end %>
+
+  </div>
 </main>
 
 
 <footer>
 
-<div id="edamam-badge" data-color="white"></div>
+  <div id="edamam-badge" data-color="white"></div>
 </footer>
