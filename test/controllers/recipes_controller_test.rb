@@ -41,4 +41,17 @@ describe RecipesController do
       end
     end
   end
+
+  describe 'show' do
+    it 'shows a specific recipe' do
+      VCR.use_cassette("recipes") do
+        id = {
+          id: "recipe_b79327d05b8e5b838ad6cfd9576b30b6"
+        }
+        get recipe_path(id)
+        must_respond_with :success
+      end
+    end
+
+  end
 end

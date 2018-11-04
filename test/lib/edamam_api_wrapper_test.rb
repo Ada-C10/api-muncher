@@ -30,6 +30,7 @@ describe EdamamApiWrapper do
         expect(recipe_instance).must_be_kind_of Recipe
       end
     end
+
   end
 
   describe 'find_specific_recipe' do
