@@ -1,18 +1,17 @@
 class Recipe
-  attr_reader :label, :uri, :image, :url, :yield, :dietLabels, :healthLabels, :ingredientLines
+  attr_reader :label, :uri, :image, :url, :dietLabels, :healthLabels, :ingredientLines
 
-  def initialize(recipe_data)
-    raise ArgumentError if recipe_data.nil? || recipe_data[:label].nil? 
+  def initialize(label, uri, image, url, dietLabels, healthLabels, ingredientLines)
 
 
-    @label = recipe_data[:label]
-    @uri = recipe_data[:uri]
-    @image = recipe_data[:image]
-    @url = recipe_data[:url]
-    @yield = recipe_data[:yield]
-    @dietLabels = recipe_data[:dietLabels]
-    @healthLabels = recipe_data[:healthLabels]
-    @ingredientLines = recipe_data[:ingredientLines]
+
+    @label = label
+    @uri = uri
+    @image = image
+    @url = url
+    @dietLabels = dietLabels
+    @ingredientLines = ingredientLines
+    @healthLabels = healthLabels
 
   end
 

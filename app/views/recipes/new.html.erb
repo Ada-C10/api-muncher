@@ -3,11 +3,9 @@
 
 <h1 class="title"><strong>WELCOME TO MUNCHER</strong></h1>
 
- <%= form_with url: recipes_path, method: :post do |f| %>
- <%= f.label(:word, "Enter Food Item")%>
- <%= hidden_field_tag :os, :value => :word %>
- <%= f.text_field(:word)%>
- <%= f.submit("SEARCH")%>
-
+ <%= form_tag recipe_list_path, method: "post" do %>
+ <%= label_tag(:word, "Enter Food Item")%>
+ <%= text_field_tag(:word)%>
+ <%= submit_tag("SEARCH")%>
  <% end %>
 </section>

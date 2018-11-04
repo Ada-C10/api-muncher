@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   root 'recipes#new'
 
-  resources :recipes, only: [:show, :index]
+  resources :recipes, only: [:show]
 
-  post 'recipes', to: 'recipes#index'
+  post '/recipes', to: 'recipes#index', as: 'recipe_list'
 
-  get 'recipes', to: 'recipes#index'
+  get ':word', to: 'recipes#index', as: 'recipe_index'
 
 
 end

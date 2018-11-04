@@ -3,16 +3,14 @@
   <h2 class="title-page">List of Recipes</h2>
 
   <div class="flex-container">
-    <% if @recipies %>
       <% @recipies.each do |recipe| %>
         <div class="card">
           <%= image_tag("#{recipe.image}", :alt => 'recipe-img', :class => 'image-tag') %>
           <div class="card-body">
-            <%= link_to recipe.label %>
+            <%= link_to recipe.label, recipe_path(recipe.uri.split("_")[1]) %>
           </div>
         </div>
       <% end %>
-    <% end %>
   </div>
   <%= will_paginate @recipies, class: "pagination" %>
 </div>
