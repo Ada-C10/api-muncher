@@ -9,7 +9,11 @@
 
 <main class = "main-container">
   <h2>Results for "<%= params[:input] %>"</h2>
+
+  <div class = "paginate">
 <%= will_paginate @recipes %>
+</div>
+
   <div class = "recipe-grid">
 
 

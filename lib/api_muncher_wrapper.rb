@@ -10,7 +10,7 @@ class ApiMuncherWrapper
 
     @ingredient = ingredient
 
-    url = BASE_URL + "?q=#{@ingredient}&from=0&to=20&app_id=" + APP_ID + "&app_key=" + APP_KEY
+    url = BASE_URL + "?q=#{@ingredient}&from=0&to=100&app_id=" + APP_ID + "&app_key=" + APP_KEY
 
     response = HTTParty.get(url)
 
