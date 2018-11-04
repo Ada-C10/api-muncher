@@ -7,5 +7,8 @@ class Recipe
 
     @name = name
     @image = options[:image]
+    @ingredients = options[:ingredients]
+    @diet_labels = options[:diet_labels]
+    @health_labels = options[:health_labels]
   end
 end

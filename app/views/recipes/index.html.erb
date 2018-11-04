@@ -1,7 +1,7 @@
 <section class="recipes-list">
 
 
-  <h1>Recipes</h1>
+  <h1><%= link_to "Recipes", recipes_homepage_path %></h1>
   <% if @recipes %>
     <ul>
       <% @recipes.each do |recipe| %>
