@@ -1,10 +1,12 @@
-<div class="row is-flex">
+<%= render partial: 'recipes/brand_header' %>
+
+<div class="results">
 
 
-  <section class="col-sm-4">
+  <section class="card-deck">
     <% @recipes.each do |recipe| %>
     <div class="box">
-      <div class="card">
+      <div class="card text-center">
         <%= link_to image_tag(recipe.image), recipe_path(link: recipe.link) , alt: "photo of #{recipe.name}", class: "card-img-top"  %>
         <div class="card-body">
           <p><%= recipe.name %></p>
@@ -12,7 +14,9 @@
       </div>
     </div>
     <% end %>
-    <%= will_paginate @recipes %>
   </section>
+  <div class="paginate">
+    <%= will_paginate @recipes, :page_links => false %>
+  </div>
 
 </div>

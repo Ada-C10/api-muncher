@@ -38,23 +38,69 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-.row.is-flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-.row.is-flex > [class*='col-'] {
-  display: flex;
-  // flex-direction: column;
+// .row.is-flex {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .results {
+//   flex-grow: 1;
+//   width: 33%;
+//   // height: 100px;
+// }
+
+// .row.is-flex > [class*='col-'] {
+//   // display: flex;
+//   // flex-direction: column;
+//   flex-grow: 1;
+//   width: 33%;
+//   height: 100px;
+// }
+
+.results {
+  margin: 2rem;
 }
 
+.card-deck {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  align-items: space-between;
 
-.is-flex .box{
-  background: none;
-  position: static;
+
 }
-.is-flex [class*="col-"] {
-  background: #fff;
+.card-deck .card {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+
+  width: 24rem;
+  // width: 33.3%;
+  flex-grow: 1;
+  flex: 0 0 33.3%;
+  border: none;
+  // flex-basis: 33.3%; /* change this value for each breakpoint*/
 }
+
+.card img {
+  border: 5px solid #00303F;
+  border-radius: 15px;
+
+}
+
+// .card-body p {
+//   overflow-wrap: inherit;
+// }
+
+
+// .is-flex .box{
+//   background: none;
+//   position: static;
+// }
+// .is-flex [class*="col-"] {
+//   background: #fff;
+// }
 
 // .homepage {
 //   // align-content: stretch;
@@ -93,6 +139,7 @@ body {
   justify-content: center;
   // margin-top: -5%;
   padding-bottom: 10%;
+  // padding-top: 10%;
   background-color: #CAE4DB;
   color: #e69815;
 }

@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class RecipesController < ApplicationController
 
   before_action :valid_search?, only: [:index]
