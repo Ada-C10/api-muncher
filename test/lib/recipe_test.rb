@@ -1,14 +1,12 @@
-# require 'test_helper'
-#
-# describe Recipe do
-#
-#   it "initializes a recipe given uri" do
-#     recipe = Recipe.new("uri")
-#     expect(recipe.uri).must_equal "uri"
-#   end
-#
-#   it "does not initialize without uri" do
-#     expect { Recipe.new }.must_raise ArgumentError
-#   end
-#
-# end
+require 'test_helper'
+
+describe Recipe do
+
+  it "initializes a recipe given uri" do
+    recipe = Recipe.new(uri: "uri test", name: "test")
+    expect(recipe.uri).must_equal "uri test"
+    expect(recipe.name).must_equal "test"
+  end
+
+
+end

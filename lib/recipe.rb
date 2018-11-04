@@ -3,7 +3,7 @@ class Recipe
 
   def initialize(uri: "", name: "", creator: "", image: "", recipe_link: "", ingredients: "", dietary_labels: [])
 
-    raise ArgumentError if uri == nil
+    raise ArgumentError if uri == nil || uri == ""
 
     @uri = uri
     @name = name
