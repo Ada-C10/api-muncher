@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   root 'recipes#search_splash'
   post '/recipes', to: 'recipes#searcher', as: "searcher"
   get '/recipes', to: 'recipes#index', as: 'recipes'
-  get '/recipes/:recipe/', to: 'recipes#show', as: 'recipe'
+  get '/recipes/:uri_num/', to: 'recipes#show', as: 'recipe'
 
 end

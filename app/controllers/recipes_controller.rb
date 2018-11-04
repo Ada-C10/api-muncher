@@ -22,7 +22,8 @@ class RecipesController < ApplicationController
 
   def show
     # maybe call a method in the api wrapper to locate the recipe
-    @recipe = Recipe.all.find_by(uri_num: params[:uri_num])
+    uri_num = params[:uri_num]
+    @recipe = EdamamApiWrapper.show_single_recipe(uri_num)
   end
 
 end
