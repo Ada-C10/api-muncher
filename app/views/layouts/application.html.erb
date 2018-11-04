@@ -7,9 +7,24 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', "https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Crimson+Text", media: 'all', 'data-turbolinks-track' => true %>
+
   </head>
+
+  <header class = "header">
+
+    <h1>API MUNCHER</h1>
+    <%= render partial: "/layouts/form" %>
+  </header>
+
 
   <body>
     <%= yield %>
   </body>
+
+
+  <footer>
+
+
+  </footer>
 </html>
