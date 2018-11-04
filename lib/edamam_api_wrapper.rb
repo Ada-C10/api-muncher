@@ -47,7 +47,6 @@ class EdamamApiWrapper
 
 
   def self.create_recipe(api_params)
-    # binding.pry
     return Recipe.new(
       id_from_uri(api_params["uri"]),
       api_params["label"],

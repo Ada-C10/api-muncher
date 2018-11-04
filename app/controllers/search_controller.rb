@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class SearchController < ApplicationController
 
   def new
@@ -9,12 +11,11 @@ class SearchController < ApplicationController
   end
 
   def index
-    @recipes = EdamamApiWrapper.search(params[:keyword])
-    # binding.pry
+    recipes = EdamamApiWrapper.search(params[:keyword])
+     @recipes = recipes.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
-# binding.pry
     @recipe = EdamamApiWrapper.show_recipe(params[:recipe])
   end
 

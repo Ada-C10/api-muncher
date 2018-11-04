@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
@@ -7,7 +8,7 @@ ruby '2.5.1'
 
 gem 'httparty'
 gem 'figaro'
-
+gem 'will_paginate', '>= 3.1'
 gem 'rails', '~> 5.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -72,6 +73,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'minitest-vcr'
   gem 'webmock'
+  gem 'dotenv-rails'
+
 end
 
 group :development do
@@ -79,14 +82,12 @@ group :development do
   gem 'binding_of_caller'
   gem 'guard'
   gem 'guard-minitest'
-  gem 'dotenv-rails'
 
 end
 
 group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
-  gem 'dotenv-rails'
 end
 
 

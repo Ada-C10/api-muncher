@@ -23,7 +23,7 @@ describe Recipe do
 
   end
 
-  it "raises an error if name or id are empty strings" do
+  it "raises an error if label or uri are empty strings" do
 
     empty_string = ''
     valid_input = 1

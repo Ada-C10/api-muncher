@@ -1,6 +1,8 @@
-<% require 'pry' %>
+
 <section class="recipe-list">
   <h1>Recipes</h1>
+  <%= will_paginate @recipes %>
+
   <% if @recipes %>
   <ul>
     <% @recipes.each do |recipe| %>
@@ -13,4 +15,6 @@
     <% end %>
   </ul>
   <% end %>
+
+
 </section>

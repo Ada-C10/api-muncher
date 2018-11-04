@@ -1,10 +1,10 @@
 require 'httparty'
-require 'pry'
+
 
 
 class Recipe
 
-  attr_reader :label, :uri, :image, :ingredients, :healthlabel, :dietlabel, :id, :url
+  attr_reader :label, :id, :image, :ingredient_lines, :diet_labels, :url
 
   def initialize(label, uri, url, image, ingredientLines, dietLabels)
 
@@ -15,8 +15,8 @@ class Recipe
 
     @url = url
     @image = image
-    @ingredientLines = ingredientLines
-    @dietLabels = dietLabels
+    @ingredient_lines = ingredientLines
+    @diet_labels = dietLabels
 
   end
 end
