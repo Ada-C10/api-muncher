@@ -96,7 +96,7 @@
 }
 
 .recipe-info {
-  padding: 5% 25% 15% 25%;
+  padding: 5% 15% 15% 15%;
   // display: grid;
   // grid-template-columns: 1fr 1fr;
   display: flex;
@@ -109,6 +109,11 @@
 //   display: flex;
 //   justify-content: center;
 // }
+
+.ingredients {
+  display: flex;
+  flex-flow: column wrap;
+}
 
 .dietary_info {
   display: flex;

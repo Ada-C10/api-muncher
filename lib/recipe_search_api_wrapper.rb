@@ -7,8 +7,6 @@ class RecipeSearchApiWrapper
 
   def self.get_recipes(flavor)
 
-    #modify so that flavor can take in multiple search terms separated by however many spaces, exclude non letters
-
     url = BASE_URL + "?q=#{flavor}" + "&app_id=#{ID}" + "&app_key=#{KEY}"
 
     first_response = HTTParty.get(url)
@@ -51,8 +49,4 @@ class RecipeSearchApiWrapper
     )
 
   end
-
-
-
-
 end
