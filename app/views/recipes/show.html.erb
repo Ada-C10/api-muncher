@@ -1,7 +1,5 @@
 <div class="recipe-detail">
   <div>
-
-
     <strong><h2><%= @recipe.name.capitalize%> Recipe:</h2></strong>  </div>
   <div>
     <ul>
@@ -22,7 +20,7 @@
           <span id="sentence"><%= "#{i}" %></span>
           <% end %>
         </li>
-        <li><%=link_to "Recipe Source", @recipe.url, class: "btn btn-primary" %></li>
+        <li><%=link_to "Recipe Source", @recipe.url, class: "btn btn-primary", target: :_blank%></li>
       </span>
     </ul>
   </div>
