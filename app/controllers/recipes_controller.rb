@@ -23,10 +23,11 @@ class RecipesController < ApplicationController
     if @recipes.empty?
       flash[:danger] = "There are no results for this search."
       redirect_to root_path
+    else
+      page = params[:page] || 1
+      @recipes = Kaminari.paginate_array(@recipes).page(page).per(10)
     end
-    page = params[:page] || 1
-    @test = Kaminari.paginate_array(@recipes).page(page).per(10)
-  end
+  end 
 
   def show
     @recipe = EdamamApiWrapper.list_recipe(params["id"])[0]
