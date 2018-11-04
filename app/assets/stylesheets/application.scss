@@ -99,14 +99,11 @@ li {
   opacity: 0.75;
   background-color:#FFFFFF;
 
-
   color: #800000;
   font-weight: bold;
 }
 
 .search-wrapper span input#dish.text {
-
-
   text-rendering: auto;
   letter-spacing: normal;
   word-spacing: normal;
@@ -115,7 +112,7 @@ li {
   text-shadow: none;
   display: inline-block;
   text-align: start;
-      background: transparent;
+  background: transparent;
 }
 
 .search-wrapper span input#dish:focus {
@@ -133,13 +130,18 @@ li {
   margin-left: 14rem;
   padding-right: 2rem;
   padding-left: 2rem;
+  // for ugly footer
+  margin-bottom: 6rem;
 }
 
 span.navbar-fixed-bottom {
   text-align: center;
   margin-bottom: 0;
   width: 100%;
-  padding: 0.75rem 1.25rem;
+  // for ugly footer
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  // padding: 0.75rem 1.25rem;
   border: 1px solid transparent;
   color: #386659;
   background-color:#a8b3be;
