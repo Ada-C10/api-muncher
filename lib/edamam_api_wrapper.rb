@@ -26,7 +26,9 @@ class EdamamApiWrapper
     url = BASE_URL + "r=#{encoded_uri}&" + "app_id=#{ID}&" + "app_key=#{KEY}"
 
     response = HTTParty.get(url)
-    if response[0]
+    unless response[0]
+      raise ArgumentError.new("Invalid recipe ID.")
+    else
       recipe = create_recipe(response[0])
     end
     return recipe
