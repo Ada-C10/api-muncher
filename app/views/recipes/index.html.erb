@@ -1,6 +1,12 @@
 <% if @recipes.present? %>
   <h3> Results for "<%= "#{params[:search]}" %>" </h3>
-  <%= @recipes["count"] %>
+  <ul>
+  <% @recipes.each do |result| %>
+    <li><%= link_to image_tag("#{result["recipe"]["image"]}"), "#{result["recipe"]["url"]}" %></li>
+    <li><%= result["recipe"]["label"] %></li>
+    <% end %>
+  </ul>
 <% else %>
-  <p>Please enter valid search term.</p>
+  <p>No recipes match this search term.</p>
 <% end %>
+<%= will_paginate @recipes %>
