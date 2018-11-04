@@ -12,6 +12,15 @@ class EdamamApiWrapper
     return response["hits"]
   end
 
+  def self.find_recipe(id)
+    uri = "http://www.edamam.com/ontologies/edamam.owl#recipe_" + "#{id}"
+    encoded_uri = URI.encode(uri)
+    url = BASE_URL + "r=#{encoded_uri}&" + "app_id=#{ID}&" + "app_key=#{KEY}"
+    
+    response = HTTParty.get(url)
+    return response
+  end
+
 end
 # index:
 #   syntax to get recipe name:
