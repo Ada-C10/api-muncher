@@ -1,0 +1,42 @@
+<section class="hits">
+  <h1>Search Results</h1>
+  <% if @recipes %>
+
+  <ul>
+    <% @recipes.each do |recipe| %>
+    <li>
+      Recipe Title: <%= recipe.label %>
+    </li>
+    <li>
+      Image: <%= recipe.image %>
+    </li>
+    <li>
+      Original URL: <%= recipe.url %>
+    </li>
+
+    <li>
+      Ingredients:
+      <ul class="nested">
+        <% recipe.ingredientLines.each do |ingredient| %>
+        <li>
+          <%= ingredient %>
+        </li>
+        <% end %>
+      </ul>
+    </li>
+
+    <li>
+      Dietary Restrictions:
+      <ul class="nested">
+        <% recipe.healthLabels.each do |label| %>
+        <li>
+          <%= label %>
+        </li>
+        <% end %>
+      </ul>
+    </li>
+
+  </ul>
+  <% end %>
+</ul>
+</section>
