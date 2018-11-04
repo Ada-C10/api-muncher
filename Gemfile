@@ -86,3 +86,8 @@ end
 
 gem 'httparty'
 gem 'bootstrap', '~> 4.1.3'
+
+## Gemfile for Rails 3+
+gem 'will_paginate', '~> 3.1.1'
+gem 'will_paginate-bootstrap'
+#this is needed to add bootsrap style to pagination
