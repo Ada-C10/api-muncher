@@ -15,16 +15,12 @@ class RecipesController < ApplicationController
         session[:search] = flavor
         @recipes = recipes.paginate(:page => params[:page], :per_page => 10)
       else
-        session[:search] = nil
-        flash[:status] = :failure
         flash[:result_text] = "No recipes found for #{flavor}"
-        redirect_to root_path
+        invalid_search
       end
     else
-      session[:search] = nil
-      flash[:status] = :failure
       flash[:result_text] = "Please enter a flavor to search"
-      redirect_to root_path
+      invalid_search
     end
   end
 
@@ -42,6 +38,12 @@ class RecipesController < ApplicationController
 
   def valid_search?
     @valid_search = params[:search] && params[:search] != ""
+  end
+
+  def invalid_search
+    session[:search] = nil
+    flash[:status] = :failure
+    redirect_to root_path
   end
 
 end
