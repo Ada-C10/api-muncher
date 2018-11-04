@@ -1,15 +1,15 @@
 class Recipe
 
-  attr_reader :label, :photo, :uri, :ingredients, :dietary_information, :link
+  attr_reader :label, :image, :uri, :ingredients, :dietary_information, :url
 
-  def initialize(label, photo, uri, options = {} )
-    raise ArgumentError if label == nil || label == "" || photo == nil || photo == "" || uri == nil || uri == "" || link == nil || link == ""
+  def initialize(label, image, uri, details = {} )
+    # binding.pry
+    raise ArgumentError if label == nil || label == "" || image == nil || image == "" || uri == nil || uri == "" || url == nil || url == ""
     @label = label
-    @photo = photo
+    @image = image
     @uri = uri
-    @ingredients = options[:ingredients]
-    @dietary_information = options[:dietary_information]
-    @link = options[:link]
+    @ingredients = details[:ingredients]
+    @dietary_information = details[:dietary_information]
+    @url = details[:url]
   end
-
-  endend
+end

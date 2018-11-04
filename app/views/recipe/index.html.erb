@@ -1,2 +1,15 @@
-
+<% if @recipes.empty? %>
+  <h3> No results found. </h3>
+<% else %>
+  <ul>
+  <% @recipes.each do |recipe| %>
+    <li>
+      <%= image_tag recipe.image, alt: recipe.label %>
+       <%= link_to recipe.label, recipe_path(uri: recipe.uri) %>
+    </li>
+  <% end %>
+  </ul>
+  <%= will_paginate @recipes %>
+<% end %>
+</section>
 <h1>RECIPES</h1>
