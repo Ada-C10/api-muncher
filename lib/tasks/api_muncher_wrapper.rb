@@ -25,23 +25,36 @@ class ApiMuncherWrapper
     return recipe_list
   end
 
+  def self.show_details(uri)
+    url = BASE_URL + "?r=#{uri}" + "&app_id=#{APP_ID}" +  "&app_key=#{APP_KEY}"
+    puts uri
 
-private
+    data = HTTParty.get(url)
+    create_recipe(data.first)
+  end
+
+  private
 
   def self.create_recipe(api_params)
-      return Recipe.new(
-        api_params["label"],
+    return Recipe.new(
+      api_params["label"],
+      id_from_uri(api_params["uri"]),
 
-        {
-          image: api_params["image"],
-          url: api_params["url"],
-          ingredients: api_params["ingredientLines"],
-          diet_labels: api_params["dietLabels"],
-          health_labels: api_params["healthLabels"]
+      {
+        image: api_params["image"],
+        url: api_params["url"],
+        ingredients: api_params["ingredientLines"],
+        diet_labels: api_params["dietLabels"],
+        health_labels: api_params["healthLabels"]
 
-        }
-      )
-    end
+      }
+    )
+  end
+
+  def self.id_from_uri(uri)
+    return uri.split("_").last
+
+  end
 
 
 
