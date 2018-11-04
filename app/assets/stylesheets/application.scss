@@ -19,48 +19,47 @@
 
 
 
-
 h1 {
+  font-size: 8vw;
   font-family: 'Baloo Bhaijaan', serif;
-  font-size: 4em;
   line-height: 1em;
   text-align: center;
   color: #f5d937;
-  padding: 1em 1em .25em 1em;
+  padding: 0em 1em 0em 1em;
 }
 
 .header {
   background-color: #19bc9b;
+  padding: 2em 1em;
 }
 
 form {
   text-align: center;
-  padding-bottom: 2em;
-  font-size: 2em;
-  line-height: 1em;
+  font-size: 16px;
   color: #2b3e50;
 }
 
 .input-group {
-  width: 50%;
+  width: 75%;
   display: inline-block;
   text-align: center;
 }
 
 #input {
-  padding-left: .5em;
   width: 50%;
-  font-size: .5em;
-  display: inline-block;
+  font-size: 1.3vw;
+  background-color: white;
+  margin: 1em;
+  text-align: center;
 }
 
 .btn-light {
-  padding: .5em 2em;
+  padding: .5em 3em;
   text-align: center;
   background-color: #2b3e50;
   border: none;
   color: white;
-  margin: 1em;
+  margin: 1em 1em 0 1em;
 }
 
 body {
