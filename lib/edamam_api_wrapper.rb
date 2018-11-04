@@ -28,7 +28,7 @@ class EdamamApiWrapper
 
     response = HTTParty.get(url)
 
-    recipe = create_recipe(" ")
+    # recipe = create_recipe(" ")
     if response[0]
       recipe = create_recipe(response[0])
     end
