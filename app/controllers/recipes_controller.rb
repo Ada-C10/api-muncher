@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
   end
 
   def index
+    @nav = true
     # @dish = params[:dish]
 
     if @dish == nil or @dish == ""
@@ -26,6 +27,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @nav = true
     # @dish = params[:dish]
 
     find_uri

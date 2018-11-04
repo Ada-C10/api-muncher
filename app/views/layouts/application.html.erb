@@ -12,6 +12,7 @@
 </head>
 
 <body class="<%= @homepage ? 'homepage' : ''%>">
+<%= render :partial => 'layouts/nav_menu' if @nav %>
   <section class="flash">
     <% flash.each do |key_word, message| %>
     <div class="<%= key_word %>"><%=message%></div>
