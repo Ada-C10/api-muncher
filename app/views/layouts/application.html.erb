@@ -10,6 +10,13 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <% if flash[:status] %>
+       <section class="row status <%= flash[:status] %>">
+         <h3>
+           <%= flash[:message] %>
+         </h3>
+       </section>
+      <% end %>
+      <%= yield %>
+    </body>
 </html>
