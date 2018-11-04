@@ -1,27 +1,65 @@
-<h2>Recipe Details</h2>
-
-<strong><%= link_to "Original Recipe" %></strong>
-
-<table cellpadding="20">
-
-  <thead>
-    <tr>
-      <th>Recipe</th>
-      <th>Ingredients</th>
-      <th>Dietary Information</th>
-      <th>Health Information</th>
-
-    </tr>
-  </thead>
+<!DOCTYPE html>
+<html>
+<body>
 
 
-  <tbody>
-    <tr>
-      <td><%= @recipe.name %></td>
-      <td><%= @recipe.ingredients %></td>
-      <td><%= @recipe.diet_labels %></td>
-      <td><%= @recipe.health_labels%></td>
-    </tr>
-  </tbody>
+  <section class="recipes-list">
 
-</table>
+    <header>
+    <p><%= link_to "Back to Search", recipes_homepage_path %></p>
+
+
+      <h4><strong><a href="<%=@recipe.url%>" target="_blank"><%= @recipe.name %></a></strong></h4>
+    </header>
+
+
+    <table cellpadding="20">
+
+      <thead>
+        <tr>
+          <th>Ingredients</th>
+          <th>Dietary Information</th>
+          <th>Health Information</th>
+
+        </tr>
+      </thead>
+
+
+      <tbody>
+        <tr>
+          <td><% if @recipe %>
+            <ul>
+              <% @recipe.ingredients.each do |ing| %>
+              <li>
+                <%= ing %>
+              </li>
+              <% end %>
+            </ul>
+            <% end %></td>
+            <td><% if @recipe %>
+              <ul>
+                <% @recipe.diet_labels.each do |label| %>
+                <li>
+                  <%= label %>
+                </li>
+                <% end %>
+              </ul>
+            <% end %></td>
+            <td><% if @recipe %>
+                <ul>
+                  <% @recipe.health_labels.each do |label| %>
+                  <li>
+                    <%= label %>
+                  </li>
+                  <% end %>
+                </ul>
+            <% end %></td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </section>
+
+</body>
+</html>

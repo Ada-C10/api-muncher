@@ -27,8 +27,7 @@ class ApiMuncherWrapper
 
   def self.show_details(uri)
     url = BASE_URL + "?r=#{uri}" + "&app_id=#{APP_ID}" +  "&app_key=#{APP_KEY}"
-    puts uri
-
+    
     data = HTTParty.get(url)
     create_recipe(data.first)
   end

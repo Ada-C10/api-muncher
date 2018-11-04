@@ -3,9 +3,8 @@ require 'will_paginate/array'
 
 class RecipesController < ApplicationController
 
-  def homepage
-
-  end
+  # def homepage
+  # end
 
   def index
     page = params[:page] || 1
@@ -13,8 +12,8 @@ class RecipesController < ApplicationController
   end
 
 
-  def create
-  end
+  # def create
+  # end
 
   def show
     @recipe = ApiMuncherWrapper.show_details(uri_from_id(params[:id]))
