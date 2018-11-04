@@ -6,7 +6,7 @@ class EdamamApiWrapper
   KEY = ENV[APP_KEY]
 
   def self.search_recipes(query)
-    url = BASE_URL + "?" + "app_id=#{ID}" + "&app_key=#{KEY}" + "&q=#{query}"
+    url = BASE_URL + "?app_id=#{ID}" + "&app_key=#{KEY}" + "&q=#{query}"
     #if doesn't work - change & to be included in string before it
 
     encoded_url = URI.encode(url)

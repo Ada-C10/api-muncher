@@ -1,7 +1,11 @@
-class SearchController < ApplicationController
+class SearchesController < ApplicationController
 
   def new
-    @query = params
+    # @recipe = EdamamApiWrapper.new
+  end
+
+  def create
+    @recipe = EdamamApiWrapper.create_recipe(api_params)
   end
 
   def index
@@ -10,8 +14,7 @@ class SearchController < ApplicationController
   end
 
   def show
-    search_id = params[:id]
-    @recipe = EdamamApiWrapper.find_by(id: recipe_id)
+    @recipe = EdamamApiWrapper.find_by(uri: recipe.uri)
     if @recipe.nil?
       head :not_found
     end
