@@ -1,0 +1,35 @@
+<section class="hits">
+  <h1>Recipe Details</h1>
+
+  <h5><%= @recipe.label %></h5>
+  <%= image_tag(@recipe.image, alt: "food-porn") %>
+  <h6>Origin: <%= link_to @recipe.url, @recipe.url, :target => "_blank" %></h6>
+
+  <ul>
+    <li>Recipe Ingredients(all the good stuff you'll need):
+      <% if @recipe.ingredientLines %>
+      <ul class="nested">
+        <% @recipe.ingredientLines.length.times do |i| %>
+        <li><%= @recipe.ingredientLines[i] %></li>
+        <% else %>
+        <li><p>N/A</p></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </li>
+
+    <li>Dietary Restrictions(your guide to allergens):
+      <% if @recipe.healthLabels %>
+      <ul class="nested">
+        <% @recipe.healthLabels.length.times do |i| %>
+        <li><%= @recipe.healthLabels[i] %></li>
+        <% else %>
+        <li><p>N/A</p></li>
+        <% end %>
+      </ul>
+      <% end %>
+    </li>
+
+  </ul>
+
+</section>

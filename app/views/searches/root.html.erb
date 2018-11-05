@@ -1,0 +1,8 @@
+<h1>Search for Recipes by Ingredient</h1>
+
+<%= form_tag( '/searches/index', :method => :get ) do %>
+<%= label_tag(:recipe, "Search for:") %>
+<%= text_field_tag(:recipe) %>
+<%= submit_tag("Send") %>
+
+<% end %>
