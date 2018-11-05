@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html>
-<body>
+
 
   <section class="homepage">
 
-    <h3>Welcome to Munchie!</h3>
+    
 
+    <div class="search">
     <%= form_tag(recipes_path, method: :get) do %>
     Recipe Search <%= text_field_tag :recipe %>
     <%= submit_tag 'Search' %>
     <% end %>
-
+  </div>
   </section>
-
-  </body>
-  </html>

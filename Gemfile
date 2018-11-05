@@ -89,3 +89,4 @@ end
 # gem 'httparty'
 gem 'figaro'
 gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap', '~> 4.1.3'

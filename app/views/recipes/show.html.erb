@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<body>
 
-
-  <section class="recipes-list">
+  <section class="recipes-details">
 
     <header>
     <p><%= link_to "Back to Search", recipes_homepage_path %></p>
@@ -12,12 +8,13 @@
       <h4><strong><a href="<%=@recipe.url%>" target="_blank"><%= @recipe.name %></a></strong></h4>
     </header>
 
+    <div class="ingred">
 
     <table cellpadding="20">
 
       <thead>
         <tr>
-          <th>Ingredients</th>
+          <th><i class="fas fa-bolt"></i> <i class="fas fa-bolt"></i> <i class="fas fa-bolt"></i> Ingredients <i class="fas fa-bolt"></i> <i class="fas fa-bolt"></i> <i class="fas fa-bolt"></i></th>
           <th>Dietary Information</th>
           <th>Health Information</th>
 
@@ -58,8 +55,6 @@
       </tbody>
 
     </table>
+    </div>
 
   </section>
-
-</body>
-</html>

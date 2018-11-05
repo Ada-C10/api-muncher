@@ -8,7 +8,8 @@ class RecipesController < ApplicationController
 
   def index
     page = params[:page] || 1
-    @recipes = ApiMuncherWrapper.list_recipes(params[:recipe],page).paginate(:page => page, :per_page => 10)
+      @recipes = ApiMuncherWrapper.list_recipes(params[:recipe],page).paginate(:page => page, :per_page => 10)
+
   end
 
 
@@ -17,14 +18,16 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = ApiMuncherWrapper.show_details(uri_from_id(params[:id]))
+  
+    # render_404 unless @recipe
 
   end
 
-private
+  private
 
-def uri_from_id(id)
-  return CGI.escape("http://www.edamam.com/ontologies/edamam.owl#recipe_#{id}")
-end
+  def uri_from_id(id)
+    return CGI.escape("http://www.edamam.com/ontologies/edamam.owl#recipe_#{id}")
+  end
 
 
 end
