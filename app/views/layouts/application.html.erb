@@ -38,12 +38,14 @@
       <%= yield %>
     </main>
 
-    <footer>
-      <div class="row">
-        <div class="col-sm-12 text-center">
-          <div id="edamam-badge" data-color="white"></div>
+    <% if params[:controller] != "pages" %>
+      <footer>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <div id="edamam-badge" data-color="transparent"></div>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    <% end %>
   </body>
 </html>
