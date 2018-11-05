@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     else
       # User doesn't match anything in the DB
       # Attempt to create a new user
-      user = User.build_from_oauth(auth_hash)
+      user = User.build_from_omniauth(auth_hash)
          if user.save
            flash[:status] = :success
            flash[:result_text] = "Successfully created new user #{user.username} with ID #{user.id}"
