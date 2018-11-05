@@ -1,8 +1,0 @@
-<h1>Search for Recipes by Ingredient</h1>
-
-<%= form_tag found_recipes_path, method: "post" do %>
-  <%= label_tag(:search, "Enter Food:") %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Send") %>
-
-<% end %>

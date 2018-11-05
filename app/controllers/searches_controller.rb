@@ -1,24 +1,16 @@
+require 'httparty'
+
 class SearchesController < ApplicationController
 
-  def new
-    # @recipe = EdamamApiWrapper.new
-  end
-
-  def create
-    @recipe = EdamamApiWrapper.create_recipe(api_params)
+  def root
   end
 
   def index
     #search results
-    @recipes = EdamamApiWrapper.search_recipes(query)
+    @recipes = EdamamApiWrapper.search_recipes( params[:recipe] )
   end
 
   def show
-    @recipe = EdamamApiWrapper.find_by(uri: recipe.uri)
-    if @recipe.nil?
-      head :not_found
-    end
-    #single search result - single recipe
-    #something goes here
+    @recipe = EdamamApiWrapper.show_recipe( params[:id] )
   end
 end

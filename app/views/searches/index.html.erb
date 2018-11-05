@@ -4,39 +4,36 @@
 
   <ul>
     <% @recipes.each do |recipe| %>
-    <li>
-      Recipe Title: <%= recipe.label %>
-    </li>
-    <li>
-      Image: <%= recipe.image %>
-    </li>
-    <li>
-      Original URL: <%= recipe.url %>
-    </li>
+    <li>Recipe Title: <%= recipe.label %></li>
+    <li>Image: <%= recipe.image %></li>
+    <%= link_to recipe_path(recipe.id) do %>
+    <%= image_tag(recipe.image, alt: "food-porn") %>
+    <% end %>
+    <li>Origin: <%= recipe.uri %></li>
 
-    <li>
-      Ingredients:
+    <li>Ingredients:
       <ul class="nested">
-        <% recipe.ingredientLines.each do |ingredient| %>
-        <li>
-          <%= ingredient %>
-        </li>
+        <% if recipe.ingredientLines %>
+        <% @recipe.ingredientLines.length.times do |i| %>
+        <li><%= @recipe.ingredientLines[i] %></li>
         <% end %>
       </ul>
+      <% end %>
     </li>
 
-    <li>
-      Dietary Restrictions:
+    <li>Dietary Restrictions:
       <ul class="nested">
-        <% recipe.healthLabels.each do |label| %>
-        <li>
-          <%= label %>
-        </li>
+        <% if recipe.healthLabels %>
+        <% @recipe.healthLabels.length.times do |i| %>
+        <li><%= @recipe.healthLabels[i] %></li>
         <% end %>
       </ul>
+      <% end %>
     </li>
+    <% end %>
 
   </ul>
+
   <% end %>
-</ul>
+
 </section>
