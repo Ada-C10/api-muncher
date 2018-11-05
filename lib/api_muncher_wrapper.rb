@@ -47,10 +47,7 @@ class ApiMuncherWrapper
     return Recipe.new(
       api_params["recipe"]["label"],
       api_params["recipe"]["uri"],
-      api_params["recipe"]["image"],
-      api_params["recipe"]["source"],
-      api_params["recipe"]["dietLabels"],
-      api_params["recipe"]["ingredientLines"]
+      api_params["recipe"]["image"]
     )
   end
 
