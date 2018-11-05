@@ -21,13 +21,15 @@ class EdamamApiWrapper
         label = hit["recipe"]["label"]
         image = hit["recipe"]["image"]
         uri = hit["recipe"]["uri"]
+        healthLabels = hit["recipe"]["healthLabels"] # this is an array
 
-        recipe_list << create_recipe({label: label, image: image, uri: uri})
+        recipe_list << create_recipe({label: label, image: image, uri: uri, healthLabels: healthLabels})
 
       end
     else
       return []
     end
+
     return recipe_list
   end
 

@@ -3,9 +3,25 @@ require 'test_helper'
 describe EdamamApiWrapper do
 
   describe 'recipe_search' do
-    it 'can list recipes given a search term' do
+    it 'can list recipes given a search term and a health label' do
       VCR.use_cassette('recipe_search') do
-        recipes = EdamamApiWrapper.recipe_search('tofu')
+        recipes = EdamamApiWrapper.recipe_search('tofu', ["vegan"])
+
+        expect(recipes.length).must_be :>, 0
+
+        recipes.each do |recipe|
+          expect(recipe).must_respond_to :label
+          expect(recipe).must_respond_to :image
+          expect(recipe).must_respond_to :uri
+          expect(recipe).must_respond_to :id
+          expect(recipe.healthLabels).must_include "Vegan"
+        end
+      end
+    end
+
+    it 'can list recipes given a search term and no health label' do
+      VCR.use_cassette('recipe_search') do
+        recipes = EdamamApiWrapper.recipe_search('tofu', [])
 
         expect(recipes.length).must_be :>, 0
 
@@ -18,9 +34,27 @@ describe EdamamApiWrapper do
       end
     end
 
+    it 'can list recipes given a search term and multiple health labels' do
+      VCR.use_cassette('recipe_search') do
+        recipes = EdamamApiWrapper.recipe_search('tofu', ["vegan", "peanut-free", "tree-nut-free"])
+
+        expect(recipes.length).must_be :>, 0
+
+        recipes.each do |recipe|
+          expect(recipe).must_respond_to :label
+          expect(recipe).must_respond_to :image
+          expect(recipe).must_respond_to :uri
+          expect(recipe).must_respond_to :id
+          expect(recipe.healthLabels).must_include "Vegan"
+          expect(recipe.healthLabels).must_include "Peanut-Free"
+          expect(recipe.healthLabels).must_include "Tree-Nut-Free"
+        end
+      end
+    end
+
     it 'returns an empty array if no results are found' do
       VCR.use_cassette('recipe_search') do
-        recipes = EdamamApiWrapper.recipe_search('qmwmemrmtmmtmy')
+        recipes = EdamamApiWrapper.recipe_search('qmwmemrmtmmtmy', [])
 
         expect(recipes).must_equal []
       end
