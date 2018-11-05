@@ -6,7 +6,6 @@ class EdamamApiWrapper
   APP_ID = ENV["EDAMAM_ID"]
 
   def self.search(word)
-    # formatted_word = word.split.join("+")
     url = BASE_URL + "?app_id=#{APP_ID}" + "&app_key=#{TOKEN}" + "&to=50" + "&q=#{word}"
     formatted_url = URI.encode(url)
     data = HTTParty.get(formatted_url)

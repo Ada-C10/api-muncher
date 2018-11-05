@@ -1,4 +1,4 @@
-<%= form_with url: "recipes_path", method: "post" do |f| %>
-<%= f.text_field :keyword %>
+<%= form_with method: "get" do |f| %>
+<%= f.text_field :recipes %>
 <%= f.submit "Search" %>
 <% end %>
