@@ -1,14 +1,11 @@
 <h1>SHOW PAGE</h1>
 
 <ul>
-  <% @recipe.first do |r| %>
-  <li><%= r.label %></li>
-  <li><%= image_tag(r.image) %></li>
-  <li><%= link_to "Original Recipe", r.url %></li>
-  <li><% r.ingredients.each do |i|  %></li>
+<li><%= @recipe.label %></li>
+  <li><%= image_tag(@recipe.image) %></li>
+  <li><%= link_to "Original Recipe", @recipe.url %></li>
+  <li><% @recipe.ingredients.each do |i|  %></li>
   <li><%= i %></li>
-
   <% end %>
-  <% end %>
-
+  
 </ul>

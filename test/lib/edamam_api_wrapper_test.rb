@@ -21,7 +21,7 @@ describe 'EdamamApiWrapper' do
     end
 
     it 'returns an empty array if no recipes found for query' do
-      
+
       VCR.use_cassette('no-recipes-file') do
         query = 'zqb'
         recipes = EdamamApiWrapper.find_recipes_for(query)
@@ -43,8 +43,8 @@ describe 'EdamamApiWrapper' do
 
         recipe = EdamamApiWrapper.find_recipe(parsed_id)
 
-        expect(recipe.label).must_equal "Teriyaki Chicken"
-        expect(recipe.uri).must_equal uri
+        expect(recipe.first.label).must_equal "Teriyaki Chicken"
+        expect(recipe.first.uri).must_equal uri
       end
 
     end

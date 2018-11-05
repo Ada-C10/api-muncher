@@ -27,7 +27,7 @@ class SearchRecipesController < ApplicationController
     recipe = EdamamApiWrapper.find_recipe(params[:id])
 
     if recipe.first
-      @recipe = recipe
+      @recipe = recipe.first
     else
       flash[:status] = :failure
       flash[:result_text] = "No recipe found"
