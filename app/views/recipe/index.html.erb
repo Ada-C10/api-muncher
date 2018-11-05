@@ -1,13 +1,18 @@
-<section class="recipes-list">
-  <h1>Recipes</h1>
-  <% if @recipes %>
-    <ul>
-      <% @recipes.each do |recipe| %></li>
-        <li><%= recipe.label %>
-        <li><%= link_to image_tag(recipe.image), recipe_path(recipe.image) %></li>
-        <li><% parsed_url = recipe.uri.partition('#').last %></li>
-        <li><%= link_to recipe.uri, recipe_path(parsed_url)%></li>
-      <% end %>
-    </ul>
-  <% end %>
+<section class="container">
+  <h1><strong>List of Recipes</strong>
+  </h2>
+
+  <div class="flex-container">
+    <% @recipes.each do |recipe| %>
+    <div class="card">
+      <%= image_tag("#{recipe.image}", :alt => 'recipe-img', :class => 'image-tag') %>
+      <div class="card-body">
+
+        <%= recipe.label %>
+        <% parsed_url = recipe.uri.partition('#').last %></li>
+        <li class="list"><%= link_to recipe.uri, recipe_path(parsed_url)%></li>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </section>
