@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   def index
-    @search = search_params[:search]
-    # Consider if search is ""(controller), cannot be found (wrapper)
+    @search = search_params
+
     @recipes = EdamamApiWrapper.list_recipes(@search).paginate(:page => params[:page], :per_page => 10)
 
     if @recipes == []
@@ -22,6 +22,6 @@ class RecipesController < ApplicationController
 
   private
   def search_params
-    params.permit(:search)
+    params.permit(:search, diet: [])
   end
 end

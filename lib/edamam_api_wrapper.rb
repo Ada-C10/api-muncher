@@ -5,14 +5,25 @@ class EdamamApiWrapper
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
 
-  def self.list_recipes(term)
-    url = BASE_URL + "?q=#{term}" + "&app_id=#{ID}" + "&app_key=#{KEY}" + "&from=0" + "&to=30"
+  def self.list_recipes(params)
+    term = params[:search]
+    diet = params[:diet]
+
+    url = BASE_URL + "?q=#{term}" + "&app_id=#{ID}" + "&app_key=#{KEY}" + "&from=0" + "&to=50"
+
+    if diet
+      diet.each do |label|
+        url += "&diet=#{label}"
+      end
+    end
 
     data = HTTParty.get(url)
 
     recipe_list = []
 
-    if data["hits"].empty?
+    if data.code == 403
+      return []
+    elsif data["hits"].empty?
       return []
     else
       data["hits"].each do |recipe_data|

@@ -1,5 +1,12 @@
 <div class="container recipe">
-  <h1 class="text-center mt-5 mb-5">List of Recipes for: <%= @search %></h1>
+  <h1 class="text-center mt-5 mb-5">List of Recipes for: <%= @search[:search] %></h1>
+  <% if @search[:diet] %>
+    <ul class="list-inline text-center mb-5">
+      <% @search[:diet].each do |label| %>
+        <li class="list-inline-item"><%= label %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
   <% if @recipes %>
     <div class="row mb-5">
