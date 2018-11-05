@@ -9,6 +9,10 @@ class UnsplashWrapper
     url = BASE + queery + ID
     data = HTTParty.get(url)
 
+    if data["results"].empty?
+      return "".html_safe
+    end
+
     if sample
       sample = data["results"].sample
       return sample["urls"]["full"].html_safe
