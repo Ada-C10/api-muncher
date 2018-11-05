@@ -1,0 +1,327 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+@import "font-awesome";
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+
+body {
+	background: #eee;
+	font-size: 15px;
+}
+
+// I created some sick custom pagination styling!
+.munch_pagination {
+	background: #eee;
+	text-align: center;
+	cursor: default;
+	margin-bottom: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* self-clearing method: */ }
+.munch_pagination a, .munch_pagination span, .munch_pagination em {
+	align-self: center;
+	align-items: center;
+	align-content: center;}
+.munch_pagination a:not(.previous_page):not(.next_page), .munch_pagination em {
+	width: 1.75em;
+	height: 1.75em;
+	font-size: 1.75em;
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+	line-height: 1.65;
+	margin: 0 3px;}
+.munch_pagination .disabled {
+	color: #999999;
+	border: 1px solid #dddddd; }
+.munch_pagination .current {
+	font-style: normal;
+	font-weight: bold;
+	background: #2e6ab1;
+	color: white;
+	border: 1px solid #2e6ab1; }
+.munch_pagination a {
+	text-decoration: none;
+	text-align: center;
+	color: #105cb6;
+	border: 1px solid #9aafe5; }
+.munch_pagination a:hover, .munch_pagination a:focus {
+	color: #000033;
+	border-color: #000033;
+	text-decoration: none; }
+.munch_pagination:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden; }
+	* html .munch_pagination {
+	height: 1%; }
+	*:first-child + html .munch_pagination {
+	overflow: hidden; }
+.munch_pagination .previous_page, .munch_pagination .next_page {
+	border-width: 2px;
+	font-size: 3em;
+	padding: 0;
+	margin-bottom: 0.1em; }
+.munch_pagination .previous_page {
+	margin-right: 0.5em;
+	border: none;}
+	.munch_pagination .next_page {
+	margin-left: 0.5em;
+	border: none;}
+.munch_pagination > * {
+	z-index: 3;}
+
+	// search bar
+
+	#searchbar {
+	  margin: 50px 100px;
+	  display: inline-block;
+	  height: 60px;
+	  float: right;
+	  padding: 0;
+		position: relative;
+		background: #eee;
+	}
+
+#search_label_home {
+		width: 800px;
+		height: 300px;
+		cursor: pointer;
+		position: absolute;
+		top: -50px;
+		right: -100px;
+	}
+
+#search_label_index {
+		width: 400px;
+		height: 150px;
+		cursor: pointer;
+		position: absolute;
+		top: -50px;
+		right: -100px;
+	}
+
+	#search_text {
+	  height: 60px;
+	  font-size: 55px;
+	  display: inline-block;
+	  font-family: "Lato";
+	  font-weight: 100;
+	  border: none;
+	  outline: none;
+	  color: #555;
+	  padding: 3px;
+	  padding-right: 60px;
+	  width: 0px;
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  background: none;
+	  z-index: 3;
+	  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+	  cursor: pointer;
+	}
+
+	#search_text:focus:hover {
+	  border-bottom: 1px solid #BBB;
+	}
+
+	#search_text:focus {
+	  width: 700px;
+	  border-bottom: 1px solid #BBB;
+	  cursor: text;
+	}
+
+	#search_submit {
+	  height: 67px;
+	  width: 63px;
+	  display: inline-block;
+	  color:red;
+	  float: right;
+	  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+	  text-indent: -10000px;
+	  border: none;
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  cursor: pointer;
+	  opacity: 0.4;
+	  cursor: pointer;
+	  transition: opacity .4s ease;
+	}
+
+	#search_submit:hover {
+	  opacity: 0.8;
+	}
+
+// This keeps nav links on top
+.app-header__user-nav-container,
+.app-header__user-nav-container > * {
+	z-index: 10
+}
+
+// Flipping cards
+
+#recipecards {
+    background: #eee !important;
+}
+
+#recipecards .btn-primary:hover,
+#recipecards .btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+#recipecards .btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+#recipecards section {
+    padding: 60px 0;
+}
+
+.section-title {
+    color: #007b5e;
+}
+
+#recipecards .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+		margin: 0 0 30px 0;
+		padding: 0;
+}
+
+.frontside .card,
+.backside .card {
+	height: 312px;
+	width: 312px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.frontside .card {
+	overflow-y: hidden;
+}
+
+.backside p.card-text {
+	margin: 0;
+	padding: 0;
+}
+
+// Scrolling backsides
+.scroll {
+    overflow-y: auto;
+		overflow-x: hidden;
+}
+
+// Heart and Close icons
+.fa {
+	color: white;
+}

@@ -1,0 +1,66 @@
+<nav>
+  <div id="searchbar" class="mt-0">
+    <form action= "<%= recipe_searches_path %>" method="get">
+      <label for="search_text" id="search_label_index"></label>
+      <input id="search_text" name="q" type="text" placeholder="I want a recipe for..." maxlength= 50 autocomplete="off" spellcheck="false">
+      <input id="search_submit" value="Submit" type="submit">
+    </form>
+  </div>
+
+  <h1 class="section-title">My Favorite Recipes</h1>
+</nav>
+
+
+<section id="recipecards" class="pb-5 pt-0">
+  <div class="container">
+    <% if @recipes.any? %>
+
+    <div class="card-deck">
+      <% @recipes.each do |recipe| %>
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
+
+            <div class="frontside">
+              <div class="card">
+                <% favorite = @login_user.favorites.find_by(recipe_uri_fragment: recipe.recipe_uri.fragment) %>
+                <%= link_to favorite_path(favorite.id), method: :delete, class: "form remove-from-favorites" do %>
+                  <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-close"></i></button>
+                <% end %>
+                <div class="card-body text-center">
+                  <p><img class="img-fluid" src="<%= recipe.image_uri %>" alt="card image"></p>
+                  <h4 class="card-title"><%= recipe.label %></h4>
+                  <p class="card-text"><%= "From: #{recipe.source}" %></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="backside scroll">
+              <div class="card">
+                <%= link_to favorite_path(favorite.id), method: :delete, class: "form remove-from-favorites" do %>
+                  <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-close"></i></button>
+                <% end %>
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title "><%= link_to recipe.label, recipe_search_path(recipe.recipe_uri.fragment) %></h4>
+                    <% recipe.ingredient_lines.each do |line| %>
+                  <p class="card-text"><%= line %></p>
+                    <% end %>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+    </div>
+    <% else %>
+    <br>
+    <br>
+    <h5 class="no-result-title text-center mt-5 pt-5">No favorites.</h5>
+  <% end %>
+  </div>
+</section>

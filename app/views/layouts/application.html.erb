@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <ul class="nav app-header__user-nav-container">
+        <% if session[:user_id] %>
+          <li class="nav-item app-header__nav_item ml-2">
+          <%= link_to "My Favorite Recipes", favorites_path, method: "get", class: "btn btn-primary"  %>
+          </li>
+          <li class="nav-item app-header__nav_item ml-2">
+          <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-primary"  %>
+          </li>
+          <li class="nav-item app-header__nav_item align-self-center ml-2">
+            (Logged In As <%= @login_user.name %>)
+          </li>
+        <% else %>
+          <li class="nav-item app-header__nav_item">
+          <%= link_to "Github Login", "/auth/github", class: "btn btn-primary" %>
+          </li>
+          <li class="nav-item app-header__nav_item ml-2">
+          <%= link_to "Google Login", "/auth/google_oauth2", class: "btn btn-primary" %>
+          </li>
+        <% end %>
+        <li class="nav-item app-header__nav_item ml-auto">
+        <%= link_to "Hello Munchy Home", root_path, class:"navbar-brand btn btn-primary" %>
+        </li>
+      </ul>
+    </nav>
+    <%= yield %>
+    <footer>
+      <div id="edamam-badge" data-color="#eee"></div>
+    </footer>
+  </body>
+</html>

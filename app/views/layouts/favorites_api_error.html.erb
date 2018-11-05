@@ -1,0 +1,6 @@
+<h1>Api Error</h1>
+<p><%= flash[:error] %></p>
+<p>Edamam is probably throttling this free account. Pour yourself a glass of water, drink it all, and then try reloading the page.</p>
+<p>Or, if you have over 5 favorites, you can clear your favorites so that Edamam doesn't have to load all five at once:</p>
+<p class="text-align-center"><%= link_to "Clear Favorites", clear_favorites_path, method: :delete, class: "btn btn-primary" %></p>
+<img src="http://dailycrossstitch.com/wp-content/uploads/2014/03/Slow-Down-Illustraition.jpg" alt="Slow Down, Enjoy Life cross-stitch">

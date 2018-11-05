@@ -1,0 +1,119 @@
+<nav>
+  <div id="searchbar" class="mt-0">
+    <form action= "<%= recipe_searches_path %>" method="get">
+      <label for="search_text" id="search_label_index"></label>
+      <input id="search_text" name="q" type="text" placeholder="I want a recipe for..." maxlength= 50 autocomplete="off" spellcheck="false">
+      <input id="search_submit" value="Submit" type="submit">
+    </form>
+  </div>
+
+  <h1 class="section-title">Search: <%= @query %></h1>
+  <% if @search_history && @search_history.any? %>
+    Recent Searches:
+    <ol class="d-flex">
+      <% @search_history.each do |query| %>
+        <li class="ml-2 d-inline">
+          <form action="<%= recipe_searches_path %>" method="get" class="form search-history">
+            <input type="hidden" name="q" value= "<%= query.q %>">
+            <input type="submit" value="<%= query.search_term %>">
+
+            <!-- TODO: Add models and relationships for health labels -->
+            <!-- So user can click on a past search (filters and query) and replicate it -->
+
+          </form>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+</nav>
+
+
+<section id="recipecards" class="pb-5 pt-0">
+  <div class="container">
+    <% if @recipes.any? %>
+
+      <div class="munch_pagination">
+        <%= will_paginate @recipes, :previous_label => previous_label, :next_label => next_label %>
+      </div>
+
+      <div class="filters mb-2">
+        <div class= "filter-buttons-container d-flex justify-content-center">
+          <form action="<%= recipe_searches_path %>" method="get" class="form shuffle">
+            <input type="hidden" name="shuffle" value="t">
+            <input type="hidden" name="q" value= "<%= @query %>">
+            <button type="submit" class="btn btn-primary">Shuffle My Recipes!</button>
+          </form>
+          <% if @shuffle %>
+            <form action="<%= recipe_searches_path %>" method="get" class="form unshuffle">
+              <input type="hidden" name="q" value= "<%= @query %>">
+              <button type="submit" class="btn btn-primary ml-2">Default Order</button>
+            </form>
+          <% end %>
+        </div>
+        <% if @health_labels.any? %>
+          <div class= "filter-checkboxes-container d-flex justify-content-center">
+            <form action="<%= recipe_searches_path %>" method="get" class="form health-filter">
+            <% @health_labels.each do |label| %>
+              <%= checkbox_field(label, params) %><%= label.capitalize %>
+            <% end %>
+              <input type="hidden" name="q" value= "<%= @query %>">
+              <input type="submit" value="Apply Filters!" class="btn btn-primary">
+            </form>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div class="card-deck">
+        <% @recipes.each do |recipe| %>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+            <div class="mainflip">
+
+              <div class="frontside">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <p><img class="img-fluid" src="<%= recipe.image_uri %>" alt="card image"></p>
+                    <h4 class="card-title"><%= recipe.label %></h4>
+                    <p class="card-text"><%= "From: #{recipe.source}" %></p>
+                    <form action="<%= favorites_path %>" method="post" class="form add-to-favorites">
+                      <input type="hidden" name="recipe_uri_fragment" value= "<%= recipe.recipe_uri.fragment %>">
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-heart"></i></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="backside scroll">
+                <div class="card">
+                  <div class="card-body text-center mt-4">
+                    <h4 class="card-title "><%= link_to recipe.label, recipe_search_path(recipe.recipe_uri.fragment) %></h4>
+                      <% recipe.ingredient_lines.each do |line| %>
+                    <p class="card-text"><%= line %></p>
+                      <% end %>
+                    <form action="<%= favorites_path %>" method="post" class="form add-to-favorites">
+                      <input type="hidden" name="recipe_uri_fragment" value= "<%= recipe.recipe_uri.fragment %>">
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-heart"></i></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+
+    <% end %>
+    </div>
+    <% else %>
+    <br>
+    <br>
+    <h5 class="no-result-title text-center mt-5 pt-5">No results.</h5>
+    <% end %>
+  </div>
+</section>
