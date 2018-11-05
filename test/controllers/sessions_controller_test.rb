@@ -2,12 +2,14 @@ require "test_helper"
 
 describe SessionsController do
   it "should get create" do
-    get sessions_create_url
-    value(response).must_be :success?
+    # set up mock auth hash
+
+    # get auth_callback_path
+    # value(response).must_be :success?
   end
 
   it "should get destroy" do
-    get sessions_destroy_url
+    delete logout_path
     value(response).must_be :success?
   end
 

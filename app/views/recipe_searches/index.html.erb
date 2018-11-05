@@ -9,7 +9,7 @@
 
   <h1 class="section-title">Search: <%= @query %></h1>
   <% if @search_history && @search_history.any? %>
-    Recent Searches
+    Recent Searches:
     <ol class="d-flex">
       <% @search_history.each do |query| %>
         <li class="ml-2 d-inline">

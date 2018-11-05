@@ -3,11 +3,9 @@
 one:
   uid: MyString
   provider: MyString
-  first_name: MyString
-  last_name: MyString
+  name: MyString
 
 two:
   uid: MyString
   provider: MyString
-  first_name: MyString
-  last_name: MyString
+  name: MyString
