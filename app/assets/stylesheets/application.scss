@@ -1,9 +1,13 @@
+
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
 
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Baloo+Bhaijaan|Gloria+Hallelujah|Questrial');
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 
 .font-selections{
   font-family: 'Baloo Bhaijaan', cursive;
@@ -19,13 +23,13 @@ body, html {
 
 }
 body {
-  padding-top: 1rem;
+
   background-image: url("board.jpeg");
   /* Full height */
-  height: 100%;
+
 
   /* Center and scale the image nicely */
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -34,6 +38,10 @@ body {
 .title {
   font-family: 'Baloo Bhaijaan', cursive;
   font-size: xx-large;
+}
+
+.title :hover{
+
 }
 
 textarea:focus,
@@ -63,3 +71,63 @@ input[type=text]:focus {
   box-shadow: 0px 23px 31px 0px rgba(158,147,158,.6);
   /* the rest of your styling */
 }
+
+.product-img img{
+  max-width: 50%;
+  height: auto;
+  background-color: rgba(52,58,64,0.79);
+  padding: 4px;
+  border: 1px solid lightgrey;
+  border-radius: 10%;
+}
+
+a.product-img {
+  background-color: transparent;
+  border: none;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container{
+  margin-top: 5rem;
+}
+
+.pagination li a:hover {
+  background-color: rgba(254,198,3,0.82);
+}
+
+.pagination li a{
+  background-color: rgba(207,217,223,0.61);
+  border: none;
+  color: #2E2F30;
+}
+.recipe-card {
+  filter: drop-shadow(0 0 0.75rem grey);
+
+}
+
+.recipe-img {
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+  border-radius: 5%;
+}
+
+//.show-recipe li:before {
+//  font-family: 'FontAwesome';
+//  content: '\f0f5';
+//  margin:0 5px 0 -15px;
+//  color: #f00;
+//}
+
+.icon {
+  margin-right: 10px;
+
+}
+
+//.icon-btn:before{
+//  font-family: 'FontAwesome';
+//  content: "\f4d5";
+//}

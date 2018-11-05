@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
 
   def index
     if params[:search]
-      @recipes = EdamamApiWrapper.list_recipes(params[:search]).paginate(page: params[:page], per_page: 10)
+      @recipes = EdamamApiWrapper.list_recipes(params[:search]).paginate(page: params[:page], per_page: 9)
     else
       @recipes = []
     end

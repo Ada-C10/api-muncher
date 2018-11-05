@@ -29,9 +29,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'awesome_print'
 gem 'httparty'
 gem 'will_paginate', '~> 3.1.0'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap4'
 
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.5.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

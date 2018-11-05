@@ -9,7 +9,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Baloo+Bhaijaan|Gloria+Hallelujah|Questrial" rel="stylesheet">
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -21,7 +20,7 @@
       <%= form_tag(list_recipes_path, method: "get", class: "form-inline") do %>
         <%= label_tag(:search, "Let's make: ") %>
         <%= text_field_tag :search, "", class: "form-control" %>
-        <%= submit_tag("Search", class: "btn btn-outline-success my-2") %>
+        <%= submit_tag("Search", class: "btn btn-outline-success my-2", name: nil) %>
       <% end %>
   </nav>
 
