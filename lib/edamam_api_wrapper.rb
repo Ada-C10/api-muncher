@@ -37,16 +37,17 @@ class EdamamApiWrapper
   private
 
   def self.create_recipe(recipe)
-    # binding.pry
-    return Recipe.new(
-      id_from_uri(recipe["uri"]),
-      recipe["label"],
-      recipe["image"],
-      recipe["url"],
-      recipe["ingredientLines"],
-      recipe["dietLabels"],
-      recipe["source"]
-    )
+    unless recipe.nil?
+      return Recipe.new(
+        id_from_uri(recipe["uri"]),
+        recipe["label"],
+        recipe["image"],
+        recipe["url"],
+        recipe["ingredientLines"],
+        recipe["dietLabels"],
+        recipe["source"]
+      )
+    end
   end
 
   def self.id_from_uri(uri)

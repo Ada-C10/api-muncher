@@ -8,8 +8,6 @@ class RecipesController < ApplicationController
       flash[:error] = "Could not find recipes. Try again."
       redirect_back fallback_location: root_path
     end
-    # return
-    # binding.pry
   end
 
   def search
@@ -22,6 +20,13 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = EdamamApiWrapper.show_recipe(params[:recipe])
+    if @recipe.nil?
+      # binding.pry
+      flash[:error] = "Could not find that particular recipe. Try again."
+      redirect_back fallback_location: root_path
+      return
+    end
+
     if @recipe.diet_labels == []
       @recipe.diet_labels << "N/A"
     end
