@@ -28,7 +28,6 @@ class EdamamApiWrapper
 
     response = HTTParty.get(url)
 
-    # recipe = create_recipe(" ")
     if response[0]
       recipe = create_recipe(response[0])
     end
@@ -44,6 +43,7 @@ class EdamamApiWrapper
       api_params["label"],
       {
         uri: api_params["uri"],
+        url: api_params["url"],
         source: api_params["source"],
         image: api_params["image"],
         ingredients: api_params["ingredientLines"],

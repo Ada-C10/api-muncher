@@ -14,10 +14,10 @@ describe Recipe do
   end
 
   it 'responds to all attribute methods' do
-    recipe_attrs = %i[diet_labels image ingredients label source uri]
+    recipe_attrs = %i[diet_labels image ingredients label source uri url]
     recipe = Recipe.new("chicken")
     recipe_attrs.each do |recipe_attr|
-      
+
       expect(recipe).must_respond_to recipe_attr
     end
   end
