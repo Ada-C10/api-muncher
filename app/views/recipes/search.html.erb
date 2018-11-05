@@ -1,14 +1,4 @@
 <container class="root_page">
-  <h1>Muncher</h1>
-
-<div class="searchbar">
-  <div class="form-group">
-  <%= form_tag recipes_index_path, method: "get" do %>
-    <%= label_tag(:query, "Look Up Recipe:") %>
-    <%= text_field_tag(:query)%>
-    <%= submit_tag("Send", class: 'btn btn-default btn-submit') %>
-  <% end %>
-  </div>
-</div>
+<%= render partial: "header" %>
 
 </container>

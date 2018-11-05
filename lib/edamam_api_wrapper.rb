@@ -20,10 +20,10 @@ class EdamamApiWrapper
     return @recipe_list
   end
 
-  def self.find_recipe(recipe)
-    @recipe_list.each do |r|
-      if r.name == recipe
-        return r
+  def self.find_recipe(params)
+    @recipe_list.each do |recipe|
+      if recipe.name == params
+        return recipe
       end
     end
   end

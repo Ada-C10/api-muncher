@@ -1,27 +1,19 @@
-<header>
-  <class="top_search">
-  <h1>Muncher</h1>
-  <div class="searchbar">
-    <div class="form-group">
-      <%= form_tag recipes_index_path, method: "get" do %>
-      <%= label_tag(:query, "Look Up Recipe:") %>
-      <%= text_field_tag(:query)%>
-      <%= submit_tag("Send", class: 'btn btn-default btn-submit') %>
-      <% end %>
-    </div>
-  </div>
-  </class>
-
-</header>
+<%= render partial: "header" %>
 
 <% if @recipes %>
 <ul class="index_container">
+  <% if @recipes == [] %>
+  "There are no munchies corresponding to the search!"
+  <% else %>
   <% @recipes.each do |recipe| %>
   <li class="recipe_card">
-    <h2><%= recipe.name %></h2>
+    <div class="name"><h2><%= recipe.name %></h2></div>
     <img src=<%= recipe.image %> class="thumbnail_photo">
-    <%=link_to "More Info", recipes_show_path(recipe.name) %>
+    <div class="info_link">
+      <%=link_to "More Info", recipes_show_path(recipe.name) %>
+    </div>
   </li>
+  <% end %>
   <% end %>
 </ul>
 </class>

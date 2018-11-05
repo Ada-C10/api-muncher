@@ -1,27 +1,41 @@
-<h1><%= @recipe.name %></h1>
-<img src=<%= @recipe.image %> >
+<%= render partial: "header" %>
 
-By: <a href="<%=@recipe.url%>"> <%=@recipe.source%> </a>
+<div class="show_page">
+  <h2><%= @recipe.name %></h2>
+  <img src=<%= @recipe.image %> >
 
-Yield: <%=@recipe.yield%> servings
+  <div class="show_block">
+    By: <a href="<%=@recipe.url%>"> <%=@recipe.source%> </a>
+  </div>
 
-Ingredients:
-<% @recipe.ingredients.each do |ingredient| %>
-<ul><li>
-  <%= ingredient %>
-</li></ul>
-<% end %>
+  <div class="show_block">
+    Yield: <%=@recipe.yield%> servings
+  </div>
 
-Health Label:
-<% @recipe.labels.each do |label| %>
-<ul><li>
-  <%= label %>
-</li></ul>
-<% end %>
+  <div class="show_block">
+    Ingredients:
+      <% @recipe.ingredients.each do |ingredient| %>
+      <ul><li>
+      <%= ingredient %>
+    </li></ul>
+    <% end %>
+  </div>
 
-Caution:
-<% @recipe.cautions.each do |caution| %>
-<ul><li>
-  <%= caution %>
-</li></ul>
-<% end %>
+  <div class="show_block">
+    Health Label:
+    <% @recipe.labels.each do |label| %>
+    <ul><li>
+      <%= label %>
+    </li></ul>
+    <% end %>
+  </div>
+
+  <div class="show_block">
+    Caution:
+    <% @recipe.cautions.each do |caution| %>
+    <ul><li>
+      <%= caution %>
+    </li></ul>
+    <% end %>
+  </div>
+</div>
