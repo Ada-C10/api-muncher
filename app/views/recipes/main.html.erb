@@ -1,0 +1,8 @@
+<h1>MUNCHER</h1>
+<br />
+<h3>Find your flavor!</h3>
+<%= form_tag recipes_path, method: "get", class: "input-group md-form form-sm form-2 pl-0" do  %>
+  <%= label_tag(:search, "Find your flavor") %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Send") %>
+<% end %>
