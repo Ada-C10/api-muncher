@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+
+
+body {
+  font-family: 'Noticia Text', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  flex-shrink: 0;
+
+}
+header h3 {
+  font-family: 'Josefin Slab', serif;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container-fluid {
+  flex: 1 0 auto;
+  background-color: lightgrey;
+}
+
+.root-head {
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  font-family: 'Josefin Slab', serif;
+  font-size: 5em;
+  font-weight: bold;
+}
+
+#edamam-badge {
+  text-align: right;
+}
+
+.search-form {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.submit-button {
+  text-align: right;
+}
+
+.root-sub {
+  text-align: left;
+  font-size: 1.5em;
+}

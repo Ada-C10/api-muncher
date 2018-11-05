@@ -1,0 +1,29 @@
+<%= render partial: "header" %>
+
+<div class="index-container">
+  <% if @recipes.present? %>
+    <h3> Results for "<%= "#{params[:search]}" %>" </h3>
+
+    <section class="page-links">
+      <%= will_paginate @recipes %>
+    </section>
+
+    <section class="recipes-container">
+      <% @recipes.each do |recipe| %>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag("#{recipe.image}", class: "card-img-top") %>
+        <div class="card-body">
+          <p class="card-text">
+            <%= recipe.label %> -
+            <% id = recipe.uri.last(32) %>
+            <%= link_to "Details", recipe_path(id) %>
+          </p>
+        </div>
+      </div>
+      <% end %>
+    <% else %>
+      <p class="no-match">No recipes match this search term. Please try again.</p>
+    <% end %>
+  </section>
+
+</div>

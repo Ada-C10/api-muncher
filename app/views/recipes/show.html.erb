@@ -1,0 +1,26 @@
+<%= render partial: "header" %>
+
+<section class="details-container">
+  <div class="title">
+    <h2><%= link_to @recipe.label, @recipe.url, target: "_blank" %></h2>
+    <h4>By <%= @recipe.source %></h4>
+  </div>
+
+  <div class="recipe">
+  <%= image_tag "#{@recipe.image}", alt: "#{@recipe.label}", class: "detail-image" %>
+    <div class="lists">
+      <h5>Ingredients</h5>
+        <% @recipe.ingredients.each do |ingredient| %>
+        <ul>
+        <li><%= ingredient %></li>
+      </ul>
+      <% end %>
+      <h5>Dietary Labels</h5>
+        <% @recipe.diet_labels.each do |diet_label| %>
+        <ul>
+          <li><%= diet_label %></li>
+        </ul>
+        <% end %>
+    </div>
+  </div>
+</section>

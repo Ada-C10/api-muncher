@@ -1,0 +1,8 @@
+<section class="search-form">
+  <%= form_tag recipes_path, :method => "get" do %>
+  <%= text_field_tag :search, params[:search], class: "form-control form-control-lg" %>
+  <div class="submit-button">
+    <%= submit_tag "... nom nom nom", class: "btn btn-outline-dark btn-lg" %>
+  </div>
+  <% end %>
+</section>
