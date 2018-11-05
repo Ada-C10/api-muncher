@@ -40,7 +40,7 @@
  }
 
  a:hover {
-   color: #A04668;
+   color: #F3EB5E;
    transition: .6s;
    text-decoration: none;
  }
@@ -49,7 +49,10 @@
  h1 {
    color: white;
    text-align: center;
-
+   font-size: 5em;
+ }
+ h4 {
+   font-style: italic;
  }
 
  p {

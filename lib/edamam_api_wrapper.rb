@@ -32,7 +32,6 @@ class EdamamApiWrapper
     data[:prev_from] = response['from'] - (response['to'] - response['from'])
     data[:more_results] = response['more']
     data[:recipes] = response['hits']
-    # data[:text] = response['ingredients']
 
     return data
   end
@@ -46,6 +45,9 @@ class EdamamApiWrapper
     parsed_recipe[:uri] = recipe['uri']
     parsed_recipe[:source] = recipe['source']
     parsed_recipe[:ingredients] = recipe['ingredientLines']
+    parsed_recipe[:url] = recipe['url']
+    parsed_recipe[:diets] = recipe['dietLabels']
+
 
     return parsed_recipe
   end

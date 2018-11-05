@@ -3,8 +3,9 @@
 <% @recipe = EdamamApiWrapper.parse_recipe(@recipe) %>
 <%= image_tag(@recipe[:image_url]) %>
 <p></p>
-  <div><strong><%= @recipe[:name] %></strong></div>
+<div><strong><%= link_to(@recipe[:name], @recipe[:url], target: "_blank") %></strong></div>
   <div><strong>By: <%= @recipe[:source] %></strong></div>
+
 <p></p>
 </div>
 <strong>
@@ -13,5 +14,14 @@
 <p>
 <% @recipe[:ingredients].each do |ingredient| %>
   <div><strong><%= ingredient %></strong></div>
+  <% end %>
+</p>
+
+<strong>
+  <h3>Dietary Labels:</h3>
+</strong>
+<p>
+<% @recipe[:diets].each do |diet| %>
+  <div><strong><%= diet %></strong></div>
   <% end %>
 </p>
