@@ -16,7 +16,7 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
-@import url('https://fonts.googleapis.com/css?family=Archivo');
+@import url('https://fonts.googleapis.com/css?family=Archivo|Pacifico');
 
 html,body {
   height: 100%;
@@ -24,6 +24,13 @@ html,body {
   font-family: 'Archivo', sans-serif;
 }
 
+h1 {
+  font-family: 'Pacifico', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Pacifico', sans-serif;
+}
 #home {
   background: url(https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=08cb0ebaadb99995755a696a9710b229&auto=format&fit=crop&w=1400&q=60) no-repeat 50% 50%;
   display: table;
@@ -48,22 +55,28 @@ html,body {
 
 .search {
   color: #EEE5E9;
-  font-weight: bold;
-  float: left;
+  float: center;
 }
 
-#search {
-  background-image: url(https://image.flaticon.com/icons/svg/149/149852.svg);
-  background-size: 30px 30px;
-  background-position: 11px 8px;
-  background-repeat: no-repeat;
-}
+// #search {
+//   background-image: url(https://image.flaticon.com/icons/svg/149/149852.svg);
+//   background-size: 30px 30px;
+//   background-position: 11px 8px;
+//   background-repeat: no-repeat;
+//   opacity: 0.5;
+// }
 
 .feedback-input {
   padding: 13px 13px 13px 54px;
   margin-bottom: 10px;
+  color: black;
 }
 
 .feedback-input:focus{
   padding: 13px 13px 13px 54px;
 }
+
+// .recipe_container {
+//   width: 50%;
+//   justify-content: center;
+// }

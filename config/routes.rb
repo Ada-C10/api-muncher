@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   root 'recipes#new'
   resources :recipes, only: [:index,:show]
 
-  get 'recipes/search' , to: 'recipe#search', as: 'recipe_search'
 
 end

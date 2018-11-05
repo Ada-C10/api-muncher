@@ -1,14 +1,36 @@
-<section class="recipes-list">
-  <h1>Recipe <%= "#{@recipe.label}" %></h1>
-    <%= image_tag(@recipe.image)%>
-    <ul>
-      <% @recipe.health.each do |health| %>
-        <li>
-          <%=health%>
-        </li>
-      <% end %>
-    </ul>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href=#>
+    <img src="https://image.flaticon.com/icons/svg/481/481486.svg" width="30" height="30" class="d-inline-block align-top" alt="Muncher Logo">
+    Muncher
+  </a>
 
+    <%= form_tag recipes_path, method: :get, class: "form-inline my-2 my-lg-0" do %>
+    <%= text_field_tag(:search, nil, placeholder: 'Search', class: "form-control mr-sm-2") %>
+    <%= submit_tag("Search", class: "btn btn-outline-success my-2 my-sm-0") %>
+    <% end %>
+
+</nav>
+
+
+
+
+
+<section class="recipes-list">
+  <div class="recipe_container">
+  <div class="card" style="width: 25em;margin:0 auto;">
+    <div class="card-body">
+      <h4 class="card-title text-center"><%= "#{@recipe.label}" %> Recipe</h4>
+
+      <div class = "text-center">
+
+
+      <% @recipe.health.each do |health| %>
+
+          <span class="badge badge-info"><%=health%></span>
+
+      <% end %>
+      </div>
+    <h5 class="card-title mt-3">Ingredients</h5>
     <ul>
       <% @recipe.ingredients.each do |ingredient| %>
         <li>
@@ -17,5 +39,9 @@
       <% end %>
     </ul>
 
-    <%= link_to "Read More", @recipe.url, target: :_blank %>
+    <%= link_to "View Original Recipe >", @recipe.url, target: :_blank %>
+    <%= image_tag @recipe.image , class: "card-img-bottom" %>
+  </div>
+</div>
+</div>
 </section>
