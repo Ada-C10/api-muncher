@@ -87,3 +87,5 @@ end
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 # gem 'kaminari'
+
+gem 'concurrent-ruby', '~> 1.0', '= 1.0.5'
