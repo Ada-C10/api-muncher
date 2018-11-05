@@ -86,3 +86,4 @@ end
 gem 'httparty'
 
 gem 'will_paginate', "~> 3.0.4"
+gem 'concurrent-ruby', '~> 1.0', '= 1.0.5'
