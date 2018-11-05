@@ -42,6 +42,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
   gem 'httparty'
+  gem 'minitest-vcr'
+  gem 'webmock'
 end
 
 group :development do
