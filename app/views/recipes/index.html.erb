@@ -1,14 +1,20 @@
 <% if @recipes.any? %>
 
 <h3 class="p-3 text-center">search results for <strong><%=@keyword%></strong></h3>
+<h4 class='p-3 text-center'>
+  <% if @health_labels.any? %>
+    <% @health_labels.each do |label| %>
+      <span> ( <%=label%> ) </span>
+    <% end %>
+  <% end %>
+</h4>
 <br>
   <%= will_paginate @recipes, renderer: BootstrapPagination::Rails %>
 
 <section class='recipes-container'>
   <% @recipes.each do |recipe| %>
 
-    <div class="card shadow p-3 mb-5 bg-white rounded" style="width:18
-    %">
+    <div class="card shadow p-3 mb-5 bg-white rounded" style="width:18%">
       <%= link_to image_tag(recipe.image, alt: "#{recipe.label}", class: "card-img-top"), recipe_path(recipe.id) %>
       <div class="card-body">
         <h5 class="card-title text-center"><%= recipe.label %></h5>
