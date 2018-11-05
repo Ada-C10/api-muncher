@@ -41,7 +41,7 @@ VCR.configure do |config|
   config.filter_sensitive_data("MUNCHER_ID") do
     ENV['MUNCHER_ID']
   end
-
+end
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

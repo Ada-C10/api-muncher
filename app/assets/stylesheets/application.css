@@ -13,9 +13,6 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
- /* Import scss content */
- @import "**/*";
 
  body {
    background-color: lightblue;
