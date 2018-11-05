@@ -22,7 +22,7 @@
         </div>
 
         <div id="health_labels">
-          <% @HEALTH_LABELS.each do |label| %>
+          <% @HEALTH_LABELS.reverse.each do |label| %>
             <p><%= check_box_tag(label) %>
             <%= label_tag(label, nil, class: 'label')  %></p>
           <% end %>
