@@ -11,7 +11,7 @@ class ApiMuncherWrapper
   def self.list_recipes(query, page)
     url = BASE_URL + "?q=#{query}" + "&app_id=#{APP_ID}" +  "&app_key=#{APP_KEY}" + "&to=30"
 
-    # "&exclude_archived=1"
+
 
     data = HTTParty.get(url)
 
@@ -23,11 +23,12 @@ class ApiMuncherWrapper
     end
 
     return recipe_list
+
   end
 
   def self.show_details(uri)
     url = BASE_URL + "?r=#{uri}" + "&app_id=#{APP_ID}" +  "&app_key=#{APP_KEY}"
-    
+
     data = HTTParty.get(url)
     create_recipe(data.first)
   end

@@ -10,6 +10,10 @@ class RecipesController < ApplicationController
     page = params[:page] || 1
       @recipes = ApiMuncherWrapper.list_recipes(params[:recipe],page).paginate(:page => page, :per_page => 10)
 
+      if @recipes.empty?
+        flash[:error] = "No results. Please refine your search."
+        redirect_back fallback_location: recipes_homepage_path
+      end
   end
 
 
@@ -18,7 +22,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = ApiMuncherWrapper.show_details(uri_from_id(params[:id]))
-  
+
     # render_404 unless @recipe
 
   end
