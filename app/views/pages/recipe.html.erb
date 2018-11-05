@@ -1,0 +1,33 @@
+<main id="recipe">
+  <ul>
+    <li><h1><%= @recipe.title %></h1></li>
+    <% if @recipe.image %>
+      <li><%= image_tag(@recipe.image) %></li>
+      <% if @current_user %>
+        <li class="save_recipe">
+          <% recipe = @recipe.uri.split("owl#").last %>
+          <% if @current_user.favorites.include?(@recipe.uri) %>
+            <%= link_to "remove from favs", remove_path(:uri=> recipe), method: :delete %>
+          <% else %>
+            <%= link_to "save this recipeee", favorite_path(:uri=> recipe) %>
+          <% end %>
+        </li>
+      <% end %>
+  </ul>
+  <ul class="recipe_info">
+      <li><%= link_to "via #{@recipe.source}", @recipe.url %></li>
+      <li>
+        health info:
+        <%= @recipe.health_labels %>
+      </li>
+      <li>dietary info: <%= @recipe.diet_labels %></li>
+      <li>calories: <%= @recipe.calories %></li>
+      <ul class="ingredients">
+        <li><h2>Ingredients:</h2></li>
+        <% @recipe.ingredients.each do |ingredient| %>
+        <li><%= ingredient %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </ul>
+</main>

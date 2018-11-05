@@ -1,0 +1,21 @@
+<main id="favs">
+  <h1>My Favorites:</h1>
+
+  <section class="favorites">
+    <% @favs.each do |fav| %>
+    <ul>
+      <% if fav.uri %>
+      <li><h2><%= link_to fav.title, recipe_path(:uri=> fav.uri) %></h2></li>
+      <li><%= image_tag(fav.image) %></li>
+      <div>
+        <li>via <%= link_to "#{fav.source}", fav.url %></li>
+        <li><%= link_to "view details", recipe_path(:uri=> fav.uri) %></li>
+        <li><%= link_to "remove from favs", remove_path(:uri=> fav.uri.split("owl#").last), method: :delete %></li>
+      </div>
+      <% else %>
+      <li><h2><%= fav.title %></h2></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </section>
+</main>
