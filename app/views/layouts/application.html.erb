@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Muncher</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <!-- attribution -->
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
+
+</head>
+
+<body>
+
+
+  <header>
+    <nav>
+
+      <h1><%= link_to "Muncher", root_path %></h1>
+      <%= render partial: "search_form", locals: { action_type: "Search" } %>
+    </nav>
+
+    <% if flash[:result_text] or flash[:messages] %>
+    <section class="alert__container">
+      <div class="alert alert-<%= flash[:status].to_s == 'failure' ? 'warning' : flash[:status] %>">
+        <span><%= flash[:status].to_s == "failure" ? "A problem occurred: " : "" %><%= flash[:result_text] %></span>
+      </div>
+    </section>
+
+    <% end %>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    <div id="edamam-badge" data-color="white"></div>
+  </footer>
+
+</body>
+
+</html>

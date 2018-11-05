@@ -1,0 +1,20 @@
+  <h2>Recipes found for: '<%=@search_term%>'</h2>
+
+<div class="recipes_container">
+
+  <% @recipes.each do |recipe| %>
+ <div class="single_recipe_entry">
+
+    <div class="recipe_link"><%= link_to recipe.name, recipe_path(recipe.uri_num) %>
+    </div>
+    <div class="recipe_photo">
+    <%= image_tag(recipe.photo, alt: "Food image: #{recipe.name}") %>
+    </div>
+  </div>
+
+  <% end %>
+  </div>
+
+  <div class="pagination">
+    <%= will_paginate @recipes %>
+  </div>
