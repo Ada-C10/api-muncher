@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
     <title>ApiMuncher</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,4 +13,7 @@
   <body>
     <%= yield %>
   </body>
+  <footer>
+  <div id="edamam-badge" data-color="white"></div>
+  </footer>
 </html>
