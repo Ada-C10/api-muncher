@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
+
   require 'will_paginate/array'
 
   before_action :find_user
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless session[:user_id]
-      redirect_to root_path
+      redirect_back fallback_location: root_path
     end
   end
 
