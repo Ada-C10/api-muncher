@@ -34,6 +34,40 @@ describe EdamamApiWrapper do
       end
     end
 
+    it 'can list recipes given a health label with no search term' do
+      VCR.use_cassette('recipe_search') do
+        recipes = EdamamApiWrapper.recipe_search(nil, ["vegan"])
+
+        expect(recipes.length).must_be :>, 0
+
+        recipes.each do |recipe|
+          expect(recipe).must_respond_to :label
+          expect(recipe).must_respond_to :image
+          expect(recipe).must_respond_to :uri
+          expect(recipe).must_respond_to :id
+          expect(recipe.healthLabels).must_include "Vegan"
+        end
+      end
+    end
+
+    it 'can list recipes given multiple health labels with no search term' do
+      VCR.use_cassette('recipe_search') do
+        recipes = EdamamApiWrapper.recipe_search(nil, ["vegan", "alcohol-free"])
+
+        expect(recipes.length).must_be :>, 0
+
+        recipes.each do |recipe|
+          expect(recipe).must_respond_to :label
+          expect(recipe).must_respond_to :image
+          expect(recipe).must_respond_to :uri
+          expect(recipe).must_respond_to :id
+          expect(recipe.healthLabels).must_include "Vegan"
+          expect(recipe.healthLabels).must_include "Alcohol-Free"
+
+        end
+      end
+    end
+
     it 'can list recipes given a search term and multiple health labels' do
       VCR.use_cassette('recipe_search') do
         recipes = EdamamApiWrapper.recipe_search('tofu', ["vegan", "peanut-free", "tree-nut-free"])
