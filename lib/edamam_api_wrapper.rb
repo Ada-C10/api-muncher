@@ -6,20 +6,21 @@ class EdamamApiWrapper
   ID = ENV["EDAMAM_ID"]
 
 
-  def self.list_channels
-    # url = BASE_URL + "channels.list?" + "token=#{TOKEN}" + "&exclude_archived=1"
-    # data = HTTParty.get(url)
-    # channel_list = []
-    #
-    # if data["channels"]
-    #   data["channels"].each do |channel_data|
-    #     channel_list << create_channel(channel_data)
-    #   end
-    # end
-    #
-    # return channel_list
-  end
+  def self.list_recipes(query)
 
+    url = BASE_URL + query + "&app_id=#{ID}" + "&app_key=#{KEY}"
+    data = HTTParty.get(url)
+    recipe_list = []
+
+    if data["hits"]
+      data["hits"].each do |recipe_data|
+        recipe_list << recipe_data["recipe"]["label"]
+      end
+    end
+
+    return recipe_list
+  end
+  
   private
 
   def self.create_recipe(api_params)
