@@ -1,0 +1,13 @@
+<header>
+  <h1>Muncher</h1>
+  <div class="searchbar">
+    <div class="form-group">
+      <%= form_tag recipes_index_path, method: "get" do %>
+      <%= label_tag(:query, "Find your flavor:") %>
+      <%= text_field_tag(:query)%>
+      <%= submit_tag("Send", class: 'btn btn-default btn-submit') %>
+      <% end %>
+    </div>
+  </div>
+
+</header>

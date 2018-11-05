@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+      <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class=content>
+      <%= yield %>
+    </div>
+
+    <footer>
+      Powered by <a href="https://www.edamam.com/">Edamam</a>
+    </footer>
+  </body>
+</html>

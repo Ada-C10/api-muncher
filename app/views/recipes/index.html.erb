@@ -1,0 +1,21 @@
+<%= render partial: "header" %>
+
+<% if @recipes %>
+<ul class="index_container">
+  <% if @recipes == [] %>
+  "There are no munchies corresponding to the search!"
+  <% else %>
+  <% @recipes.each do |recipe| %>
+  <li class="recipe_card">
+    <div class="name"><h2><%= recipe.name %></h2></div>
+    <img src=<%= recipe.image %> class="thumbnail_photo">
+    <div class="info_link">
+      <%=link_to "More Info", recipes_show_path(recipe.name) %>
+    </div>
+  </li>
+  <% end %>
+  <% end %>
+</ul>
+</class>
+
+<% end %>
