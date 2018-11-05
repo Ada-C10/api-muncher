@@ -13,7 +13,6 @@ class EdamamApiWrapper
     if data["hits"]
       data["hits"].each do |recipe_data|
         recipe_list << create_recipe(recipe_data)
-        # recipe_list << recipe_data["recipe"]["label"]
       end
     end
 
