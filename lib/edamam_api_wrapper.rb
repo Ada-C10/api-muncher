@@ -29,8 +29,10 @@ class EdamamApiWrapper
 
     data = HTTParty.get(url)
 
-    if data
+    if data.first 
       return details_recipe(data.first)
+    else
+      return []
     end
 
   end
@@ -38,35 +40,35 @@ class EdamamApiWrapper
   private
 
   def self.create_recipe(api_params)
-    return Recipe.new(api_params["recipe"]["label"], URI(api_params["recipe"]["uri"]),
-    {
-      image: api_params["recipe"]["image"],
-      source: api_params["recipe"]["source"],
-      url: api_params["recipe"]["url"],
-      ingredients: api_params["recipe"]["ingredientLines"], # array
-      calories: api_params["recipe"]["calories"],
-      diet_labels: api_params["recipe"]["dietLabels"], #array
-      health_labels: api_params["recipe"]["healthLabels"]
-    }
-  )
-end
+    return Recipe.new(
+      api_params["recipe"]["label"],
+      URI(api_params["recipe"]["uri"]),
+      {
+        image: api_params["recipe"]["image"],
+        source: api_params["recipe"]["source"],
+        url: api_params["recipe"]["url"],
+        ingredients: api_params["recipe"]["ingredientLines"], # array
+        calories: api_params["recipe"]["calories"],
+        diet_labels: api_params["recipe"]["dietLabels"], #array
+        health_labels: api_params["recipe"]["healthLabels"]
+      }
+    )
+  end
 
-def self.details_recipe(data)
-  return Recipe.new(data["label"], URI(data["uri"]),
-    {
-      image: data["image"],
-      source: data["source"],
-      url: data["url"],
-      ingredients: data["ingredientLines"],
-      calories: data["calories"],
-      diet_labels: data["dietLabels"],
-      health_labels: data["healthLabels"]
-    }
-
-  )
-
-end
-
-
+  def self.details_recipe(data)
+    return Recipe.new(
+      data["label"],
+      URI(data["uri"]),
+      {
+        image: data["image"],
+        source: data["source"],
+        url: data["url"],
+        ingredients: data["ingredientLines"],
+        calories: data["calories"],
+        diet_labels: data["dietLabels"],
+        health_labels: data["healthLabels"]
+      }
+    )
+  end
 
 end
