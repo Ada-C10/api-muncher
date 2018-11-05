@@ -1,14 +1,19 @@
+<section>
+  <h3>Recipes with <%= "#{@search_term}"%></h3>
+</section>
+<section class="recipe-index-cards w-50">
 <% @recipes.each do |recipe| %>
-<div class="card-deck">
-  <div class="card w-25 card-padding text-center" >
-    <%= image_tag recipe.img, class: "card-img-top"%>
-
-    <div class="card-body card-padding">
-      <h5 class="card-title"><%="#{recipe.name}"%></h5>
-      <p class="card-text"><%="#{recipe.ingredients}"%></p>
-      <h6 class="card-subtitle mb-2 text-muted"><%="#{recipe.author}"%></h6>
-      <p class="card-text btn btn-outline-dark"><%= link_to "Recipe details", "#{recipe.url}" %></p>
-      <% end %>
+  <div class="card">
+    <div class="card card-padding text-center" >
+      <%= image_tag recipe.img, class: "card-img-top"%>
+      <div class="card-body card-padding">
+        <h5 class="card-title"><%="#{recipe.name}"%></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%="#{recipe.author}"%></h6>
+        <p class="card-text btn btn-outline-dark"><%= link_to "Recipe details", recipe_path(recipe.id) %></p>
+        <% end %>
+        <div id="edamam-badge" data-color="white"></div>
+      </div>
     </div>
   </div>
   <br>
+</section>

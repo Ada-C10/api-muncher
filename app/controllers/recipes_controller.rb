@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = EdamamApiWrapper.find_recipe(params[:recipe_data])
+    @recipe = EdamamApiWrapper.find_recipe(recipe.id)
     if @recipe.nil?
       flash[:status] = :warning
       flash[:result_text] = "Recipe not found. Please try again."
