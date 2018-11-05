@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def search_history
     if session[:user_id]
-      @search_history = @login_user.queries.order(created_at: :desc).limit(10)
+      @search_history = @login_user.queries.order(created_at: :desc).limit(10).offset(1)
     end
   end
 

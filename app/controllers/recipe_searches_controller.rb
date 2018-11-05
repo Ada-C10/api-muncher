@@ -1,3 +1,5 @@
+require "cgi"
+
 class RecipeSearchesController < ApplicationController
   skip_before_action :require_login
 
@@ -6,8 +8,9 @@ class RecipeSearchesController < ApplicationController
 
   def index
     if params[:q] && session[:user_id]
-      search_term = Query.create(user_id: session[:user_id],
-                                 search_term: params[:q].downcase)
+      query = Query.create(user_id: session[:user_id],
+                           q: CGI.escape(params[:q].downcase),
+                           search_term: params[:q].downcase)
     end
 
     params[:q] ||= ""
