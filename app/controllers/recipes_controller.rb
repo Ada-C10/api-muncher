@@ -8,4 +8,12 @@ class RecipesController < ApplicationController
       render :index, status: :bad_request
     end
   end
+
+
+  def show
+    @recipe = EdamamApiWrapper.show_recipe(params[:id])
+    if @recipe == []
+      render "layouts/notfound", status: :not_found
+    end
+  end
 end

@@ -1,12 +1,12 @@
 require 'httparty'
 
 class EdamamApiWrapper
-  BASE_URL = "https://api.edamam.com/search?"
+  BASE_URL = "https://api.edamam.com/"
   KEY = ENV["APP_KEY"]
   ID = ENV["APP_ID"]
 
   def self.list_recipes(keyword)
-    url = BASE_URL + "q=#{keyword}" + "&app_id=#{ ID }" + "&app_key=#{ KEY }" + "&from=0&to=100"
+    url = BASE_URL + "search?" + "q=#{keyword}" + "&app_id=#{ ID }" + "&app_key=#{ KEY }" + "&from=0&to=100"
     encoded_uri = URI.encode(url)
     data = HTTParty.get(encoded_uri)
     recipe_list = []
@@ -19,17 +19,27 @@ class EdamamApiWrapper
     return recipe_list
   end
 
+  def self.show_recipe(id)
+    url = BASE_URL + "search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{id}" + "&app_id=#{ID}&app_key=#{KEY}"
+    data = HTTParty.get(url)
+    if data.empty?
+      return []
+    else
+      return create_recipe(data[0])
+    end
+  end
+
   private
 
   def self.create_recipe(api_params)
     return Recipe.new(
-      api_params["recipe"]["label"],
-      api_params["recipe"]["uri"],
-      api_params["recipe"]["image"],
+      api_params["label"],
+      api_params["uri"],
       {
-        url: api_params["recipe"]["url"],
-        ingredients: api_params["recipe"]["ingredients"],
-        dietary_information: api_params["recipe"]["healthLabels"]
+        image: api_params["image"],
+        url: api_params["url"],
+        ingredients: api_params["ingredients"],
+        dietary_information: api_params["healthLabels"]
       }
     )
   end
