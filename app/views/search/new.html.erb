@@ -1,4 +1,5 @@
-<h1>Search by a keyword<span class="search"> <%= @channel %></span> </h1>
+<span class="search"> <%= @channel %></span> </h1>
+
 
 <%= form_tag search_create_path, method: "post" do %>
   <%= label_tag(:q, "Enter food") %>

@@ -7,14 +7,14 @@
     <ul>
 
       <% @recipes.each do |recipe| %>
-        <li>
-         <img src= <%= recipe.image %> class="img-thumbnail, item_show" >
+
+         <img src= <%= recipe.image %> class="img-fluid" >
          <%= recipe.label %>
-         <li><%= link_to "See Details",
+         <%= link_to "See Details",
          search_show_path(recipe.uri),
          class: "btn btn-primary"%></li>
 
-        </li>
+
       <% end %>
     </ul>
   <% end %>

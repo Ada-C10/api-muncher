@@ -1,7 +1,15 @@
-<h2>  <%= @recipe.label %></h2>
-<img src= <%= @recipe.image %> class="img-thumbnail, item_show" >
+<section class="recipe-list">
+  <h1>Recipes</h1>
+  <% if @recipe %>
+  <ul>
+    <li><%= image_tag "#{@recipe.image}" %></li>
+    <li>Name: <%=@recipe.id  %></li>
 
-<%= @recipe.url %>
-<%= @recipe.dietlabel %>
- <h3>Ingredients:<h3>
-    <%= @recipe.ingredientLines %>
+    <li><%= link_to "Recipe Original Link page", "#{@recipe.url}", target: :_blank %></li>
+    <li>ingredients: <%=@recipe.ingredientLines  %></li>
+    <li>dietary info: <%=@recipe.dietlabel %></li>
+
+
+  </ul>
+  <% end %>
+</section>

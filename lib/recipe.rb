@@ -4,7 +4,7 @@ class Recipe
 
   def initialize(label, uri, url, image, ingredientLines, dietLabels)
 
-    # raise ArgumentError if label == nil || label == "" || uri == nil || uri == ""
+    raise ArgumentError if label == nil || label == "" || uri == nil || uri == ""
 
 
     @label = label

@@ -16,3 +16,73 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+body{
+  font-family: 'Quicksand', sans-serif;
+  background-color: #7CBA65;
+}
+
+.top_of_page{
+  padding-right: 100px;
+}
+
+.top_of_page > ul >li{
+  list-style-type: none;
+  float: right;
+  padding-right: 30px;
+}
+
+.fas, .header_links, #home_link{
+  color: grey;
+}
+
+.header_links:hover, .fas:hover, #home_link:hover{
+  color: #ffa791;
+  text-decoration: none;
+}
+
+header > h1{
+  color: #00241C;
+  text-align: center;
+  font-family: 'Lucida Console';
+  padding-top: 60px;
+  padding-bottom: 60px;
+  font-size: 3em;
+}
+
+
+.dropdown-menu-right {
+    padding-left: 10px;
+}
+
+
+li{
+  list-style-type: none;
+}
+
+section .success, section .form_errors, section .error {
+  text-align: center;
+  padding: 0.75rem 1.25rem;
+  margin: 1em;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+section .success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+section .error, section .form_errors{
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.body_main{
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}

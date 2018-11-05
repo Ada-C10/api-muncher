@@ -68,8 +68,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap', '~> 4.1.3'
+
 group :development, :test do
   gem 'pry-rails'
+  gem 'minitest-vcr'
+  gem 'webmock'
+
 end
 
 group :development do
