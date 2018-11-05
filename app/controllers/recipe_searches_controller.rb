@@ -5,8 +5,9 @@ class RecipeSearchesController < ApplicationController
   end
 
   def index
-    if params[:q]
-      search_term = Query.create()
+    if params[:q] && session[:user_id]
+      search_term = Query.create(user_id: session[:user_id],
+                                 search_term: params[:q].downcase)
     end
 
     params[:q] ||= ""

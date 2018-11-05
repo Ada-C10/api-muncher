@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: [:create]
+  skip_before_action :search_history
 
   def create
     auth_hash = request.env['omniauth.auth']
@@ -28,7 +29,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # also destroy queries
+    # also destroy user's search history when they log out
+    @login_user.queries.destroy_all
+
     session[:user_id] = nil
     flash[:status] = :success
     flash[:result_text] = "Successfully logged out"

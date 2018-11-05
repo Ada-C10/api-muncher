@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :find_user
   before_action :require_login
+  before_action :search_history
 
   private
 
@@ -17,6 +18,12 @@ class ApplicationController < ActionController::Base
   def require_login
     unless session[:user_id]
       render "/layouts/login"
+    end
+  end
+
+  def search_history
+    if session[:user_id]
+      @search_history = @login_user.queries.order(created_at: :desc).limit(10)
     end
   end
 

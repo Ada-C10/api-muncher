@@ -1,12 +1,18 @@
 <% if @recipe %>
   <h1>
     <%= @recipe.label %>
-
-    <form action="<%= favorites_path %>" method="post" class="form add-to-favorites d-inline-block">
-      <input type="hidden" name="recipe_uri_fragment" value= "<%= @recipe.recipe_uri.fragment %>">
-      <button type="submit" class="btn btn-primary btn-sm">
-        <i class="fa fa-heart"></i>  Add To Favorites</button>
-    </form>
+    <% if @login_user && @login_user.favorites.find_by(recipe_uri_fragment: @recipe.recipe_uri.fragment) %>
+      <% favorite = @login_user.favorites.find_by(recipe_uri_fragment: @recipe.recipe_uri.fragment) %>
+      <%= link_to favorite_path(favorite.id), method: :delete, class: "form remove-from-favorites d-inline-block" do %>
+        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-close"></i>  Remove From Favorites</button>
+      <% end %>
+    <% else %>
+      <form action="<%= favorites_path %>" method="post" class="form add-to-favorites d-inline-block">
+        <input type="hidden" name="recipe_uri_fragment" value= "<%= @recipe.recipe_uri.fragment %>">
+        <button type="submit" class="btn btn-primary btn-sm">
+          <i class="fa fa-heart"></i>  Add To Favorites</button>
+      </form>
+    <% end %>
 
   </h1>
 
