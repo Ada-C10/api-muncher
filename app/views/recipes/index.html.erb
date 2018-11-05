@@ -5,5 +5,8 @@ hello
 <%= link_to recipe.name, recipe_path(recipe.uri_num) %>
 <%= image_tag(recipe.photo, alt: "Food image: #{recipe.name}") %>
 <%= recipe.uri_num %>
-<!-- image_tag "recipe.photo", alt: "Image of #{recipe.name}" -->
+
+
 <% end %>
+
+<%= will_paginate @recipes %>

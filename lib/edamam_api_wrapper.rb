@@ -17,7 +17,7 @@ class EdamamApiWrapper
   def self.list_recipes(search_term)
     # search_term = "quinoa"
 
-    url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{search_term}"
+    url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{search_term}" + "&from=0" + "&to=100"
     encoded_url = URI.encode(url) # break out into separate function?
 
     data = HTTParty.get(encoded_url)
