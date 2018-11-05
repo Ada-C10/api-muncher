@@ -7,13 +7,13 @@ class SearchRecipesController < ApplicationController
     if params[:search] && params[:search] != ""
       recipes = EdamamApiWrapper.find_recipes_for(params[:search])
 
-      # if recipes.first
+      if recipes.first
         @recipes = recipes.paginate(:page => params[:page], per_page: 10)
-      # else
-      #   flash[:status] = :failure
-      #   flash[:result_text] = "Sorry, no recipes were found for your request"
-      #   redirect_to(root_path)
-      # end
+      else
+        flash[:status] = :failure
+        flash[:result_text] = "Sorry, no recipes were found for your request"
+        redirect_to(root_path)
+      end
 
     else
       flash.now[:status] = :failure
