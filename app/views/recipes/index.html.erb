@@ -1,16 +1,26 @@
 <%= render partial: "header" %>
 
-<% if @recipes.present? %>
-  <h3> Results for "<%= "#{params[:search]}" %>" </h3>
-  <ul>
-  <% @recipes.each do |recipe| %>
-    <li><%= image_tag("#{recipe.image}") %></li>
-    <li><%= recipe.label %></li>
-    <% id = recipe.uri.last(32) %>
-    <li><%= link_to "Details", recipe_path(id) %></li>
+<div class="index-container">
+  <% if @recipes.present? %>
+    <h3> Results for "<%= "#{params[:search]}" %>" </h3>
+
+    <section class="recipes-container">
+      <% @recipes.each do |recipe| %>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag("#{recipe.image}", class: "card-img-top") %>
+        <div class="card-body">
+          <p class="card-text">
+            <%= recipe.label %> -
+            <% id = recipe.uri.last(32) %>
+            <%= link_to "Details", recipe_path(id) %>
+          </p>
+        </div>
+      </div>
+      <% end %>
+    <% else %>
+      <p>No recipes match this search term.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>No recipes match this search term.</p>
-<% end %>
-<%= will_paginate @recipes %>
+  </section>
+  
+  <%= will_paginate @recipes %>
+</div>
