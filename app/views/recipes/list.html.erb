@@ -1,0 +1,68 @@
+<div class="wrapper">
+  <div class="container">
+  <%= form_tag list_recipes_path, method: "get" do %>
+    <%= label_tag(:search, "Let' make: ") %>
+    <%= text_field_tag(:search, class: "input") %>
+    <%= submit_tag("Search", class: "close-btn") %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="search-container">
+  <div class="search-icon-btn">
+    <i class="fa fa-search"></i>
+  </div>
+  <div class="search-input">
+    <input type="search" class="search-bar" placeholder="Search...">
+  </div>
+</div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<section class="recipes-list">
+  <h1>Muncher Recipes</h1>
+  <ul class="pagination">
+  <% if @recipes %>
+    <% @recipes.each do |recipe| %>
+        <li class="media page-item">
+          <%= image_tag("#{recipe.image}", class: "mr-3 img-thumbnail img-fluid", alt: "food") %>
+         <div class="media-body">
+           <h5 class="mt-0"><%= link_to "#{recipe.label}", show_recipe_path(recipe.uri)%></h5>
+           <p>Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+         </div>
+        </li>
+    <% end %>
+  <% end %>
+</section>
+
+
+
+
+<!--This one works-->
+<% @recipes.each do |recipe| %>
+  <%= image_tag("#{recipe.image}", class: "img-thumbnail img-fluid", alt: "food") %>
+  <h5 ><%= link_to "#{recipe.label}", show_recipe_path(recipe.uri)%></h5>
+  <div>
+    <p>Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p></div>
+<% end %>
+
+<%= will_paginate @recipes, renderer: BootstrapPagination::Rails %>

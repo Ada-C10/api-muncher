@@ -1,0 +1,55 @@
+<h1><%="#{@recipe.label}"%></h1>
+<div class="show-recipe card-deck d-flex justify-content-around" >
+  <div class="card recipe-card card-main" style="max-width: 18rem;">
+    <%= link_to "#{@recipe.url}", target: :_blank do %>
+      <%= image_tag(@recipe.image, class: "food_image recipe-img", alt: "food", style: "width: 17.5rem;") %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%="#{@recipe.label}"%></h5>
+      </i><%= link_to "View Recipe", url_for(@recipe.url), target: "_blank", class: "btn btn-primary icon-btn"%>
+    </div>
+  </div>
+
+
+
+
+<div class="card recipe-card text-white bg-info mb-3" style="max-width: 18rem;">
+  <div class="card-header"><h5 class="card-title">Ingredients</h5></div>
+  <div class="card-body">
+    <%@recipe.ingredients.each do |ing| %>
+      <p class="card-text">
+        <i class="fas fa-utensils fa-rotate-90 icon"></i> <%= ing %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="card text-white recipe-card bg-warning mb-3" style="max-width: 18rem;">
+  <div class="card-header"><h5 class="card-title">Health Labels</h5></div>
+  <div class="card-body">
+    <%@recipe.health.each do|h| %>
+      <p class="card-text">
+        <i class="fas fa-leaf icon"></i><%= h %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="card text-white recipe-card bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header"><h5 class="card-title">Cautions</h5></div>
+  <div class="card-body">
+    <% if @recipe.cautions.empty? %>
+      <%= "No Dietary Warnings Listed" %>
+    <% else %>
+      <%@recipe.cautions.each do|x| %>
+      <p class="card-text">
+        <i class="fas fa-exclamation-triangle icon"></i><%= x %>
+      </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+</div>
