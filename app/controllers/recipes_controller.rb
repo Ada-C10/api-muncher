@@ -6,27 +6,23 @@ class RecipesController < ApplicationController
 
     if recipes.length > 0
 
-
-    @recipes = recipes.paginate(page: params[:page], per_page: 10)
-  else
-    flash[:status] = :failure
-    flash[:result_text] = "No results match #{@search_term}"
-    redirect_to root_path
-  end
+      @recipes = recipes.paginate(page: params[:page], per_page: 10)
+    else
+      flash[:status] = :failure
+      flash[:result_text] = "No results match #{@search_term}"
+      redirect_to root_path
+    end
   end
 
   def search_splash
-
   end
 
   def searcher
-    # TODO: add flash messages
-    # but also do i need this to be a post? can it be a get with the params in the form?
     # if params[:search_term]
-      redirect_to recipes_path(search_term: params[:search_term])
+    redirect_to recipes_path(search_term: params[:search_term])
     # else
-      # flash[:status] = :failure
-      # flash[:result_text] = "No results match #{@search_term}}"
+    # flash[:status] = :failure
+    # flash[:result_text] = "No results match #{@search_term}}"
     # end
   end
 
