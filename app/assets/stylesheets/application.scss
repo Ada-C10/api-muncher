@@ -71,3 +71,20 @@ header h3 {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+.index-container h3 {
+  text-align: center;
+}
+
+.page-links {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.pagination {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
