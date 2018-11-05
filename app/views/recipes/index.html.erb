@@ -28,11 +28,25 @@
       <% if @keyword.blank?%>
         010101010 <strong>blank</strong> search does not compute 01010101010101010101
       <%else%>
-        <%str = "010101010 #{@keyword} search does not compute 010101010101010101010101010".truncate(60, omission: "")%>
-        <%result = str.split(@keyword)%>
-        <%=result[0]%><strong><%=@keyword%></strong><%=result[1]%>
+          <%str = "010101010 #{@keyword} search does not compute 010101010101010101010101010".truncate(60, omission: "")%>
+          <%result = str.split(@keyword)%>
+          <%=result[0]%><strong><%=@keyword%></strong><%=result[1]%>
       <%end%>
     </p>
+
+    <% if @health_labels.any? %>
+      <% @health_labels.each do |label| %>
+      <br>
+      <p class='text-center'>
+        <%str = "01010" %>
+        <%rand(1..11).times { str += "10"}%>
+        <%str +=  " #{label} 01010101010101010101010101010101010101010101010101010101010"%>
+        <%=str.truncate(60, omission: "")%>
+      </p>
+
+      <% end %>
+    <% end %>
+
     <br>
     <p class='text-center'>0101010 please search again 0101010101010 boop beep boop 010</p>
     <br>
