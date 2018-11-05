@@ -1,0 +1,105 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.image-tag {
+  width: 300px;
+  height: 200px;
+}
+
+.card {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+}
+
+.title-page {
+  padding-bottom: 100px;
+  color: rgb(61, 61, 61);
+  text-align: center;
+  text-transform: uppercase;
+}
+.pagination {
+  .previous_page { background:#ffffff; color:white; padding: .5em; font-size: .8em; color: #35324d;}
+  .previous_page.disabled { background: white; color: #dedede; border: 2px solid #dedede;}
+  .current { background: #30CFD0; color: #ffffff; border: .4em solid #30CFD0;}
+  .next_page { background:#ffffff; color:white; padding: .5em; font-size: .8em; color: #35324d;}
+  .next_page.disabled { background: white; color: #dedede; border: 2px solid #dedede;}
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pagination > *{
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+.index-page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+
+}
+
+.title {
+  padding: 24px;
+}
+
+.food-item {
+  padding: 12px;
+}
+
+.general {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+img {
+  padding: 24px;
+}
+
+.health {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.list {
+  list-style-type: none;
+}
+
+.form {
+  padding: 120px;
+}
+
+.title {
+  font-weight: bolder;
+  color: Darkblue;
+}
+
+.slogan {
+  font-weight: bolder;
+}
+
+.search-title {
+  padding-bottom: 20px;
+}

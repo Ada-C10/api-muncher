@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ApiMuncher</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+  <main>
+    <section class="flash-messages">
+      <% flash.each do |key, message| %>
+      <p class="<%= key %>">
+        <%= message %>
+      </p>
+      <% end %>
+    </section>
+
+    <%= yield %>
+  </main>
+
+  <footer class="footer">
+    <p>Customer Care  |  Privacy Policy  |  Terms of Service</p>
+    <p><%= "\u00A9" %> 2018 SEMNIC Ltd. All Rights Reserved</p>
+  </footer>
+</body>
+</html>

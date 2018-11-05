@@ -1,0 +1,22 @@
+<section class="container">
+<button class="button" class="btn btn-info">
+  <div><%= link_to "Home", root_path%></div>
+</button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h2 class="title"><strong>List of recipes for <%="#{params[:word]}"%></strong>
+    </h2>
+  </nav>
+
+  <div class="flex-container">
+    <% @recipes.each do |recipe| %>
+    <div class="card">
+      <%= image_tag("#{recipe.image}", :alt => 'recipe-img', :class => 'image-tag') %>
+      <div class="card-body">
+
+        <%= link_to recipe.label, recipe_detail_path(recipe.uri.split("_")[1]) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= will_paginate @recipies, class: "pagination" %>
+</section>
