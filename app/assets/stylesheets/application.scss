@@ -1,16 +1,16 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*/
 
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
@@ -26,8 +26,28 @@
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
-  font-style: italic;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
+  background-color: rgb(175, 218, 141);
+  color: white;
+  text-align: center;
+}
+
+.content{
+  padding-bottom: 100px;
 }
