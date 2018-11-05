@@ -1,0 +1,24 @@
+
+  <section class="recipes-list">
+    <header>
+
+      <h3>Recipes</h3>
+    </header>
+
+    <p><%= link_to "Back to Search", recipes_homepage_path %></p>
+
+    <div class="list-recipes">
+
+    <% if @recipes %>
+    <ul>
+      <% @recipes.each do |recipe| %>
+      <li>
+        <%= link_to recipe.name, recipe_path(recipe.id) %>
+        <%= image_tag recipe.image %>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+  <%= will_paginate @posts %>
+</section>

@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "recipes.scss";
+@import  url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Righteous');
+
+
+
+body {
+  background-color: white;
+  text-align: center;
+  font-family: 'helvetica';
+
+
+}
+
+.homepage {
+  flex: 1 1 auto;
+}
+
+.wrapper{
+    line-height: 125%;
+    font-size: 55px;
+    font-family: 'Righteous', cursive;
+    color: #fff;
+    background-color: #ffb600;
+    text-align: center;
+    padding: 22px;
+    text-shadow: 2px 2px #ff0000;
+}
+
+.search {
+  margin: 55px;
+  margin-bottom: 100px;
+  border: 2px solid red;
+  padding: 40px 40px 100px 40px;
+  border-radius: 20px;
+}
+.search input[type=submit] {
+  font-size: 20px;
+
+}
+
+.search input[type=text] {
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+// font-family: 'Righteous', cursive;
+// font-family: 'Julius Sans One', sans-serif;
