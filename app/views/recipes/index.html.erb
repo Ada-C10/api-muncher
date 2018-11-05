@@ -7,7 +7,7 @@
         <img class="card-img-top" src="<%=recipe.image_url%>" alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title"<%=recipe.label%></h5>
-        <%=link_to 'Check recipe', recipes_show_path(recipe.id) %>
+        <a href="<%=recipes_show_path(recipe.id)%>" class="btn btn-primary">View Recipe</a>
         </div>
       </div>
       <% end %>
