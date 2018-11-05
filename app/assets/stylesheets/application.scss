@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *  background: url(https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1d992c355cbbe3f02ddc5f762f2ada73&auto=format&fit=crop&w=1400&q=60
+
+ *///images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=08cb0ebaadb99995755a696a9710b229&auto=format&fit=crop&w=1400&q=60
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+@import url('https://fonts.googleapis.com/css?family=Archivo|Pacifico');
+
+html,body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Archivo', sans-serif;
+}
+
+h1 {
+  font-family: 'Pacifico', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Pacifico', sans-serif;
+}
+#home {
+  background: url(https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=08cb0ebaadb99995755a696a9710b229&auto=format&fit=crop&w=1400&q=60) no-repeat 50% 50%;
+  display: table;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.landing-text {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn-default {
+
+}
+
+.alert {
+  margin-bottom: 0rem;
+}
+
+.search {
+  color: #EEE5E9;
+  float: center;
+}
+
+// #search {
+//   background-image: url(https://image.flaticon.com/icons/svg/149/149852.svg);
+//   background-size: 30px 30px;
+//   background-position: 11px 8px;
+//   background-repeat: no-repeat;
+//   opacity: 0.5;
+// }
+
+.feedback-input {
+  padding: 13px 13px 13px 54px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.feedback-input:focus{
+  padding: 13px 13px 13px 54px;
+}
+
+// .recipe_container {
+//   width: 50%;
+//   justify-content: center;
+// }
+
+.recipe-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0;
+}
+ .card-padding {
+  padding: 1em;
+}
