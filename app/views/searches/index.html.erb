@@ -5,11 +5,9 @@
   <ul>
     <% @recipes.each do |recipe| %>
     <li>Recipe Title: <%= recipe.label %></li>
-    <li>Image: <%= recipe.image %></li>
     <%= link_to recipe_path(recipe.id) do %>
     <%= image_tag(recipe.image, alt: "food-porn") %>
     <% end %>
-    <li>Origin: <%= recipe.uri %></li>
 
     <li>Ingredients:
       <ul class="nested">

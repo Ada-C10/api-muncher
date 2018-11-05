@@ -15,8 +15,8 @@ class EdamamApiWrapper
 
     recipe_list = []
 
-    if response["hits"]["recipe"]
-      response["hits"]["recipe"].each do |hit|
+    if response["hits"]
+      response["hits"].each do |hit|
         recipe_list << create_recipe(hit)
       end
     else
@@ -31,11 +31,11 @@ class EdamamApiWrapper
 
     response = HTTParty.get(url)
     if response.success?
-      recipe = EdamamApiWrapper.create_recipe(response)
-      binding.pry
+      recipe = EdamamApiWrapper.build_a_recipe(response)
       return recipe
     end
   end
+
 
   private
 
@@ -45,6 +45,20 @@ class EdamamApiWrapper
 
   def self.create_recipe(api_params)
     return Recipe.new(
+      api_params["recipe"]["label"],
+      api_params["recipe"]["image"],
+      api_params["recipe"]["uri"],
+      api_params["recipe"]["url"],
+      {
+        id: self.id_from_uri(api_params["recipe"]["uri"]),
+        ingredientLines: api_params["recipe"]["ingredientLines"],
+        healthLabels: api_params["recipe"]["healthLabels"]
+      }
+    )
+  end
+
+  def self.build_a_recipe(api_params)
+    return Recipe.new(
       api_params[0]["label"],
       api_params[0]["image"],
       api_params[0]["uri"],
@@ -52,10 +66,9 @@ class EdamamApiWrapper
       {
         id: self.id_from_uri(api_params[0]["uri"]),
         ingredientLines: api_params[0]["ingredientLines"],
-        ehalthLabels: api_params[0]["healthLabels"]
+        healthLabels: api_params[0]["healthLabels"]
       }
     )
   end
-
 
 end
