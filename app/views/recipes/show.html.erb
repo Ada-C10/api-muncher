@@ -1,10 +1,10 @@
-<section class="channels-list">
+<section class="recipe">
   <% if @recipe%>
     <ul>
       <% @recipe.each do |recipe| %>
         <ul>
           <h1><%=recipe.label%></h1>
-          <li>Ingredients:
+          <li><strong>Ingredients:</strong>
             <%recipe.ingredients.each do |item|%>
               <%if item == recipe.ingredients.last%>
                 <%=item%>
@@ -13,7 +13,7 @@
               <%end%>
             <%end%>
           </li>
-          <li>Dietary information:
+          <li><strong>Dietary information:</strong>
             <%recipe.dietaryinformation.each do |item|%>
               <%if item == recipe.dietaryinformation.last%>
                 <%=item%>
