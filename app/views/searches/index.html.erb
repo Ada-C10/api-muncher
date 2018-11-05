@@ -8,30 +8,8 @@
     <%= link_to recipe_path(recipe.id) do %>
     <%= image_tag(recipe.image, alt: "food-porn") %>
     <% end %>
-
-    <li>Ingredients:
-      <ul class="nested">
-        <% if recipe.ingredientLines %>
-        <% @recipe.ingredientLines.length.times do |i| %>
-        <li><%= @recipe.ingredientLines[i] %></li>
-        <% end %>
-      </ul>
-      <% end %>
-    </li>
-
-    <li>Dietary Restrictions:
-      <ul class="nested">
-        <% if recipe.healthLabels %>
-        <% @recipe.healthLabels.length.times do |i| %>
-        <li><%= @recipe.healthLabels[i] %></li>
-        <% end %>
-      </ul>
-      <% end %>
-    </li>
     <% end %>
-
   </ul>
-
   <% end %>
 
 </section>
