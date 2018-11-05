@@ -1,7 +1,11 @@
 <header>
-  <h1><%= link_to "Muncher", root_path %></h1>
+  <h1 class="site-name"><%= link_to "Muncher", root_path %></h1>
   <section class="other-pg-search">
-    <%= render partial: "form" %>
+    <!-- couldn't get this form to submit the
+    params correctly for a new search
+    it would only keep the original
+    search word as its params for a query -->
+    <!-- <%= render partial: "form" %> -->
   </section>
 </header>
 

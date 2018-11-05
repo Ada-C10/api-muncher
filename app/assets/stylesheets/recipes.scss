@@ -26,18 +26,20 @@ h1, h2 {
   margin-top: 1em;
 }
 
+.site-name {
+  font-size: 5em;
+}
+
 .root-pg-search {
   position: fixed;
   top: 50%;
   left: 50%;
-  /* bring your own prefixes */
   transform: translate(-50%, -50%);
 }
 
 .other-pg-search {
-  position: fixed;
-  top: 5%;
-  left: 40%;
+  display: flex;
+  justify-content: center;
 }
 
 #show-result {
@@ -45,6 +47,14 @@ h1, h2 {
 }
 
 section div > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+section > ul {
   list-style: none;
   display: flex;
   flex-direction: row;
