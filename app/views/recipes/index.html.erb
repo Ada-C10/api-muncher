@@ -7,7 +7,7 @@
     <section class="page-links">
       <%= will_paginate @recipes %>
     </section>
-    
+
     <section class="recipes-container">
       <% @recipes.each do |recipe| %>
       <div class="card" style="width: 18rem;">
@@ -22,7 +22,7 @@
       </div>
       <% end %>
     <% else %>
-      <p>No recipes match this search term.</p>
+      <p class="no-match">No recipes match this search term. Please try again.</p>
     <% end %>
   </section>
 
