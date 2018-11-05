@@ -2,12 +2,9 @@ class Recipe
   attr_reader :name, :url, :ingredients_list, :dietary_info, :health_info, :photo, :uri_num
 
 
-def initialize( name:, url:, ingredients_list:, dietary_info:, health_info:, photo:, uri_num: )
-	raise ArgumentError if name == nil || name == ""
-  # || id == nil || id == ""
+def initialize( name:"", url:"", ingredients_list:"", dietary_info:"", health_info:"", photo:"", uri_num:"" )
+	raise ArgumentError if name == nil || name == "" || uri_num == nil || uri_num == "" || url == nil || url == ""
 
-
-    # QUESTION: add an id (maybe pull from the URI???)
 
     @name = name
     @url = url
