@@ -13,9 +13,16 @@
 
   <nav class="navbar navbar-dark bg-dark sticky-top">
     <h1><%= link_to "munchbot-2000", root_path, class: "nav-link"%></h1>
-    <%= form_tag recipes_path, method: :get do %>
-    <%= text_field_tag :keyword %>
-    <%= submit_tag "recipe search" %>
+    <%= form_tag recipes_path, method: :get, id: 'health_labels' do %>
+
+      <%= text_field_tag :keyword %>
+      <%= submit_tag "recipe search" %>
+
+      <% @HEALTH_LABELS.each do |label| %>
+        <%= check_box_tag(label) %>
+        <%= label_tag(label) %>
+      <% end %>
+
     <% end %>
   </nav>
 
