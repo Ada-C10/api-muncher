@@ -10,8 +10,6 @@
     </div>
 </nav>
 
-<body id="show_form">
-
   <h1 id="recipe_results">Your Recipe Results</h1>
 
   <% if @recipes.empty? %>
@@ -49,6 +47,10 @@
     <%end%>
     </div>
   </div>
+</div>
+
+<div class="center_pag">
+<%= will_paginate @recipes, renderer: BootstrapPagination::Rails %>
 </div>
 
 </body>

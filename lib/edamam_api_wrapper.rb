@@ -10,7 +10,7 @@ class EdamamApiWrapper
   # curl "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free"
 
   def self.list_recipes(ingredients)
-    url = BASE_URL + "search?q=#{ingredients}" + "&app_id=#{ID}&app_key=#{KEY}"
+    url = BASE_URL + "search?q=#{ingredients}" + "&app_id=#{ID}&app_key=#{KEY}&to=100"
 
     data = HTTParty.get(url)
       recipe_list = []

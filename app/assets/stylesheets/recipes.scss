@@ -7,9 +7,17 @@
 );
 }
 
-.center_nil {
-  color: black;
-  text-align: center;
+
+.pagination a {
+    margin: 0 4px; /* 0 is for top and bottom. Feel free to change it */
+    color: black;
+    padding: 16px 16px;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: coral;
+    color: white;
 }
 
 p > .btn {
