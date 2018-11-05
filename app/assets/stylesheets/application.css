@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
-section ul {
+.channels-list ul {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   grid-gap: 10px;
  }
