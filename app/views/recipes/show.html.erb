@@ -17,6 +17,10 @@
 
   <section class="labels">
     <h3>Dietary Labels</h3>
+    <% if @recipe.dietary_labels.empty? %>
+     <p>none</p>
+    <% end %>
+
     <% @recipe.dietary_labels.each do |label| %>
       <p><%= label %></p>
     <% end %>

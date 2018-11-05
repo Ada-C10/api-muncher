@@ -34,8 +34,12 @@ class ActiveSupport::TestCase
       :match_requests_on => [:method, :uri, :body] # The http method, URI and body of a request all need to match
     }
     # Don't leave our Slack token lying around in a cassette file.
-    config.filter_sensitive_data("<SLACK_TOKEN>") do
-      ENV['SLACK_TOKEN']
+    config.filter_sensitive_data("<EDAMAM_TOKEN>") do
+      ENV['EDAMAM_APP_ID']
+    end
+
+    config.filter_sensitive_data("<EDAMAM_TOKEN>") do
+      ENV['EDAMAM_APP_ID']
     end
   end
 end
