@@ -1,7 +1,6 @@
 #https://api.edamam.com/search?app_id=cbb60eec&app_key=4e66a33b50ad72982bec83800f09869c&q=chicken
 
 require 'httparty'
-require 'pry'
 
 class EdamamApiWrapper
   # Your code here!
@@ -25,7 +24,7 @@ class EdamamApiWrapper
         recipe_list << create_recipe(recipe_data["recipe"])
       end
     end
-    
+
     return recipe_list
   end
 
