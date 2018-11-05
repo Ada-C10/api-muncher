@@ -9,6 +9,30 @@
   justify-content: space-around;
 }
 
+.img {
+  display: inline-block;
+  float: left;
+  padding: 10px;
+}
+
 .pagination {
   padding: 2px;
+}
+
+
+.details_vertical {
+  display: inline-block;
+  float: left;
+  padding: 10px;
+}
+
+.details_horizontal {
+  display: inline-block;
+  float: left;
+  padding: 10px;
+}
+
+.splash {
+  background-color: #17B73F;
+  height: 100%;
 }

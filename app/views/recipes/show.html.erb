@@ -1,21 +1,36 @@
-<%= @recipe.name %>
-<!-- open in new window -->
-<%= link_to @recipe.name, @recipe.url, target: "_blank" %>
+<h2><%= @recipe.name %></h2>
+
+<p><%= link_to 'Source', @recipe.url, target: "_blank" %>
+</p>
+
+  <div class="img">
+    <%= image_tag(@recipe.photo, alt: "Food image: #{@recipe.name}") %>
+  </div>
 
 
-<%= image_tag(@recipe.photo, alt: "Food image: #{@recipe.name}") %>
+  <div class="details_vertical">
+    <h3>Ingredients:</h3>
+    <ul>
+    <% @recipe.ingredients_list.each do |i| %>
+    <li><%= i %></li>
+    <% end %>
+    </ul>
+  </div>
 
-Ingredients:
-<% @recipe.ingredients_list.each do |i| %>
-<%= i %>
-<% end %>
+  <div class="details_horizontal">
 
-Dietary Info:
-<% @recipe.dietary_info.each do |d| %>
-<%= d %>
-<% end %>
+    <h3>Dietary Info:</h3>
+    <ul>
+    <% @recipe.dietary_info.each do |d| %>
+    <li><%= d %></li>
+    <% end %>
+    </ul>
 
-Health Info:
-<% @recipe.health_info.each do |h| %>
-<%= h %>
-<% end %>
+    <h3>Health Info:</h3>
+    <ul>
+    <% @recipe.health_info.each do |h| %>
+    <li><%= h %></li>
+    <% end %>
+    </ul>
+
+</div>

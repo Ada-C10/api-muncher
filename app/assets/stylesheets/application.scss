@@ -29,12 +29,12 @@ body {
   "m"
   "f";
 
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
-  grid-area: 'h';
+  grid-area: h;
   background-color: #17B73F;
   padding: 10px;
 }
@@ -60,7 +60,7 @@ nav h1 a:visited {
 }
 
 main {
-  grid-area: 'm';
+  grid-area: m;
   font-family: helvetica, arial, sans-serif;
   color: #333333;
 }
@@ -84,6 +84,7 @@ a:visited {
 }
 
 footer {
-  grid-area: 'f';
+  grid-area: f;
+  padding: 10px;
   background-color: #17B73F;
 }
