@@ -1,1 +1,17 @@
-recipe details page 
+<div class="box">
+
+<% @recipe = EdamamApiWrapper.parse_recipe(@recipe) %>
+<%= image_tag(@recipe[:image_url]) %>
+<p></p>
+  <div><strong><%= @recipe[:name] %></strong></div>
+  <div><strong>By: <%= @recipe[:source] %></strong></div>
+<p></p>
+</div>
+<strong>
+  <h3>ingredient List:</h3>
+</strong>
+<p>
+<% @recipe[:ingredients].each do |ingredient| %>
+  <div><strong><%= ingredient %></strong></div>
+  <% end %>
+</p>

@@ -13,3 +13,88 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
+ /* Import scss content */
+ @import "**/*";
+
+ body {
+   background-color: lightblue;
+   padding: 5em;
+   color: #fff ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url('https://www.accugipuzkoa.org/wp-content/uploads/2018/09/TALLER-COCINA-EII-21-9-18.jpg');
+ }
+
+ a:visited {
+   color: #fff;
+
+ }
+ a:link {
+   color: #fff;
+ }
+
+ a:hover {
+   color: #A04668;
+   transition: .6s;
+   text-decoration: none;
+ }
+
+
+ h1 {
+   color: white;
+   text-align: center;
+
+ }
+
+ p {
+   font-family: verdana;
+   font-size: 20px;
+   text-align: center;
+ }
+
+footer {
+  color: #923030;
+  text-align: center;
+
+}
+
+main {
+  padding: 4rem;
+}
+
+li {
+  list-style: none;
+}
+
+.box{
+    width: 100%;
+    text-align:center;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  text-align: center;
+  justify-content: center;
+  grid-column-gap: 50px;
+  grid-row-gap: 25px;
+  align-self: auto;
+  margin: 4em
+}
+
+.grid-item img {
+  max-width: 100%;
+  height: 250px;
+  border-radius: 50;
+  padding: 2px;
+  border: 1px solid #fff ;
+  outline-offset: 1px;
+  margin: 0 auto ;
+}

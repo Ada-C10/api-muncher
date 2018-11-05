@@ -1,1 +1,31 @@
-recipe list page 
+<h2>Search Results:
+  "<%= @query %>"
+</h2>
+
+<p>
+<container>
+<p></p>
+<ul class="grid-container">
+  <% @recipes.each do |recipe| %>
+  <li class="grid-item">
+  <strong>
+    <div class="container">
+      <%  recipe = EdamamApiWrapper.parse_recipe(recipe['recipe']) %>
+      <%=  link_to(image_tag(recipe[:image_url]), recipe_path(recipe: recipe[:uri])) %>
+    </div>
+      <%=  recipe[:name] %>
+  </strong>
+  </li>
+  <% end %>
+</ul>
+</container>
+<p></p>
+<div class="box">
+<% unless @prev_from < 0 %>
+  <%= link_to('Previous 10 recipes', recipes_path(from: @prev_from, query: @query)) %>
+<% end %>
+<p></p>
+<% if @more_results && @next_from > 0%>
+  <%= link_to('Next 10 recipes', recipes_path(from: @next_from, query: @query)) %>
+<% end %>
+</div>
