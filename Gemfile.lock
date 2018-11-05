@@ -79,7 +79,7 @@ GEM
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     coderay (1.1.2)
-    concurrent-ruby (1.1.0)
+    concurrent-ruby (1.1.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.4)
@@ -113,7 +113,7 @@ GEM
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
-    jbuilder (2.7.0)
+    jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
     jquery-rails (4.3.3)
@@ -185,7 +185,7 @@ GEM
       pry (>= 0.10.4)
     public_suffix (3.0.3)
     puma (3.12.0)
-    rack (2.0.5)
+    rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.1)
@@ -312,7 +312,7 @@ DEPENDENCIES
   webmock
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.17.1
+   1.16.2
