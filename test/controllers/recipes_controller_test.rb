@@ -28,9 +28,16 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
       end
     end
 
+    it "can get a single recipe" do
+      VCR.use_cassette("get_single_recipe") do
+        recipe = {
+          :uri => "http://www.edamam.com/ontologies/edamam.owl#recipe_6245fdcbb8c11fc1784df27c4d3426c5"
+        }
 
+        get recipe_path(recipe: recipe[:uri])
 
+        must_respond_with :ok
+      end
+    end
   end
-
-
 end
