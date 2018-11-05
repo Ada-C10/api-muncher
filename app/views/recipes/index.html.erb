@@ -32,8 +32,8 @@
       <%else%>
         <p class='text-center'>
           <%str = "010101010 #{@keyword} search does not compute 010101010101010101010101010".truncate(60, omission: "")%>
-          <%result = str.split(@keyword)%>
-          <%=result[0]%><strong><%=@keyword%></strong><%=result[1]%>
+          <%result = str.split(" #{@keyword} ")%>
+          <%=result[0]%> <strong><%=@keyword%></strong> <%=result[1]%>
         </p>
 
         <% if @health_labels.any? %>
@@ -44,8 +44,8 @@
             <%rand(1..11).times { str += "10"}%>
             <%str +=  " with #{label} 01010101010101010101010101010101010101010101010101010101010"%>
             <%str = str.truncate(60, omission: "")%>
-            <%result = str.split(label)%>
-            <%=result[0]%><strong><%=label%></strong><%=result[1]%>
+            <%result = str.split(" #{label} ")%>
+            <%=result[0]%> <strong><%=label%></strong> <%=result[1]%>
           </p>
 
           <% end %>
