@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
       redirect_to root_path
     else
 
-    @recipes = EdamamApiWrapper.find_recipes('q', @dish)
+    @recipes = EdamamApiWrapper.find_recipes('q', @dish.strip)
     if @recipes.empty?
       flash[:error] = "Sorry, something went wrong. No recipes found for #{@dish}. Try another search."
       redirect_to root_path
