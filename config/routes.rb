@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback", to: "sessions#create", as: 'auth_callback'
   delete "/logout", to: "sessions#destroy", as: "logout"
 
-  resources :queries, only: [:create, :destroy]
   resources :recipe_searches, only: [:index, :show]
+  resources :favorites, only: [:index, :create, :destroy]
 end

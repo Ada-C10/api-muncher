@@ -61,7 +61,11 @@
                     <p><img class="img-fluid" src="<%= recipe.image_uri %>" alt="card image"></p>
                     <h4 class="card-title"><%= recipe.label %></h4>
                     <p class="card-text"><%= "From: #{recipe.source}" %></p>
-                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                    <form action="<%= favorites_path %>" method="post" class="form add-to-favorites">
+                      <input type="hidden" name="recipe_uri_fragment" value= "<%= recipe.recipe_uri.fragment %>">
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-heart"></i></button>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -73,7 +77,11 @@
                       <% recipe.ingredient_lines.each do |line| %>
                     <p class="card-text"><%= line %></p>
                       <% end %>
-                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                    <form action="<%= favorites_path %>" method="post" class="form add-to-favorites">
+                      <input type="hidden" name="recipe_uri_fragment" value= "<%= recipe.recipe_uri.fragment %>">
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-heart"></i></button>
+                    </form>
                   </div>
                 </div>
               </div>

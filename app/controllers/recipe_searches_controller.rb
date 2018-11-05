@@ -12,7 +12,6 @@ class RecipeSearchesController < ApplicationController
     params[:q] ||= ""
     @query = params[:q].downcase
 
-
     filters = {}
     if params[:health]
       filters[:health] = params[:health]

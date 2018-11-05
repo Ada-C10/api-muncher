@@ -32,7 +32,9 @@ class EdamamApiWrapper
   def self.get_recipe(uri)
     edamam_id = BASE_URI + "/search?r=#{EDAMAM_ID_PREFIX + uri}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     data = HTTParty.get(edamam_id)
-    if data[0]
+    if data.include?("Error 401")
+      return nil
+    elsif data[0]
       return build_recipe(data[0])
     else
       return nil

@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_055426) do
+ActiveRecord::Schema.define(version: 2018_11_05_070343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "recipe_uri_fragment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "queries", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -31,5 +38,6 @@ ActiveRecord::Schema.define(version: 2018_11_05_055426) do
     t.integer "queries_count"
   end
 
+  add_foreign_key "favorites", "users"
   add_foreign_key "queries", "users"
 end
