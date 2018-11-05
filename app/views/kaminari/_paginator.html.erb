@@ -1,6 +1,6 @@
 <%= paginator.render do %>
   <nav>
-    <ul class="pagination pagination-flex">
+    <ul class="pagination">
       <%= first_page_tag unless current_page.first? %>
       <%= prev_page_tag unless current_page.first? %>
       <% each_page do |page| %>
@@ -15,4 +15,3 @@
     </ul>
   </nav>
 <% end %>
-s
