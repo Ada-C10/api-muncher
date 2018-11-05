@@ -1,0 +1,238 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*/
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800|Work+Sans');
+
+.recipe-index-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0;
+}
+
+.card-padding {
+  padding: 1em;
+}
+
+.background-img {
+  background-image: image-url('food.jpg');
+  background-size: 100vw 100vh;
+}
+
+.input-group.md-form.form-sm.form-2 input.green-border  {
+  border: 1px solid #959227;
+  height: 3em;
+}
+
+.btn-background {
+  background: #959227;
+  border: none;
+}
+
+.main-search {
+  padding: 3em;
+}
+
+.search {
+  margin: 3em;
+  margin-top: 5em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.recipe-index-cards a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.pages {
+  padding: 2em;
+}
+
+.index-heading {
+  margin-top: 3.5em;
+}
+
+.pagination {
+  display: block;
+}
+
+.show-container {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  justify-items: center;
+  padding: 2em;
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+h2, h3, h4, h5 {
+  text-align: center;
+  padding-top: 0.5em;
+  font-family: "Montserrat";
+}
+
+h1 {
+  text-align: center;
+  font-family: "Montserrat";
+}
+
+.non-main-h1 {
+  color: #525015;
+}
+
+body {
+  padding-top: 10em;
+  font-family: "Work Sans";
+}
+
+img {
+  border-radius: 2%;
+}
+
+.diet-heading {
+  border-top: 2px solid #959227;
+  margin-top: 1em;
+}
+
+.pagination-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.page-link {
+  color: #959227;
+}
+
+.page-item.active .page-link {
+  background-color: #959227;
+  border-color: #959227;
+}
+
+.page-link:hover {
+  color: #959227;
+  background-color: #f5f4d7;
+  border-color: #f5f4d7;
+}
+
+.btn-outline-dark {
+  border-color: #959227;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.btn-outline-dark:hover {
+  background-color: #959227;
+  border-color: #959227;
+}
+
+.btn-outline-dark a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-outline-dark:hover {
+  a {
+    color: white;
+  }
+}
+
+.white-text-color {
+  color: white;
+}
+
+.header-background-color {
+  background-color: #dfdd86;
+}
+
+header {
+  height: 250px;
+  border-bottom: 1px solid #959227;
+}
+
+.show-h2 {
+  padding-top: 4em;
+}
+
+.show-h4 {
+  padding-bottom: 0.5em;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .background-img {
+    background-image: none;
+    background-size: auto;
+  }
+
+  .white-text-color {
+    color: #525015;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+
+  h3, .h3 {
+    font-size: 1rem;
+  }
+
+  .index-heading {
+    margin-top: 4em;
+  }
+
+  .search {
+    margin: 0em;
+    margin-top: 1em;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+
+  .w-25 {
+    width: 75% !important;
+  }
+
+  img {
+    width: 150px;
+    height:  auto;
+  }
+
+  .show-h4 {
+    font-size: 1em;
+  }
+
+  .small-ingredients {
+    font-size: .85em;
+  }
+
+  .show-container {
+     padding: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+  }
+
+}
