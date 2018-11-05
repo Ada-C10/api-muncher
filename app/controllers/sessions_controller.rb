@@ -7,14 +7,14 @@ class SessionsController < ApplicationController
     if user
       # User was found in the database
       flash[:status] = :success
-      flash[:result_text] = "Successfully logged in as existing user #{user.username}"
+      flash[:result_text] = "Successfully logged in as existing user #{user.name}"
     else
       # User doesn't match anything in the DB
       # Attempt to create a new user
       user = User.build_from_omniauth(auth_hash)
          if user.save
            flash[:status] = :success
-           flash[:result_text] = "Successfully created new user #{user.username} with ID #{user.id}"
+           flash[:result_text] = "Successfully created new user #{user.name} with ID #{user.id}"
          else
            flash.now[:status] = :failure
            flash.now[:result_text] = "Could not create new user account"
