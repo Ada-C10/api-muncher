@@ -84,3 +84,5 @@ group :test do
 end
 
 gem 'httparty'
+
+gem 'concurrent-ruby', '~> 1.0', '>= 1.0.2'
