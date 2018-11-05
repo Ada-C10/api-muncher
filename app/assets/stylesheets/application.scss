@@ -25,6 +25,17 @@ body {
   flex-direction: column;
 }
 
+footer {
+  flex-shrink: 0;
+  
+}
+header h3 {
+  font-family: 'Josefin Slab', serif;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+
 .container-fluid {
   flex: 1 0 auto;
   background-color: lightgrey;
@@ -54,37 +65,4 @@ body {
 .root-sub {
   text-align: left;
   font-size: 1.5em;
-}
-
-footer {
-  flex-shrink: 0;
-}
-header h3 {
-  font-family: 'Josefin Slab', serif;
-  font-size: 3em;
-  font-weight: bold;
-  text-align: center;
-}
-
-.recipes-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.index-container h3 {
-  text-align: center;
-}
-
-.page-links {
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-}
-
-.pagination {
-  grid-column: 2 / 3;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
 }
