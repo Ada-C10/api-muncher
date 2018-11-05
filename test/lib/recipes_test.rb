@@ -11,7 +11,6 @@ describe Recipes do
 
       # expect(recipe.name).must_be_instance of String
     end
-
   end
 
 end

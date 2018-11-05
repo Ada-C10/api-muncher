@@ -1,18 +1,31 @@
 require "test_helper"
 
 describe RecipesController do
-  it "should get index" do
-    VCR.use_cassette('search_list') do
+  describe "index" do
 
-      get recipes_index_path
+    it "should get index" do
+      VCR.use_cassette('search_list') do
 
-      must_respond_with :ok
+        get recipes_index_path
+
+        must_respond_with :ok
+      end
     end
-  end
 
-  it "should get show" do
-    get recipes_show_url
-    value(response).must_be :success?
-  end
+  end #index end
 
+  describe "show" do
+
+    it "should get show page" do
+      VCR.use_cassette('single_recipe') do
+
+        get recipe_show_path(uri)
+
+        must_respond_with :success
+      end
+    end
+
+  end #show end
+
+  
 end
