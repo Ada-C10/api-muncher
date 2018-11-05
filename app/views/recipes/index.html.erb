@@ -1,6 +1,6 @@
 <section class="channels-list">
-  <h1>Recepies for <%=params[:message]%></h1>
-  <% if @recipes %>
+  <% if @recipes != []%>
+    <h1>Recepies for <%=params[:message]%></h1>
     <ul>
       <% @recipes.each do |recipe| %>
       <div class="card" style="width: 18rem;">
@@ -12,5 +12,7 @@
       </div>
       <% end %>
     </ul>
+  <% else %>
+    <p> The search term you provided does exist. Please try again <p>
   <% end %>
 </section>
