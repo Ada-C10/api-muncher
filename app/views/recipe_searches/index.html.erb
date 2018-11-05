@@ -9,7 +9,6 @@
 
   <h1 class="section-title">Search: <%= @query %></h1>
 
-  <a href="<%= root_path %>" class="navbar-brand">Home</a>
 </nav>
 
 
@@ -21,27 +20,31 @@
         <%= will_paginate @recipes, :previous_label => previous_label, :next_label => next_label %>
       </div>
 
-      <div class="filters">
-        <form action="<%= recipe_searches_path %>" method="get" class="form shuffle">
-          <input type="hidden" name="shuffle" value="t">
-          <input type="hidden" name="q" value= "<%= @query %>">
-          <button type="submit" class="btn btn-primary">Shuffle My Recipes!</button>
-        </form>
-        <% if @shuffle %>
-          <form action="<%= recipe_searches_path %>" method="get" class="form unshuffle">
+      <div class="filters mb-2">
+        <div class= "filter-buttons-container d-flex justify-content-center">
+          <form action="<%= recipe_searches_path %>" method="get" class="form shuffle">
+            <input type="hidden" name="shuffle" value="t">
             <input type="hidden" name="q" value= "<%= @query %>">
-            <button type="submit" class="btn btn-primary">Default Order</button>
+            <button type="submit" class="btn btn-primary">Shuffle My Recipes!</button>
           </form>
-        <% end %>
-        <% if @health_labels.any? %>
-          <form action="<%= recipe_searches_path %>" method="get" class="form health-filter">
-          <% @health_labels.each do |label| %>
-            <%= checkbox_field(label, params) %><%= label.capitalize %>
+          <% if @shuffle %>
+            <form action="<%= recipe_searches_path %>" method="get" class="form unshuffle">
+              <input type="hidden" name="q" value= "<%= @query %>">
+              <button type="submit" class="btn btn-primary ml-2">Default Order</button>
+            </form>
           <% end %>
-            <input type="hidden" name="q" value= "<%= @query %>">
-            <input type="submit" value="Apply Filters!">
-          </form>
-        <% end %>
+        </div>
+        <% if @health_labels.any? %>
+          <div class= "filter-checkboxes-container d-flex justify-content-center">
+            <form action="<%= recipe_searches_path %>" method="get" class="form health-filter">
+            <% @health_labels.each do |label| %>
+              <%= checkbox_field(label, params) %><%= label.capitalize %>
+            <% end %>
+              <input type="hidden" name="q" value= "<%= @query %>">
+              <input type="submit" value="Apply Filters!" class="btn btn-primary">
+            </form>
+          <% end %>
+        </div>
       </div>
 
 

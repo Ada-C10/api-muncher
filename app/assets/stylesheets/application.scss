@@ -170,3 +170,9 @@ body {
 	#search_submit:hover {
 	  opacity: 0.8;
 	}
+
+//
+.app-header__user-nav-container,
+.app-header__user-nav-container > * {
+	z-index: 10
+}

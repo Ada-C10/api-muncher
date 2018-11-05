@@ -14,18 +14,21 @@
   <body>
     <nav>
       <ul class="nav app-header__user-nav-container">
-        <% if session[:user_id] %>
           <li class="nav-item app-header__nav_item">
-            Welcome <%= @login_user.name %>!
+          <%= link_to "Hello Munchy Home", root_path, class:"navbar-brand btn btn-primary" %>
           </li>
-          <li class="nav-item app-header__nav_item">
+        <% if session[:user_id] %>
+          <li class="nav-item app-header__nav_item ml-2 align-self-center">
+            Welcome, <%= @login_user.name %>!
+          </li>
+          <li class="nav-item app-header__nav_item ml-auto">
           <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-primary"  %>
           </li>
         <% else %>
-          <li class="nav-item app-header__nav_item">
+          <li class="nav-item app-header__nav_item ml-auto">
           <%= link_to "Github Login", "/auth/github", class: "btn btn-primary" %>
           </li>
-          <li class="nav-item app-header__nav_item">
+          <li class="nav-item app-header__nav_item ml-1">
           <%= link_to "Google Login", "/auth/google_oauth2", class: "btn btn-primary" %>
           </li>
         <% end %>
