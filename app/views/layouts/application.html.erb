@@ -11,20 +11,27 @@
   </head>
 
 
-  <nav class="navbar navbar-dark bg-dark sticky-top">
-    <h1><%= link_to "munchbot-2000", root_path, class: "nav-link"%></h1>
-    <%= form_tag recipes_path, method: :get, id: 'health_labels' do %>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+      <h1><%= link_to "munchbot-2000", root_path, class: "nav-link"%></h1>
 
-      <%= text_field_tag :keyword %>
-      <%= submit_tag "recipe search" %>
 
-      <% @HEALTH_LABELS.each do |label| %>
-        <%= check_box_tag(label) %>
-        <%= label_tag(label) %>
+      <%= form_tag recipes_path, method: :get, id:"search_form" do %>
+        <div id="submit_button">
+          <%= text_field_tag :keyword %>
+          <%= submit_tag "recipe search", class: 'submit' %>
+        </div>
+
+        <div id="health_labels">
+          <% @HEALTH_LABELS.each do |label| %>
+            <p><%= check_box_tag(label) %>
+            <%= label_tag(label, nil, class: 'label')  %></p>
+          <% end %>
+        </div>
+
       <% end %>
+    </nav>
 
-    <% end %>
-  </nav>
+
 
 
   <body>
