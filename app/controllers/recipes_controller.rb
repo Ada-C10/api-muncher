@@ -7,8 +7,11 @@ def new
 end
 
 def index
-  @recipies = EdamamApiWrapper.list_recipes(params[:word]).paginate(page: params[:page], per_page: 10)
-  # binding.pry
+  @recipes = EdamamApiWrapper.list_recipes(params[:word]).paginate(page: params[:page], per_page: 10)
+
+  if @recipes.empty?
+    flash[:message] = "Couldn't find food items with that search. Please try again"
+  end
 end
 
 

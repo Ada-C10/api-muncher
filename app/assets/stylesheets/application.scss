@@ -23,7 +23,7 @@
 
 main{
   padding-top: 30px;
-  padding-bottom: 200px;
+  padding-bottom: 300px;
   background-color: rgb(252, 249, 244);
 }
 
@@ -37,4 +37,10 @@ footer{
   align-items: center;
   background-color: rgb(38, 38, 38);
   color: rgb(223, 223, 223);
+}
+
+.flash-messages {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
 }

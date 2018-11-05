@@ -6,7 +6,7 @@
   </nav>
 
   <div class="flex-container">
-    <% @recipies.each do |recipe| %>
+    <% @recipes.each do |recipe| %>
     <div class="card">
       <%= image_tag("#{recipe.image}", :alt => 'recipe-img', :class => 'image-tag') %>
       <div class="card-body">
