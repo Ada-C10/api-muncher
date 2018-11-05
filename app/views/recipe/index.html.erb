@@ -2,12 +2,11 @@
   <h1>Recipes</h1>
   <% if @recipes %>
     <ul>
-      <% @recipes.each do |recipe| %>
-        <li>
-          <% parsed_url = recipe.uri.partition('#').last %>
-          <%= link_to recipe.uri, recipe_path(parsed_url) %>
-          <%= recipe.label  %>
-        </li>
+      <% @recipes.each do |recipe| %></li>
+        <li><%= recipe.label %>
+        <li><%= link_to image_tag(recipe.image), recipe_path(recipe.image) %></li>
+        <li><% parsed_url = recipe.uri.partition('#').last %></li>
+        <li><%= link_to recipe.uri, recipe_path(parsed_url)%></li>
       <% end %>
     </ul>
   <% end %>

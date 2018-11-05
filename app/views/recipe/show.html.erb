@@ -1,13 +1,46 @@
-<section class="recipes-list">
-  <h1><%= @recipe.label %></h1>
-  <div>
-      <ul>
-        <li><%=@recipe.label %></td>
-        <li><%=link_to image_tag(@recipe.image)  %></li>
-        <li><%=@recipe.yield %></li>
-        <li><%=@recipe.healthLabels  %></li>
-        <li><%=@recipe.ingredients  %></li>
-        <li><%=@recipe.calories  %></li>
-      </li>
-  </ul>
-</section>
+<container class="general">
+  <section class="details">
+    <h1><%= @recipe.label %></h1>
+    <div class=list>
+      <li><%=link_to image_tag(@recipe.image)  %></li>
+    <div>
+
+    <section class="ingredients">
+      <h2>Ingredients</h2>
+      <ul class="show">
+        <%@recipe.ingredients.each do |ingredient| %>
+          <%ingredient.each do |text| %>
+            <li>
+              <%= ingredient["text"] %>
+              <%= ingredient["weight"]  %>
+              <%= "ounces" %>
+            </li>
+            <% end %>
+          <% end %>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Health Labels</h2>
+      <ul class="show">
+        <%@recipe.healthLabels.each do |label| %>
+          <li>
+            <%= label %>
+          </li>
+          <% end %>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Serving Size</h2>
+      <ul class="show">
+        <%="#{'%.0f' % (@recipe.yield)}" %>
+    </section>
+
+    <section>
+      <h2>Calories</h2>
+      <ul class="show">
+        <%="#{'%.0f' %(@recipe.calories)}" %>
+    </section>
+  </section>
+</container>

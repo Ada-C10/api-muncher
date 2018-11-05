@@ -16,3 +16,31 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+
+main{
+  padding-top: 30px;
+  padding-bottom: 300px;
+  background-color: rgb(252, 249, 244);
+}
+
+.general {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.list {
+  list-style-type: none;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0F8FF;
+}

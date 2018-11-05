@@ -39,7 +39,7 @@ class EdamamApiWrapper
 
   def self.create_recipe(api_params) #<--holds all the logic
     return Recipe.new(
-      uri: api_params["recipe"]["uri"],
+      api_params["recipe"]["uri"],
       label: api_params["recipe"]["label"],
       image: api_params["recipe"]["image"],
       serving: api_params["recipe"]["yield"],
@@ -52,7 +52,7 @@ class EdamamApiWrapper
 
   def self.keyboard(api_params)
     return Recipe.new(
-      uri: api_params["uri"], #already in recipe
+      api_params["uri"], #already in recipe
       label: api_params["label"],
       image: api_params["image"],
       serving: api_params["yield"],
