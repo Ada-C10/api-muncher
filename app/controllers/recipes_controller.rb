@@ -8,6 +8,9 @@ class RecipesController < ApplicationController
   def show
     @uri = params[:id]
     @recipe = ApiMuncherWrapper.recipe_by_uri(@uri)
+    if @recipe.nil?
+      head :not_found
+    end
   end
 
 end
