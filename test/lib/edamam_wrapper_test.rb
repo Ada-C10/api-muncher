@@ -17,8 +17,6 @@ describe 'Edamam Api Wrapper' do
 
   describe 'find_recipes' do
     it 'returns array of 1 - 100 recipes for valid search, if given "r" ' do
-
-      # expect(results.length).must_be :>=, 1
     end
 
     it 'returns an empty array for invalid search, if given "r" ' do
