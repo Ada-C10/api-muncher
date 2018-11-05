@@ -35,7 +35,6 @@ class EdamamApiWrapper
     new_uri = CGI.escape("http://www.edamam.com/ontologies/edamam.owl#recipe_#{uri}")
     url = BASE_URL + "search?r=#{new_uri}" + "&app_id=#{APP_ID}&app_key=#{APP_KEY}"
     data = HTTParty.get(url)
-    #binding.pry
     if data
       data.map do |array|
         uri = format_uri(array["uri"])
