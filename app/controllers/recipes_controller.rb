@@ -1,8 +1,10 @@
 class RecipesController < ApplicationController
+  require 'will_paginate/array'
 
   def index
     @food_search = params[:food_search]
-    @recipes = RecipeApiWrapper.list_recipes(@food_search)
+    recipes = RecipeApiWrapper.list_recipes(@food_search)
+    @recipes = recipes.paginate(:page => params[:page], :per_page => 10)
     if @recipes == []
       flash[:status] = :not_found
           flash[:result_text] = "There were no results for your search term. Please try again"

@@ -6,7 +6,7 @@ class RecipeApiWrapper
   APP_KEY = ENV["APP_KEY"]
 
   def self.list_recipes(food_search)
-    recipes_url = "#{BASE_URL}/search?q=#{food_search}&app_id=#{APP_ID}&app_key=#{APP_KEY}"
+    recipes_url = "#{BASE_URL}/search?q=#{food_search}&to=30&app_id=#{APP_ID}&app_key=#{APP_KEY}"
 
     data = HTTParty.get(recipes_url)
 
