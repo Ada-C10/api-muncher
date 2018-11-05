@@ -10,6 +10,7 @@ describe SearchRecipesController do
     end
   end
 
+
   it 'can view the index page' do
     VCR.use_cassette('find_recipes_file') do
       get search_recipes_path, params: {
@@ -20,27 +21,6 @@ describe SearchRecipesController do
     end
   end
 
-  it 'renders new form and responds with 400 bad request if params search is nil' do
-    VCR.use_cassette('find_recipes_file') do
-      get search_recipes_path, params: {
-        search: nil
-      }
-      expect(flash[:result_text]).must_equal 'Search input cannot be blank'
-      must_respond_with :bad_request
-
-    end
-  end
-
-  it 'renders new form and responds with 400 bad request if params search is an empty string' do
-    VCR.use_cassette('find_recipes_file') do
-      get search_recipes_path, params: {
-        search: ""
-      }
-
-      expect(flash[:result_text]).must_equal 'Search input cannot be blank'
-      must_respond_with :bad_request
-    end
-  end
 
   it 'displays a flash message if there were no recipes found for search input' do
     VCR.use_cassette('no-recipes-file') do
@@ -55,6 +35,31 @@ describe SearchRecipesController do
 
   end
 
+  it 'renders new form and responds with 400 bad request if params search is nil' do
+
+    VCR.use_cassette('find_recipes_file') do
+      get search_recipes_path, params: {
+        search: nil
+      }
+
+      expect(flash[:result_text]).must_equal 'Search input cannot be blank'
+      must_respond_with :bad_request
+    end
+
+  end
+
+  it 'renders new form and responds with 400 bad request if params search is an empty string' do
+
+    VCR.use_cassette('find_recipes_file') do
+      get search_recipes_path, params: {
+        search: ""
+      }
+
+      expect(flash[:result_text]).must_equal 'Search input cannot be blank'
+      must_respond_with :bad_request
+    end
+
+  end
 
   it 'can view the details page with a valid recipe' do
     VCR.use_cassette('find_recipes_file') do
@@ -74,8 +79,8 @@ describe SearchRecipesController do
 
       get search_recipe_path(parsed_id)
 
-      expect(flash[:result_text]).must_equal 'No recipe found'
-      must_redirect_to search_recipes_path
+      expect(flash[:result_text]).must_equal "This recipe does not exist. Please try again."
+      must_redirect_to root_path
     end
 
   end

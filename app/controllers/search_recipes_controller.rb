@@ -26,12 +26,12 @@ class SearchRecipesController < ApplicationController
   def show
     recipe = EdamamApiWrapper.find_recipe(params[:id])
 
-    if recipe.first
+    if recipe.first && params[:id] == recipe.first.uri.fragment
       @recipe = recipe.first
     else
       flash[:status] = :failure
-      flash[:result_text] = "No recipe found"
-      redirect_to(search_recipes_path)
+      flash[:result_text] = "This recipe does not exist. Please try again."
+      redirect_to(root_path)
     end
   end
 
