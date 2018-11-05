@@ -1,0 +1,50 @@
+<header class = "header">
+  <h1><%= link_to "MUNCHER", root_path%></h1>
+  <%= render partial: "/layouts/form" %>
+</header>
+
+
+<main class = "main-container">
+
+  <% if @recipes.count == 0 %>
+
+  <h2>There are no recipes for "<%= params[:input] %>". Please enter a new search above.</h2>
+
+  <% else %>
+
+  <h2>Results for "<%= params[:input] %>"</h2>
+
+  <div class = "paginate">
+    <%= will_paginate @recipes %>
+  </div>
+
+  <div class = "recipe-grid">
+
+    <ul>
+      <% @recipes.each do |recipe| %>
+
+      <li class = "individual-recipe">
+
+        <% pattern = /recipe_(.*)/ %>
+        <% uri = pattern.match(recipe.uri) %>
+
+        <img src = <%= recipe.image %>
+        alt = <%= recipe.label %>
+        class = "recipe-image">
+
+        <h3><%= link_to recipe.label, recipe_path(uri[1]) %></h3>
+
+      </li>
+
+      <% end %>
+    </ul>
+
+  </div>
+
+  <% end %>
+</main>
+
+
+<footer>
+  <div id="edamam-badge" data-color="white"></div>
+</footer>

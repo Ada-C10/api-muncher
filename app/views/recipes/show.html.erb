@@ -1,0 +1,43 @@
+<header class = "header">
+  <h1><%= link_to "MUNCHER", root_path%></h1>
+  <%= render partial: "/layouts/form" %>
+</header>
+
+
+<main class = "main-container recipe-container">
+
+  <div class = "recipe-container-header">
+    <h2><%= @recipe.label %></h2>
+    <h3>By <%= @recipe.source %></h3>
+  </div>
+
+  <div class = "recipe-container-image">
+    <img src = <%= @recipe.image%>
+    alt = <%= @recipe.label %>
+    class = "food-image">
+  </div>
+
+  <div class = "recipe-container-ingredients">
+    <h4>Ingredients</h4>
+    <% @recipe.ingredients.each do |ingredient| %>
+    <ul>
+      <p><li><%= ingredient %></li></p>
+    </ul>
+    <% end %>
+  </div>
+
+  <div class = "recipe-container-nutrition">
+    <h4>Dietary Labels:</h4>
+    <% @recipe.diet_labels.each do |label| %>
+    <ul>
+      <p><li><%= label %></li></p>
+    </ul>
+    <% end %>
+  </div>
+
+</main>
+
+
+<footer>
+  <div id="edamam-badge" data-color="white"></div>
+</footer>
