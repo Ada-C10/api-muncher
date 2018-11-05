@@ -6,18 +6,12 @@
 
       <h1 class="root-head">MunchEase</h1>
 
-      <section class="search-form">
-        <div class="root-sub">
-          <sub>The easy way to cure your munchies...</sub>
-        </div>
-        <%= form_tag recipes_path, :method => "get" do %>
-        <%= text_field_tag :search, params[:search], class: "form-control form-control-lg" %>
-        <div class="submit-button">
-          <%= submit_tag "Search", class: "btn btn-outline-dark btn-lg" %>
-        </div>
-        <% end %>
-      </section>
+      <div class="root-sub">
+        <sub>The easy way to cure your munchies...</sub>
+      </div>
       
+      <%= render partial: "search_form" %>
+
     </div>
     <div class="col">
     </div>
