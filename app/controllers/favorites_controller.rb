@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
     }
     if recipes.any? {|recipe| recipe == nil}
       flash.now[:error] = "Deet deet deet, waiting for the API to respond! You're probably making too many requests/minute."
-      render "/layouts/api_error", status: :failure
+      return render "/layouts/favorites_api_error", status: :failure
     else
       @recipes = recipes.paginate(:page => params[:page], :per_page => 9)
     end

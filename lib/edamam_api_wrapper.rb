@@ -18,7 +18,9 @@ class EdamamApiWrapper
     end
     data = HTTParty.get(uri)
     recipe_list = []
-    if data["hits"]
+    if data.include?("Error 401")
+      return nil
+    elsif data["hits"]
       data["hits"].each do |hit_data|
         recipe = build_recipe(hit_data["recipe"])
         if recipe.valid?

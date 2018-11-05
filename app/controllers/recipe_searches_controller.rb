@@ -22,6 +22,10 @@ class RecipeSearchesController < ApplicationController
     end
 
     recipes = EdamamApiWrapper.list_recipes(@query, filters: filters)
+    if recipes.nil?
+      flash.now[:error] = "Deet deet deet, waiting for the API to respond! You're probably making too many requests/minute."
+      return render "/layouts/index_api_error", status: :failure
+    end
     @shuffle = params["shuffle"]
     if @shuffle == "t"
       length = recipes.length

@@ -10,15 +10,15 @@
   <h1 class="section-title">Search: <%= @query %></h1>
   <% if @search_history && @search_history.any? %>
     Recent Searches
-    <ol>
+    <ol class="d-flex">
       <% @search_history.each do |query| %>
-        <li>
+        <li class="ml-2 d-inline">
           <form action="<%= recipe_searches_path %>" method="get" class="form search-history">
             <input type="hidden" name="q" value= "<%= query.q %>">
             <input type="submit" value="<%= query.search_term %>">
 
-            # TODO: Add models and relationships for health labels
-            # So user can click on a past search (filters and query) and replicate it
+            <!-- TODO: Add models and relationships for health labels -->
+            <!-- So user can click on a past search (filters and query) and replicate it -->
 
           </form>
         </li>
