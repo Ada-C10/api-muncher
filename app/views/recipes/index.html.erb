@@ -1,6 +1,6 @@
 <h1><%= link_to "Edemam", root_path %> </h1>
   <section><%= form_tag search_path, method: "get" do %>
-  <%= label_tag(:search_term, "Hmm what sounds good...") %>
+  <%= label_tag(:search_term, "Enter your search here...") %>
   <%= text_field_tag(:search_term) %>
   <%= submit_tag("Search") %>
   <% end %>
@@ -14,15 +14,31 @@
   <%= paginate @recipes , outer_window: 3 %>
   <%= page_entries_info @recipes %>
 
-    <ul >
-      <% @recipes.each do |recipe| %>
-        <li><%= recipe.label %></li>
-        <li><%= link_to "Details", recipe_path(recipe.uri) %></li>
-        <li><%= image_tag recipe.image%></li>
+<div class="row">
+     <% @recipes.each do |recipe| %>
+     <div class="col-md-3">
+       <figure class="card card-product text-center">
+     		<div class="img-wrap">
+          <%= image_tag recipe.image, class:"card-img-top img-fluid"%>
+        </div>
+        <figcaption class="info-wrap">
+          <%= recipe.label %>
+          <div class="action-wrap">
+				<div class="details-wrap h5">
+        <span class="detail-new"><%= link_to "Details", recipe_path(recipe.uri), class: "btn btn-primary btn-sm add-to-cart" %></span>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
       <% end %>
-    </ul>
+
+</div>
+
+
 
   <% end %>
+
+
 </section>
 <%# the recipe.uri is coming from ..http://localhost:3000/recipes/uri%>
 <%# the recipe path recipe_path(recipe.uri) is calling the route below%>

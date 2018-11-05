@@ -26,6 +26,8 @@ class RecipesController < ApplicationController
   end
 
   def home
+    @body_class || ''
   end
+
 
 end

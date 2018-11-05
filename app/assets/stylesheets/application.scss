@@ -16,3 +16,11 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+
+.splash {
+  background-image: image-url("cupcake.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
