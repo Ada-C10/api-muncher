@@ -28,6 +28,10 @@ VCR.configure do |config|
   config.filter_sensitive_data("<EDAMAM_ID") do
     ENV['EDAMAM_ID']
   end
+
+  config.filter_sensitive_data("<EDAMAM_ID") do
+    ENV['HEROKU_API_KEY']
+  end
 end
 
 
