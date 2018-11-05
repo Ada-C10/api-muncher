@@ -12,6 +12,22 @@
   </head>
 
   <body>
+    <nav>
+      <ul class="nav app-header__user-nav-container">
+        <% if session[:user_id] %>
+          <li class="nav-item app-header__nav_item">
+          <%= link_to "Log out", logout_path, method: "delete"   %>
+          </li>
+        <% else %>
+          <li class="nav-item app-header__nav_item">
+          <%= link_to "Github Login", "/auth/github", class: "btn btn-primary" %>
+          </li>
+          <li class="nav-item app-header__nav_item">
+          <%= link_to "Google Login", "/auth/google_oauth2", class: "btn btn-primary" %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
     <%= yield %>
     <footer>
       <div id="edamam-badge" data-color="#eee"></div>
