@@ -28,8 +28,12 @@ class EdamamApiWrapper
 
       data = HTTParty.get(url)
 
-        # recipe_list = []
-      return recipe_hits(data[0])
+      if data.length > 0
+       recipe = recipe_hits(data[0])
+       return recipe
+     else
+       return nil
+     end
 
     end
 
