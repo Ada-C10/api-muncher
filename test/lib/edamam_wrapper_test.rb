@@ -3,7 +3,7 @@ describe 'Edamam Api Wrapper' do
 
   describe 'get_message' do
     it 'returns true when a valid food was successful' do
-      VCR.use_cassette("channels") do
+      VCR.use_cassette("burger_recipes") do
         # message = "test message"
         search_term = "burger"
 
