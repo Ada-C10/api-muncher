@@ -27,4 +27,9 @@ class FavoritesController < ApplicationController
 
   def destroy
   end
+
+  def clear
+    @login_user.favorites.destroy_all
+    redirect_to favorites_path
+  end
 end

@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   resources :recipe_searches, only: [:index, :show]
   resources :favorites, only: [:index, :create, :destroy]
+  delete "/favorites", to: "favorites#clear", as: "clear_favorites"
 end

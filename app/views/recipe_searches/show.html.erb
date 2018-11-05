@@ -1,5 +1,15 @@
 <% if @recipe %>
-  <h1><%= @recipe.label %></h1>
+  <h1>
+    <%= @recipe.label %>
+
+    <form action="<%= favorites_path %>" method="post" class="form add-to-favorites d-inline-block">
+      <input type="hidden" name="recipe_uri_fragment" value= "<%= @recipe.recipe_uri.fragment %>">
+      <button type="submit" class="btn btn-primary btn-sm">
+        <i class="fa fa-heart"></i>  Add To Favorites</button>
+    </form>
+
+  </h1>
+
   <%= image_tag(@recipe.image_uri, size: "400x400", alt: "#{@recipe.label} image") %>
   <p><%= link_to "From: #{@recipe.source}", @recipe.source_uri, target: "_blank" %></p>
   <p>Serves <%= @recipe.recipe_yield.to_i %></p>

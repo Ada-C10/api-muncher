@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless session[:user_id]
-      redirect_back fallback_location: root_path
+      render "/layouts/login"
     end
   end
 
