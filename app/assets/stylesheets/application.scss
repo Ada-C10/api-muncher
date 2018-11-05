@@ -16,3 +16,46 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+
+body {
+  font-family: 'Noticia Text', serif;
+  background-color: lightgrey;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-fluid {
+  flex: 1 0 auto;
+}
+
+.root-head {
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+  font-family: 'Josefin Slab', serif;
+  font-size: 5em;
+  font-weight: bold;
+}
+
+#edamam-badge {
+  text-align: right;
+}
+
+.search-form {
+  text-align: center;
+}
+
+.submit-button {
+  text-align: right;
+}
+
+.root-sub {
+  text-align: left;
+  font-size: 1.5em;
+}
+
+footer {
+  flex-shrink: 0;
+}
