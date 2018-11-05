@@ -85,4 +85,4 @@ end
 
 gem 'httparty'
 
-gem 'concurrent-ruby', '~> 1.0', '>= 1.0.2'
+gem 'concurrent-ruby', '~> 1.0', '>= 1.0.5'
