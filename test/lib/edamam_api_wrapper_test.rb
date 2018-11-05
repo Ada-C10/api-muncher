@@ -21,12 +21,13 @@ describe 'EdamamApiWrapper' do
     end
 
     it 'returns an empty array if no recipes found for query' do
+      
       VCR.use_cassette('no-recipes-file') do
         query = 'zqb'
         recipes = EdamamApiWrapper.find_recipes_for(query)
 
         expect(recipes.length).must_equal 0
-        expect(recipes.first).must_equal nil 
+        expect(recipes.first).must_equal nil
       end
 
     end

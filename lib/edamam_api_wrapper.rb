@@ -29,8 +29,8 @@ class EdamamApiWrapper
 
     data = HTTParty.get(url)
 
-    if data.first 
-      return details_recipe(data.first)
+    if data.first
+      return [details_recipe(data.first)]
     else
       return []
     end
