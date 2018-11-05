@@ -1,14 +1,19 @@
-<%= paginator(session[:page], @recipes) %>
+<main id="search">
+  <div class="paginator">
+    <%= paginator(session[:page], @recipes) %>
+  </div>
 
-<% if @recipes[0].url == nil %>
+  <% if @recipes[0].url == nil %>
   <h2><%= @recipes[0].title %></h2>
-<% else %>
-  <% @recipes.each do |recipe| %>
-    <ul>
-      <li><h1><%= recipe.title %></h1></li>
-      <li><%= image_tag(recipe.image) %></li>
-      <li>via <%= link_to "#{recipe.source}", recipe.url %></li>
-      <li><%= link_to "view details", recipe_path(:uri=> recipe.uri) %></li>
-    </ul>
+  <% else %>
+    <section class="recipes">
+      <% @recipes.each do |recipe| %>
+      <ul>
+        <li><%= image_tag(recipe.image) %></li>
+        <li><h1><%= link_to recipe.title, recipe_path(:uri=> recipe.uri) %></h1></li>
+        <li class="source"><%= link_to "via #{recipe.source}", recipe.url %></li>
+      </ul>
+      <% end %>
+    </section>
   <% end %>
-<% end %>
+</main>

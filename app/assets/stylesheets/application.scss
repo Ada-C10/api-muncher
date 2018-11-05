@@ -16,3 +16,19 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
+
+.login {
+  color: #111111;
+  right: 0;
+  position: fixed;
+  display: inline-block;
+  list-style: none;
+}
+
+.login li {
+  background-color: #fefefe;
+  padding: .5vw 1vw .5vw 1vw;
+  margin: 1.5vw 1.5vw 0 1.2vw;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px #404040;
+}

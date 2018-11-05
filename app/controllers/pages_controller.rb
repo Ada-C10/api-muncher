@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @recent_searches = Search.limit(10).reverse_order
+    @bg_image = UnsplashWrapper.image("food", true)
   end
 
   def search
@@ -9,22 +10,24 @@ class PagesController < ApplicationController
       Search.create(queery: params[:queery])
     end
 
+    @bg_image = UnsplashWrapper.image(session[:queery], true)
+
     if params[:page]
       session[:page] = params[:page].to_i
     else
       session[:page] = 1
     end
-    puts session[:queery]
 
     @recipes = EdamamWrapper.search(session[:queery], session[:page])
   end
 
   def recipe
     if params[:uri]
-      session[:recipe] = EdamamWrapper.recipe(params[:uri])
+      recipe = EdamamWrapper.recipe(params[:uri])
     else
-      session[:recipe] = EdamamWrapper.recipe(params[:title])
+      recipe = EdamamWrapper.recipe(params[:title])
     end
-    @recipe = session[:recipe]
+    session[:uri] = recipe.uri
+    @recipe = recipe
   end
 end

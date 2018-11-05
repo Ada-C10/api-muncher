@@ -2,15 +2,15 @@ module PagesHelper
   def paginator(page, recipes)
     output = []
     if page > 1
-      output << (link_to "previous page ", search_path(:page=> (session[:page] - 1)))
+      output << (link_to "prev page", search_path(:page=> (session[:page] - 1)))
     else
-      output << "previous page "
+      output << "<a class=\"nohover\">prev page</a>"
     end
-    output << "#{session[:page]} "
+    output << "<span> #{session[:page]} </span>"
     if recipes.length == 10
       output << (link_to "next page", search_path(:page=> (session[:page] + 1)))
     else
-      output << "next page"
+      output << "<a class=\"nohover\">next page</a>"
     end
 
     return output.join.html_safe

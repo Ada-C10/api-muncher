@@ -7,15 +7,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      body {
+        background-image: url(<%= @bg_image %>);
+        background-size: cover;
+      }
+    </style>
   </head>
 
   <body>
-    <% if @current_user %>
-      Signed in as <strong><%= @current_user.username %></strong>!
-      <%= link_to "Sign out", logout_path, id: "sign_out" %>
-    <% else %>
-      <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-    <% end %>
+    <p class="logo"><%= link_to "Food.", root_path %></p>
+    <ul class="login">
+      <% if @current_user %>
+        <li>Signed in as <strong><%= @current_user.username %></strong>!</li>
+        <li><%= link_to "Log out", logout_path, id: "sign_out" %></li>
+        <li><%= link_to "My Favorites (#{@current_user.favorites.length})", favs_path %></li>
+      <% else %>
+        <li><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></li>
+      <% end %>
+    </ul>
+
     <%= yield %>
   </body>
 </html>

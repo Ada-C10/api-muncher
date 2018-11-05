@@ -12,7 +12,13 @@ class User < ApplicationRecord
     unless self.favorites
       self.favorites = []
     end
-    
+
     self.favorites << uri
+    self.save
+  end
+
+  def remove(uri)
+    self.favorites.delete(uri)
+    self.save
   end
 end
