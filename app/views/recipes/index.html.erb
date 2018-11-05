@@ -1,13 +1,29 @@
-<h1>List of Recipies:</h1>
+<header>
+  <class="top_search">
+  <h1>Muncher</h1>
+  <div class="searchbar">
+    <div class="form-group">
+      <%= form_tag recipes_index_path, method: "get" do %>
+      <%= label_tag(:query, "Look Up Recipe:") %>
+      <%= text_field_tag(:query)%>
+      <%= submit_tag("Send", class: 'btn btn-default btn-submit') %>
+      <% end %>
+    </div>
+  </div>
+  </class>
+
+</header>
 
 <% if @recipes %>
-<ul>
+<ul class="index_container">
   <% @recipes.each do |recipe| %>
-  <li>
-    <%= recipe.name %>
+  <li class="recipe_card">
+    <h2><%= recipe.name %></h2>
     <img src=<%= recipe.image %> class="thumbnail_photo">
-    <li><%=link_to "More Info", recipes_show_path(recipe.name) %></li>
+    <%=link_to "More Info", recipes_show_path(recipe.name) %>
   </li>
   <% end %>
 </ul>
+</class>
+
 <% end %>
