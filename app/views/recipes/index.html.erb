@@ -1,12 +1,20 @@
-hello
-<br />
-<% @recipes.each do |recipe| %>
-<!-- encode :recipe show address using the name (remove spaces) -- or get an id? -->
-<%= link_to recipe.name, recipe_path(recipe.uri_num) %>
-<%= image_tag(recipe.photo, alt: "Food image: #{recipe.name}") %>
-<%= recipe.uri_num %>
+  <h2>Recipes found for: '<%=@search_term%>'</h2>
 
+<div class="recipes_container">
 
-<% end %>
+  <% @recipes.each do |recipe| %>
+ <div class="single_recipe_entry">
 
-<%= will_paginate @recipes %>
+    <div class="recipe_link"><%= link_to recipe.name, recipe_path(recipe.uri_num) %>
+    </div>
+    <div class="recipe_photo">
+    <%= image_tag(recipe.photo, alt: "Food image: #{recipe.name}") %>
+    </div>
+  </div>
+
+  <% end %>
+  </div>
+
+  <div class="pagination">
+    <%= will_paginate @recipes %>
+  </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ApiMuncher</title>
+    <title>Muncher</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,8 +17,8 @@
 
     <% unless current_page?(root_path) %>
   <header>
-    <nav class="navbar navbar-light bg-light navbar-expand-md fixed-top scrolling-navbar">
-        <h2 class="navbar-text pb-0"><%= link_to "Muncher", root_path %></h2>
+    <nav>
+        <h1><%= link_to "Muncher", root_path %></h1>
 <%= render partial: "search_form", locals: { action_type: "Search" } %>
     </nav>
   </header>
