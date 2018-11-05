@@ -3,9 +3,16 @@ class EdamamApiWrapper
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
 
-  def self.recipe_search(keyword)
+  def self.recipe_search(keyword, health_labels)
 
     url = BASE_URL + "?q=#{keyword}" + "&app_id=#{ID}" + "&app_key=#{KEY}" + "&to=100"  #search results max out at 100
+
+    if health_labels.any?
+      health_labels.each do |label|
+        url += "&health=#{label}"
+      end
+    end
+
     data = HTTParty.get(url)
     recipe_list = []
 
