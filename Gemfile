@@ -89,3 +89,5 @@ gem 'will_paginate-bootstrap'
 # gem 'kaminari'
 
 gem 'concurrent-ruby', '~> 1.0', '= 1.0.5'
+gem 'dotenv-rails'
+gem 'httparty'
