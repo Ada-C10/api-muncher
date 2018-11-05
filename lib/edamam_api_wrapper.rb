@@ -48,6 +48,9 @@ class EdamamApiWrapper
     # data = data.parsed_response
     if data
       return build_recipe(data[0])
+      # QUESTION: return argument error?
+    else
+      return nil
     end
 
   end
@@ -55,14 +58,17 @@ class EdamamApiWrapper
   private
 
   def self.build_recipe(recipe_hash)
-    return Recipe.new(
-      name: recipe_hash["label"],
-      url: recipe_hash["url"],
-      ingredients_list: recipe_hash["ingredientLines"], #array
-      dietary_info: recipe_hash["dietLabels"], #array
-      health_info: recipe_hash["healthLabels"], #array
-      photo: recipe_hash["image"],
-      uri_num: recipe_hash["uri"]
-    )
+    if recipe_hash
+      return Recipe.new(
+        name: recipe_hash["label"],
+        url: recipe_hash["url"],
+        ingredients_list: recipe_hash["ingredientLines"], #array
+        dietary_info: recipe_hash["dietLabels"], #array
+        health_info: recipe_hash["healthLabels"], #array
+        photo: recipe_hash["image"],
+        uri_num: recipe_hash["uri"]
+      )
+
+    end
   end
 end
