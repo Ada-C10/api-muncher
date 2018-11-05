@@ -8,13 +8,13 @@ class EdamamApiWrapper
 
   def self.find_recipes(query_type, query_string)
 
-    url = BASE_URL + '?'+ query_type + '=' + URI.encode(query_string)+ '&app_id=' + EDAMAM_APP_ID + '&app_key=' + EDAMAM_APP_KEY + '&from=0&to=1000'
+    #populates @response
+    get_message(query_type, query_string)
 
-    response = HTTParty.get(url)
-    if response.key? "hits"
-      return_recipes(response)
-    elsif response[0].key? "uri"
-      return_single_recipe(response[0])
+    if @response.key? "hits"
+      return_recipes(@response)
+    elsif @response[0].key? "uri"
+      return_single_recipe(@response)
     else
       return []
     end
@@ -22,17 +22,26 @@ class EdamamApiWrapper
 
   private
 
+  def self.get_message(query_type, query_string)
+
+    url = BASE_URL + '?'+ query_type + '=' + URI.encode(query_string)+ '&app_id=' + EDAMAM_APP_ID + '&app_key=' + EDAMAM_APP_KEY + '&from=0&to=1000'
+    
+    @response = HTTParty.get(url)
+    return @response.success?
+  end
+
+
   def self.return_single_recipe(api_params)
 
     if api_params
-      return Recipe.new(api_params["label"],
+      return Recipe.new(api_params[0]["label"],
         {
-          ingredients: api_params["ingredientLines"],
-          uri: api_params["uri"],
-          url: api_params["url"],
-          image_url: api_params["image"],
-          dietary_info: api_params["dietLabels"],
-          health_info: api_params["healthLabels"]
+          ingredients: api_params[0]["ingredientLines"],
+          uri: api_params[0]["uri"],
+          url: api_params[0]["url"],
+          image_url: api_params[0]["image"],
+          dietary_info: api_params[0]["dietLabels"],
+          health_info: api_params[0]["healthLabels"]
         }
       )
 
