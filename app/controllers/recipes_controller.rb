@@ -5,6 +5,7 @@ require 'will_paginate/array'
   end
 
   def index
+
     @keyword = params[:keyword]
     @health_labels = params_health_labels
 

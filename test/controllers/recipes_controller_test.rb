@@ -18,6 +18,14 @@ describe RecipesController do
       end
     end
 
+    it 'succeeds with valid search keyword and health label checkboxes' do
+      VCR.use_cassette('recipe_search') do
+        get recipes_path, params: {keyword: 'tofu', 'vegan' => '1', 'peanut-free' => '1', 'tree-nut-free' => '1'}
+
+        must_respond_with :success
+      end
+    end
+
     it 'responds with bad_request with invalid search keyword' do
       VCR.use_cassette('recipe_search') do
         get recipes_path, params: {keyword: 'qmwmemrmtmmtmy'}
