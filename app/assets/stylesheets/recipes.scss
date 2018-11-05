@@ -1,3 +1,54 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipes-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.index-container h3 {
+  text-align: center;
+}
+
+.page-links {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.pagination {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.title {
+  text-align: center;
+}
+
+.recipe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  align-items: center;
+}
+
+.detail-image {
+  grid-column: 1 / 2;
+  padding-left: 50px;
+  justify-self: end;
+  padding-right: 50px;
+  max-width: 100%;
+}
+
+.lists {
+  grid-column: 2 / 3;
+  padding-left: 50px;
+}
+
+.details-container {
+  flex: 1 0 auto;
+}
