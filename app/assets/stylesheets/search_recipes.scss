@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+// Search Form - Main page
+
 .new-form-container {
   background-image: image-url('main.jpg');
   background-size: cover;
@@ -24,17 +26,116 @@
   font-size: 200%;
 }
 
-.main-container {
-  margin: 7rem;
+
+
+// Header section
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(220,220,220,.7), rgba(220,220,220,.7)), image-url('main.jpg');
+  background-size: cover;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  color: rgb(5,54,9);
 }
 
-.card-title {
-  text-decoration: none;
+
+// Index page - all recipes
+
+.main-container {
+  margin: 8rem;
+}
+
+.main-container h1 {
   color: rgb(5,54,9);
+  margin-bottom: 1.5rem;
+}
+
+
+.card-title {
+  color: rgb(5,54,9);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(99,120,103);
+  text-decoration: none;
 }
 
 .pagination-container {
   display: flex;
   justify-content: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
+}
+
+.pagination-container a {
+  color: rgb(5,54,9);
+}
+
+
+// Show page - details
+
+.recipe-main-container {
+  display: grid;
+  grid-template-rows: 0.5 auto auto;
+  grid-template-columns: auto auto;
+  margin: 5rem;
+}
+
+.recipe-title {
+  display: grid;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.recipe-title a {
+  color: rgb(5,54,9);
+  text-decoration: none;
+}
+
+.recipe-title a:hover {
+  color: rgb(99,120,103);
+}
+
+.recipe-image {
+  display: grid;
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.recipe-ingredients {
+  display: grid;
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  list-style-type: none;
+  margin-left: 2rem;
+}
+
+.recipe-dietary-labels {
+  margin-top: 2rem;
+  display: grid;
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+
+// Footer section
+
+footer {
+  display: flex;
+  justify-content: center;
 }
