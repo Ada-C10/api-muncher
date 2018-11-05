@@ -16,6 +16,10 @@
           <form action="<%= recipe_searches_path %>" method="get" class="form search-history">
             <input type="hidden" name="q" value= "<%= query.q %>">
             <input type="submit" value="<%= query.search_term %>">
+
+            # TODO: Add models and relationships for health labels
+            # So user can click on a past search (filters and query) and replicate it
+
           </form>
         </li>
       <% end %>
