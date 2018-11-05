@@ -1,11 +1,20 @@
+<%= render partial: '/layouts/header' %>
+
+
+<section class="main-container">
+
+
 <h1>SHOW PAGE</h1>
 
 <ul>
 <li><%= @recipe.label %></li>
   <li><%= image_tag(@recipe.image) %></li>
-  <li><%= link_to "Original Recipe", @recipe.url %></li>
+  <li><%= link_to "Original Recipe", @recipe.url, target: :_blank %></li>
   <li><% @recipe.ingredients.each do |i|  %></li>
   <li><%= i %></li>
   <% end %>
-  
+
 </ul>
+
+
+</section>

@@ -1,3 +1,9 @@
+<%= render partial: '/layouts/header' %>
+
+<section class="main-container">
+
+
+
 <ul>
   <% @recipes.each do |recipe| %>
   <li> <%= link_to image_tag(recipe.image), recipe.url%> </li>
@@ -6,3 +12,6 @@
 </ul>
 
 <%= will_paginate @recipes %>
+
+
+</section>
