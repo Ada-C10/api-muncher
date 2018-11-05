@@ -67,6 +67,8 @@ gem 'bootstrap', '~> 4.1.3'
 group :development, :test do
   gem 'pry-rails'
   gem 'dotenv-rails'
+  gem 'minitest-vcr'
+  gem 'webmock'
 end
 
 group :development do
@@ -84,8 +86,3 @@ end
 gem 'httparty'
 
 gem 'will_paginate', "~> 3.0.4"
-
-group :development, :test do
-  gem 'minitest-vcr'
-  gem 'webmock'
-end
