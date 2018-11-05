@@ -1,0 +1,27 @@
+<%= render partial: "header_search" %>
+
+<section class="recipes-list-entry">
+  <h1>Results for <%= "#{@food_search}" %></h1>
+
+  <section class="d-flex flex-wrap d-flex justify-content-center">
+    <% if @recipes %>
+      <% @recipes.each do |recipe| %>
+        <div class="recipes-list-entry">
+          <p class="recipes-list-image">
+            <%= link_to image_tag(recipe.image, alt: "Recipe Image"), recipe_path(params: {uri: recipe.uri, label: recipe.label}) %>
+          </p>
+          <p class="recipes-list-title">
+            <%= link_to recipe.label, recipe_path(params: {uri: recipe.uri, label: recipe.label}) %>
+          </p>
+        </div>
+      <% end %>
+  </section>
+  <% else %>
+    <p>
+      No recipes match <%= "#{@food_search}" %>
+    </p>
+  <% end %>
+</section>
+<div class="digg_pagination">
+  <%= will_paginate @recipes, :container => false %>
+</div>

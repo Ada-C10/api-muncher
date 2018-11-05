@@ -1,0 +1,19 @@
+<div class="home d-flex flex-column text-center">
+  <div class="home-title text-center">
+    <h1>MUNCHER</h1>
+  </div>
+
+  <div class="home-search">
+    <%= form_tag(recipe_list_path, method: :get) do %>
+    <p class="search-text">
+      <%= label_tag(:food_search, "Find your flavor...") %>
+    </p>
+    <p class="search-box">
+      <%= text_field_tag(:food_search) %>
+    </p>
+    <p class="search-button">
+      <%= submit_tag("Search") %>
+    </p>
+  </div>
+  <% end %>
+</div>
