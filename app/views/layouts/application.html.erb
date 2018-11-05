@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  </head>
+
+
+  <body>
+    <header class="app-header__header">
+    <h1>
+      <a href="/">Recipe Search</a>
+
+      <small> Find your flavor</small>
+    </h1>
+
+    <section class="search_box">
+    <%= form_tag recipes_index_path, method: :get do %>
+     <%= label_tag(:message, "Enter search term") %>
+     <%= text_field_tag(:message) %>
+     <%= submit_tag("Send") %>
+   </section>
+
+    <% end %>
+  </header>
+
+    <% if flash.any? %>
+  <section class='alert__container'>
+    <% flash.each do |name, message| %>
+    <% if name == 'warning' || name == 'success' %>
+    <div class="alert alert-<%= name %> text-center">
+      <span><%= message %></span>
+      <% if flash[:message] %>
+      <ul>
+        <% flash[:message].each do |message|%>
+        <li class="error-list text-center">
+          <%= message %>
+        </li>
+        <%end%>
+      </ul>
+      <% end %>
+    </div>
+    <% end %>
+    <%end%>
+  </section>
+  <% end%>
+    <%= yield %>
+  </body>
+  <div id="edamam-badge" data-color="white"></div>
+</html>
