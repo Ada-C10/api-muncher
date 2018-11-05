@@ -2,8 +2,17 @@ class RecipesController < ApplicationController
 
   def index
     @search_term = params[:search_term]
-    @recipes = EdamamApiWrapper.list_recipes(@search_term).paginate(page: params[:page], per_page: 10)
+    recipes = EdamamApiWrapper.list_recipes(@search_term)
 
+    if recipes.length > 0
+
+
+    @recipes = recipes.paginate(page: params[:page], per_page: 10)
+  else
+    flash[:status] = :failure
+    flash[:result_text] = "No results match #{@search_term}"
+    redirect_to root_path
+  end
   end
 
   def search_splash
@@ -13,17 +22,23 @@ class RecipesController < ApplicationController
   def searcher
     # TODO: add flash messages
     # but also do i need this to be a post? can it be a get with the params in the form?
-    if params[:search_term]
+    # if params[:search_term]
       redirect_to recipes_path(search_term: params[:search_term])
-    else
-      redirect_to root_path
-    end
+    # else
+      # flash[:status] = :failure
+      # flash[:result_text] = "No results match #{@search_term}}"
+    # end
   end
 
   def show
-    # maybe call a method in the api wrapper to locate the recipe
     uri_num = params[:uri_num]
     @recipe = EdamamApiWrapper.show_single_recipe(uri_num)
+
+    if @recipe.nil?
+      flash[:status] = :failure
+      flash[:result_text] = "Cannot locate #{params[:uri_num]}"
+      redirect_to root_path
+    end
   end
 
 end
