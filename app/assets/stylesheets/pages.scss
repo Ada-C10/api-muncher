@@ -19,7 +19,7 @@ body {
   font-size: 4vw;
   font-weight: 900;
   font-family: Helvetica, sans-serif;
-  margin-bottom: 2vw;
+  margin: 1vw 0 1vw 1vw;
 }
 
 .logo a {
@@ -41,9 +41,8 @@ body {
 .search, .recent_searches {
   background-color: #fefefe;
   color: #111111;
-  padding: 2vw 3vw 2vw 3vw;
-  border-radius: 4px;
-  box-shadow: 1px 1px 5px #404040;
+  padding: 3vw 3vw 3vw 3vw;
+  border-radius: 1px;
   width: 33vw;
 }
 
