@@ -16,8 +16,13 @@
 @import "bootstrap";
 /* Import scss content */
 @import "**/*";
-
-
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive|Dancing+Script');
+body {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  padding: 0 1.5em 0 1.5em;
+  background-color: #fbe1e5;
+}
 .splash {
   background-image: image-url("cupcake.jpg");
   background-size: cover;
