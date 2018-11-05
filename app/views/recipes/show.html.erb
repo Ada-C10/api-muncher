@@ -1,0 +1,27 @@
+<h1><%= @recipe.name %></h1>
+<img src=<%= @recipe.image %> >
+
+By: <a href="<%=@recipe.url%>"> <%=@recipe.source%> </a>
+
+Yield: <%=@recipe.yield%> servings
+
+Ingredients:
+<% @recipe.ingredients.each do |ingredient| %>
+<ul><li>
+  <%= ingredient %>
+</li></ul>
+<% end %>
+
+Health Label:
+<% @recipe.labels.each do |label| %>
+<ul><li>
+  <%= label %>
+</li></ul>
+<% end %>
+
+Caution:
+<% @recipe.cautions.each do |caution| %>
+<ul><li>
+  <%= caution %>
+</li></ul>
+<% end %>

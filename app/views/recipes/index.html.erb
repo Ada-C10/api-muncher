@@ -1,0 +1,13 @@
+<h1>List of Recipies:</h1>
+
+<% if @recipes %>
+<ul>
+  <% @recipes.each do |recipe| %>
+  <li>
+    <%= recipe.name %>
+    <img src=<%= recipe.image %> class="thumbnail_photo">
+    <li><%=link_to "More Info", recipes_show_path(recipe.name) %></li>
+  </li>
+  <% end %>
+</ul>
+<% end %>

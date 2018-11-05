@@ -1,6 +1,8 @@
 require 'httparty'
 
 class EdamamApiWrapper
+
+  attr_reader :recipe_list
   BASE_URL = "https://api.edamam.com/search?q="
   APP_KEY = ENV["EDAMAM_KEY"]
   APP_ID = ENV["EDAMAM_ID"]
@@ -8,16 +10,24 @@ class EdamamApiWrapper
   def self.list_recipes(query)
     url = BASE_URL + query + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
     data = HTTParty.get(url)
-    recipe_list = []
+    @recipe_list = []
 
     if data["hits"]
       data["hits"].each do |recipe_data|
-        recipe_list << create_recipe(recipe_data)
+        @recipe_list << create_recipe(recipe_data)
       end
     end
-
-    return recipe_list
+    return @recipe_list
   end
+
+  def self.find_recipe(recipe)
+    @recipe_list.each do |r|
+      if r.name == recipe
+        return r
+      end
+    end
+  end
+
 
   private
 
