@@ -1,5 +1,5 @@
 class RecipeSearchesController < ApplicationController
-  skip_before_action :require_login, only: [:home]
+  skip_before_action :require_login
 
   def home
   end

@@ -1,4 +1,5 @@
 class QueriesController < ApplicationController
+
   def create
   end
 
