@@ -1,8 +1,8 @@
-<h1>Send Message to <span class="channel-name"> <%= @channel %></span> </h1>
 
-<%= form_with url: recipes_index_path, method: "get" do |form| %>
-  <%= label_tag(:query, "Search for a recipe") %>
-  <%= form.text_field :query %>
-  <%= form.submit "Search" %>
+
+<%= form_tag recipes_index_path, method: "get" do %>
+  <%= label_tag(:query, "Search") %>
+  <%= text_field_tag(:query) %>
+  <%= submit_tag("Send") %>
 
 <% end %>
