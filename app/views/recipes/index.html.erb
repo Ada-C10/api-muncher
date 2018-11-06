@@ -1,8 +1,5 @@
 
 
-<%= form_tag chat_create_path(@channel), method: "post" do %>
-  <%= label_tag(:query, "Enter Message") %>
-  <%= text_field_tag(:query) %>
-  <%= submit_tag("Send") %>
-
+<% @recipies.each do |recipe| %>
+  <li> <%= "#{recipe.label}" %> </li>
 <% end %>

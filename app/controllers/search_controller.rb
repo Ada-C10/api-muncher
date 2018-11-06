@@ -1,9 +1,13 @@
 class SearchController < ApplicationController
-after_action :user_query, only: :new
+# after_action :user_query, only: :new
 
 
   def create
-    #when search happens
+    if EdamamApiWrapper.search_recipes(@query)
+      redirect_to recipes_index_path
+    else
+      flash.now[:warning] = "Didn't work"
+    end
   end
 
   def new; end

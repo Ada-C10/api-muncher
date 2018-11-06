@@ -4,12 +4,13 @@ describe EdamamApiWrapper do
   let (:query) { "eggplant" }
 
   describe "search recipes method" do
+
     it 'can send out a search query' do
       VCR.use_cassette('search_list') do
         data = EdamamApiWrapper.search_recipes(query)
 
-        expect(data["count"]).must_be :>, 0
-        expect(data["count"]).wont_equal nil
+        expect(data.count).must_be :>, 0
+        expect(data.count).wont_equal nil
       end
     end
 
@@ -17,15 +18,32 @@ describe EdamamApiWrapper do
       VCR.use_cassette('search_list') do
         data = EdamamApiWrapper.search_recipes(query)
 
-        expect(data['params']['q']).must_include query
+        first = data.first
+        last = data.last
+
+        expect(first.title.downcase).must_include "eggplant"
+        expect(last.title.downcase).must_include "eggplant"
       end
     end
 
     it 'returns a list of recipes' do
       VCR.use_cassette('search_list') do
         data = EdamamApiWrapper.search_recipes(query)
-        
-        expect(data['hits'].count).must_equal 10
+
+        expect(data.count).must_equal 10
+
+        data.each do |recipe|
+          expect(recipe).must_respond_to :title
+          expect(recipe).must_respond_to :photo
+          expect(recipe).must_respond_to :ingredients
+          expect(recipe).must_respond_to :recipe_id
+          expect(recipe).must_respond_to :servings
+          expect(recipe).must_respond_to :restrictions
+          expect(recipe).must_respond_to :diet
+          expect(recipe).must_respond_to :prep_time
+          expect(recipe).must_respond_to :calorie_count
+          expect(recipe).must_respond_to :restrictions
+        end
       end
     end
 
@@ -41,17 +59,26 @@ describe EdamamApiWrapper do
 
     it 'returns one recipe' do
       VCR.use_cassette('single_recipe') do
-        recipe = EdamamApiWrapper.get_one_recipe(uri)
+        recipe = EdamamApiWrapper.recipe_contents(uri)
 
-        expect(recipe.count).must_equal 1
-        expect(recipe[0]["uri"]).must_include uri
-        expect(recipe[0]["label"]).must_include "Spicy Eggplant"
+        expect(recipe).must_be_instance_of Recipes
+        expect(recipe.recipe_id).must_include uri
+        expect(recipe.title).must_include "Spicy Eggplant"
+
+        expect(recipe).must_respond_to :photo
+        expect(recipe).must_respond_to :ingredients
+        expect(recipe).must_respond_to :servings
+        expect(recipe).must_respond_to :restrictions
+        expect(recipe).must_respond_to :diet
+        expect(recipe).must_respond_to :prep_time
+        expect(recipe).must_respond_to :calorie_count
+        expect(recipe).must_respond_to :restrictions
       end
     end
 
       it 'returns false for incorrect input' do
         VCR.use_cassette('bogus_single_recipe_input') do
-          expect(EdamamApiWrapper.get_one_recipe("potatoes")).must_equal false
+          expect(EdamamApiWrapper.recipe_contents("potatoes")).must_equal false
         end
       end
 
