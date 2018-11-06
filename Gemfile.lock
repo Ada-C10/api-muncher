@@ -270,6 +270,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chromedriver-helper
+  concurrent-ruby (~> 1.0, = 1.0.5)
   dotenv-rails
   guard
   guard-minitest
