@@ -1,0 +1,56 @@
+
+<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">MUNCHER</a>
+  <div class="nav app-header__user-nav-container right-items">
+    <%= form_tag recipes_path, method: :get do %>
+      <%= label_tag(:query, "Dont see something you like, search again?", class: "label_tag") %>
+      <%= text_field_tag(:query) %>
+      <%= submit_tag "Search", class: "btn btn-outline-warning btn-rounded btn-sm my-0" %>
+      <% end %>
+    </div>
+</nav>
+
+  <h1 id="recipe_results">Your Recipe Results</h1>
+
+  <% if @recipes.empty? %>
+  <div class="center_nil">
+  <p>Looks like there were no results for your search. Discover something scrumptious and search again.</p>
+  </div>
+<% else %>
+
+<div class="container">
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+        <div class="col-md-3 col-sm-6">
+            <div class="product-grid6">
+              <div class="product-image6">
+                <%= link_to image_tag(recipe.image), show_path(recipe.uri)%>
+              </div>
+              <div class="product-content">
+                <h3 class="title"><%= link_to recipe.label, show_path(recipe.uri) %></h3>
+              <div class="health_list">
+                <% recipe.health.each do |list| %>
+                    <ul class="health">
+                        <li class="health_list"><%= list %></li>
+                    </ul>
+                    <% end %>
+                  </div>
+                </div>
+
+              <ul class="social">
+                <p> Not use what you ingredients you need? Get the full list of ingredient with one click away. </p>
+                <%= link_to "View Full Recipe", show_path(recipe.uri), class: "btn btn-primary" %>
+              </ul>
+            </div>
+          </div>
+    <% end %>
+    <%end%>
+    </div>
+  </div>
+</div>
+
+<div class="center_pag">
+<%= will_paginate @recipes, renderer: BootstrapPagination::Rails %>
+</div>
+
+</body>
