@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  </head>
+  <section>
+    <%= form_tag recipes_path, method: :get do %>
+      <%= label_tag(:food, "Enter Food") %>
+      <%= text_field_tag(:food) %>
+      <%= submit_tag("Send") %>
+
+    <% end %>
+  </section>
+
+  <body>
+    <%= yield %>
+  </body>
+  <footer>
+    <div id="edamam-badge" data-color="white"></div>
+  </footer>
+</html>
