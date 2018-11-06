@@ -1,0 +1,13 @@
+<section class="recipe-list">
+
+  <h1>Muncher <span class="recipe-title"></span> </h1>
+
+  <div class = "form_d">
+    <%= form_tag recipes_path(@recipes), method: "get" do %>
+      <%= label_tag(:title, "Find your flavor") %>
+      <%= text_field_tag(:title) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+
+</section>

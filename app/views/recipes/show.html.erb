@@ -1,0 +1,40 @@
+<div class = "show_page">
+
+<% if @recipe.nil? %>
+  <h4> 404 Not found: This recipe does not exist.</h4>
+<% else %>
+
+  <secion class = "container">
+   <div class="col-md-10">
+     <div class="media">
+       <div class = "media-left">
+         <p class = "media-object"><%= image_tag(@recipe.image)%></p>
+       </div>
+       <div class ="media-body">
+         <p><strong>Recipe Name: <%=@recipe.label%></strong></p>
+         <p class = "ingredients">
+           <h6>Ingredients:</h6>
+           <ul>
+            <% @recipe.ingredients.each do |ing| %>
+              <li><%= ing %></li>
+            <%end%>
+           </ul>
+        </p>
+
+        <p class = "dietaries">
+          <h6>Diataries:</h6>
+          <ul>
+            <% @recipe.dietaries.each do |diet| %>
+              <li><%= diet %></li>
+            <%end%>
+         </ul>
+       </p>
+
+       <p><%= link_to "view original recipe", href = @recipe.url, target: :_blank %></p>
+     </div>
+    </div>
+    </div>
+ </secion>
+<%end%>
+
+</div>

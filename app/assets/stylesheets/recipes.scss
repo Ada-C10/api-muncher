@@ -1,0 +1,26 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+
+}
+
+.show_page {
+  margin: 5%;
+
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+.media-left {
+  margin-right:  5%;
+}
