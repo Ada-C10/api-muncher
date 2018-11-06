@@ -10,7 +10,8 @@
     <%= favicon_link_tag(source="favicon.ico", options={})%>
   </head>
 
-
+  <body>
+    
     <nav class="navbar navbar-dark bg-dark sticky-top">
       <h1><%= link_to "munchbot-2000", root_path, class: "nav-link"%></h1>
 
@@ -34,7 +35,7 @@
 
 
 
-  <body>
+
     <%= yield %>
   </body>
 
