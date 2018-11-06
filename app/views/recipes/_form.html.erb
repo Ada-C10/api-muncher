@@ -1,0 +1,5 @@
+<%= form_tag recipes_index_path, method: :get do %>
+<%= label_tag(:recipes, "find your flavor") %>
+<%= text_field_tag(:recipes) %>
+<%= submit_tag("Search") %>
+<% end %>

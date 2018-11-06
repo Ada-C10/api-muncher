@@ -1,0 +1,43 @@
+
+<header>
+  <h1 class="site-name"><%= link_to "Muncher", root_path %></h1>
+  <section class="other-pg-search">
+    <!-- couldn't get this form to submit the
+    params correctly for a new search
+    it would only keep the original
+    search word as its params for a query -->
+    <%= render partial: "form", post: @search %>
+  </section>
+  <section class="other-pg-error-msg">
+  <%= flash[:error] %>
+</section>
+</header>
+
+<h2 id="show-result">Results for "<%= "#{@search_term}" %>"</h2>
+
+<%= will_paginate @recipes %>
+
+<section>
+  <div class="card-group">
+    <div class="card mb-3" style="width: 30rem;">
+
+      <ul>
+
+        <% @recipes.each do |recipe| %>
+        <li>
+
+          <%= link_to(image_tag("#{recipe.photo}", class: "card-img-top", alt: "picture of recipe.name"), recipe_show_path(recipe.id)) %>
+          <div class="card-body">
+            <p class="card-title">
+              <%= "#{recipe.name}" %>
+            </p>
+          </div>
+        </li>
+
+
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</section>

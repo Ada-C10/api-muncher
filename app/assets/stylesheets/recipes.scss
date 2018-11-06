@@ -1,0 +1,75 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-family: 'Concert One', cursive;
+  font-size: 2em;
+}
+
+h1, h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root-pg-h1 {
+  position: fixed;
+  top: 8%;
+  left: 28%;
+  font-size: 10em;
+}
+
+#root-pg-h2 {
+  top: 40%;
+  left: 44%;
+  position: fixed;
+  margin-top: 1em;
+}
+
+.main-pg-error-msg {
+  display: flex;
+  justify-content: center;
+  margin-top: 15em;
+}
+
+.other-pg-error-msg {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+}
+
+.site-name {
+  font-size: 5em;
+}
+
+.root-pg-search {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.other-pg-search {
+  display: flex;
+  justify-content: center;
+}
+
+#show-result {
+  padding-top: 3em;
+}
+
+section div > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+section > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+}

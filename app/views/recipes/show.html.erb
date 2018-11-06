@@ -1,0 +1,41 @@
+<header>
+  <h1 class="site-name"><%= link_to "Muncher", root_path %></h1>
+  <section class="other-pg-search">
+    <!-- couldn't get this form to submit the
+    params correctly for a new search
+    it would only keep the original
+    search word as its params for a query -->
+    <%= render partial: "form", post: @search %>
+  </section>
+</header>
+
+<section id="show-result">>
+<h1><%= @recipe.name %></h1>
+<h2>by  <%= link_to @recipe.source, @recipe.original_recipe, target: :_blank  %></h2>
+
+<ul>
+  <li>
+    <%= image_tag("#{@recipe.photo}", :alt => "photo of recipe") %>
+  </li>
+  <li>
+    <ul>
+      Ingredients
+    <% @recipe.ingredients.each do |ingredient| %>
+    <li>
+      <%= ingredient %>
+    </li>
+    <% end %>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      Dietary Labels
+    <% @recipe.diet_labels.each do |label| %>
+    <li>
+      <%= label %>
+    </li>
+    <% end %>
+    </ul>
+  </li>
+</ul>
+</section>
