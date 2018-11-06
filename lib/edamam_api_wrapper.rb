@@ -38,7 +38,7 @@ class EdamamApiWrapper
     end
 
     recipe = single_recipe(data[0])
-    # recipe << arrange_recipe(data)
+
     return recipe
   end
 
@@ -59,6 +59,7 @@ class EdamamApiWrapper
     api_params["healthLabels"],
     api_params["calories"],
     api_params["totalTime"],
+    api_params["url"]
   )
 
 
@@ -79,6 +80,7 @@ class EdamamApiWrapper
     api_params["recipe"]["healthLabels"],
     api_params["recipe"]["calories"],
     api_params["recipe"]["totalTime"],
+    api_params["recipe"]["url"],
   )
 
   end
