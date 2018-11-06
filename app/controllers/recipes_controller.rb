@@ -15,11 +15,12 @@ class RecipesController < ApplicationController
       redirect_to root_path
     else
 
-    @recipes = EdamamApiWrapper.find_recipes('q', @dish.strip)
-    if @recipes.empty?
+    recipes = EdamamApiWrapper.find_recipes('q', @dish.strip)
+    if recipes.empty?
       flash[:error] = "Sorry, something went wrong. No recipes found for #{@dish}. Try another search."
       redirect_to root_path
     else
+      @recipes = Kaminari.paginate_array(recipes).page(params[:page]).per(10)
       render :index
       #list recipes
     end

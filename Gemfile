@@ -88,3 +88,6 @@ end
 
 gem 'httparty'
 gem 'dotenv-rails'
+
+#Kaminari paginate
+gem 'kaminari'

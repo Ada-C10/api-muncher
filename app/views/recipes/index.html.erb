@@ -1,16 +1,21 @@
 <div class="list-container">
   <h1>Results for: <%= @dish%><%=" "%><%= "(#{@recipes.length})"%></h1>
-<ul>
-<div class="row">
-  <% @recipes.each do |recipe| %>
-  <div class="col-sm">
-  <li><strong><%= recipe.name %></strong></li>
-  <li><%= image_tag recipe.image_url %></li>
-  <li><%= link_to "See Recipe", show_recipe_path(uri: recipe.uri)%></li>
+
+    <div class="row">
+      <section>
+        <%= paginate @recipes %>
+      </section>
+      <%= @recipes.each do |recipe| %>
+      <div class="col-sm">
+          <ul>
+        <li><strong><%= recipe.name %></strong></li>
+        <li><%= image_tag recipe.image_url %></li>
+        <li><%= link_to "See Recipe", show_recipe_path(uri: recipe.uri)%></li>
+          </ul>
+      </div>
+      <%end%>
     </div>
-  <%end%>
-  </div>
-</ul>
+
 </div>
 
 <%= render partial: 'layouts/footer_attribution' %>
