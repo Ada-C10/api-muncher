@@ -11,14 +11,15 @@ class RecipesController < ApplicationController
   end
 
   def search
-    @search = params[:recipes]
-    if @search
+    search = params[:recipes]
+    if search
       redirect_to recipes_index_path(params[:recipes])
       return
     end
   end
 
   def show
+    # binding.pry
     @recipe = EdamamApiWrapper.show_recipe(params[:recipe])
     if @recipe.nil?
       # binding.pry
