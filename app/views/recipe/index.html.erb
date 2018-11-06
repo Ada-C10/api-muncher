@@ -9,7 +9,7 @@
 
         <%= recipe.label %>
         <% parsed_url = recipe.uri.partition('#').last %></li>
-        <li class="list"><%= link_to recipe.uri, recipe_path(parsed_url)%></li>
+        <li class="list"><%= link_to "Recipe's Detail", recipe_path(parsed_url)%></li>
       </div>
     </div>
     <% end %>

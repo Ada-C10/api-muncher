@@ -12,7 +12,7 @@ class EdamamApiWrapper
     if data["hits"]
       data["hits"].each do |recipe_data|
         recipe_list << create_recipe(recipe_data)
-      end
+      end  
       return recipe_list #returns list of recipes from api
     else
       ArgumentError

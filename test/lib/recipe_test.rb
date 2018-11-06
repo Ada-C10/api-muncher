@@ -21,11 +21,11 @@ describe Recipe do
     }.must_raise ArgumentError
   end
 
-  it "properly sets non-initialized parameters" do
-    my_recipe = Recipe.new('url', 'pie', 2, 'jpeg', [], [], [], 4)
+  it "optional parameters get set properly" do
+    my_recipe = Recipe.new('url', label: 'pie', serving: 2, image: 'jpeg', dietLabels: [], healthLabels: [], ingredients: [], calories: 4)
 
     expect(my_recipe.image).must_equal 'jpeg'
-    expect(my_recipe.serving).must_equal 2
+    expect(my_recipe.yield).must_equal 2
     expect(my_recipe.dietLabels).must_equal []
     expect(my_recipe.ingredients).must_equal []
     expect(my_recipe.calories).must_equal 4
