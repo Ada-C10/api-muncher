@@ -3,7 +3,8 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = EdamamApiWrapper.search_recipes(@query)
-
+    # .paginate(params[:page], per_page: 10)
+    binding.pry
     if @recipes == false
       flash.now[:errror] = "Sorry, there are no recipes for that ingredient."
     end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ApiMuncher</title>
+    <title>chomp crunch munch: ApiMuncher</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,6 +12,8 @@
   <body>
 
     <header>
+      <h1 class = ""> chomp crunch munch </h1>
+
       <nav>
         <% if session[:user_id] %>
             <%= link_to "Log out", logout_path, method: "delete"   %> <!-- change log in to log out -->
@@ -19,6 +21,7 @@
             <%= link_to "Login with Github", "/auth/github" %> <!-- show log-in button -->
         <% end %>
       </nav>
+
     </header>
 
       <section class="flash">
