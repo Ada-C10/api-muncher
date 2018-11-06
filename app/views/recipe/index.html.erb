@@ -1,7 +1,6 @@
 <section class="container">
   <h1><strong>List of Recipes</strong>
   </h2>
-
   <div class="flex-container">
     <% @recipes.each do |recipe| %>
     <div class="card">
@@ -14,5 +13,10 @@
       </div>
     </div>
     <% end %>
+    <section>
+      <%= page_entries_info @recipes %>
+      <%= will_paginate @recipes, container: false %>
+    </section>
   </div>
+
 </section>

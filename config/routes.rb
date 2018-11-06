@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'recipe#home'
 
-  post '/recipes', to: 'recipe#index', as: 'recipes'
+  get '/recipes', to: 'recipe#index', as: 'recipes'
   get '/recipe/:uri', to: 'recipe#show', as: 'recipe'
   # get ':recipe/new', to: 'recipe#new', as: 'recipe_new_'
   # post ':recipe', to: 'recipe#create', as: 'recipe_create'

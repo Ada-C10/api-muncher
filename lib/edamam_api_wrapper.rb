@@ -6,7 +6,7 @@ class EdamamApiWrapper
   APP_KEY = ENV["EDAMAM_APPLICATION_KEYS"]
 
   def self.search(food)
-    url = BASE_URL  + "q=#{food}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}"
+    url = BASE_URL  + "q=#{food}" + "&app_id=#{APP_ID}" + "&app_key=#{APP_KEY}&@from=0&to=50"
     data = HTTParty.get(url) #use httparty to send of the url
     recipe_list = []
     if data["hits"]
