@@ -1,0 +1,53 @@
+<%= render partial: '/layouts/header' %>
+
+<section class="main-container">
+
+  <section class="recipe-main-container">
+
+    <div class="recipe-title">
+      <h1><%= @recipe.label %></h1>
+      <h3><%= link_to "By: #{@recipe.source}", @recipe.url, target: :_blank %></h3>
+    </div>
+
+    <div class="recipe-image">
+      <%= image_tag(@recipe.image) %>
+    </div>
+
+    <div class="recipe-ingredients">
+      <ul>
+        <h3>Ingredients</h3>
+        <% @recipe.ingredients.each do |i| %>
+        <li><%= i %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="recipe-dietary-labels">
+      <h2><%= "Dietary Information" %></h2>
+      <br>
+      <ul>
+        <li><%= "Calories: #{@recipe.calories.round(2)}" %></li>
+
+        <br>
+        <% if @recipe.diet_labels.first %>
+        <li><h5><%= "Diet Labels:" %></h5></li>
+        <% @recipe.diet_labels.each do |label| %>
+        <li><%= label %></li>
+        <% end %>
+        <% end  %>
+
+        <br>
+        <% if @recipe.health_labels.first %>
+        <li><h5><%= "Health Labels:" %></h5></li>
+        <% @recipe.health_labels.each do |label| %>
+        <li><%= label %></li>
+        <% end %>
+        <% end  %>
+      </ul>
+    </div>
+
+
+  </section>
+
+
+</section>

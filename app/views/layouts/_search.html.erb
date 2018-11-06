@@ -1,0 +1,8 @@
+<div class="input-group">
+<%= form_tag(search_recipes_path, method: "get", id: "search-form", class: "form-inline my-2 my-lg-0") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "What are you craving?", class: 'form-control mr-sm-2' %>
+  <span class="input-group-btn">
+    <%= submit_tag "Search", class: 'btn btn-sm btn-light' %>
+  </span>
+<% end %>
+</div>

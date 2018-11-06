@@ -1,0 +1,28 @@
+<%= render partial: '/layouts/header' %>
+
+<section class="main-container">
+
+  <h1><%= "Results for '#{params[:search]}' " %></h1>
+
+  <div class="card-columns">
+
+    <% @recipes.each do |recipe| %>
+
+    <div class="card" style="width: 12rem;">
+      <a href="<%= search_recipe_path(recipe.uri.fragment)%>">
+        <img class="card-img-top" src="<%= recipe.image %>" alt="food image for recipe">
+        <div class="card-body">
+          <h5 class="card-title"><%= recipe.label %></h5>
+        </div>
+      </a>
+    </div>
+
+    <% end %>
+  </div>
+
+  <div class="pagination-container">
+    <%= will_paginate @recipes %>
+  </div>
+
+
+</section>
