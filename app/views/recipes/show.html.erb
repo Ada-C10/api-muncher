@@ -1,0 +1,40 @@
+<div class="container" id="recipe_information_wrapper">
+  <%= render partial: "searchbar" %>
+
+  </section>
+
+  <section id="recipe_information">
+
+    <section id="recipe_basics">
+      <h1><%= @name %></h1>
+      <h2><%= "Recipe by: #{@creator}" %></h2>
+      <img class="image-thumbnail" src= <%= "#{@photo}"%> alt="#{recipe.name}">
+      <%= link_to "See Original Recipe", @url, class: "btn btn-primary" , target: :_blank %>
+    </section>
+
+    <section id="recipe_details">
+      <section id="diet_labels_container">
+        <h3><%= "Diet Types" %></h3>
+        <ul id="diet_label_list">
+          <% @dietLabels.each do |label| %>
+            <li>
+              <%= label %>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+
+      <section id="ingredients_container">
+        <h3><%= "Ingredients" %></h3>
+        <ul id="ingredient_list">
+          <% @ingredients.each do |ingredient| %>
+            <li>
+              <%= ingredient["text"] %>
+            </li>
+
+          <% end %>
+        </ul>
+      </section>
+    </section>
+  </section>
+</div>

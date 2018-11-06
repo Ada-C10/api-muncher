@@ -1,0 +1,23 @@
+<%= render partial: "searchbar" %>
+
+<%= paginate @recipes %>
+<section id="recipe_results">
+
+  <h1><%= "Recipes for #{params["search_terms"].capitalize}" %></h1>
+  <% if @recipes %>
+    <div class="recipe_container">
+        <% @recipes.each do |recipe| %>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src= <%= "#{recipe.image}"%> alt="#{recipe.name}">
+            <div class="card-body">
+              <h5 class="card-title"> <%= "#{recipe.name}" %> </h5>
+              <%= link_to "See Recipe", recipe_path( recipe.id ), class: "btn btn-primary"  %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+
+  <% else %>
+    <h1>Sorry, no results found</h1>
+  <% end %>
+</section>

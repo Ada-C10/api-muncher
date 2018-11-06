@@ -1,0 +1,10 @@
+<div class="container" id="homepage_container">
+  <h1>Recipe Finder</h1>
+  <%= form_tag recipe_index_path, method: :get do %>
+  <!-- # recipe_index_path, method: "get" do  -->
+  <%# label_tag(:search_terms, "Enter Ingredient") %>
+    <%= text_field_tag ( :search_terms ) %>
+    <%= submit_tag ( "Search" ) %>
+  <% end %>
+  <div id="edamam-badge" data-color="transparent"></div>
+</div>
