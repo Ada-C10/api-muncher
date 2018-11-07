@@ -1,0 +1,25 @@
+<section class=homepage>
+
+  <h3>welcome to munchbot</h3>
+  <p></p>
+  <p class= "text-center">
+    <% output = "" %>
+    <% 200.times do %>
+    <% output += '0 1 ' %>
+    <% end %>
+    <% output += '0 beep beep boop boop 0' %>
+    <% 200.times do %>
+    <% output += ' 1 0' %>
+    <% end %>
+    <% output += ' enter search term ' %>
+    <% 200.times do %>
+    <% output += '0 1 ' %>
+    <% end %>
+    <% output += '0 end of message 0' %>
+    <% 400.times do %>
+    <% output += ' 1 0' %>
+    <% end %>
+    <%= output %>
+  </p>
+
+</section>

@@ -1,0 +1,39 @@
+<% if @recipe %>
+  <h1 class='text-center'><%= @recipe.label.downcase %></h1>
+  <br>
+  <br>
+  <section class='recipe_show'>
+    <section class='recipe_photo'>
+      <div class='text-center'><img src=<%= @recipe.image %>></div>
+      <a href=<%=@recipe.url%> class='text-center recipe_link', target="_blank" >view recipe source</a>
+    </section>
+
+    <section class='recipe_details'>
+      <figure>
+        <figcaption>ingredients</figcaption>
+          <ul>
+            <% @recipe.ingredientLines.each do |ingredient| %>
+              <li><%=ingredient%></li>
+            <% end %>
+          </ul>
+      </figure>
+      <br>
+      <figure>
+        <figcaption>dietary considerations</figcaption>
+          <ul>
+            <% @recipe.healthLabels.each do |label| %>
+              <li><%=label%></li>
+            <% end %>
+          </ul>
+      </figure>
+    </section>
+  </section>
+<% else %>
+  <section class='not_found'>
+    <p class='text-center'>0101010101010101010 recipe does not compute 0101010101010101010</p>
+    <br>
+    <p class='text-center'>010 beep beep boop 010101010101010101010 try again 010100101010</p>
+    <br>
+    <p class='text-center'>0101010101010101010101010101010101010101 end of message 0101010</p>
+  </section>
+<% end %>

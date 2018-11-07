@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MunchBot-2000</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag(source="favicon.ico", options={})%>
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+      <h1><%= link_to "munchbot-2000", root_path, class: "nav-link"%></h1>
+
+
+      <%= form_tag recipes_path, method: :get, id:"search_form" do %>
+        <div id="submit_button">
+          <%= text_field_tag :keyword %>
+          <%= submit_tag "recipe search", class: 'submit' %>
+        </div>
+
+        <div id="health_labels">
+          <% @HEALTH_LABELS.reverse.each do |label| %>
+            <p><%= check_box_tag(label) %>
+            <%= label_tag(label, nil, class: 'label')  %></p>
+          <% end %>
+        </div>
+
+      <% end %>
+    </nav>
+
+
+
+
+
+    <%= yield %>
+  </body>
+
+  <footer class="bg-dark">
+    <div class= "text-center" id="edamam-badge" data-color="light">
+      <a href="https://www.edamam.com" title="Powered by Edamam" target="_blank">
+      <img alt="Powered by Edamam" src="https://developer.edamam.com/images/light.png" height="40" width="200">
+      </a>
+    </div>
+  </footer>
+</html>

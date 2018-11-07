@@ -1,0 +1,94 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pagination {
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+figcaption, .pagination *, .not_found p, .card-title {
+  font-size: 1.2rem;
+}
+
+
+.recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+* {
+  font-family: monospace;
+  color: black;
+}
+
+h1, h2, h3 {
+  font-family: monospace;  //for some reason not inheriting this from above *
+}
+
+nav {
+  margin-bottom: 50px;
+}
+
+nav h1 a, .pagination li a, .recipe_link, .label {
+  color: tomato;
+}
+
+.nav-link:hover, .pagination li a:hover, .recipe_link:hover, .label:hover{
+  color: lightgreen;
+  text-decoration: none;
+}
+
+.submit:hover {
+  background-color: darkgrey;
+}
+
+#health_labels {
+  overflow: auto;
+  width:160px;
+  height:70px;
+}
+
+#search_form {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+#submit_button {
+  padding-right: 30px;
+}
+
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#edamam-badge {
+  padding: 15px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.recipe_show {
+  display: grid;
+  grid-column-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.recipe_photo {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
