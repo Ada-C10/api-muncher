@@ -4,8 +4,8 @@ class EdamamWrapper
   class EdamamError < StandardError; end
 
   BASE_URL = "https://api.edamam.com/search"
-  ID = ENV["MUNCHER_ID"]
-  KEY = ENV["MUNCHER_KEYS"]
+  ID = ENV["APP_ID"]
+  KEY = ENV["APP_KEYS"]
 
   def self.search_recipes(query)
     url = BASE_URL + "?q=#{query}" + "&app_id=#{ID}" + "&app_key=#{KEY}" + "&from=0" + "&to=50"
