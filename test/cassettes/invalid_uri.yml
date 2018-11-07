@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.edamam.com/search?app_id=<EDAMAM_APP_ID>&app_key=<EDAMAM_APP_KEY>&from=0&r=burger&to=1000
+    uri: https://api.edamam.com/search?app_id=<EDAMAM_APP_ID>&app_key=<EDAMAM_APP_KEY>&from=0&r=http://url.com&to=1000
     body:
       encoding: US-ASCII
       string: ''
@@ -21,24 +21,24 @@ http_interactions:
       Server:
       - ngx_openresty
       Date:
-      - Mon, 05 Nov 2018 17:47:12 GMT
+      - Wed, 07 Nov 2018 04:42:44 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '1'
+      - '2'
       Connection:
       - keep-alive
       Set-Cookie:
-      - route=e631c7ba5082b8aedfb6e067f8f8e739; Path=/
+      - route=8e5a812ca79b4bbf3e9a7ba3906de9f3; Path=/
       Cache-Control:
       - private
       Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
       X-Served-By:
-      - ip-10-157-133-209/10.157.133.209
+      - ip-10-140-213-39/10.140.213.39
     body:
       encoding: UTF-8
-      string: "["
+      string: "[]"
     http_version: 
-  recorded_at: Mon, 05 Nov 2018 17:47:12 GMT
+  recorded_at: Wed, 07 Nov 2018 04:42:45 GMT
 recorded_with: VCR 4.0.0

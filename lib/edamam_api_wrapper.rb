@@ -6,21 +6,30 @@ class EdamamApiWrapper
   EDAMAM_APP_ID = ENV['EDAMAM_APP_ID']
   EDAMAM_APP_KEY = ENV['EDAMAM_APP_KEY']
 
+  def self.query_search(term)
+    return self.find_recipes("q", term)
+  end
+
+  def self.uri_search(uri)
+    result = self.find_recipes("r", uri)
+    return result == [] ? nil : result
+  end
+
+  private
+
   def self.find_recipes(query_type, query_string)
 
     #populates @response
     get_message(query_type, query_string)
-
-    if @response.key? "hits"
+    if @response.empty?
+      return []
+    elsif @response.key? "hits"
       return_recipes(@response)
     elsif @response[0].key? "uri"
       return_single_recipe(@response)
-    else
-      return []
     end
   end
 
-  private
 
   def self.get_message(query_type, query_string)
 

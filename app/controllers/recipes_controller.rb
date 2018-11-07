@@ -15,16 +15,16 @@ class RecipesController < ApplicationController
       redirect_to root_path
     else
 
-    recipes = EdamamApiWrapper.find_recipes('q', @dish.strip)
-    if recipes.empty?
-      flash[:error] = "Sorry, something went wrong. No recipes found for #{@dish}. Try another search."
-      redirect_to root_path
-    else
-      @recipes = Kaminari.paginate_array(recipes).page(params[:page]).per(10)
-      render :index
-      #list recipes
+      recipes = EdamamApiWrapper.query_search(@dish.strip)
+      if recipes.empty?
+        flash[:error] = "Sorry, something went wrong. No recipes found for #{@dish}. Try another search."
+        redirect_to root_path
+      else
+        @recipes = Kaminari.paginate_array(recipes).page(params[:page]).per(10)
+        render :index
+        #list recipes
+      end
     end
-  end
   end
 
   def show
@@ -38,7 +38,14 @@ class RecipesController < ApplicationController
       flash[:error] = "Something went wrong. Can't locate link to this #{@dish}."
       redirect_to root_path
     else
-      @recipe = EdamamApiWrapper.find_recipes('r', @uri)
+      @recipe = EdamamApiWrapper.uri_search(@uri)
+      if @recipe
+        render :show
+      else
+        #render not found view
+        #flash error 
+        head :not_found
+      end
     end
   end
 
