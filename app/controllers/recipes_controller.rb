@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
       flash[:message] = "Please enter the name of a recipe."
       redirect_back(fallback_location: root_path)
     else
-      @recipes = EdamamWrapper.search_recipes(@query)
+      @recipes = EdamamWrapper.search_recipes(@query).paginate(page: params[:page], per_page: 10)
       #@recipes = recipes.paginate(page: params[:page], per_page: 12)
     end
   end

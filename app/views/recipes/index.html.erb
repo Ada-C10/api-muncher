@@ -25,7 +25,14 @@
         </div>
         <% end %>
       </div>
+      <section>
+          <%= page_entries_info @recipes %>
+          <%= will_paginate @recipes, container: false %>
+        </section>
+
       </div>
+
       <% end %>
   </section>
+  
 </main>
