@@ -1,0 +1,11 @@
+<div class="homepage">
+  <div class="container homepage-text offset-sm-2">
+    <h1 class="homepage-title">Muncher.</h1>
+    <%= form_tag(recipes_path, :method => "get") do %>
+      <p class="input-phrase"><%= label_tag(:recipe, "Find your flavor...") %></p>
+      <p class="input"><%= text_field_tag :recipe, params[:recipe], class: "input-word" %>
+        <%= submit_tag "Find", name: nil %>
+      </p>
+    <% end %>
+  </div>
+</div>

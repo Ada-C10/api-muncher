@@ -1,0 +1,90 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body, html {
+  height: 100%;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+.homepage {
+  background-image: url("https://images.alphacoders.com/557/557503.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Changa One', cursive;
+}
+
+.homepage-text {
+  padding-top: 5rem;
+}
+
+.homepage-title {
+  padding: 3rem;
+  font-size: 5rem;
+}
+
+.input {
+  padding-left: 3rem;
+}
+
+.input-phrase {
+  padding-left: 4rem;
+}
+
+
+.input-word {
+  padding-left: 1rem;
+}
+
+input[type=text] {
+  width: 15rem;
+  height: 3rem;
+  border: 2px solid black;
+}
+
+input[type=submit] {
+  height: 3rem;
+  width: 5rem;
+  background-color: #9ACD32;
+  border: 2px solid black;
+}
+
+// SHOW
+
+.show-container {
+  padding-top: 6rem;
+    padding-bottom: 7rem;
+}
+
+.topper {
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+
+}
+
+.show-header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.recipe-link {
+  padding-bottom: 1rem;
+  color: black;
+  text-decoration: underline;
+}
+
+.show-headers {
+  text-decoration: underline;
+}
+
+.show-body {
+  padding-top: 2rem;
+}
+
+.ingredients li {
+  line-height: 2rem;
+}
+
+.dietary_info li {
+  line-height: .5rem;
+}
