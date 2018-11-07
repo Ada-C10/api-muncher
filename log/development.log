@@ -7150,3 +7150,54 @@ Completed 200 OK in 35922ms (Views: 130.0ms | ActiveRecord: 0.0ms)
 Completed 200 OK in 8637ms (Views: 11.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 13:29:44 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Started GET "/" for 127.0.0.1 at 2018-11-07 13:29:47 -0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Invalid CSS after "      width": expected ";", was ": 250px;":
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1187255075778343042_70202203681000'
+
+Started POST "/__better_errors/8732db0b9de8ecc7/variables" for 127.0.0.1 at 2018-11-07 13:29:47 -0800
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 5237ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Invalid CSS after "      width": expected ";", was ": 250px;":
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1187255075778343042_70202291263440'
+
+Started GET "/" for 127.0.0.1 at 2018-11-07 13:31:24 -0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+
+Sass::SyntaxError - Invalid CSS after "@import "**/*";": expected "}", was "":
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__1187255075778343042_70202289622080'
+
+Started POST "/__better_errors/b4afd53bd14be933/variables" for 127.0.0.1 at 2018-11-07 13:31:24 -0800
+Started GET "/" for 127.0.0.1 at 2018-11-07 13:32:14 -0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1501ms (Views: 1498.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=beef&commit=Search" for 127.0.0.1 at 2018-11-07 13:32:20 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"beef", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 14820ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
