@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Muncher" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+      <div class="top"
+      <header class="search-wrapper">
+        <%= link_to root_path do %>
+          <h1><em>Muncher</em>
+          </h1>
+        <% end %>
+        <h6>Powered by <%= link_to "Edamam", "https://www.edamam.com/" %></h6>
+        <br>
+      </header>
+
+      <section class="flash">
+        <% if flash[:status].present? %>
+        <p class="<%= flash[:status] %>"><%= flash[:message] %></p>
+        <% end %>
+      </section>
+    <%= yield %>
+    </div>
+
+    <div class="bottom"
+
+    </div>
+  </body>
+
+</html>

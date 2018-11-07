@@ -1,0 +1,38 @@
+<main>
+  <div>
+    <div>
+      <%= render partial: "form" %>
+    </div>
+      <% if @recipes %>
+    <h2 class="recipes"><%= @recipes.count %> RESULTS FOR: "<%= @query.capitalize %>"</h2>
+      <% end %>
+  </div>
+
+  <section>
+      <% if @recipes%>
+        <div class="recipe_display">
+        <% @recipes.each do |recipe| %>
+          <div class='recipe'
+            <div class='recipe-picture'>
+            <%= link_to recipe_path(recipe.id) do %>
+                  <%= image_tag(recipe.image, target: :_blank, alt: "#{recipe.name}") %>
+                  <br>
+                  <br>
+            <% end %>
+           <div class="recipe-name">
+             <%= link_to "#{recipe.name}",recipe_path(recipe.id) %>
+           </div>
+        </div>
+        <% end %>
+      </div>
+      <section>
+          <%= page_entries_info @recipes %>
+          <%= will_paginate @recipes, container: false %>
+        </section>
+
+      </div>
+
+      <% end %>
+  </section>
+  
+</main>
