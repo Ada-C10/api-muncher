@@ -12,7 +12,7 @@ gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-  #gem 'uglifier', '>= 1.3.0'
+  gem 'uglifier', '>= 1.3.0'
 
 gem 'httparty'
 gem 'will_paginate', '>=3.1'
@@ -72,9 +72,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'jquery-rails'
+
 gem 'jquery-turbolinks'
-gem 'bootstrap', '~> 4.1.3'
 group :development, :test do
   gem 'pry-rails'
 end
