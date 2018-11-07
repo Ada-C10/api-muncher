@@ -11,18 +11,17 @@ class EdamamApiWrapper
   TOKEN = ENV["EDAMAM_TOKEN"]
 
   def self.search_recipes(search_query)
-    url = BASE_URL + "?q=" + "#{search_query}" + "&app_id=#{ID}" + "&app_key=#{TOKEN}"
+    url = BASE_URL + "?q=" + "#{search_query}" + "&app_id=#{ID}" + "&app_key=#{TOKEN} + &to=80" #limit to 80 results
     data = HTTParty.get(url)
     recipes_list = []
 
     if data["hits"].count == 0 || data.code == 403
       return false
-    else
-      data["hits"].each do |recipe_info|
-        recipes_list << arrange_recipe(recipe_info)
-      end
     end
-    # binding.pry
+
+    data["hits"].each do |recipe_info|
+      recipes_list << arrange_recipe(recipe_info)
+    end
     return recipes_list
 
   end

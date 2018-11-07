@@ -1,7 +1,33 @@
+<section class="recipes-list">
 
+<%= will_paginate @recipes %>
 
-<% @recipes.each do |recipe| %>
-  <li> <%= link_to "#{recipe.title}", recipe_show_path(recipe.recipe_id)  %> </li>
-<% end %>
+<table class="table">
+  <tbody>
+  <% @recipes.each do |recipe| %>
+      <tr>
+        <td> <%= image_tag recipe.photo, size: "100x100" %> </td>
+        <td>
+          <%= link_to "#{recipe.title}", recipe_show_path(recipe.recipe_id)  %>
+          <p>
+            <% if recipe.restrictions != nil %>
+              <% recipe.restrictions.each do |restriction| %>
+               | <%= restriction %> |
+              <% end %>
+            <% end %>
 
-<%= will_paginate @recipe , renderer: RemoteLinkPagination::LinkRenderer %>
+            <% if recipe.diet != nil %>
+              <% recipe.diet.each do |diet| %>
+               | <%= diet %> |
+              <% end %>
+            <% end %>
+          </p>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @recipes %>
+
+</section>

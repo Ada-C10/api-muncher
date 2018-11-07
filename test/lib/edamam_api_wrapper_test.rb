@@ -30,8 +30,6 @@ describe EdamamApiWrapper do
       VCR.use_cassette('search_list') do
         data = EdamamApiWrapper.search_recipes(query)
 
-        expect(data.count).must_equal 10
-
         data.each do |recipe|
           expect(recipe).must_respond_to :title
           expect(recipe).must_respond_to :photo

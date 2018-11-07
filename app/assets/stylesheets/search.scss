@@ -1,34 +1,48 @@
 .search-page {
-  display: grid;
-  grid-template-rows: repeat(3, 8rem);
-  grid-template-columns: repeat(3, 1fr);
-
+  // display: grid;
+  // grid-template-rows: repeat(3, 2fr);
+  // grid-template-columns: repeat(3, 1fr);
+  margin: 10rem;
+  padding: 5rem;
+  position: static;
 }
 
 .burger-anim {
-  grid-row-start: 3;
-  grid-column-start: 2;
-  justify: end;
-  align-self: center;
+  // grid-row-start: 3;
+  // grid-column-start: 2;
+  // justify-content: start;
+  // align-self: center;
+  position: relative;
 }
 
 .search-form {
-  grid-row-start: 3;
-  grid-column-start: 2;
   align-self: center;
-  justify-self: end;
+  // justify-self: end;
+  z-index: 12; /*order of div layers */
+  position: relative;
+  top: 5rem;
 
+}
+
+.form-group {
+  z-index: 15;
 }
 
 .center {  /*position of food */
   position: absolute;
-  transform: translate(-50%, -50%);
+  // transform: translate(-50%, -50%);
 }
 
 #burger {
-  width: 300px; /* width of sandwich */
+  min-width: 150px;
+  max-width: 320px;
 }
 
+#burger, .biteMe{
+  margin: 1rem;
+  padding: 0.5rem;
+  height: auto;
+}
 
 #burger .bun {
   background: -webkit-radial-gradient(rgba(255, 255, 255, 0.5) 5%, #f8981f 6%), -webkit-radial-gradient(rgba(255, 255, 255, 0.5) 5%, #f8981f 6%), #f8981f;
@@ -68,7 +82,6 @@
   /* For WebKit (Safari, Chrome, etc) */
   background: #FFC4BA -webkit-gradient(linear, left top, left bottom, from(#D9391C), to(#FFC4BA)) no-repeat;
   /* Mozilla,Firefox/Gecko */
-  width: 300px;
   height: 15px;
   border-radius: 40%;
   -webkit-animation: just-drop 0.5s cubic-bezier(0.02, 0.75, 0.26, 1.08);
@@ -197,21 +210,23 @@
 
  .biteMe {
   opacity: 0;
-  width: 100px;
+  width: 110px;
   height: 80px;
   background: white;
   border-radius: 100%;
-  transform: translate(60%, -100%);
+  transform: translate(100%, -10%);
+  position: fixed;
   animation: fade-me .1s;
-  animation-delay: 3s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
+  z-index: 10;
 }
 
 .biteMe:before { /* rightmost chew mark */
   content: '';
   position: absolute;
-  width: 50%;
-  height: 40%;
+  width: 55%;
+  height: 60%;
   background: white;
   border-radius: 100%;
   top: 50px;

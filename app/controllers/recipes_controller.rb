@@ -2,11 +2,10 @@ class RecipesController < ApplicationController
   before_action :find_query
 
   def index
-    @recipes = EdamamApiWrapper.search_recipes(@query)
-    # .paginate(params[:page], per_page: 10)
-    binding.pry
+    @recipes = EdamamApiWrapper.search_recipes(find_query).paginate(page: params[:page], per_page: 10)
+
     if @recipes == false
-      flash.now[:errror] = "Sorry, there are no recipes for that ingredient."
+      render :notfound, status: :not_found
     end
 
   end
@@ -22,7 +21,7 @@ class RecipesController < ApplicationController
   private
 
   def find_query
-    @query = params.permit[:query]
+    @query = params[:query]
   end
 
 end

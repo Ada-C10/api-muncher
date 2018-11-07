@@ -1,3 +1,41 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipe-header {
+  text-shadow: 5px 1px 5px rgba(255, 219, 88, 0.3);
+}
+
+.recipe-show {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  align-content: center;
+  padding: 1rem;
+}
+
+article.card {
+  grid-column-start: 2;
+  font-family: "Averia Serif Libre", serif;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  position: relative;
+}
+
+.card-link {
+  position: relative; /*allows card links to work relative to card's z-index*/
+}
+
+.recipes-list {
+  font-family: "Averia Serif Libre", serif;
+}
+
+.error_page {
+  text-align: center;
+  justify-content: center;
+}

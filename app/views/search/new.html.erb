@@ -1,9 +1,9 @@
 <section class = "search-page">
 
 <!-- hamburger animation -->
-<figure class = "burger-anim">
+<figure class="row justify-content-center burger-anim"> <!--bootstrap responsiveness-->
 <!-- ====================================== -->
-    <div class='center' id='burger'>
+    <div class='col-3 center' id='burger'>
       <div class='bun top'></div>
       <div class='tomato'></div>
       <div class='cheese'></div>
@@ -15,12 +15,14 @@
     <!-- =================================== -->
 </figure>
 
-<section class = "search-form">
+<section class="search-form row h-25 w-50 justify-content-center">
+  <div class="form-group col-12 align-self-end">
     <%= form_tag recipes_index_path, method: "get" do %>
       <%= label_tag(:query, "") %>
       <%= text_field_tag(:query) %>
       <%= submit_tag( "forage", class: "btn btn-outline-primary" ) %>
-
     <% end %>
-    </section>
+    </div>
+</section>
+
 </section>

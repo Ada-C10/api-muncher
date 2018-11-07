@@ -30,6 +30,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+gem 'kaminari'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
