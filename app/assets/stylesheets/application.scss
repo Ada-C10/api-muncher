@@ -1,0 +1,161 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*/
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+
+html {
+  min-height: 100%;
+}
+
+body {
+
+  min-height: 100vh;
+  font-family: 'Raleway', sans-serif;
+  background: #fff;
+  color: #3f4042;
+  background-color: #fffff6;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.homepage {
+  background-image: url("https://www.weightwatchers.com.au/images/3081/dynamic/foodandrecipes/2014/08/BaconMshrmPasta_800.jpg");
+}
+
+li {
+  list-style: none;
+}
+
+.search-wrapper {
+  min-height: 100vh;
+}
+
+.search-wrapper  {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-wrapper span {
+  margin-top: 50%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.search-wrapper span {
+  margin-bottom: 0.5rem;
+}
+
+.search-wrapper span h1 {
+  color: #990000;
+  font-family: 'Halant', serif;
+  font-size: 6rem;
+  margin-bottom: 4rem;
+}
+
+.search-wrapper span {
+  padding-right: 6rem;
+  padding-left: 6rem;
+}
+
+.search-wrapper span label{
+  margin-bottom: 0rem;
+  margin-left: 3rem;
+  font-size: 1.5rem;
+}
+
+.search-wrapper span label{
+  margin-right: 14rem;
+}
+
+.search-wrapper span input#dish {
+
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 23rem;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border-radius: 0.5rem;
+
+  border: none;
+  outline: none;
+  background: transparent;
+  opacity: 0.75;
+  background-color:#FFFFFF;
+
+  color: #800000;
+  font-weight: bold;
+}
+
+.search-wrapper span input#dish.text {
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  background: transparent;
+}
+
+.search-wrapper span input#dish:focus {
+  outline-style:none;
+  outline-width:0;
+  border:2px solid #73A6FF;
+  margin:0;
+  outline-color:-moz-use-text-color;
+  outline-style:none;
+  outline-width:0;
+}
+
+.search-wrapper span input.btn.btn-primary{
+  font-family: 'Nunito', sans-serif;
+  margin-left: 14rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  // for ugly footer
+  margin-bottom: 10rem;
+}
+
+span.navbar-fixed-bottom {
+  text-align: center;
+  margin-bottom: 0;
+  width: 100%;
+  // for ugly footer
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  // padding: 0.75rem 1.25rem;
+  border: 1px solid transparent;
+  color: #386659;
+  background-color:#a8b3be;
+  border-color: #9ca8b4;
+}
+
+section .error {
+  text-align: center;
+  padding: 0.75rem 1.25rem;
+  margin: 1em;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}

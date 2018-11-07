@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ApiMuncher</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Halant|Nunito|Raleway" rel="stylesheet">
+  <script src="https://developer.edamam.com/attribution/badge.js"></script>
+</head>
+
+<body class="<%= @homepage ? 'homepage' : ''%>">
+<%= render :partial => 'layouts/nav_menu' if @nav %>
+  <section class="flash">
+    <% flash.each do |key_word, message| %>
+    <div class="<%= key_word %>"><%=message%></div>
+    <% end %>
+  </section>
+  <%= yield %>
+</body>
+</html>
