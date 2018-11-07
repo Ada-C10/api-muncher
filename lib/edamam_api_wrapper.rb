@@ -1,5 +1,8 @@
 require 'httparty'
 
+class RecipeNotFoundError < StandardError
+end
+
 class EdamamApiWrapper
 
   BASE_URL = 'https://api.edamam.com/search?'
@@ -24,8 +27,9 @@ class EdamamApiWrapper
   end
 
   def self.create_recipe(api_params)
-
-    raise ArgumentError.new("recipe does not exist") if api_params.nil?
+    if api_params.nil? || api_params["uri"].nil? || api_params["uri"].empty?
+      raise RecipeNotFoundError, "recipe does not exist"
+    end
 
     parsed_uri = api_params["uri"].split("_")[1]
 
@@ -38,6 +42,8 @@ class EdamamApiWrapper
       ingredients: api_params["ingredientLines"],
       dietary_labels: api_params["dietLabels"]
     )
+
+
   end
 
   def self.find_recipe(uri)

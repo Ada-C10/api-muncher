@@ -25,7 +25,7 @@ describe EdamamApiWrapper do
     it "creates and returns instance of Recipe" do
       VCR.use_cassette("recipe") do
         api_params = {
-          uri: "randomuri1234",
+          uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_7bf4a371c6884d809682a72808da7dc2",
           name: "test food title",
           creator: "test creator",
           image: "random_image_url",
@@ -34,7 +34,8 @@ describe EdamamApiWrapper do
           dietary_labels: ["label", "label"]
         }
 
-       recipe =  Recipe.new(api_params)
+       recipe = EdamamApiWrapper.create_recipe(api_params)
+       # recipe =  Recipe.new(api_params)
 
        assert_instance_of(Recipe, recipe)
        expect(recipe.uri).must_equal api_params[:uri]
@@ -78,7 +79,7 @@ describe EdamamApiWrapper do
     it "can't return a recipe given an invalid uri" do
       VCR.use_cassette("found_recipe") do
         uri = "test_uri"
-        
+
         expect{EdamamApiWrapper.find_recipe(uri)}.must_be false
       end
     end

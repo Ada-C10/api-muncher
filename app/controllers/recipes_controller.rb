@@ -22,7 +22,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-
     if params[:uri].nil? || params[:uri].empty?
       flash[:warning] = "Sorry recipe does not exist."
       redirect_to root_path
@@ -30,10 +29,8 @@ class RecipesController < ApplicationController
 
     uri = params[:uri]
     @recipe = EdamamApiWrapper.find_recipe(uri)
-
-    if @recipe.nil?
-      render :notfound, status: :not_found
-    end
+  rescue RecipeNotFoundError
+    render 'not_found', status: :not_found
   end
 
   private
