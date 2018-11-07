@@ -1,16 +1,14 @@
 require 'httparty'
 
-
 class MuncherApiWrapper
   BASE_URL = "https://api.edamam.com/search"
-  APP_ID = "540129f8"
-  APP_KEY = "5ed28c083c24a129f2e18bd58e3cf2a9"
+  APP_ID = ENV["EDAMAM_ID"]
+  APP_KEY = ENV["EDAMAM_KEY"]
 
   def self.get_recipes(query)
     recipes = []
     url = "#{BASE_URL}?app_id=#{APP_ID}&app_key=#{APP_KEY}&q=#{query}" + "&to=100"
     data = HTTParty.get(url)
-
     if data["hits"]
       data["hits"].each do |hit|
         name = hit["recipe"]["label"]

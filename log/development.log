@@ -6756,3 +6756,316 @@ Processing by HomepageController#index as HTML
 Completed 200 OK in 61ms (Views: 46.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-11-06 17:52:48 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kjfitzpatrick/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 313ms (Views: 307.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=eggs&commit=Search" for 127.0.0.1 at 2018-11-06 17:53:54 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"eggs", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 3015ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipe?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_9d74a7986510d0380b3fb47b7b65bf33" for 127.0.0.1 at 2018-11-06 17:54:08 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"r"=>"http://www.edamam.com/ontologies/edamam.owl#recipe_9d74a7986510d0380b3fb47b7b65bf33"}
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 546ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipe?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_79fb80a8033dc74d016f149f1d08a5a3" for 127.0.0.1 at 2018-11-06 17:54:27 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"r"=>"http://www.edamam.com/ontologies/edamam.owl#recipe_79fb80a8033dc74d016f149f1d08a5a3"}
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 525ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipe?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_537674d26ba277c31469d316126db1ad" for 127.0.0.1 at 2018-11-06 17:54:35 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"r"=>"http://www.edamam.com/ontologies/edamam.owl#recipe_537674d26ba277c31469d316126db1ad"}
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 525ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/recipe?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_dda0ee5255a5c1a5eb6b8068e9e44a1a" for 127.0.0.1 at 2018-11-06 17:55:11 -0800
+Processing by RecipesController#show as HTML
+  Parameters: {"r"=>"http://www.edamam.com/ontologies/edamam.owl#recipe_dda0ee5255a5c1a5eb6b8068e9e44a1a"}
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1027ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-07 09:56:04 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kjfitzpatrick/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 198ms (Views: 191.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=beef&commit=Search" for 127.0.0.1 at 2018-11-07 09:56:16 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"beef", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 5755ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=beef&commit=Search" for 127.0.0.1 at 2018-11-07 09:57:02 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"beef", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1356ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=beef&commit=Search" for 127.0.0.1 at 2018-11-07 10:02:09 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"beef", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1044ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=beef&commit=Search" for 127.0.0.1 at 2018-11-07 10:02:15 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"beef", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1594ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=beef&commit=Search" for 127.0.0.1 at 2018-11-07 10:02:29 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"beef", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 408ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=beef&commit=Search" for 127.0.0.1 at 2018-11-07 10:02:32 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"beef", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 455ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:03:13 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 435ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:07:06 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 10972ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:08:52 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 481ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:12:19 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:12:22 -0800
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 257152ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:16:36 -0800
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:16:36 -0800
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:16:36 -0800
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:16:36 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:16:36 -0800
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:16:36 -0800
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:16:36 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:16:36 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+Started POST "/__better_errors/eeabf20733ced603/variables" for 127.0.0.1 at 2018-11-07 10:16:36 -0800
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:17:16 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant MuncherApiWrapper::EDAMAM_ID:
+  lib/muncher_api_wrapper.rb:5:in `<class:MuncherApiWrapper>'
+  lib/muncher_api_wrapper.rb:3:in `<main>'
+  app/controllers/recipes_controller.rb:9:in `index'
+
+Started POST "/__better_errors/39445720493de03b/variables" for 127.0.0.1 at 2018-11-07 10:17:16 -0800
+Started POST "/__better_errors/39445720493de03b/eval" for 127.0.0.1 at 2018-11-07 10:17:48 -0800
+Started POST "/__better_errors/39445720493de03b/eval" for 127.0.0.1 at 2018-11-07 10:17:52 -0800
+Started POST "/__better_errors/39445720493de03b/eval" for 127.0.0.1 at 2018-11-07 10:18:09 -0800
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:18:28 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 557ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:19:09 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:19:19 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25897ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 91033ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:20:40 -0800
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:20:40 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 463ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 537ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=chicken&commit=Search" for 127.0.0.1 at 2018-11-07 10:20:56 -0800
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kjfitzpatrick/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"chicken", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 3526ms (Views: 146.2ms | ActiveRecord: 0.0ms)
+
+
