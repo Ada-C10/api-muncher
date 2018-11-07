@@ -7069,3 +7069,33 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 3526ms (Views: 146.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/search?utf8=%E2%9C%93&q=eggs&commit=Search" for 127.0.0.1 at 2018-11-07 11:06:05 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"eggs", "commit"=>"Search"}
+Started GET "/" for 127.0.0.1 at 2018-11-07 11:06:09 -0800
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9029ms (Views: 2243.5ms | ActiveRecord: 0.0ms)
+
+
+Processing by HomepageController#index as HTML
+Started GET "/" for 127.0.0.1 at 2018-11-07 11:06:14 -0800
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.6ms)
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=bread&commit=Search" for 127.0.0.1 at 2018-11-07 11:06:25 -0800
+Processing by RecipesController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"bread", "commit"=>"Search"}
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered recipes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6021ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
