@@ -28,21 +28,27 @@ html {
   overflow-x: hidden;
 }
 
-// @include media-breakpoint-up(xs) {
-//   nav .navbar-brand {
-//     font-size: 10rem;
-//   }
-// }
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  html {
+    font-size: 0.6rem;
+  }
+}
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(md) { /* med sized screens and up */
   html {
     font-size: 1rem;
   }
 }
 
-@include media-breakpoint-up(lg) {
+@include media-breakpoint-up(lg) { /* large sized screens and up */
   html {
     font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(xl) { /* x-large sized screens and up */
+  html {
+    font-size: 1.4rem;
   }
 }
 
@@ -54,14 +60,17 @@ body {
   font-size: 4em;
   font-family: 'Fredoka One', cursive;
   color: $crimson;
+  white-space: pre-line; /*overwrite bootstrap no wrap so it can wrap!! */
+}
+
+@include media-breakpoint-down(sm) {
+  .navbar-brand {
+    margin: 2rem;
+  }
 }
 
 .navbar-brand:hover {
   color: $salmon;
-}
-
-.navbar-search input {
-
 }
 
 .btn-outline-primary {
@@ -88,6 +97,13 @@ body {
   line-height: 60px;
   background-color: #f5f5f5;
   z-index: 13; /*layer of footer*/
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  .footer {
+    white-space: pre;
+    align-content: normal;
+  }
 }
 
 .text-muted {

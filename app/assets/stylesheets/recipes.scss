@@ -18,6 +18,19 @@ table {
   margin-left: 2rem;
 }
 
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  .pagination {
+    font-size: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+@include media-breakpoint-up(xl) { /* x-large sized screens and up */
+  .pagination {
+    font-size: 1.5rem;
+  }
+}
+
 .pagination, .pagination a {
   color: $crimson;
 }
@@ -25,6 +38,12 @@ table {
 .pagination a {
   text-decoration: none;
 }
+
+// @include media-breakpoint-down(sm) { /* sm sized screens and under */
+//   .pagination a {
+//     margin: 0.2rem;
+//   }
+// }
 
 .pagination a:hover {
   color: $salmon;
@@ -39,8 +58,31 @@ table {
   font-family: "Averia Serif Libre", serif;
 }
 
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  .recipes-list {
+    font-size: 2rem;
+  }
+}
+
 .recipe-header {
   text-shadow: 5px 1px 5px rgba(255, 219, 88, 0.3);
+}
+
+@include media-breakpoint-down(sm) {
+  table {
+    padding-right: 3rem;
+  }
+}
+
+table .recipe-index-links {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  table .recipe-index-links {
+    font-size: 3rem;
+  }
 }
 
 .recipe-show {

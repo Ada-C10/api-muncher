@@ -7,6 +7,13 @@
   position: static;
 }
 
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  .search-page {
+    padding: 0rem 5rem 1rem 5rem; /* top right bottom left */
+    position: static;
+  }
+}
+
 .search-index-items {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -16,6 +23,13 @@
 .submit-button {
   margin: 1rem;
   padding: 0.5rem;
+}
+
+@include media-breakpoint-down(sm) {
+  .submit-button {
+    font-size: 3rem;
+    padding: 3rem;
+  }
 }
 
 .burger-anim, .search-form {
@@ -32,15 +46,37 @@
   top: 5rem;
 }
 
+@include media-breakpoint-down(sm) {
+  .search-form {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+
 section input {
   width: 100%;
   padding: 1rem;
   margin: 1rem;
 }
+//
+// @include media-breakpoint-down(sm) {
+//   section input {
+//
+//   }
+// }
 
 section .form-group {
   z-index: 15;
 }
+
+@include media-breakpoint-down(sm) {
+  section .form-group {
+    padding-top: 6rem;
+  }
+}
+
+
+// ================BURGER STUFF BELOW=================
 
 .center {  /*position of food */
   position: absolute;
@@ -229,7 +265,7 @@ section .form-group {
   background: white;
   border-radius: 100%;
   transform: translate(100%, -10%);
-  position: fixed;
+  position: absolute;
   animation: fade-me .1s;
   animation-delay: 2s;
   animation-fill-mode: forwards;

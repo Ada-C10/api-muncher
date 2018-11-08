@@ -8,7 +8,7 @@
       <tr>
         <td class="align-self-center"> <%= image_tag recipe.photo, size: "100x100" %> </td>
         <td>
-          <%= link_to "#{recipe.title}", recipe_show_path(recipe.recipe_id)  %>
+          <%= link_to "#{recipe.title}", recipe_show_path(recipe.recipe_id), class: "recipe-index-links"  %>
           <p>
             <% if recipe.restrictions != nil %>
               <% recipe.restrictions.each do |restriction| %>
