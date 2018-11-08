@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark main-nav">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+
+                <a class="nav-link" href="/">Home</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="/">RECIPE MUNCHER</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="title-search">
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Find your flavor...") %>
+  <%= text_field_tag(:q, @recipe_query) %>
+   <%= submit_tag("Search") %>
+<% end %>
+</div>
+
+<% if @recipes %>
+<section class="cards-container">
+
+    <% @recipes.each do |recipe| %>
+
+      <section class="card">
+        <img class="card-img-top" src="<%= recipe.image %>" alt="Card image cap">
+
+        <div class="card-body">
+          <h5 class="card-title"><%=link_to recipe.name, recipe_path(r: recipe.uri) %></h5>
+        </div>
+      </section>
+
+    <% end %>
+</section>
+
+<% end %>
+
+
+
+<%= will_paginate @recipes, render: BootstrapPagination::Rails %>
