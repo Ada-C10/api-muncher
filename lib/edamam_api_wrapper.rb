@@ -10,6 +10,7 @@ class EdamamApiWrapper
     encoded_uri = URI.encode(url)
     data = HTTParty.get(encoded_uri)
     recipe_list = []
+    # binding.pry
     data["hits"].each do |recipe|
       label = recipe["recipe"]["label"]
       image = recipe["recipe"]["image"]
@@ -22,23 +23,14 @@ class EdamamApiWrapper
   def self.show_recipe(id)
     url = BASE_URL + "search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{id}" + "&app_id=#{ID}&app_key=#{KEY}"
     data = HTTParty.get(url)
+    #binding.pry
     if data.empty?
       return []
     else
+      # binding.pry
       return create_recipe(data[0])
     end
   end
-
-  # def self.single_recipe(id)
-  #    url= BASE_URL + "search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{id}" + "&app_id=#{ID}&app_key=#{KEY}"
-  #   data = HTTParty.get(url)
-  #    if data.empty?
-  #     return []
-  #   else
-  #    return create_recipe(data[0])
-  # end
-  #
-  #
   private
 
   def self.create_recipe(api_params)
