@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+  </body>
+</html>
+<div class="recipe-container">
+  <div class="header">
+    <div class="image">
+      <div class="tape">
+      </div>
+      <%= image_tag(@recipe.image, id: "recipe-img") %>
+    </div>
+
+    <h3><%= @recipe.label %></h3>
+
+    <article class="label">
+      <h2>Diet Labels: </h2>
+      <ul>
+        <% @recipe.dietLabels.each do |diet_label| %>
+        <li>
+          <%= diet_label %>
+        </li>
+        <% end %>
+      </ul>
+
+    </article>
+
+    <article class="ingredients">
+      <h3>Ingredients: </h3>
+      <ul>
+        <% @recipe.ingredientLines.each do |ingredient| %>
+        <li>
+          <%= ingredient %>
+        </li>
+        <% end %>
+      </ul>
+    </article>
+  </div>
+
+</div>
+</html>
