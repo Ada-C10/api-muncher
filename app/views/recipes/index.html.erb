@@ -1,12 +1,12 @@
-<section class="recipes-list">
+<section class="recipes-list align-items-center">
 
-<%= will_paginate @recipes %>
+<%= will_paginate @recipes, :link_separator => "&#8212;" %>
 
-<table class="table">
+<table class="table table-responsive">
   <tbody>
   <% @recipes.each do |recipe| %>
       <tr>
-        <td> <%= image_tag recipe.photo, size: "100x100" %> </td>
+        <td class="align-self-center"> <%= image_tag recipe.photo, size: "100x100" %> </td>
         <td>
           <%= link_to "#{recipe.title}", recipe_show_path(recipe.recipe_id)  %>
           <p>
@@ -28,6 +28,6 @@
   </tbody>
 </table>
 
-<%= will_paginate @recipes %>
+<%= will_paginate @recipes, :link_separator => "&#8212;" %>
 
 </section>

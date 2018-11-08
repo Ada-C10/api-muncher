@@ -23,6 +23,29 @@ $bisque: #FCD5CE;
 $crimson: #D50454;
 $mustard: #FFDB58;
 
+html {
+  font-size: 0.8rem;
+  overflow-x: hidden;
+}
+
+// @include media-breakpoint-up(xs) {
+//   nav .navbar-brand {
+//     font-size: 10rem;
+//   }
+// }
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
 body {
   margin-bottom: 5rem;
 }
@@ -35,6 +58,10 @@ body {
 
 .navbar-brand:hover {
   color: $salmon;
+}
+
+.navbar-search input {
+
 }
 
 .btn-outline-primary {

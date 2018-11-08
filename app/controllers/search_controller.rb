@@ -1,6 +1,4 @@
 class SearchController < ApplicationController
-# after_action :user_query, only: :new
-
 
   def create
     if EdamamApiWrapper.search_recipes(@query)

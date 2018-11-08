@@ -18,12 +18,14 @@
         <%= link_to "chomp crunch munch", root_path, class: "navbar-brand" %>
 
       <% if params[:action] != 'new' %> <!-- show on all pages but search new page -->
+          <div class="navbar search">
             <%= form_tag recipes_index_path, method: "get" do %>
               <%= label_tag(:query, "") %>
               <%= text_field_tag(:query) %>
               <%= submit_tag( "forage", class: "btn btn-outline-primary" ) %>
             <% end %>
           <% end %>
+          </div>
         </nav>
 
     </header>

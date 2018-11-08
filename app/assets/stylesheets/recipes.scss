@@ -2,6 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$salmon: #FA8C94;
+$dark-slate-grey: #3C5C6B;
+$bisque: #FCD5CE;
+$crimson: #D50454;
+$mustard: #FFDB58;
+
+table {
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+.pagination {
+  padding: 1rem;
+  margin-left: 2rem;
+}
+
+.pagination, .pagination a {
+  color: $crimson;
+}
+
+.pagination a {
+  text-decoration: none;
+}
+
+.pagination a:hover {
+  color: $salmon;
+  font-weight: bolder;
+}
+
+.pagination a:visited {
+  color: $dark-slate-grey;
+}
+
+.recipes-list {
+  font-family: "Averia Serif Libre", serif;
+}
+
 .recipe-header {
   text-shadow: 5px 1px 5px rgba(255, 219, 88, 0.3);
 }
@@ -11,6 +48,10 @@
   grid-template-columns: repeat(3, 2fr);
   align-content: center;
   padding: 1rem;
+}
+
+.recipe-photo {
+
 }
 
 article.card {
@@ -29,10 +70,6 @@ article.card {
 
 .card-link {
   position: relative; /*allows card links to work relative to card's z-index*/
-}
-
-.recipes-list {
-  font-family: "Averia Serif Libre", serif;
 }
 
 .error_page {

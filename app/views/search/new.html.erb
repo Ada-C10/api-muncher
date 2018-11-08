@@ -1,28 +1,29 @@
-<section class = "search-page">
+<section class="search-page">
 
-<!-- hamburger animation -->
-<figure class="row justify-content-center burger-anim"> <!--bootstrap responsiveness-->
-<!-- ====================================== -->
-    <div class='col-3 center' id='burger'>
-      <div class='bun top'></div>
-      <div class='tomato'></div>
-      <div class='cheese'></div>
-      <div class='burger'></div>
-      <div class='salad'></div>
-      <div class='bun bottom'></div>
-    </div>
-    <div class='biteMe center'></div>
-    <!-- =================================== -->
-</figure>
+  <span class="search-index-items align-items-center justify-content-center">
+    <!-- hamburger animation -->
+    <figure class="row justify-content-center burger-anim"> <!--bootstrap responsiveness-->
+    <!-- ====================================== -->
+        <div class='col-3 center' id='burger'>
+          <div class='bun top'></div>
+          <div class='tomato'></div>
+          <div class='cheese'></div>
+          <div class='burger'></div>
+          <div class='salad'></div>
+          <div class='bun bottom'></div>
+        </div>
+        <div class='biteMe center'></div>
+        <!-- =================================== -->
+    </figure>
 
-<section class="search-form row h-25 w-50 justify-content-center">
-  <div class="form-group col-12 align-self-end">
-    <%= form_tag recipes_index_path, method: "get" do %>
-      <%= label_tag(:query, "") %>
-      <%= text_field_tag(:query) %>
-      <%= submit_tag( "forage", class: "btn btn-outline-primary" ) %>
-    <% end %>
-    </div>
-</section>
+    <section class="search-form justify-content-center">
+      <div class="form-group align-self-center align-items-center">
+        <%= form_tag recipes_index_path, method: "get" do %>
+          <%= text_field_tag(:query, nil, class: "form-control-lg")%>
+          <%= submit_tag( "forage", class: "submit-button btn btn-outline-primary btn-block" ) %>
+        <% end %>
+        </div>
+    </section>
+  </span>
 
 </section>

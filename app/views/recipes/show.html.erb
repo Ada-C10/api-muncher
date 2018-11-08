@@ -13,7 +13,7 @@
     <h2 class="card-title"><%= "#{@recipe.title}" %></h2>
   <ul class="card-text">
       <li> Servings: <%= @recipe.servings.to_i %>  &#127869;</li>
-      <li> Calories per: <%= @recipe.calorie_count.to_i %> </li>
+      <li> Calories: <%= @recipe.calorie_count.to_i %> </li>
       <% if @recipe.prep_time > 0.0 %>
         <li> Prep Time: <%= @recipe.prep_time %>
       <% end %>
