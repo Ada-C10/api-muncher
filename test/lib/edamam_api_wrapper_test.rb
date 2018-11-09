@@ -3,8 +3,11 @@ require 'test_helper'
 describe EdamamApiWrapper do
   it "can list recipes" do
     VCR.use_cassette('list_of_recipes') do
-      search = "salmon"
-      recipes = EdamamApiWrapper.list_recipes(search)
+      params = {
+        search: "salmon"
+      }
+
+      recipes = EdamamApiWrapper.list_recipes(params)
 
       expect(recipes.length).must_be :>, 0
       recipes.each do |recipe|
@@ -17,8 +20,11 @@ describe EdamamApiWrapper do
 
   it "will return an empty array if no results are found for list recipes" do
     VCR.use_cassette('list_of_recipes') do
-      search = "faskjl134"
-      recipes = EdamamApiWrapper.list_recipes(search)
+      params = {
+        search: "faskjl134"
+      }
+
+      recipes = EdamamApiWrapper.list_recipes(params)
 
       expect(recipes.length).must_equal 0
     end
@@ -35,12 +41,12 @@ describe EdamamApiWrapper do
     end
   end
 
-  it "will return an empty array if no results are found for individual recipe details" do
+  it "will return nil if no results are found for individual recipe details" do
     VCR.use_cassette('list_of_recipes') do
       id = "7bf4a371c6884d809682a72808da7dc3"
       recipe = EdamamApiWrapper.recipe_details(id)
 
-      expect(recipe.length).must_equal 0
+      expect(recipe).must_be_nil
     end
   end
 end

@@ -40,7 +40,7 @@ class EdamamApiWrapper
     data = HTTParty.get(encoded_url)
 
     if data.parsed_response.empty?
-      return []
+      return nil
     else
       return recipe_data(data)
     end
