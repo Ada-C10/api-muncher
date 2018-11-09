@@ -1,0 +1,38 @@
+<div class="container recipe">
+  <div class="text-center">
+    <h1 class="text-center mt-5 mb-1"><%= @recipe.label %></h1>
+    <p>by: <%= @recipe.source %></p>
+    <p><a href="<%= @recipe.original_url %>" target="_blank">Original Recipe</a></p>
+  </div>
+  <div class="row mt-5">
+    <div class="col-sm-5">
+      <%= image_tag "#{@recipe.image}", class: "detail-image", style: 'width:100%;', alt: "#{@recipe.label}" %> 
+    </div>
+    <div class="col-sm-7">
+      <h3>Ingredients</h3>
+      <ul>
+        <% @recipe.ingredients.each do |ingredient| %>
+          <li><%= ingredient %></li>
+        <% end %>
+      </ul>
+      <div class="row d-flex justify-content-around mt-5">
+        <div class="col-sm-3.5">
+          <h3>Dietary Labels</h3>
+          <ul>
+            <% @recipe.diet_labels.each do |diet| %>
+              <li><%= diet %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-sm-3.5">
+          <h3>Health Labels</h3>
+          <ul>
+            <% @recipe.health_labels.each do |health| %>
+              <li><%= health %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
