@@ -1,0 +1,15 @@
+<section class="index-image">
+  <h1>Recipes</h1>
+  <% if @recipe %>
+  <ul>
+    <li><%= image_tag "#{@recipe.image}" %></li>
+    <li>Name: <%=@recipe.id  %></li>
+
+    <li><%= link_to "Recipe Original Link page", "#{@recipe.url}", target: :_blank %></li>
+    <li>ingredientLines: <%=@recipe.ingredient_lines  %></li>
+    <li>dietLabels: <%=@recipe.diet_labels  %></li>
+
+
+  </ul>
+  <% end %>
+</section>

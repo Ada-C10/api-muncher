@@ -1,0 +1,16 @@
+<h1>Recipes</h1>
+
+<%= will_paginate @recipes %>
+<section class="index-image">
+  <% if @recipes %>
+  <% @recipes.each do |recipe| %>
+  <ul>
+    <li><%= link_to "#{recipe.id}",
+    search_detail_path(recipe.label) %></li>
+    <li><%= image_tag "#{recipe.image}" %></li>
+  </ul>
+
+    <% end %>
+  <% end %>
+
+</section>

@@ -1,0 +1,69 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*/
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+
+
+ul {
+  list-style-type: none;
+}
+
+
+//
+// .recipe-list {
+//   display: grid;
+//    grid-gap: 50px;
+//    grid-template-columns: auto auto;
+//    background-color: #fff0f5;
+//    padding: 10px
+// }
+//
+// .list {
+//   border: 1px solid;
+//   font-size: 30px;
+//   text-align: center;
+// }
+
+
+.index-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #fff0f5;
+
+}
+
+.front {
+  background-color: #fff0f5;
+
+}
+
+body {
+  background-color: #fff0f5;
+
+}
+
+.center {
+  text-align: center;
+  padding-top: 150px;
+}
+
+.heading {
+  text-align: center;
+  color: orange;
+}
