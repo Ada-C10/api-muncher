@@ -13,7 +13,7 @@
       <% @recipes.each do |recipe| %>
         <div class="col-sm-6 col-md-4 mb-4 text-center">
           <div class="card">
-            <img src="<%= recipe.image %>" width="500" alt="<%= recipe.label %>" class="card-img-top">
+            <%= link_to image_tag("#{recipe.image}", class: "card-img-top", style: 'width:500;', alt: "#{recipe.label}"), recipe_path(recipe.id) %>
           </div>
           <div class="card-body">
             <p class="card-title"><%= link_to recipe.label, recipe_path(recipe.id) %></p>

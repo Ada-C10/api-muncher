@@ -6,7 +6,7 @@
   </div>
   <div class="row mt-5">
     <div class="col-sm-5">
-      <img src="<%= @recipe.image %>" width=100% alt="<%= @recipe.label %>" class="detail-image">
+      <%= image_tag "#{@recipe.image}", class: "detail-image", style: 'width:100%;', alt: "#{@recipe.label}" %> 
     </div>
     <div class="col-sm-7">
       <h3>Ingredients</h3>
