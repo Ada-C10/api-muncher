@@ -1,0 +1,18 @@
+
+ <h1 Search Results: <%= @keyword %> </h1>
+ <% if @recipes.empty? %>
+    <h1> No Results Found </h1>
+    <% else %>
+  <div>
+    <% @recipes.each do |recipe| %>
+      <div>
+        <div>
+          <img src="<%= recipe.image %>" width="500" alt="<%= recipe.label %>">
+          <%= link_to "#{recipe.label}", recipe_path(recipe.uri) %>
+        </div>
+      </div>
+        <% end %>
+        <%end %>
+         <section >
+        <%= paginate @recipes %>
+      </section>

@@ -1,0 +1,24 @@
+<section class="show">
+  <% if @recipe%>
+  <h1><%= @recipe.label %></h1>
+  <%=image_tag(@recipe.image)%>
+  <ul>
+    <h3>Ingredients:</h3>
+    <% @recipe.ingredients.each do |ingredient|%>
+    <li>
+      <%= ingredient["text"] %>
+    </li>
+    <% end %>
+  </ul>
+  <ul>
+    <h3>Health Information:</h3>
+    <% @recipe.dietary_information.each do |dietary_information|%>
+    <li>
+      <%= dietary_information %>
+    </li>
+    <% end %>
+  </ul>
+  <a href="<%=@recipe.url%>" target="_blank">Full recipe</a>
+  <%else%>
+  <% end %>
+</section>
