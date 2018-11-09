@@ -65,7 +65,8 @@ table {
 }
 
 .recipe-header {
-  text-shadow: 5px 1px 5px rgba(255, 219, 88, 0.3);
+  color: $bisque;
+  text-shadow: 0px -1px 10px rgba(150, 150, 150, 1);
 }
 
 @include media-breakpoint-down(sm) {
@@ -77,6 +78,7 @@ table {
 table .recipe-index-links {
   font-size: 1.5rem;
   text-decoration: none;
+  color: $dark-slate-grey;
 }
 
 @include media-breakpoint-down(sm) { /* sm sized screens and under */
