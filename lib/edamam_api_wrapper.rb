@@ -5,7 +5,7 @@ class EdamamApiWrapper
   RETURN_RECIPE = "search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23"
   ID = ENV["EDAMAM_ID"]
   KEY = ENV["EDAMAM_KEY"]
-# def self.search_recipes(search_param)
+  # def self.search_recipes(search_param)
   def self.search_recipes(search_term)
 
     url = BASE_URL + QUERY_ALL + "#{search_term}" + "&app_id=" + ID + "&app_key=" + KEY + "&from=0&to=5000"
@@ -26,10 +26,12 @@ class EdamamApiWrapper
 
     url = BASE_URL + RETURN_RECIPE + "#{recipe_uri}" + "&app_id=" + ID + "&app_key=" + KEY
     recipe = HTTParty.get(url)
-
-    recipe = create_recipe(recipe[0])
-
-    return recipe
+    if recipe.empty?
+      return recipe
+    else
+      recipe = create_recipe(recipe[0])
+      return recipe
+    end
   end
 
   private
