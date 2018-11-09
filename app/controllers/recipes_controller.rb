@@ -20,8 +20,4 @@ class RecipesController < ApplicationController
 
   private
 
-  def find_query
-    @query = params[:query]
-  end
-
 end

@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  before_action :find_query
 
   def create
     if EdamamApiWrapper.search_recipes(@query)
@@ -6,6 +7,7 @@ class SearchController < ApplicationController
     else
       flash.now[:warning] = "Didn't work"
     end
+    raise
   end
 
   def new; end
@@ -15,5 +17,4 @@ class SearchController < ApplicationController
   def user_query
     @query = params[:query]
   end
-
 end #end of class
