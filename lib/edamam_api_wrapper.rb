@@ -32,7 +32,7 @@ class EdamamApiWrapper
     end
 
     parsed_uri = api_params["uri"].split("_")[1]
-
+    binding.pry
     return Recipe.new(
       uri: parsed_uri,
       name: api_params["label"],
@@ -42,7 +42,6 @@ class EdamamApiWrapper
       ingredients: api_params["ingredientLines"],
       dietary_labels: api_params["dietLabels"]
     )
-
 
   end
 
@@ -55,7 +54,7 @@ class EdamamApiWrapper
       recipe = create_recipe(data[0])
       return recipe
     else
-       #return a not found
+       raise ArgumentError, "invalid uri"
     end
   end
 

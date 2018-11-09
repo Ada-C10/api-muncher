@@ -35,7 +35,6 @@ describe EdamamApiWrapper do
         }
 
        recipe = EdamamApiWrapper.create_recipe(api_params)
-       # recipe =  Recipe.new(api_params)
 
        assert_instance_of(Recipe, recipe)
        expect(recipe.uri).must_equal api_params[:uri]
@@ -61,7 +60,7 @@ describe EdamamApiWrapper do
           dietary_labels: ["label", "label"]
         }
 
-       expect{Recipe.new(api_params)}.must_raise ArgumentError
+       expect{EdamamApiWrapper.create_recipe(api_params)}.must_raise RecipeNotFoundError
     end
   end
 
@@ -80,7 +79,7 @@ describe EdamamApiWrapper do
       VCR.use_cassette("found_recipe") do
         uri = "test_uri"
 
-        expect{EdamamApiWrapper.find_recipe(uri)}.must_be false
+        expect{EdamamApiWrapper.find_recipe(uri)}.must_raise RecipeNotFoundError
       end
     end
 
