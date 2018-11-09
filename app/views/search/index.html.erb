@@ -1,18 +1,16 @@
 <h1>Recipes</h1>
 
-  <%= will_paginate @recipes %>
+<%= will_paginate @recipes %>
+<section class="index-image">
   <% if @recipes %>
-  <div class="recipe-list">
-  <div class="list">
-    <% @recipes.each do |recipe| %>
-    <div class="list">
-      <%= link_to "#{recipe.id}",
-      search_detail_path(recipe.label) %>
-    </div>
-    <div class="list"><%= image_tag "#{recipe.image}" %></div>
+  <% @recipes.each do |recipe| %>
+  <ul>
+    <li><%= link_to "#{recipe.id}",
+    search_detail_path(recipe.label) %></li>
+    <li><%= image_tag "#{recipe.image}" %></li>
+  </ul>
+
     <% end %>
-  </div>
   <% end %>
 
-
-</div>
+</section>

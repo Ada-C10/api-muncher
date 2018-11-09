@@ -1,4 +1,6 @@
-<h1> Search for a new Recipe by keyword </h1>
+<h1 class="heading"> Find your Flavor.... </h1>
+
+<div class="center">
 
 <%= form_tag search_create_path, method: "post" do %>
   <%= label_tag(:keyword, "Enter a Keyword for receipe") %>
@@ -6,3 +8,4 @@
   <%= submit_tag("Send") %>
 
 <% end %>
+</div>
