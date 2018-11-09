@@ -1,7 +1,7 @@
 <!--boostrap cards -->
 <section class="recipe-show">
 
-<article class="card bg-recipe mb-3" style="width: 30rem;">
+<article class="card bg-recipe mb-3">
   <img class="card-img-top" src= <%= @recipe.photo %> alt = "photo of <%= @recipe.title %>" />
 
   <section class="card-img-overlay"> <!-- overlay over photo -->
@@ -42,9 +42,9 @@
         <% end %>
       </ul>
     </article>
-    <p>
+    <aside>
         <%= link_to "Go to", @recipe.recipe_link, target: :blank, class: "card-link" %> <strong> <%= "#{@recipe.source}" %> </strong> for more info and to view the directions!
-    </p>
+    </aside>
   </div>
 
 </article>
