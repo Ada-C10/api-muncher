@@ -1,0 +1,9 @@
+<%= form_tag recipes_path, method: :get do %>
+  <div class="input-group mr-sm-2">
+    <input id="search" name="search" type="text" class="form-control" placeholder="Find Your Flavor" aria-label="Find Your Flavor">
+    <div class="input-group-append">
+      <%= submit_tag "Search", class: "btn btn-outline-light" %>
+    </div>
+
+  </div>
+<% end %>
