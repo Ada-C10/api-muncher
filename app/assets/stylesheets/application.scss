@@ -29,11 +29,13 @@ body {
   background-color: #F5F5F5;
   color: #2C2C2C;
   font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
 }
 
 body#homepage {
   background-image: asset-data-url("food.jpg");
   background-color: #01579B;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,7 +49,7 @@ a:hover {
 a.card-img-overlay {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   padding: 1.5rem;
 }
@@ -70,12 +72,11 @@ nav {
 }
 
 .pagination > * {
-    padding-right: 0.3rem;
-    font-size: 0.8rem;
+  padding-right: 0.3rem;
 }
 
 article {
-  padding-top: 150px;
+  padding-top: 16rem;
 }
 
 h1 {
@@ -85,7 +86,7 @@ h1 {
 #muncher {
   font-family: 'Pacifico', cursive;
   color: $light;
-  font-size: 3rem;
+  font-size: 6rem;
 }
 
 a#muncher, a#muncher::hover {
@@ -103,7 +104,7 @@ input#query::placeholder {
 }
 
 #muncher.muncher-homepage {
-  font-size: 4rem;
+  font-size: 8rem;
 }
 
 section.muncher-homepage > section > form > div > #query {
@@ -120,4 +121,61 @@ section.muncher-homepage > section > form > div > #query::placeholder {
 section.muncher-homepage > section > form > div > div > input.btn.btn-outline-light {
   background-color: $primary;
   color: $light;
+  border: none;
+}
+
+.form-inline .input-group, .form-inline .custom-select {
+    width: 100%;
+}
+
+.form-control, .btn {
+  font-size: 2rem;
+  height: 4rem;
+}
+
+.card-columns {
+  column-count: 2;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 2.25rem;
+}
+
+.alert-primary {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .form-control, .btn {
+    font-size: 1rem;
+    height: 2.25rem;
+  }
+
+  a.card-img-overlay {
+    font-size: 2rem;
+  }
+
+  .card-columns {
+    column-count: 3;
+  }
+
+  h2 {
+    font-size: 2.75rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  article {
+    padding-top: 14rem;
+  }
 }

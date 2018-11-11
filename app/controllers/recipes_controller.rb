@@ -3,12 +3,12 @@ require 'will_paginate/array'
 class RecipesController < ApplicationController
   def index
     @query = params[:query]
-    @recipes = EdamamApiWrapper.list_recipes(@query).paginate(page: params[:page], per_page: 10)
+    @recipes = EdamamApiWrapper.list_recipes(@query).paginate(page: params[:page], per_page: 12)
 
     if @recipes.empty?
       flash.now[:message] = "Could not find any recipes for '#{@query}'. Here are some yummy ones instead!"
       @query = "yummy"
-      @recipes = EdamamApiWrapper.list_recipes(@query).paginate(page: params[:page], per_page: 10)
+      @recipes = EdamamApiWrapper.list_recipes(@query).paginate(page: params[:page], per_page: 12)
     end
   end
 

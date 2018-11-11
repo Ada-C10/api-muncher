@@ -1,6 +1,6 @@
 <%= render partial: "header" %>
 
-<article class="recipe-detail col-sm-8 mx-auto">
+<article class="recipe-detail col-sm-10 mx-auto">
   <% if @recipe %>
     <div class="card">
       <div class="card-body">
@@ -10,7 +10,7 @@
             <span class="badge badge-secondary"><%= info %></span>
           <% end %>
         </p>
-        <h4>Ingredients</h4>
+        <h3>Ingredients:</h3>
         <ul>
           <% @recipe.ingredients.each do |ingredient| %>
             <li><%= ingredient %></li>
