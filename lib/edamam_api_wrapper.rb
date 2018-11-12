@@ -32,7 +32,7 @@ class EdamamApiWrapper
     end
 
     parsed_uri = api_params["uri"].split("_")[1]
-    binding.pry
+
     return Recipe.new(
       uri: parsed_uri,
       name: api_params["label"],
