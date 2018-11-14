@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>chomp crunch munch: ApiMuncher</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--help with responsiveness -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Comfortaa|Fredoka+One" rel="stylesheet">  <!-- fonts -->
+    <script src="https://developer.edamam.com/attribution/badge.js"></script> <!-- for edamam attr -->
+  </head>
+
+  <body>
+    <header class="navbar-header">
+      <nav class="navbar bg-light">
+        <%= link_to "chomp crunch munch", root_path, class: "navbar-brand" %>
+
+        <% if params[:action] != 'new' %> <!-- show on all pages but search new page -->
+            <div class="navbar-search">
+              <%= form_tag recipes_index_path, method: "get" do %>
+                <%= label_tag(:query, "") %>
+                <%= text_field_tag(:query) %>
+                <%= submit_tag( "forage", class: "btn btn-outline-primary" ) %>
+              <% end %>
+            <% end %>
+          </div>
+        </nav>
+
+    </header>
+
+    <main>
+
+      <section class="flash">
+        <% flash.each do |name, message| %>
+        <div class="<%= name %>"><%= message %></div>
+        <% end %>
+      </section>
+
+        <%= yield %>
+
+    </main>
+
+      <footer class = "footer">
+          <div id="edamam-badge" data-color="badge"></div>
+          <p class = 'text-muted'> an Ada Developers Academy Project by Leanne Rivera </p>
+      </footer>
+
+  </body>
+</html>

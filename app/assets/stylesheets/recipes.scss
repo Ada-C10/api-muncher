@@ -1,0 +1,161 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$salmon: #FA8C94;
+$dark-slate-grey: #3C5C6B;
+$bisque: #FCD5CE;
+$crimson: #D50454;
+$mustard: #FFDB58;
+
+table {
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+.pagination {
+  padding: 1rem;
+  margin-left: 2rem;
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  .pagination {
+    font-size: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+@include media-breakpoint-up(xl) { /* x-large sized screens and up */
+  .pagination {
+    font-size: 1.5rem;
+  }
+}
+
+.pagination, .pagination a {
+  color: $crimson;
+}
+
+.pagination a {
+  text-decoration: none;
+}
+
+// @include media-breakpoint-down(sm) { /* sm sized screens and under */
+//   .pagination a {
+//     margin: 0.2rem;
+//   }
+// }
+
+.pagination a:hover {
+  color: $salmon;
+  font-weight: bolder;
+}
+
+.pagination a:visited {
+  color: $dark-slate-grey;
+}
+
+.recipes-list {
+  font-family: "Averia Serif Libre", serif;
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  .recipes-list {
+    font-size: 2rem;
+  }
+}
+
+.recipe-header {
+  color: $bisque;
+  text-shadow: 0px -1px 10px rgba(150, 150, 150, 1);
+}
+
+@include media-breakpoint-down(sm) {
+  table {
+    padding-right: 3rem;
+  }
+}
+
+table .recipe-index-links {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: $dark-slate-grey;
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  table .recipe-index-links {
+    font-size: 3rem;
+  }
+}
+
+.recipe-show {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  align-content: center;
+  padding: 1rem;
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  .recipe-show {
+    display: flex;
+    align-content: center;
+    padding: 1rem;
+  }
+}
+
+.recipe-photo {
+
+}
+
+article.card {
+  grid-column-start: 2;
+  font-family: "Averia Serif Libre", serif;
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  justify-content: center;
+}
+
+.card {
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-self: center;
+  // position: relative;
+  width: 30rem;
+}
+
+@include media-breakpoint-down(sm) {
+  .card {
+    width: 100%;
+    font-size: 2rem;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .card img {
+    max-height: 40%;
+    width: auto;
+  }
+}
+
+.card-link {
+  position: relative; /*allows card links to work relative to card's z-index*/
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  aside {
+    font-size: 2.5rem;
+  }
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  aside a {
+    color: $crimson;
+  }
+}
+
+.error_page {
+  text-align: center;
+  justify-content: center;
+}

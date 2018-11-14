@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+
+$salmon: #FA8C94;
+$dark-slate-grey: #3C5C6B;
+$bisque: #FCD5CE;
+$crimson: #D50454;
+$mustard: #FFDB58;
+
+html {
+  font-size: 0.8rem;
+  overflow-x: hidden;
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  html {
+    font-size: 0.6rem;
+  }
+}
+
+@include media-breakpoint-up(md) { /* med sized screens and up */
+  html {
+    font-size: 1rem;
+  }
+}
+
+@include media-breakpoint-up(lg) { /* large sized screens and up */
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(xl) { /* x-large sized screens and up */
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+body {
+  margin-bottom: 5rem;
+}
+
+.navbar-brand {
+  font-size: 4em;
+  font-family: 'Fredoka One', cursive;
+  color: $crimson;
+  white-space: pre-line; /*overwrite bootstrap no wrap so it can wrap!! */
+}
+
+@include media-breakpoint-down(sm) {
+  .navbar-brand {
+    margin: 2rem;
+  }
+}
+
+.navbar-brand:hover {
+  color: $salmon;
+}
+
+.btn-outline-primary {
+  color: $dark-slate-grey;
+  border-color: $dark-slate-grey;
+}
+
+.bg-recipe {
+  background: $mustard;
+}
+
+.btn-outline-primary:hover {
+  background-color: $salmon;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+  z-index: 13; /*layer of footer*/
+}
+
+@include media-breakpoint-down(sm) { /* sm sized screens and under */
+  .footer {
+    white-space: pre;
+    align-content: normal;
+  }
+}
+
+.text-muted {
+  opacity: 0.3;
+}

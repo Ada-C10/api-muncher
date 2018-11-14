@@ -1,0 +1,167 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=73a32603&app_key=fc79540af556f65253707c3c2b00862e&r=potatoes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Fri, 02 Nov 2018 04:05:23 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - route=e631c7ba5082b8aedfb6e067f8f8e739; Path=/
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Served-By:
+      - ip-10-157-133-209/10.157.133.209
+    body:
+      encoding: UTF-8
+      string: "["
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 04:05:24 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=73a32603&app_key=fc79540af556f65253707c3c2b00862e&r=potatoes%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Fri, 02 Nov 2018 04:17:48 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - route=8e5a812ca79b4bbf3e9a7ba3906de9f3; Path=/
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Served-By:
+      - ip-10-140-213-39/10.140.213.39
+    body:
+      encoding: UTF-8
+      string: "["
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 04:17:48 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=73a32603&app_key=fc79540af556f65253707c3c2b00862e&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_potatoes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Fri, 02 Nov 2018 05:03:13 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - route=e631c7ba5082b8aedfb6e067f8f8e739; Path=/
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Served-By:
+      - ip-10-157-133-209/10.157.133.209
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Fri, 02 Nov 2018 05:03:13 GMT
+- request:
+    method: get
+    uri: https://api.edamam.com/search?app_id=f153f948&app_key=5985451e7edc634659c0e762c2654b37&r=http://www.edamam.com/ontologies/edamam.owl%23recipe_potatoes
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - ngx_openresty
+      Date:
+      - Wed, 07 Nov 2018 20:18:18 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - route=e631c7ba5082b8aedfb6e067f8f8e739; Path=/
+      Cache-Control:
+      - private
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      X-Served-By:
+      - ip-10-157-133-209/10.157.133.209
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Wed, 07 Nov 2018 20:18:18 GMT
+recorded_with: VCR 4.0.0
