@@ -1,0 +1,20 @@
+<section class="channels-list">
+  <% if @recipes != []%>
+    <h1>Recepies for <%=params[:message]%></h1>
+    <ul>
+      <% @recipes.each do |recipe| %>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="<%=recipe.image_url%>" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title"<%=recipe.label%></h5>
+        <a href="<%=recipes_show_path(recipe.id)%>" class="btn btn-primary">View Recipe</a>
+        </div>
+      </div>
+      <% end %>
+    </ul>
+  <% else %>
+    <p> The search term you provided does exist. Please try again <p>
+  <% end %>
+</section>
+<%= paginate @recipes %>
+<%= page_entries_info @recipes %>

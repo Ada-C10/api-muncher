@@ -1,0 +1,30 @@
+<section class="recipe">
+  <% if @recipe%>
+    <ul>
+      <% @recipe.each do |recipe| %>
+        <ul>
+          <h1><%=recipe.label%></h1>
+          <li><strong>Ingredients:</strong>
+            <%recipe.ingredients.each do |item|%>
+              <%if item == recipe.ingredients.last%>
+                <%=item%>
+              <%else%>
+              <%=item + ","%>
+              <%end%>
+            <%end%>
+          </li>
+          <li><strong>Dietary information:</strong>
+            <%recipe.dietaryinformation.each do |item|%>
+              <%if item == recipe.dietaryinformation.last%>
+                <%=item%>
+              <%else%>
+              <%=item + ","%>
+              <%end%>
+            <%end%>
+          </li>
+          <a href="<%= recipe.recipe_url%>"><img src="<%=recipe.image_url%>" alt="picture of food recipe"></a>
+        </ul>
+      <% end %>
+    </ul>
+  <% end %>
+</section>

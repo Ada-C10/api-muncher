@@ -1,0 +1,8 @@
+<h1>Search the Edamam API </h1>
+
+<%= form_tag recipes_index_path, method: :get do %>
+  <%= label_tag(:message, "Enter search term") %>
+  <%= text_field_tag(:message) %>
+  <%= submit_tag("Send") %>
+
+<% end %>
