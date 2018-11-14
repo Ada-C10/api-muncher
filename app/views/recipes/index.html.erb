@@ -1,0 +1,22 @@
+<!-- displays searh results for food in cards-->
+<section class="main-content">
+  <h2 class="section-title"><%="#{@food.capitalize}"%> Recipes</h2>
+
+  <% if @recipes %>
+  <section class="cards-container">
+
+      <% @recipes.each do |recipe| %>
+
+        <section class="card">
+          <img class="card-img-top" src="<%= recipe.image %>" alt="Card image cap">
+
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to "#{recipe.name}", recipe_path(recipe.uri) %></h5>
+          </div>
+        </section>
+
+      <% end %>
+  </section>
+  <% end %>
+
+</section>

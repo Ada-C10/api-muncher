@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ApiMuncher</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+
+      <nav class="navbar"
+        <section class="logo-wrapper">
+          <%= link_to "Ghost Muncher", root_path, class: "logo" %>
+        </section>
+
+        <section class="seach-bar">
+          <%= form_tag recipes_path, method: "get" do %>
+          <% label_tag(:food) %>
+          <%= text_field_tag(:food, nil, placeholder: "Search Recipes") %>
+          <%= submit_tag("Munch", class: "btn btn-primary") %>
+          <% end %>
+        </section>
+      </nav>
+
+    </header>
+
+    <main>
+      
+      <section class="flash">
+        <% flash.each do |name, message| %>
+          <% if message.class == Array %>
+            <% message.each do |msg| %>
+              <div class="alert-<%= name %>">
+                <strong><%= "#{name}:" %></strong><%= " #{msg}" %></div>
+            <% end %>
+          <% else %>
+            <div class="alert-<%= name %>">
+                <%= message %>
+            </div>
+          <% end %>
+        <% end %>
+      </section>
+
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p>Powered by Edamam</p>
+    </footer>
+
+  </body>
+</html>

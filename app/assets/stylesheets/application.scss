@@ -1,0 +1,153 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+/* Import scss content */
+@import "**/*";
+
+body {
+  background-color: black;
+  color: #FEFC34;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+p {
+    text-align: center;
+}
+
+.seach-bar {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  // background-color: #181AE9;
+  border-top-style: dashed;
+  border-bottom-style: dashed;
+  border-color: #181AE9;
+  border-width: 5px;
+}
+
+.logo-wrapper a:hover {
+  color: #181AE9;
+}
+
+.page-content-wrapper {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin: 10%;
+  padding-bottom: 2em;
+  background-color: white;
+  color: #181AE9;
+  padding: 2em;
+  border-radius: 20px;
+}
+
+.logo {
+  display: block;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 4.5em;
+  color: #FEFC34;
+}
+
+main img {
+ width: 100%;
+}
+
+.flash {
+  padding: 1em;
+}
+
+.section-title {
+  text-align: center;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+}
+
+.cards-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   flex-direction: row;
+  justify-content: center;
+
+}
+
+.card {
+   margin: 1rem 1em;
+}
+
+.recipe {
+  display: grid;
+  grid-template: auto auto / 1fr 1fr;
+  justify-items: left;
+}
+
+.recipe-intro h3 {
+  padding-top: 1em;
+}
+
+.ingredients {
+   padding: 2em;
+}
+
+.ingredients h3 {
+  padding-bottom: 1em;
+  padding-top: 3em;
+}
+
+.ingredients p {
+  text-align: left;
+  margin-bottom: .5em;
+}
+
+.labels {
+  padding-top: 1em;
+}
+
+.labels p {
+  text-align: left;
+}
+
+.recipe-link {
+  padding-top: 1em;
+  font-size: 1.5em;
+}
+
+.btn-primary {
+    background: #FEFC34;
+    color: #181AE9;
+}
+
+.btn-primary.raised {
+	box-shadow: 0 3px 0 0 #007299;
+}
