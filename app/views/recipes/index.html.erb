@@ -1,0 +1,21 @@
+<%= render partial: "header" %>
+
+<article class="recipes-list">
+  <% if flash[:message] %>
+    <div class="alert alert-primary" role="alert"><%= flash[:message] %></div>
+  <% end %>
+  <h2>Results for "<%= @query %>"</h2>
+  <%= will_paginate @recipes %>
+  <hr>
+  <div class="card-columns">
+    <% if @recipes %>
+        <% @recipes.each do |recipe| %>
+          <div class="card text-white">
+            <%= link_to image_tag("#{recipe.image}", alt: "#{recipe.label}", class: "card-img"), recipe_path(recipe.id) %>
+            <%= link_to "#{recipe.label}", recipe_path(recipe.id), class: "card-img-overlay" %>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+  <%= will_paginate @recipes %>
+</article>
