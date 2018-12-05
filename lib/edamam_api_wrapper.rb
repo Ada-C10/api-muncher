@@ -27,7 +27,7 @@ class EdamamApiWrapper
   end
   # chocolate mouse "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_7543ecfa28b7506a97360748f017a83e",
   # kimchi pasta "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_b3ce18c4a415f62086a858c54f2c3f19",
-  # https://api.edamam.com/search?app_id=cce9a91f&app_key=d0f4da3c9d8a64a9be87b192561284b7&r=http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_b3ce18c4a415f62086a858c54f2c3f19
+  # https://api.edamam.com/search?app_id=xxx&app_key=xxx=http:%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_b3ce18c4a415f62086a858c54f2c3f19
 
   #this method takes a uri (which will come from params) and returns a recipe
   def self.find_recipe_by(uri)
