@@ -10,8 +10,6 @@ class EdamamApiWrapper
   APP_KEY = ENV["APP_KEY"]
 
 
-  #list the channels  **
-  # base_url = https://api.edamam.com/search?app_id=cce9a91f&app_key=d0f4da3c9d8a64a9be87b192561284b7&q=chocolate mouse
 
   def self.list_recipes(user_search) #i passed search_term in the controller and view to use this
     url = BASE_URL + "search?" + "app_id=#{APP_ID}" + "&app_key=#{APP_KEY}" + "&q=#{user_search}" + "&to=100"
