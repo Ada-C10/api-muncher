@@ -1,0 +1,18 @@
+<% @body_class = "homepage" %>
+<body class="splash">
+<h1>Edemam</h1>
+
+<div class="row">
+
+
+  <section><%= form_tag search_path, method: "get", class: 'input-group' do %>
+  <%= text_field_tag :search_term %>
+  <span class="input-group-btn">
+  <%= submit_tag "search" %>
+  </span>
+  <% end %>
+  </section>
+
+  </div>
+
+</body>
